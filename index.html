@@ -3,285 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagar Lal | AI & ML Engineer</title>
+    <title>Sagar | AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #050b14;
-            color: #e2e8f0;
+            background-color: #050505;
+            color: #a1a1aa; /* zinc-400 */
             overflow-x: hidden;
         }
 
-        .glass {
-            background: rgba(15, 23, 42, 0.4);
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .vercel-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .vercel-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .floating-nav {
+            background: rgba(10, 10, 10, 0.6);
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .glow-avatar {
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
-            animation: pulse-glow 3s infinite alternate;
-        }
-        
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.3); }
-            100% { box-shadow: 0 0 60px rgba(59, 130, 246, 0.6); }
+        /* Animated background gradient */
+        .gradient-orb {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #050b14; }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #52525b; }
     </style>
 </head>
-<body class="antialiased selection:bg-blue-600 selection:text-white">
+<body class="antialiased selection:bg-white selection:text-black">
 
-    <!-- Navbar with 5-Language Switcher -->
-    <nav class="fixed w-full z-50 glass py-4 border-b border-white/5 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">SAGAR.</a>
+    <div class="gradient-orb"></div>
+
+    <!-- Floating Pill Navbar -->
+    <nav class="fixed w-full z-50 top-6 px-4 flex justify-center pointer-events-none">
+        <div class="floating-nav pointer-events-auto rounded-full px-6 py-3 flex items-center gap-8 shadow-2xl">
+            <a href="#" class="brand-font text-xl font-bold tracking-tighter text-white">SAGAR.</a>
             
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300 items-center">
-                <a href="#about" class="hover:text-cyan-400 transition-colors" data-i18n="nav_about">About</a>
-                <a href="#projects" class="hover:text-cyan-400 transition-colors" data-i18n="nav_projects">Projects</a>
-                <a href="#experience" class="hover:text-cyan-400 transition-colors" data-i18n="nav_experience">Experience</a>
-                
-                <!-- Expanded Language Selector -->
-                <div class="relative ml-4 flex items-center border border-slate-700 rounded-lg px-2 py-1 bg-[#0f172a]">
-                    <i class="fas fa-globe text-slate-400 text-xs mr-2"></i>
-                    <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-sm text-slate-200 outline-none cursor-pointer appearance-none">
-                        <option value="en" class="bg-[#0f172a]">English</option>
-                        <option value="it" class="bg-[#0f172a]">Italiano</option>
-                        <option value="es" class="bg-[#0f172a]">Español</option>
-                        <option value="fr" class="bg-[#0f172a]">Français</option>
-                        <option value="de" class="bg-[#0f172a]">Deutsch</option>
-                    </select>
-                </div>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
+                <a href="#about" class="hover:text-white transition-colors" data-i18n="nav_about">About</a>
+                <a href="#projects" class="hover:text-white transition-colors" data-i18n="nav_projects">Projects</a>
+                <a href="#experience" class="hover:text-white transition-colors" data-i18n="nav_experience">Experience</a>
+            </div>
+            
+            <!-- Sleek Language Selector -->
+            <div class="relative flex items-center pl-4 border-l border-white/10">
+                <i class="fas fa-globe text-zinc-500 text-xs mr-2"></i>
+                <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-sm text-zinc-300 outline-none cursor-pointer appearance-none font-medium">
+                    <option value="en" class="bg-[#0a0a0a]">EN</option>
+                    <option value="it" class="bg-[#0a0a0a]">IT</option>
+                    <option value="es" class="bg-[#0a0a0a]">ES</option>
+                    <option value="fr" class="bg-[#0a0a0a]">FR</option>
+                    <option value="de" class="bg-[#0a0a0a]">DE</option>
+                </select>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-40 pb-24 px-6 overflow-hidden" id="about">
-        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none"></div>
-
-        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16 relative z-10">
-            <div class="flex-1 text-center md:text-left">
-                <div class="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-semibold tracking-wider uppercase mb-6" data-i18n="hero_badge">
-                    Master's Student at University of Verona
-                </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight" data-i18n="hero_title">
-                    Engineering <br>
-                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400">Intelligent AI</span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-400 mb-8 font-light max-w-2xl leading-relaxed" data-i18n="hero_subtitle">
-                    I am a Machine Learning Engineer specializing in <strong class="text-slate-200 font-medium">Explainable AI (XAI)</strong>, <strong class="text-slate-200 font-medium">Computer Vision</strong>, and building production-ready automation systems.
-                </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="mailto:Sagarrangwani1@gmail.com" class="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-semibold transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]" data-i18n="hero_cta">
-                        Get In Touch
-                    </a>
-                </div>
+    <section class="relative pt-48 pb-24 px-6 z-10" id="about">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-xs font-medium tracking-wide mb-8">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span data-i18n="hero_badge">Verona, Italy • AI Engineer</span>
             </div>
-
-            <div class="flex-shrink-0 relative">
-                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-tr from-blue-500 to-cyan-300 glow-avatar">
-                    <img src="profile.jpg" alt="Sagar Lal" class="w-full h-full object-cover rounded-full border-4 border-[#050b14]" onerror="this.src='https://ui-avatars.com/api/?name=Sagar+Lal&size=512&background=0D8ABC&color=fff'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 px-6 relative">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-16">
             
-            <div class="lg:col-span-3">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-                    <span class="w-8 h-1 bg-cyan-500 rounded-full"></span> <span data-i18n="exp_title">Career Journey</span>
-                </h2>
-                <div class="space-y-8 border-l border-slate-800 pl-6 ml-3">
-                    
-                    <div class="relative group">
-                        <div class="absolute -left-[33px] top-1.5 w-4 h-4 bg-[#050b14] border-2 border-cyan-500 rounded-full group-hover:bg-cyan-500 transition-colors"></div>
-                        <h3 class="text-xl font-bold text-white" data-i18n="job1_title">Project Manager</h3>
-                        <div class="flex items-center gap-3 text-sm mt-1 mb-3">
-                            <span class="text-cyan-400 font-semibold">Codesy</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500" data-i18n="job1_date">May 2024 - Present</span>
-                        </div>
-                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="job1_desc">
-                            Leading cross-functional teams to deliver AI-driven solutions and Python-based applications. Managing the end-to-end lifecycle of process automation systems using Agile methodologies.
-                        </p>
-                    </div>
-
-                    <div class="relative group">
-                        <div class="absolute -left-[33px] top-1.5 w-4 h-4 bg-[#050b14] border-2 border-slate-600 rounded-full group-hover:border-cyan-500 transition-colors"></div>
-                        <h3 class="text-xl font-bold text-white" data-i18n="job2_title">Business Development Executive</h3>
-                        <div class="flex items-center gap-3 text-sm mt-1 mb-3">
-                            <span class="text-cyan-400 font-semibold">Codesy</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500" data-i18n="job2_date">Nov 2022 - Apr 2024</span>
-                        </div>
-                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="job2_desc">
-                            Executed data-driven strategies to increase brand awareness. Analyzed campaign performance and KPIs to optimize strategies and maximize ROI.
-                        </p>
-                    </div>
-
-                    <div class="relative group">
-                        <div class="absolute -left-[33px] top-1.5 w-4 h-4 bg-[#050b14] border-2 border-slate-600 rounded-full group-hover:border-cyan-500 transition-colors"></div>
-                        <h3 class="text-xl font-bold text-white" data-i18n="job3_title">Web Design Specialist</h3>
-                        <div class="flex items-center gap-3 text-sm mt-1 mb-3">
-                            <span class="text-cyan-400 font-semibold">Freelance</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-slate-500" data-i18n="job3_date">Mar 2020 - Jan 2022</span>
-                        </div>
-                        <p class="text-slate-400 text-sm leading-relaxed" data-i18n="job3_desc">
-                            Designed user-focused, standards-compliant websites using HTML, CSS, JavaScript, and Bootstrap, delivering responsive mobile-friendly solutions.
-                        </p>
-                    </div>
-                </div>
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 tracking-tighter text-white leading-tight" data-i18n="hero_title">
+                Building <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500">Intelligent Systems.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-zinc-400 mb-10 font-light max-w-2xl mx-auto leading-relaxed" data-i18n="hero_subtitle">
+                Machine Learning Engineer specializing in <strong class="text-zinc-200 font-medium">Explainable AI (XAI)</strong> and <strong class="text-zinc-200 font-medium">Computer Vision</strong>. Focused on scalable automation and transparent neural networks.
+            </p>
+            
+            <div class="flex justify-center gap-4">
+                <a href="mailto:Sagarrangwani1@gmail.com" class="px-8 py-3 bg-white text-black rounded-full font-semibold hover:bg-zinc-200 transition-all text-sm" data-i18n="hero_cta">
+                    Contact Me
+                </a>
+                <a href="https://github.com/Sagarsamrangwani" target="_blank" class="px-8 py-3 vercel-card rounded-full font-semibold text-white flex items-center gap-2 text-sm">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Skills & Education -->
-            <div class="lg:col-span-2 space-y-12">
-                <div>
-                    <h2 class="text-2xl font-bold mb-6 text-white" data-i18n="skills_title">Core Technologies</h2>
+    <!-- Bento Grid Section (Skills & Edu) -->
+    <section id="projects" class="py-24 px-6 z-10 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <!-- Large Skill Card -->
+                <div class="vercel-card rounded-3xl p-8 md:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <i class="fas fa-microchip text-2xl text-zinc-300 mb-4"></i>
+                        <h2 class="text-2xl font-bold text-white mb-2" data-i18n="skills_title">Core Stack</h2>
+                        <p class="text-zinc-400 text-sm mb-6" data-i18n="skills_desc">Technologies I use to build production-ready AI models and automation tools.</p>
+                    </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-300 text-sm hover:border-blue-500 hover:text-white transition-colors">Python & PyTorch</span>
-                        <span class="px-3 py-1.5 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-300 text-sm hover:border-blue-500 hover:text-white transition-colors">TensorFlow & OpenCV</span>
-                        <span class="px-3 py-1.5 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-300 text-sm hover:border-blue-500 hover:text-white transition-colors">Explainable AI (XAI)</span>
-                        <span class="px-3 py-1.5 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-300 text-sm hover:border-blue-500 hover:text-white transition-colors">Transformers</span>
-                        <span class="px-3 py-1.5 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-300 text-sm hover:border-blue-500 hover:text-white transition-colors">REST APIs & SQL</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-zinc-200 text-sm">Python</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-zinc-200 text-sm">PyTorch & TensorFlow</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-zinc-200 text-sm">OpenCV</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-zinc-200 text-sm">XAI Methods</span>
+                        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-zinc-200 text-sm">REST APIs & SQL</span>
                     </div>
                 </div>
 
-                <div>
-                    <h2 class="text-2xl font-bold mb-6 text-white" data-i18n="edu_title">Education & Research</h2>
-                    <div class="glass p-5 rounded-xl border-l-4 border-l-blue-500 mb-4 hover:bg-slate-800/40 transition-colors">
-                        <h4 class="font-bold text-white text-md mb-1" data-i18n="edu1_title">MSc in Artificial Intelligence</h4>
-                        <p class="text-blue-400 text-sm font-medium mb-1">University of Verona, Italy</p>
-                        <p class="text-slate-400 text-xs mb-2" data-i18n="edu1_date">Expected Graduation: October 2026</p>
-                        <p class="text-slate-300 text-xs leading-relaxed" data-i18n="edu1_desc"><strong>Focus:</strong> Explainable AI (XAI), Causal Anomaly Detection, Deep Learning for image-based analysis, and systems for real-world industrial applications.</p>
+                <!-- Small Edu Card -->
+                <div class="vercel-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <i class="fas fa-graduation-cap text-2xl text-zinc-300 mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-1" data-i18n="edu1_title">MSc AI</h3>
+                        <p class="text-zinc-400 text-sm mb-4">University of Verona</p>
                     </div>
-                    <div class="glass p-5 rounded-xl border-l-4 border-l-slate-700 hover:bg-slate-800/40 transition-colors">
-                        <h4 class="font-bold text-white text-md mb-1" data-i18n="edu2_title">BSc in Computer Systems Engineering</h4>
-                        <p class="text-slate-400 text-sm font-medium mb-2">Dawood University</p>
-                        <p class="text-slate-500 text-xs" data-i18n="edu2_desc">Data Structures, Algorithms, Software Engineering</p>
+                    <p class="text-zinc-500 text-xs" data-i18n="edu1_date">Exp. 2026</p>
+                </div>
+
+                <!-- Projects/Research Card -->
+                <div class="vercel-card rounded-3xl p-8 md:col-span-3">
+                    <h2 class="text-2xl font-bold text-white mb-6" data-i18n="focus_title">Current Focus</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="border-l border-white/10 pl-4">
+                            <h4 class="text-zinc-200 font-medium mb-2">Explainable AI</h4>
+                            <p class="text-zinc-500 text-sm" data-i18n="focus_1">Making black-box neural networks transparent using feature attribution techniques.</p>
+                        </div>
+                        <div class="border-l border-white/10 pl-4">
+                            <h4 class="text-zinc-200 font-medium mb-2">Computer Vision</h4>
+                            <p class="text-zinc-500 text-sm" data-i18n="focus_2">Building robust object detection and image classification pipelines.</p>
+                        </div>
+                        <div class="border-l border-white/10 pl-4">
+                            <h4 class="text-zinc-200 font-medium mb-2">Process Automation</h4>
+                            <p class="text-zinc-500 text-sm" data-i18n="focus_3">Architecting Python-based workflows integrated smoothly with REST APIs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-white/5 bg-[#03070d] text-center">
-        <p class="text-slate-500 text-sm font-medium">&copy; 2026 Sagar Lal. <span data-i18n="footer_text">Engineered for the future.</span></p>
+    <!-- Linear Experience Section -->
+    <section id="experience" class="py-24 px-6 z-10 relative">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 tracking-tight" data-i18n="exp_title">Experience</h2>
+            
+            <div class="space-y-6">
+                <!-- Job 1 -->
+                <div class="vercel-card rounded-2xl p-6 group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="job1_title">Project Manager</h3>
+                            <p class="text-zinc-400 text-sm">Codesy</p>
+                        </div>
+                        <span class="text-xs font-medium text-zinc-500 mt-2 md:mt-0" data-i18n="job1_date">May 2024 - Present</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed" data-i18n="job1_desc">
+                        Leading cross-functional teams to deliver AI-driven solutions and Python-based applications. Managing the end-to-end lifecycle of process automation systems using Agile methodologies.
+                    </p>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="vercel-card rounded-2xl p-6 group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="job2_title">Business Dev. Executive</h3>
+                            <p class="text-zinc-400 text-sm">Codesy</p>
+                        </div>
+                        <span class="text-xs font-medium text-zinc-500 mt-2 md:mt-0" data-i18n="job2_date">Nov 2022 - Apr 2024</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed" data-i18n="job2_desc">
+                        Executed data-driven strategies to increase brand awareness. Analyzed campaign performance and KPIs to optimize strategies and maximize ROI.
+                    </p>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="vercel-card rounded-2xl p-6 group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="job3_title">Web Design Specialist</h3>
+                            <p class="text-zinc-400 text-sm">Freelance</p>
+                        </div>
+                        <span class="text-xs font-medium text-zinc-500 mt-2 md:mt-0" data-i18n="job3_date">Mar 2020 - Jan 2022</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm leading-relaxed" data-i18n="job3_desc">
+                        Designed user-focused, standards-compliant websites using HTML, CSS, JavaScript, and Bootstrap, delivering responsive mobile-friendly solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center mt-12 z-10 relative">
+        <p class="text-zinc-600 text-sm brand-font">&copy; 2026 Sagar Lal. All rights reserved.</p>
     </footer>
 
-    <!-- Multilingual Localization Script -->
+    <!-- 5-Language Script -->
     <script>
         const translations = {
             en: {
-                nav_about: "About", nav_projects: "Projects", nav_experience: "Experience",
-                hero_badge: "Master's Student at University of Verona",
-                hero_title: "Engineering <br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>Intelligent AI</span>",
-                hero_subtitle: "I am a Machine Learning Engineer specializing in <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Computer Vision</strong>, and building production-ready automation systems.",
-                hero_cta: "Get In Touch",
-                exp_title: "Career Journey",
-                job1_title: "Project Manager", job1_date: "May 2024 - Present",
-                job1_desc: "Leading cross-functional teams to deliver AI-driven solutions and Python-based applications. Managing the end-to-end lifecycle of process automation systems using Agile methodologies.",
-                job2_title: "Business Development Executive", job2_date: "Nov 2022 - Apr 2024",
-                job2_desc: "Executed data-driven strategies to increase brand awareness. Analyzed campaign performance and KPIs to optimize strategies and maximize ROI.",
-                job3_title: "Web Design Specialist", job3_date: "Mar 2020 - Jan 2022",
-                job3_desc: "Designed user-focused, standards-compliant websites using HTML, CSS, JavaScript, and Bootstrap, delivering responsive mobile-friendly solutions.",
-                skills_title: "Core Technologies", edu_title: "Education & Research",
-                edu1_title: "MSc in Artificial Intelligence", edu1_date: "Expected Graduation: October 2026",
-                edu1_desc: "<strong>Focus:</strong> Explainable AI (XAI), Causal Anomaly Detection, Deep Learning for image-based analysis, and systems for real-world industrial applications.",
-                edu2_title: "BSc in Computer Systems Engineering", edu2_desc: "Data Structures, Algorithms, Software Engineering",
-                footer_text: "Engineered for the future."
+                nav_about: "About", nav_projects: "Stack", nav_experience: "Experience",
+                hero_badge: "Verona, Italy • AI Engineer",
+                hero_title: "Building <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500'>Intelligent Systems.</span>",
+                hero_subtitle: "Machine Learning Engineer specializing in <strong class='text-zinc-200 font-medium'>Explainable AI (XAI)</strong> and <strong class='text-zinc-200 font-medium'>Computer Vision</strong>. Focused on scalable automation and transparent neural networks.",
+                hero_cta: "Contact Me",
+                skills_title: "Core Stack", skills_desc: "Technologies I use to build production-ready AI models and automation tools.",
+                edu1_title: "MSc AI", edu1_date: "Exp. 2026",
+                focus_title: "Current Focus", focus_1: "Making black-box neural networks transparent using feature attribution techniques.", focus_2: "Building robust object detection and image classification pipelines.", focus_3: "Architecting Python-based workflows integrated smoothly with REST APIs.",
+                exp_title: "Experience",
+                job1_title: "Project Manager", job1_date: "May 2024 - Present", job1_desc: "Leading cross-functional teams to deliver AI-driven solutions and Python-based applications. Managing the end-to-end lifecycle of process automation systems using Agile methodologies.",
+                job2_title: "Business Dev. Executive", job2_date: "Nov 2022 - Apr 2024", job2_desc: "Executed data-driven strategies to increase brand awareness. Analyzed campaign performance and KPIs to optimize strategies and maximize ROI.",
+                job3_title: "Web Design Specialist", job3_date: "Mar 2020 - Jan 2022", job3_desc: "Designed user-focused, standards-compliant websites using HTML, CSS, JavaScript, and Bootstrap, delivering responsive mobile-friendly solutions."
             },
             it: {
-                nav_about: "Chi Sono", nav_projects: "Progetti", nav_experience: "Esperienza",
-                hero_badge: "Studente Magistrale presso l'Università di Verona",
-                hero_title: "Ingegneria dell'<br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>Intelligenza Artificiale</span>",
-                hero_subtitle: "Sono un Ingegnere di Machine Learning specializzato in <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Computer Vision</strong> e nello sviluppo di sistemi di automazione pronti per la produzione.",
+                nav_about: "Chi Sono", nav_projects: "Stack", nav_experience: "Esperienza",
+                hero_badge: "Verona, Italia • Ingegnere IA",
+                hero_title: "Sviluppo <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500'>Sistemi Intelligenti.</span>",
+                hero_subtitle: "Ingegnere Machine Learning specializzato in <strong class='text-zinc-200 font-medium'>Explainable AI (XAI)</strong> e <strong class='text-zinc-200 font-medium'>Computer Vision</strong>. Focalizzato su automazione scalabile e reti neurali trasparenti.",
                 hero_cta: "Contattami",
-                exp_title: "Percorso Professionale",
-                job1_title: "Project Manager", job1_date: "Mag 2024 - Presente",
-                job1_desc: "Guida di team interfunzionali per fornire soluzioni basate sull'IA e applicazioni Python. Gestione dell'intero ciclo di vita dei sistemi di automazione dei processi utilizzando metodologie Agile.",
-                job2_title: "Sviluppo Commerciale", job2_date: "Nov 2022 - Apr 2024",
-                job2_desc: "Esecuzione di strategie basate sui dati per aumentare la brand awareness. Analisi delle performance delle campagne e dei KPI per ottimizzare le strategie e massimizzare il ROI.",
-                job3_title: "Specialista Web Design", job3_date: "Mar 2020 - Gen 2022",
-                job3_desc: "Progettazione di siti web incentrati sull'utente e conformi agli standard utilizzando HTML, CSS, JavaScript e Bootstrap, fornendo soluzioni responsive per dispositivi mobili.",
-                skills_title: "Tecnologie Principali", edu_title: "Istruzione e Ricerca",
-                edu1_title: "Laurea Magistrale in Intelligenza Artificiale", edu1_date: "Laurea Prevista: Ottobre 2026",
-                edu1_desc: "<strong>Focus:</strong> Explainable AI (XAI), Rilevamento Causale delle Anomalie, Deep Learning per l'analisi di immagini e sistemi per applicazioni industriali.",
-                edu2_title: "Laurea Triennale in Ingegneria Informatica", edu2_desc: "Strutture Dati, Algoritmi, Ingegneria del Software",
-                footer_text: "Progettato per il futuro."
+                skills_title: "Tecnologie Base", skills_desc: "Strumenti che utilizzo per costruire modelli IA pronti per la produzione.",
+                edu1_title: "Master IA", edu1_date: "Prev. 2026",
+                focus_title: "Focus Attuale", focus_1: "Rendere trasparenti le reti neurali black-box usando tecniche di attribuzione.", focus_2: "Sviluppo di pipeline robuste per il rilevamento di oggetti e classificazione immagini.", focus_3: "Architettura di workflow in Python integrati con API REST.",
+                exp_title: "Esperienza",
+                job1_title: "Project Manager", job1_date: "Mag 2024 - Presente", job1_desc: "Guida di team interfunzionali per fornire soluzioni IA e applicazioni Python. Gestione del ciclo di vita dei sistemi di automazione con metodologie Agile.",
+                job2_title: "Sviluppo Commerciale", job2_date: "Nov 2022 - Apr 2024", job2_desc: "Esecuzione di strategie basate sui dati per aumentare la brand awareness e massimizzare il ROI.",
+                job3_title: "Specialista Web Design", job3_date: "Mar 2020 - Gen 2022", job3_desc: "Progettazione di siti web incentrati sull'utente con HTML, CSS, JavaScript e Bootstrap."
             },
             es: {
-                nav_about: "Sobre Mí", nav_projects: "Proyectos", nav_experience: "Experiencia",
-                hero_badge: "Estudiante de Máster en la Universidad de Verona",
-                hero_title: "Ingeniería de <br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>Inteligencia Artificial</span>",
-                hero_subtitle: "Soy un Ingeniero de Machine Learning especializado en <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Visión por Computadora</strong> y en la creación de sistemas de automatización.",
+                nav_about: "Sobre Mí", nav_projects: "Tecnologías", nav_experience: "Experiencia",
+                hero_badge: "Verona, Italia • Ingeniero de IA",
+                hero_title: "Construyendo <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500'>Sistemas Inteligentes.</span>",
+                hero_subtitle: "Ingeniero de Machine Learning especializado en <strong class='text-zinc-200 font-medium'>Explainable AI (XAI)</strong> y <strong class='text-zinc-200 font-medium'>Visión por Computadora</strong>. Enfocado en la automatización escalable.",
                 hero_cta: "Contáctame",
-                exp_title: "Trayectoria Profesional",
-                job1_title: "Gerente de Proyectos", job1_date: "May 2024 - Presente",
-                job1_desc: "Liderazgo de equipos para entregar soluciones impulsadas por IA y aplicaciones Python. Gestión del ciclo de vida completo de sistemas de automatización mediante metodologías Agile.",
-                job2_title: "Desarrollo de Negocios", job2_date: "Nov 2022 - Abr 2024",
-                job2_desc: "Ejecución de estrategias para aumentar el conocimiento de la marca. Análisis del rendimiento de campañas y KPI para optimizar estrategias y maximizar el ROI.",
-                job3_title: "Especialista en Diseño Web", job3_date: "Mar 2020 - Ene 2022",
-                job3_desc: "Diseño de sitios web centrados en el usuario utilizando HTML, CSS, JavaScript y Bootstrap, ofreciendo soluciones responsivas adaptadas a dispositivos móviles.",
-                skills_title: "Tecnologías Principales", edu_title: "Educación e Investigación",
-                edu1_title: "Máster en Inteligencia Artificial", edu1_date: "Graduación Prevista: Octubre 2026",
-                edu1_desc: "<strong>Enfoque:</strong> Explainable AI (XAI), Detección Causal de Anomalías, Deep Learning para el análisis de imágenes y sistemas para aplicaciones industriales.",
-                edu2_title: "Grado en Ingeniería de Sistemas", edu2_desc: "Estructuras de Datos, Algoritmos, Ingeniería de Software",
-                footer_text: "Diseñado para el futuro."
+                skills_title: "Tecnologías", skills_desc: "Herramientas que utilizo para crear modelos de IA listos para producción.",
+                edu1_title: "Máster IA", edu1_date: "Prev. 2026",
+                focus_title: "Enfoque Actual", focus_1: "Hacer transparentes las redes neuronales de caja negra mediante técnicas de atribución.", focus_2: "Construcción de tuberías robustas de detección de objetos.", focus_3: "Diseño de flujos de trabajo en Python integrados con API REST.",
+                exp_title: "Experiencia",
+                job1_title: "Gerente de Proyectos", job1_date: "May 2024 - Presente", job1_desc: "Liderazgo de equipos para entregar soluciones de IA y aplicaciones Python usando metodologías Agile.",
+                job2_title: "Desarrollo de Negocios", job2_date: "Nov 2022 - Abr 2024", job2_desc: "Ejecución de estrategias de datos para aumentar el conocimiento de la marca y maximizar el ROI.",
+                job3_title: "Especialista Web", job3_date: "Mar 2020 - Ene 2022", job3_desc: "Diseño de sitios web centrados en el usuario utilizando HTML, CSS, JavaScript y Bootstrap."
             },
             fr: {
-                nav_about: "À propos", nav_projects: "Projets", nav_experience: "Expérience",
-                hero_badge: "Étudiant en Master à l'Université de Vérone",
-                hero_title: "Ingénierie de <br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>l'Intelligence Artificielle</span>",
-                hero_subtitle: "Je suis un Ingénieur en Machine Learning spécialisé en <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Vision par Ordinateur</strong>, et dans la création de systèmes d'automatisation.",
+                nav_about: "À propos", nav_projects: "Technologies", nav_experience: "Expérience",
+                hero_badge: "Vérone, Italie • Ingénieur IA",
+                hero_title: "Création de <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500'>Systèmes Intelligents.</span>",
+                hero_subtitle: "Ingénieur Machine Learning spécialisé en <strong class='text-zinc-200 font-medium'>Explainable AI (XAI)</strong> et <strong class='text-zinc-200 font-medium'>Vision par Ordinateur</strong>. Axé sur l'automatisation évolutive.",
                 hero_cta: "Contactez-moi",
-                exp_title: "Parcours Professionnel",
-                job1_title: "Chef de Projet", job1_date: "Mai 2024 - Présent",
-                job1_desc: "Direction d'équipes pour fournir des solutions basées sur l'IA et des applications Python. Gestion de bout en bout des systèmes d'automatisation des processus à l'aide des méthodologies Agile.",
-                job2_title: "Développement Commercial", job2_date: "Nov 2022 - Avr 2024",
-                job2_desc: "Exécution de stratégies basées sur les données pour accroître la notoriété de la marque. Analyse des performances des campagnes et des KPI pour maximiser le ROI.",
-                job3_title: "Spécialiste en Conception Web", job3_date: "Mar 2020 - Jan 2022",
-                job3_desc: "Conception de sites Web axés sur l'utilisateur à l'aide de HTML, CSS, JavaScript et Bootstrap, en fournissant des solutions réactives adaptées aux mobiles.",
-                skills_title: "Technologies Principales", edu_title: "Éducation et Recherche",
-                edu1_title: "Master en Intelligence Artificielle", edu1_date: "Obtention prévue : Octobre 2026",
-                edu1_desc: "<strong>Focus :</strong> Explainable AI (XAI), Détection d'anomalies causales, Deep Learning pour l'analyse d'images et systèmes pour applications industrielles.",
-                edu2_title: "Licence en Ingénierie Informatique", edu2_desc: "Structures de données, Algorithmes, Génie logiciel",
-                footer_text: "Conçu pour l'avenir."
+                skills_title: "Technologies", skills_desc: "Outils que j'utilise pour créer des modèles d'IA prêts pour la production.",
+                edu1_title: "Master IA", edu1_date: "Prév. 2026",
+                focus_title: "Objectif Actuel", focus_1: "Rendre les réseaux de neurones transparents à l'aide de techniques d'attribution.", focus_2: "Création de pipelines robustes de détection d'objets.", focus_3: "Architecture de flux de travail Python intégrés aux API REST.",
+                exp_title: "Expérience",
+                job1_title: "Chef de Projet", job1_date: "Mai 2024 - Présent", job1_desc: "Direction d'équipes pour fournir des solutions d'IA et des applications Python avec les méthodologies Agile.",
+                job2_title: "Développement Commercial", job2_date: "Nov 2022 - Avr 2024", job2_desc: "Exécution de stratégies de données pour accroître la notoriété de la marque et maximiser le ROI.",
+                job3_title: "Spécialiste Web", job3_date: "Mar 2020 - Jan 2022", job3_desc: "Conception de sites Web axés sur l'utilisateur à l'aide de HTML, CSS, JavaScript et Bootstrap."
             },
             de: {
-                nav_about: "Über mich", nav_projects: "Projekte", nav_experience: "Erfahrung",
-                hero_badge: "Masterstudent an der Universität Verona",
-                hero_title: "Engineering von <br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>Künstlicher Intelligenz</span>",
-                hero_subtitle: "Ich bin ein Machine Learning Engineer, spezialisiert auf <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Computer Vision</strong> und die Entwicklung von Automatisierungssystemen.",
+                nav_about: "Über mich", nav_projects: "Technologien", nav_experience: "Erfahrung",
+                hero_badge: "Verona, Italien • KI-Ingenieur",
+                hero_title: "Aufbau <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500'>Intelligenter Systeme.</span>",
+                hero_subtitle: "Machine Learning Engineer mit Spezialisierung auf <strong class='text-zinc-200 font-medium'>Explainable AI (XAI)</strong> und <strong class='text-zinc-200 font-medium'>Computer Vision</strong>.",
                 hero_cta: "Kontaktieren Sie mich",
-                exp_title: "Beruflicher Werdegang",
-                job1_title: "Projektmanager", job1_date: "Mai 2024 - Heute",
-                job1_desc: "Leitung von Teams zur Bereitstellung von KI-gesteuerten Lösungen und Python-basierten Anwendungen. End-to-End-Management von Prozessautomatisierungssystemen mithilfe agiler Methoden.",
-                job2_title: "Geschäftsentwicklung", job2_date: "Nov 2022 - Apr 2024",
-                job2_desc: "Durchführung datengesteuerter Strategien zur Steigerung der Markenbekanntheit. Analyse der Kampagnenleistung und KPIs zur Maximierung des ROI.",
-                job3_title: "Webdesign-Spezialist", job3_date: "März 2020 - Jan 2022",
-                job3_desc: "Design benutzerorientierter Websites mit HTML, CSS, JavaScript und Bootstrap, Bereitstellung von responsiven, mobilfreundlichen Lösungen.",
-                skills_title: "Kerntechnologien", edu_title: "Bildung & Forschung",
-                edu1_title: "Master in Künstlicher Intelligenz", edu1_date: "Voraussichtlicher Abschluss: Oktober 2026",
-                edu1_desc: "<strong>Schwerpunkt:</strong> Explainable AI (XAI), Kausale Anomalieerkennung, Deep Learning für bildbasierte Analysen und Systeme für reale Industrieanwendungen.",
-                edu2_title: "Bachelor in Systemtechnik", edu2_desc: "Datenstrukturen, Algorithmen, Software Engineering",
-                footer_text: "Entwickelt für die Zukunft."
+                skills_title: "Kern-Stack", skills_desc: "Technologien zum Erstellen produktionsbereiter KI-Modelle.",
+                edu1_title: "Master KI", edu1_date: "Vor. 2026",
+                focus_title: "Aktueller Fokus", focus_1: "Transparenz von Black-Box-Neuronale-Netzen durch Feature-Attribution.", focus_2: "Aufbau robuster Objekterkennungspipelines.", focus_3: "Architektur Python-basierter Workflows mit REST-APIs.",
+                exp_title: "Erfahrung",
+                job1_title: "Projektmanager", job1_date: "Mai 2024 - Heute", job1_desc: "Leitung von Teams zur Bereitstellung von KI-Lösungen und Python-Anwendungen mit agilen Methoden.",
+                job2_title: "Geschäftsentwicklung", job2_date: "Nov 2022 - Apr 2024", job2_desc: "Ausführung von Datenstrategien zur Steigerung der Markenbekanntheit und Maximierung des ROI.",
+                job3_title: "Web-Spezialist", job3_date: "März 2020 - Jan 2022", job3_desc: "Design benutzerorientierter Websites mit HTML, CSS, JavaScript und Bootstrap."
             }
         };
 
