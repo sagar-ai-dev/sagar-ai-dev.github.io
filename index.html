@@ -42,7 +42,7 @@
 </head>
 <body class="antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- Navbar with Language Switcher -->
+    <!-- Navbar with 5-Language Switcher -->
     <nav class="fixed w-full z-50 glass py-4 border-b border-white/5 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             <a href="#" class="text-2xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">SAGAR.</a>
@@ -52,13 +52,15 @@
                 <a href="#projects" class="hover:text-cyan-400 transition-colors" data-i18n="nav_projects">Projects</a>
                 <a href="#experience" class="hover:text-cyan-400 transition-colors" data-i18n="nav_experience">Experience</a>
                 
-                <!-- Language Selector -->
+                <!-- Expanded Language Selector -->
                 <div class="relative ml-4 flex items-center border border-slate-700 rounded-lg px-2 py-1 bg-[#0f172a]">
                     <i class="fas fa-globe text-slate-400 text-xs mr-2"></i>
                     <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-sm text-slate-200 outline-none cursor-pointer appearance-none">
                         <option value="en" class="bg-[#0f172a]">English</option>
                         <option value="it" class="bg-[#0f172a]">Italiano</option>
                         <option value="es" class="bg-[#0f172a]">Español</option>
+                        <option value="fr" class="bg-[#0f172a]">Français</option>
+                        <option value="de" class="bg-[#0f172a]">Deutsch</option>
                     </select>
                 </div>
             </div>
@@ -214,13 +216,13 @@
                 exp_title: "Percorso Professionale",
                 job1_title: "Project Manager", job1_date: "Mag 2024 - Presente",
                 job1_desc: "Guida di team interfunzionali per fornire soluzioni basate sull'IA e applicazioni Python. Gestione dell'intero ciclo di vita dei sistemi di automazione dei processi utilizzando metodologie Agile.",
-                job2_title: "Sviluppo Commerciale (Business Dev)", job2_date: "Nov 2022 - Apr 2024",
+                job2_title: "Sviluppo Commerciale", job2_date: "Nov 2022 - Apr 2024",
                 job2_desc: "Esecuzione di strategie basate sui dati per aumentare la brand awareness. Analisi delle performance delle campagne e dei KPI per ottimizzare le strategie e massimizzare il ROI.",
                 job3_title: "Specialista Web Design", job3_date: "Mar 2020 - Gen 2022",
                 job3_desc: "Progettazione di siti web incentrati sull'utente e conformi agli standard utilizzando HTML, CSS, JavaScript e Bootstrap, fornendo soluzioni responsive per dispositivi mobili.",
                 skills_title: "Tecnologie Principali", edu_title: "Istruzione e Ricerca",
                 edu1_title: "Laurea Magistrale in Intelligenza Artificiale", edu1_date: "Laurea Prevista: Ottobre 2026",
-                edu1_desc: "<strong>Focus:</strong> Explainable AI (XAI), Rilevamento Causale delle Anomalie, Deep Learning per l'analisi di immagini e sistemi per applicazioni industriali nel mondo reale.",
+                edu1_desc: "<strong>Focus:</strong> Explainable AI (XAI), Rilevamento Causale delle Anomalie, Deep Learning per l'analisi di immagini e sistemi per applicazioni industriali.",
                 edu2_title: "Laurea Triennale in Ingegneria Informatica", edu2_desc: "Strutture Dati, Algoritmi, Ingegneria del Software",
                 footer_text: "Progettato per il futuro."
             },
@@ -228,20 +230,58 @@
                 nav_about: "Sobre Mí", nav_projects: "Proyectos", nav_experience: "Experiencia",
                 hero_badge: "Estudiante de Máster en la Universidad de Verona",
                 hero_title: "Ingeniería de <br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>Inteligencia Artificial</span>",
-                hero_subtitle: "Soy un Ingeniero de Machine Learning especializado en <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Visión por Computadora</strong> y en la creación de sistemas de automatización listos para producción.",
+                hero_subtitle: "Soy un Ingeniero de Machine Learning especializado en <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Visión por Computadora</strong> y en la creación de sistemas de automatización.",
                 hero_cta: "Contáctame",
                 exp_title: "Trayectoria Profesional",
                 job1_title: "Gerente de Proyectos", job1_date: "May 2024 - Presente",
-                job1_desc: "Liderazgo de equipos multidisciplinarios para entregar soluciones impulsadas por IA y aplicaciones basadas en Python. Gestión del ciclo de vida completo de sistemas de automatización de procesos mediante metodologías Agile.",
-                job2_title: "Ejecutivo de Desarrollo de Negocios", job2_date: "Nov 2022 - Abr 2024",
-                job2_desc: "Ejecución de estrategias basadas en datos para aumentar el conocimiento de la marca. Análisis del rendimiento de campañas y KPI para optimizar estrategias y maximizar el ROI.",
+                job1_desc: "Liderazgo de equipos para entregar soluciones impulsadas por IA y aplicaciones Python. Gestión del ciclo de vida completo de sistemas de automatización mediante metodologías Agile.",
+                job2_title: "Desarrollo de Negocios", job2_date: "Nov 2022 - Abr 2024",
+                job2_desc: "Ejecución de estrategias para aumentar el conocimiento de la marca. Análisis del rendimiento de campañas y KPI para optimizar estrategias y maximizar el ROI.",
                 job3_title: "Especialista en Diseño Web", job3_date: "Mar 2020 - Ene 2022",
                 job3_desc: "Diseño de sitios web centrados en el usuario utilizando HTML, CSS, JavaScript y Bootstrap, ofreciendo soluciones responsivas adaptadas a dispositivos móviles.",
                 skills_title: "Tecnologías Principales", edu_title: "Educación e Investigación",
                 edu1_title: "Máster en Inteligencia Artificial", edu1_date: "Graduación Prevista: Octubre 2026",
-                edu1_desc: "<strong>Enfoque:</strong> Explainable AI (XAI), Detección Causal de Anomalías, Deep Learning para el análisis de imágenes y sistemas para aplicaciones industriales en el mundo real.",
-                edu2_title: "Grado en Ingeniería de Sistemas Informáticos", edu2_desc: "Estructuras de Datos, Algoritmos, Ingeniería de Software",
+                edu1_desc: "<strong>Enfoque:</strong> Explainable AI (XAI), Detección Causal de Anomalías, Deep Learning para el análisis de imágenes y sistemas para aplicaciones industriales.",
+                edu2_title: "Grado en Ingeniería de Sistemas", edu2_desc: "Estructuras de Datos, Algoritmos, Ingeniería de Software",
                 footer_text: "Diseñado para el futuro."
+            },
+            fr: {
+                nav_about: "À propos", nav_projects: "Projets", nav_experience: "Expérience",
+                hero_badge: "Étudiant en Master à l'Université de Vérone",
+                hero_title: "Ingénierie de <br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>l'Intelligence Artificielle</span>",
+                hero_subtitle: "Je suis un Ingénieur en Machine Learning spécialisé en <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Vision par Ordinateur</strong>, et dans la création de systèmes d'automatisation.",
+                hero_cta: "Contactez-moi",
+                exp_title: "Parcours Professionnel",
+                job1_title: "Chef de Projet", job1_date: "Mai 2024 - Présent",
+                job1_desc: "Direction d'équipes pour fournir des solutions basées sur l'IA et des applications Python. Gestion de bout en bout des systèmes d'automatisation des processus à l'aide des méthodologies Agile.",
+                job2_title: "Développement Commercial", job2_date: "Nov 2022 - Avr 2024",
+                job2_desc: "Exécution de stratégies basées sur les données pour accroître la notoriété de la marque. Analyse des performances des campagnes et des KPI pour maximiser le ROI.",
+                job3_title: "Spécialiste en Conception Web", job3_date: "Mar 2020 - Jan 2022",
+                job3_desc: "Conception de sites Web axés sur l'utilisateur à l'aide de HTML, CSS, JavaScript et Bootstrap, en fournissant des solutions réactives adaptées aux mobiles.",
+                skills_title: "Technologies Principales", edu_title: "Éducation et Recherche",
+                edu1_title: "Master en Intelligence Artificielle", edu1_date: "Obtention prévue : Octobre 2026",
+                edu1_desc: "<strong>Focus :</strong> Explainable AI (XAI), Détection d'anomalies causales, Deep Learning pour l'analyse d'images et systèmes pour applications industrielles.",
+                edu2_title: "Licence en Ingénierie Informatique", edu2_desc: "Structures de données, Algorithmes, Génie logiciel",
+                footer_text: "Conçu pour l'avenir."
+            },
+            de: {
+                nav_about: "Über mich", nav_projects: "Projekte", nav_experience: "Erfahrung",
+                hero_badge: "Masterstudent an der Universität Verona",
+                hero_title: "Engineering von <br><span class='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400'>Künstlicher Intelligenz</span>",
+                hero_subtitle: "Ich bin ein Machine Learning Engineer, spezialisiert auf <strong class='text-slate-200 font-medium'>Explainable AI (XAI)</strong>, <strong class='text-slate-200 font-medium'>Computer Vision</strong> und die Entwicklung von Automatisierungssystemen.",
+                hero_cta: "Kontaktieren Sie mich",
+                exp_title: "Beruflicher Werdegang",
+                job1_title: "Projektmanager", job1_date: "Mai 2024 - Heute",
+                job1_desc: "Leitung von Teams zur Bereitstellung von KI-gesteuerten Lösungen und Python-basierten Anwendungen. End-to-End-Management von Prozessautomatisierungssystemen mithilfe agiler Methoden.",
+                job2_title: "Geschäftsentwicklung", job2_date: "Nov 2022 - Apr 2024",
+                job2_desc: "Durchführung datengesteuerter Strategien zur Steigerung der Markenbekanntheit. Analyse der Kampagnenleistung und KPIs zur Maximierung des ROI.",
+                job3_title: "Webdesign-Spezialist", job3_date: "März 2020 - Jan 2022",
+                job3_desc: "Design benutzerorientierter Websites mit HTML, CSS, JavaScript und Bootstrap, Bereitstellung von responsiven, mobilfreundlichen Lösungen.",
+                skills_title: "Kerntechnologien", edu_title: "Bildung & Forschung",
+                edu1_title: "Master in Künstlicher Intelligenz", edu1_date: "Voraussichtlicher Abschluss: Oktober 2026",
+                edu1_desc: "<strong>Schwerpunkt:</strong> Explainable AI (XAI), Kausale Anomalieerkennung, Deep Learning für bildbasierte Analysen und Systeme für reale Industrieanwendungen.",
+                edu2_title: "Bachelor in Systemtechnik", edu2_desc: "Datenstrukturen, Algorithmen, Software Engineering",
+                footer_text: "Entwickelt für die Zukunft."
             }
         };
 
