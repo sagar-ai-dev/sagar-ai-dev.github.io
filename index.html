@@ -3,59 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagar Lal | AI Engineer</title>
+    <title>Sagar Lal | AI & Automation Engineer</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- React & ReactDOM (Production) -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    
+    <!-- Babel for in-browser JSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f1523;
-            color: #cbd5e1;
-            overflow-x: hidden;
-        }
-
-        .glass-card {
-            background: #131b2f;
-            border: 1px solid #1e293b;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-4px);
-            border-color: #3b82f6;
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .progress-bar-container {
-            width: 100%;
-            background-color: #1e293b;
-            border-radius: 9999px;
-            height: 6px;
-            margin-top: 4px;
-        }
-
-        .input-field {
-            width: 100%;
-            background-color: #0f1523;
-            border: 1px solid #1e293b;
-            color: #f8fafc;
-            border-radius: 0.5rem;
-            padding: 0.75rem 1rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .input-field:focus {
-            border-color: #3b82f6;
-        }
-
+        body { font-family: 'Inter', sans-serif; background-color: #0f1523; color: #cbd5e1; overflow-x: hidden; }
+        .glass-card { background: #131b2f; border: 1px solid #1e293b; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .glass-card:hover { transform: translateY(-4px); border-color: #3b82f6; }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .progress-bar-container { width: 100%; background-color: #1e293b; border-radius: 9999px; height: 6px; margin-top: 4px; }
+        .input-field { width: 100%; background-color: #0f1523; border: 1px solid #1e293b; color: #f8fafc; border-radius: 0.5rem; padding: 0.75rem 1rem; outline: none; transition: border-color 0.3s ease; }
+        .input-field:focus { border-color: #3b82f6; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0f1523; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
@@ -63,609 +34,370 @@
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500 selection:text-white">
+    
+    <!-- React Mount Point -->
+    <div id="root"></div>
 
-    <!-- Top Navigation -->
-    <nav class="w-full py-5 px-6 border-b border-slate-800/50 bg-[#0f1523]/90 backdrop-blur-md fixed top-0 z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tighter text-blue-500">Sagar<span class="text-purple-500">Lal</span></a>
-            
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#home" class="px-4 py-1.5 bg-blue-600 text-white rounded-full">Home</a>
-                <a href="#projects" class="hover:text-white transition-colors" data-i18n="nav_projects">Projects</a>
-                <a href="#skills" class="hover:text-white transition-colors" data-i18n="nav_skills">Skills</a>
-                <a href="#experience" class="hover:text-white transition-colors" data-i18n="nav_experience">Experience</a>
-                <a href="#contact" class="hover:text-white transition-colors" data-i18n="nav_contact">Contact</a>
-            </div>
-            
-            <div class="relative flex items-center bg-[#131b2f] border border-slate-700 rounded-lg px-2 py-1.5">
-                <i class="fas fa-globe text-slate-400 text-xs mr-2"></i>
-                <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-xs font-semibold text-slate-200 outline-none cursor-pointer appearance-none">
-                    <option value="en" class="bg-[#0f1523]">EN</option>
-                    <option value="it" class="bg-[#0f1523]">IT</option>
-                    <option value="es" class="bg-[#0f1523]">ES</option>
-                    <option value="fr" class="bg-[#0f1523]">FR</option>
-                    <option value="de" class="bg-[#0f1523]">DE</option>
-                </select>
-            </div>
-        </div>
-    </nav>
+    <!-- React Application Code -->
+    <script type="text/babel">
+        const { useState } = React;
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-8">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-medium mb-6">
-                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                    <span data-i18n="hero_status">Project Manager @ Codesy · MSc AI Candidate</span>
-                </div>
-
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-3">
-                    Hi, I'm <span class="gradient-text">Sagar Lal</span>
-                </h1>
-                <h2 class="text-xl md:text-2xl text-slate-200 font-semibold mb-2" data-i18n="hero_role">
-                    AI & Automation | Machine Learning Engineer
-                </h2>
-                <p class="text-sm text-slate-400 mb-6 font-medium" data-i18n="hero_certs">
-                    Google Certified Cybersecurity | Data Analytics & BI
-                </p>
-
-                <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-8 max-w-3xl" data-i18n="hero_bio">
-                    I build <strong class="text-blue-400">AI-driven solutions</strong> and intelligent automation systems, from scalable workflows to <strong class="text-purple-400">Explainable AI (XAI)</strong> pipelines, with Python, PyTorch, TensorFlow, and OpenCV. This builds on 2+ years of end-to-end project management and cross-functional development. Currently pursuing an M.S. in Artificial Intelligence.
-                </p>
-
-                <div class="flex flex-wrap gap-2 mb-10">
-                    <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded-md">Python</span>
-                    <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded-md">PyTorch</span>
-                    <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded-md">TensorFlow</span>
-                    <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded-md">OpenCV</span>
-                    <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded-md">XAI</span>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-6">
-                    <a href="#projects" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-colors flex items-center gap-2 text-sm" data-i18n="btn_work">
-                        View My Work <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="px-6 py-3 border border-slate-600 hover:bg-slate-800 text-white font-semibold rounded-lg transition-colors text-sm" data-i18n="btn_contact">
-                        Get in Touch
-                    </a>
-                    <div class="flex gap-4 ml-2 border-l border-slate-700 pl-6">
-                        <a href="https://github.com/Sagarsamrangwani" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-github text-xl"></i></a>
-                        <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:col-span-4 flex flex-col items-center">
-                <div class="relative w-64 h-64 md:w-72 md:h-72 mb-10">
-                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 p-1.5">
-                        <div class="w-full h-full rounded-full bg-[#0f1523] p-1">
-                            <img src="profile.jpg" alt="Sagar Lal" class="w-full h-full object-cover rounded-full" onerror="this.src='https://ui-avatars.com/api/?name=Sagar+Lal&size=512&background=1e293b&color=fff'">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Technologies Section -->
-    <section id="skills" class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/50">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-white tracking-tight mb-4" data-i18n="skills_header">Skills & Technologies</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="skills_sub">Core technologies I work with across AI development, data processing, full-stack web, and cloud tooling.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-6">
-                    <i class="fas fa-brain text-purple-400 text-2xl"></i>
-                    <h3 class="text-xl font-bold text-white">AI / ML</h3>
-                </div>
-                <div class="space-y-5">
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Python</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-purple-600 to-purple-400 h-full rounded-full" style="width: 90%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">PyTorch & TensorFlow</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-purple-600 to-purple-400 h-full rounded-full" style="width: 75%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">OpenCV / Vision</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-purple-600 to-purple-400 h-full rounded-full" style="width: 80%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Explainable AI (XAI)</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-purple-600 to-purple-400 h-full rounded-full" style="width: 70%"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-6">
-                    <i class="fas fa-database text-emerald-400 text-2xl"></i>
-                    <h3 class="text-xl font-bold text-white">Data & Backend</h3>
-                </div>
-                <div class="space-y-5">
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">SQL / Databases</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full" style="width: 85%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Pandas & NumPy</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full" style="width: 90%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">REST APIs</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full" style="width: 75%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Flask / FastAPI</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-emerald-600 to-emerald-400 h-full rounded-full" style="width: 70%"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-6">
-                    <i class="fas fa-layer-group text-blue-400 text-2xl"></i>
-                    <h3 class="text-xl font-bold text-white">Frontend / Web</h3>
-                </div>
-                <div class="space-y-5">
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">HTML5 & CSS3</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-blue-600 to-blue-400 h-full rounded-full" style="width: 95%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">JavaScript</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-blue-600 to-blue-400 h-full rounded-full" style="width: 85%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Bootstrap & Tailwind</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-blue-600 to-blue-400 h-full rounded-full" style="width: 80%"></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-6">
-                    <i class="fas fa-terminal text-orange-400 text-2xl"></i>
-                    <h3 class="text-xl font-bold text-white">DevOps & Tools</h3>
-                </div>
-                <div class="space-y-5">
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Git & GitHub</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-orange-600 to-orange-400 h-full rounded-full" style="width: 90%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Jupyter & Colab</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-orange-600 to-orange-400 h-full rounded-full" style="width: 85%"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1"><span class="text-slate-200 font-medium">Docker</span></div>
-                        <div class="progress-bar-container"><div class="bg-gradient-to-r from-orange-600 to-orange-400 h-full rounded-full" style="width: 50%"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mb-12">
-            <h3 class="text-lg font-bold text-white mb-6" data-i18n="skills_comp">Complementary Technologies & Frameworks</h3>
-            <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">C++</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">scikit-learn</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Transformers</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">NLP</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Sentiment Analysis</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">CNNs</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Grad-CAM</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Saliency Maps</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Exploratory Data Analysis (EDA)</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Matplotlib</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Conda / venv</span>
-                <span class="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded hover:bg-slate-700 transition-colors">Data Cleaning</span>
-            </div>
-        </div>
-
-        <!-- Stats Row -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <div class="glass-card rounded-xl p-6 text-center">
-                <h4 class="text-3xl font-extrabold text-white mb-2">12+</h4>
-                <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider" data-i18n="stat_core">Core Technologies</p>
-            </div>
-            <div class="glass-card rounded-xl p-6 text-center">
-                <h4 class="text-3xl font-extrabold text-white mb-2">25+</h4>
-                <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider" data-i18n="stat_comp">Complementary Skills</p>
-            </div>
-            <div class="glass-card rounded-xl p-6 text-center">
-                <h4 class="text-3xl font-extrabold text-white mb-2">2+</h4>
-                <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider" data-i18n="stat_exp">Years Experience</p>
-            </div>
-            <div class="glass-card rounded-xl p-6 text-center">
-                <h4 class="text-3xl font-extrabold text-white mb-2">4</h4>
-                <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider" data-i18n="stat_cert">Certifications</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/50">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-white tracking-tight mb-4" data-i18n="proj_header">Featured Projects</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="proj_sub">A selection of my recent research and development work across AI systems, automated machine learning pipelines, and computer vision.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
-                <a href="https://github.com/Sagarsamrangwani/Medical-Imaging-Continual-Learning-Pipeline" target="_blank" class="absolute inset-0 z-10"></a>
-                <div class="flex justify-between items-start mb-6 relative z-20">
-                    <span class="px-2.5 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-md text-[10px] font-bold uppercase tracking-wider">AI / ML</span>
-                    <span class="text-emerald-400 text-xs font-semibold" data-i18n="badge_completed">Completed</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors" data-i18n="p1_title">Automated Medical Imaging Continual Learning Pipeline</h3>
-                <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-grow" data-i18n="p1_desc">
-                    Implemented an automated, cross-domain continual learning pipeline for complex medical imaging tasks. Utilized knowledge distillation algorithms to train a lightweight MobileNetV3 student model. 
-                </p>
-                <div class="flex flex-wrap gap-2 relative z-20">
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Python</span>
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">PyTorch</span>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
-                <a href="https://github.com/Sagarsamrangwani/causal_anomaly_detection" target="_blank" class="absolute inset-0 z-10"></a>
-                <div class="flex justify-between items-start mb-6 relative z-20">
-                    <span class="px-2.5 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-md text-[10px] font-bold uppercase tracking-wider">Research / XAI</span>
-                    <span class="text-amber-400 text-xs font-semibold" data-i18n="badge_ongoing">Ongoing (Thesis)</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors" data-i18n="p2_title">Automated Causal Anomaly Detection System</h3>
-                <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-grow" data-i18n="p2_desc">
-                    Core academic thesis research focusing on Explainable AI (XAI). Engineered an automated pipeline to identify root causes within complex anomaly datasets using feature attribution techniques.
-                </p>
-                <div class="flex flex-wrap gap-2 relative z-20">
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Python</span>
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">TensorFlow</span>
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">XAI</span>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
-                <a href="https://github.com/Sagarsamrangwani/Machine_learning_Stock_data_ana" target="_blank" class="absolute inset-0 z-10"></a>
-                <div class="flex justify-between items-start mb-6 relative z-20">
-                    <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-md text-[10px] font-bold uppercase tracking-wider">Data / Models</span>
-                    <span class="text-emerald-400 text-xs font-semibold" data-i18n="badge_completed">Completed</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors" data-i18n="p3_title">AI-Driven Financial Analysis & Automation</h3>
-                <p class="text-sm text-slate-400 leading-relaxed mb-6 flex-grow" data-i18n="p3_desc">
-                    Developed a machine learning architecture that automatically ingests, processes, and analyzes large-scale stock market data using time-series models for trend prediction.
-                </p>
-                <div class="flex flex-wrap gap-2 relative z-20">
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Python</span>
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Time-Series</span>
-                    <span class="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Pandas</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 px-6 max-w-4xl mx-auto border-t border-slate-800/50">
-        <h2 class="text-3xl font-extrabold text-white tracking-tight mb-8" data-i18n="exp_title">Professional Experience</h2>
-        
-        <div class="space-y-4">
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <div>
-                        <h3 class="text-xl font-bold text-white" data-i18n="job1_title">Project Manager</h3>
-                        <p class="text-blue-400 text-sm font-medium">Codesy</p>
-                    </div>
-                    <span class="text-xs font-semibold text-slate-500 mt-2 md:mt-0" data-i18n="job1_date">May 2024 - Present</span>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed mt-2" data-i18n="job1_desc">
-                    Leading cross-functional teams to deliver AI-driven solutions and Python-based applications. Managing the end-to-end lifecycle of process automation systems using Agile methodologies.
-                </p>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <div>
-                        <h3 class="text-xl font-bold text-white" data-i18n="job2_title">Business Dev. Executive</h3>
-                        <p class="text-slate-300 text-sm font-medium">Codesy</p>
-                    </div>
-                    <span class="text-xs font-semibold text-slate-500 mt-2 md:mt-0" data-i18n="job2_date">Nov 2022 - Apr 2024</span>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed mt-2" data-i18n="job2_desc">
-                    Executed data-driven strategies to increase brand awareness. Analyzed campaign performance and KPIs to optimize strategies and maximize ROI.
-                </p>
-            </div>
-            
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                    <div>
-                        <h3 class="text-xl font-bold text-white" data-i18n="job3_title">Web Design Specialist</h3>
-                        <p class="text-slate-300 text-sm font-medium">Freelance</p>
-                    </div>
-                    <span class="text-xs font-semibold text-slate-500 mt-2 md:mt-0" data-i18n="job3_date">Mar 2020 - Jan 2022</span>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed mt-2" data-i18n="job3_desc">
-                    Designed user-focused, standards-compliant websites using HTML, CSS, JavaScript, and Bootstrap, delivering responsive mobile-friendly solutions.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW: Contact & FAQ Section -->
-    <section id="contact" class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/50">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 tracking-tight mb-4" data-i18n="contact_title">Get in Touch</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="contact_sub">Have a project in mind or want to discuss opportunities? I'd love to hear from you!</p>
-        </div>
-
-        <div class="grid lg:grid-cols-12 gap-8 mb-16">
-            
-            <!-- Left: Contact Info & Status -->
-            <div class="lg:col-span-4 space-y-6">
-                <!-- Info Card -->
-                <div class="glass-card rounded-2xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-6" data-i18n="contact_info">Contact Information</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-envelope text-blue-500 mt-1"></i>
-                            <div>
-                                <p class="text-sm font-bold text-white">Email</p>
-                                <a href="mailto:Sagarrangwani1@gmail.com" class="text-slate-400 text-sm hover:text-blue-400 transition-colors">Sagarrangwani1@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
-                            <div>
-                                <p class="text-sm font-bold text-white" data-i18n="contact_loc">Location</p>
-                                <p class="text-slate-400 text-sm">Verona, Italy</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Connect Card -->
-                <div class="glass-card rounded-2xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4" data-i18n="contact_connect">Connect With Me</h3>
-                    <div class="space-y-4">
-                        <a href="https://github.com/Sagarsamrangwani" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
-                            <i class="fab fa-github w-5 text-center"></i> <span class="text-sm font-medium">GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin w-5 text-center"></i> <span class="text-sm font-medium">LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: Contact Form -->
-            <div class="lg:col-span-8 glass-card rounded-2xl p-8">
-                <h3 class="text-2xl font-bold text-white mb-6" data-i18n="form_title">Send Me a Message</h3>
-                <!-- Formspree placeholder action -->
-                <form action="#" method="POST" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-bold text-slate-200 mb-2" data-i18n="form_name">Name *</label>
-                            <input type="text" placeholder="John Doe" class="input-field" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-slate-200 mb-2" data-i18n="form_email">Email *</label>
-                            <input type="email" placeholder="john@example.com" class="input-field" required>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-200 mb-2" data-i18n="form_subject">Subject *</label>
-                        <input type="text" placeholder="Project Collaboration" class="input-field" required>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-200 mb-2" data-i18n="form_msg">Message *</label>
-                        <textarea rows="4" placeholder="Hi! I'd like to discuss..." class="input-field resize-none" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors" data-i18n="form_btn">
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <!-- FAQ / Info Grid -->
-        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div class="glass-card rounded-xl p-6">
-                <h4 class="text-lg font-bold text-white mb-2" data-i18n="faq_1_title">Response Time</h4>
-                <p class="text-slate-400 text-sm" data-i18n="faq_1_desc">I typically respond to inquiries within 24-48 hours during business days.</p>
-            </div>
-            <div class="glass-card rounded-xl p-6">
-                <h4 class="text-lg font-bold text-white mb-2" data-i18n="faq_2_title">Project Types</h4>
-                <p class="text-slate-400 text-sm" data-i18n="faq_2_desc">I specialize in AI/ML pipelines, automated workflows, and data-driven process optimization.</p>
-            </div>
-            <div class="glass-card rounded-xl p-6">
-                <h4 class="text-lg font-bold text-white mb-2" data-i18n="faq_3_title">Consultation</h4>
-                <p class="text-slate-400 text-sm" data-i18n="faq_3_desc">Free initial consultations available to discuss your project requirements and technical feasibility.</p>
-            </div>
-            <div class="glass-card rounded-xl p-6">
-                <h4 class="text-lg font-bold text-white mb-2" data-i18n="faq_4_title">Collaboration</h4>
-                <p class="text-slate-400 text-sm" data-i18n="faq_4_desc">Open to remote work, contract positions, and academic or industry research partnerships.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Detailed Footer -->
-    <footer class="pt-16 pb-8 border-t border-slate-800/50 bg-[#0a0f18]">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 mb-12">
-            
-            <div>
-                <a href="#" class="text-2xl font-bold tracking-tighter text-blue-500 mb-2 block">Sagar<span class="text-purple-500">Lal</span></a>
-                <p class="text-slate-300 text-sm font-medium mb-4" data-i18n="footer_role">Senior AI Engineer · Agentic AI & ML Systems</p>
-                <p class="text-slate-500 text-sm flex items-center gap-2"><i class="fas fa-map-marker-alt"></i> Verona, Italy</p>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-4" data-i18n="footer_links">Quick Links</h4>
-                <div class="flex flex-col space-y-2 text-sm text-slate-400">
-                    <a href="#projects" class="hover:text-blue-400 transition-colors" data-i18n="nav_projects">Projects</a>
-                    <a href="#skills" class="hover:text-blue-400 transition-colors" data-i18n="nav_skills">Skills</a>
-                    <a href="#home" class="hover:text-blue-400 transition-colors" data-i18n="nav_about">About</a>
-                    <a href="#contact" class="hover:text-blue-400 transition-colors" data-i18n="nav_contact">Contact</a>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-4" data-i18n="footer_connect">Connect</h4>
-                <div class="flex gap-4">
-                    <a href="https://github.com/Sagarsamrangwani" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-github text-xl"></i></a>
-                    <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                    <a href="mailto:Sagarrangwani1@gmail.com" class="text-slate-400 hover:text-white transition-colors"><i class="fas fa-envelope text-xl"></i></a>
-                </div>
-            </div>
-
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-            <p>&copy; 2026 Sagar Lal. All rights reserved.</p>
-            <p class="mt-2 md:mt-0" data-i18n="footer_status">Open to new opportunities · Last updated July 2026</p>
-        </div>
-    </footer>
-
-    <!-- Multilingual Translation Script -->
-    <script>
-        const translations = {
+        // Translation Dictionary with Corrected Title
+        const t = {
             en: {
-                nav_projects: "Projects", nav_skills: "Skills", nav_experience: "Experience", nav_contact: "Contact", nav_about: "About",
-                hero_status: "Project Manager @ Codesy · MSc AI Candidate", hero_role: "AI & Automation | Machine Learning Engineer", hero_certs: "Google Certified Cybersecurity | Data Analytics & BI",
-                hero_bio: "I build <strong class='text-blue-400'>AI-driven solutions</strong> and intelligent automation systems, from scalable workflows to <strong class='text-purple-400'>Explainable AI (XAI)</strong> pipelines, with Python, PyTorch, TensorFlow, and OpenCV. This builds on 2+ years of end-to-end project management and cross-functional development. Currently pursuing an M.S. in Artificial Intelligence.",
-                btn_work: "View My Work <i class='fas fa-arrow-right'></i>", btn_contact: "Get in Touch",
-                stat_core: "Core Technologies", stat_comp: "Complementary Skills", stat_exp: "Years Experience", stat_cert: "Certifications",
-                skills_header: "Skills & Technologies", skills_sub: "Core technologies I work with across AI development, data processing, full-stack web, and cloud tooling.", skills_comp: "Complementary Technologies & Frameworks",
-                proj_header: "Featured Projects", proj_sub: "A selection of my recent research and development work across AI systems, automated machine learning pipelines, and computer vision.",
-                badge_completed: "Completed", badge_ongoing: "Ongoing (Thesis)",
-                p1_title: "Automated Medical Imaging Continual Learning Pipeline", p1_desc: "Implemented an automated, cross-domain continual learning pipeline for complex medical imaging tasks. Utilized knowledge distillation algorithms to train a lightweight MobileNetV3 student model.", 
-                p2_title: "Automated Causal Anomaly Detection System", p2_desc: "Core academic thesis research focusing on Explainable AI (XAI). Engineered an automated pipeline to identify root causes within complex anomaly datasets using feature attribution techniques.", 
-                p3_title: "AI-Driven Financial Analysis & Automation", p3_desc: "Developed a machine learning architecture that automatically ingests, processes, and analyzes large-scale stock market data using time-series models for trend prediction.", 
-                exp_title: "Professional Experience",
-                job1_title: "Project Manager", job1_date: "May 2024 - Present", job1_desc: "Leading cross-functional teams to deliver AI-driven solutions and Python-based applications. Managing the end-to-end lifecycle of process automation systems using Agile methodologies.",
-                job2_title: "Business Dev. Executive", job2_date: "Nov 2022 - Apr 2024", job2_desc: "Executed data-driven strategies to increase brand awareness. Analyzed campaign performance and KPIs to optimize strategies and maximize ROI.",
-                job3_title: "Web Design Specialist", job3_date: "Mar 2020 - Jan 2022", job3_desc: "Designed user-focused, standards-compliant websites using HTML, CSS, JavaScript, and Bootstrap, delivering responsive mobile-friendly solutions.",
-                contact_title: "Get in Touch", contact_sub: "Have a project in mind or want to discuss opportunities? I'd love to hear from you!",
-                contact_info: "Contact Information", contact_loc: "Location", contact_connect: "Connect With Me",
-                form_title: "Send Me a Message", form_name: "Name *", form_email: "Email *", form_subject: "Subject *", form_msg: "Message *", form_btn: "Send Message",
-                faq_1_title: "Response Time", faq_1_desc: "I typically respond to inquiries within 24-48 hours during business days.",
-                faq_2_title: "Project Types", faq_2_desc: "I specialize in AI/ML pipelines, automated workflows, and data-driven process optimization.",
-                faq_3_title: "Consultation", faq_3_desc: "Free initial consultations available to discuss your project requirements and technical feasibility.",
-                faq_4_title: "Collaboration", faq_4_desc: "Open to remote work, contract positions, and academic or industry research partnerships.",
-                footer_role: "AI & ML Engineer", footer_links: "Quick Links", footer_connect: "Connect", footer_status: "Open to new opportunities · Last updated July 2026"
+                nav: ["Home", "Projects", "Skills", "Experience", "Contact"],
+                hero_badge: "Project Manager @ Codesy · MSc AI Candidate",
+                hero_title: "Hi, I'm",
+                hero_role: "AI & Automation Engineer | Machine Learning",
+                hero_certs: "Google Certified Cybersecurity | Data Analytics & BI",
+                hero_bio: "I build <strong class='text-blue-400'>AI-driven solutions</strong> and intelligent automation systems. With expertise in Python, PyTorch, React, and JavaScript, I bridge the gap between complex <strong class='text-purple-400'>Explainable AI (XAI)</strong> pipelines and scalable web applications. Currently pursuing my Master's in Artificial Intelligence.",
+                btn_work: "View My Work", btn_contact: "Get in Touch",
+                stats: ["Core Technologies", "Complementary Skills", "Years Experience", "Certifications"],
+                sec_skills: "Skills & Technologies", sec_skills_sub: "Core technologies I work with across AI development, data processing, full-stack web, and cloud tooling.",
+                sec_proj: "Featured Projects", sec_proj_sub: "A selection of my recent research and development work across AI systems, automated machine learning pipelines, and computer vision.",
+                sec_exp: "Professional Experience",
+                sec_contact: "Get in Touch", sec_contact_sub: "Have a project in mind or want to discuss opportunities? I'd love to hear from you!",
+                contact_info: "Contact Information", contact_loc: "Location", contact_conn: "Connect With Me",
+                form: ["Send Me a Message", "Name *", "Email *", "Subject *", "Message *", "Send Message"]
             },
             it: {
-                nav_projects: "Progetti", nav_skills: "Competenze", nav_experience: "Esperienza", nav_contact: "Contatti", nav_about: "Chi Sono",
-                hero_status: "Project Manager @ Codesy · Master in IA", hero_role: "IA & Automazione | Ingegnere Machine Learning", hero_certs: "Certificato Google Cybersecurity | Data Analytics & BI",
-                hero_bio: "Sviluppo <strong class='text-blue-400'>soluzioni basate sull'IA</strong> e sistemi di automazione, da flussi di lavoro scalabili a pipeline di <strong class='text-purple-400'>Explainable AI (XAI)</strong>. Questo si basa su oltre 2 anni di gestione progetti. Attualmente sto conseguendo un Master in Intelligenza Artificiale.",
-                btn_work: "Vedi i Progetti <i class='fas fa-arrow-right'></i>", btn_contact: "Contattami",
-                stat_core: "Tecnologie Base", stat_comp: "Competenze Extra", stat_exp: "Anni di Esp.", stat_cert: "Certificazioni",
-                skills_header: "Competenze e Tecnologie", skills_sub: "Tecnologie principali con cui lavoro nello sviluppo IA, elaborazione dati, web design e strumenti cloud.", skills_comp: "Tecnologie e Framework Complementari",
-                proj_header: "Progetti in Evidenza", proj_sub: "Una selezione dei miei recenti lavori di ricerca e sviluppo in sistemi di intelligenza artificiale, pipeline automatizzate e visione artificiale.",
-                badge_completed: "Completato", badge_ongoing: "In corso (Tesi)",
-                p1_title: "Pipeline Automatizzata per l'Imaging Medico", p1_desc: "Implementazione di una pipeline di apprendimento continuo automatizzata per compiti complessi di imaging medico.", 
-                p2_title: "Sistema Automatizzato di Rilevamento Anomalie Causali", p2_desc: "Ricerca accademica (tesi) incentrata sull'Explainable AI (XAI). Pipeline automatizzata per identificare le cause profonde nei dataset.", 
-                p3_title: "Analisi Finanziaria e Automazione guidata dall'IA", p3_desc: "Architettura di machine learning che acquisisce, elabora e analizza automaticamente i dati del mercato azionario.", 
-                exp_title: "Esperienza Professionale",
-                job1_title: "Project Manager", job1_date: "Mag 2024 - Presente", job1_desc: "Guida di team per fornire soluzioni IA e applicazioni Python. Gestione di sistemi di automazione dei processi con metodologie Agile.",
-                job2_title: "Sviluppo Commerciale", job2_date: "Nov 2022 - Apr 2024", job2_desc: "Esecuzione di strategie per aumentare la brand awareness e massimizzare il ROI.",
-                job3_title: "Specialista Web Design", job3_date: "Mar 2020 - Gen 2022", job3_desc: "Progettazione di siti web incentrati sull'utente con HTML, CSS, JavaScript e Bootstrap.",
-                contact_title: "Contattami", contact_sub: "Hai un progetto in mente o vuoi discutere di opportunità? Mi piacerebbe sentirti!",
-                contact_info: "Informazioni di Contatto", contact_loc: "Posizione", contact_connect: "Connettiti",
-                form_title: "Inviami un Messaggio", form_name: "Nome *", form_email: "Email *", form_subject: "Oggetto *", form_msg: "Messaggio *", form_btn: "Invia Messaggio",
-                faq_1_title: "Tempo di Risposta", faq_1_desc: "In genere rispondo alle richieste entro 24-48 ore lavorative.",
-                faq_2_title: "Tipi di Progetto", faq_2_desc: "Sono specializzato in pipeline AI/ML, flussi di lavoro automatizzati e ottimizzazione dei processi.",
-                faq_3_title: "Consulenza", faq_3_desc: "Consulenze iniziali gratuite per discutere i requisiti del progetto e la fattibilità tecnica.",
-                faq_4_title: "Collaborazione", faq_4_desc: "Aperto a lavoro da remoto, posizioni a contratto e partnership di ricerca.",
-                footer_role: "Ingegnere IA & ML", footer_links: "Link Rapidi", footer_connect: "Connettiti", footer_status: "Aperto a nuove opportunità · Aggiornato a Luglio 2026"
+                nav: ["Home", "Progetti", "Competenze", "Esperienza", "Contatti"],
+                hero_badge: "Project Manager @ Codesy · Master in IA",
+                hero_title: "Ciao, sono",
+                hero_role: "Ingegnere IA & Automazione | Machine Learning",
+                hero_certs: "Certificato Google Cybersecurity | Data Analytics & BI",
+                hero_bio: "Sviluppo <strong class='text-blue-400'>soluzioni basate sull'IA</strong> e sistemi di automazione. Con competenze in Python, PyTorch, React e JavaScript, collego complesse pipeline di <strong class='text-purple-400'>Explainable AI (XAI)</strong> ad applicazioni web scalabili. Attualmente sto conseguendo un Master in IA.",
+                btn_work: "Vedi i Progetti", btn_contact: "Contattami",
+                stats: ["Tecnologie Base", "Competenze Extra", "Anni di Esperienza", "Certificazioni"],
+                sec_skills: "Competenze e Tecnologie", sec_skills_sub: "Tecnologie principali nello sviluppo IA, web full-stack e strumenti cloud.",
+                sec_proj: "Progetti in Evidenza", sec_proj_sub: "Una selezione dei miei recenti lavori di ricerca e sviluppo in sistemi IA e visione artificiale.",
+                sec_exp: "Esperienza Professionale",
+                sec_contact: "Contattami", sec_contact_sub: "Hai un progetto in mente? Mi piacerebbe parlarne!",
+                contact_info: "Informazioni", contact_loc: "Posizione", contact_conn: "Connettiti",
+                form: ["Inviami un Messaggio", "Nome *", "Email *", "Oggetto *", "Messaggio *", "Invia Messaggio"]
             },
             es: {
-                nav_projects: "Proyectos", nav_skills: "Habilidades", nav_experience: "Experiencia", nav_contact: "Contacto", nav_about: "Sobre Mí",
-                hero_status: "Gerente de Proyectos @ Codesy · Máster en IA", hero_role: "IA y Automatización | Ingeniero de Machine Learning", hero_certs: "Certificado Google Cybersecurity | Data Analytics & BI",
-                hero_bio: "Construyo <strong class='text-blue-400'>soluciones de IA</strong> y sistemas de automatización, desde flujos de trabajo hasta tuberías de <strong class='text-purple-400'>Explainable AI (XAI)</strong>. Esto se basa en más de 2 años de gestión de proyectos. Cursando un Máster en Inteligencia Artificial.",
-                btn_work: "Ver mis Proyectos <i class='fas fa-arrow-right'></i>", btn_contact: "Contáctame",
-                stat_core: "Tecnologías", stat_comp: "Habilidades Extra", stat_exp: "Años de Exp.", stat_cert: "Certificaciones",
-                skills_header: "Habilidades y Tecnologías", skills_sub: "Tecnologías principales con las que trabajo en desarrollo de IA, procesamiento de datos y diseño web.", skills_comp: "Tecnologías Complementarias",
-                proj_header: "Proyectos Destacados", proj_sub: "Una selección de mi trabajo reciente en sistemas de IA, canales de machine learning automatizados y visión por computadora.",
-                badge_completed: "Completado", badge_ongoing: "En curso (Tesis)",
-                p1_title: "Canal Automatizado de Imágenes Médicas", p1_desc: "Implementé un canal automatizado de aprendizaje continuo para tareas de imágenes médicas.", 
-                p2_title: "Sistema Automatizado de Detección de Anomalías Causales", p2_desc: "Investigación de tesis enfocada en Explainable AI (XAI). Diseñé un canal automatizado para identificar causas raíz.", 
-                p3_title: "Análisis Financiero y Automatización con IA", p3_desc: "Desarrollé una arquitectura que ingiere, procesa y analiza automáticamente datos del mercado de valores.", 
-                exp_title: "Experiencia Profesional",
-                job1_title: "Gerente de Proyectos", job1_date: "May 2024 - Presente", job1_desc: "Liderazgo de equipos para entregar soluciones de IA y aplicaciones Python usando metodologías Agile.",
-                job2_title: "Desarrollo de Negocios", job2_date: "Nov 2022 - Abr 2024", job2_desc: "Ejecución de estrategias de datos para aumentar el conocimiento de la marca y maximizar el ROI.",
-                job3_title: "Especialista Web", job3_date: "Mar 2020 - Ene 2022", job3_desc: "Diseño de sitios web centrados en el usuario utilizando HTML, CSS, JavaScript y Bootstrap.",
-                contact_title: "Contáctame", contact_sub: "¿Tienes un proyecto en mente o quieres discutir oportunidades? ¡Me encantaría escucharte!",
-                contact_info: "Información de Contacto", contact_loc: "Ubicación", contact_connect: "Conecta Conmigo",
-                form_title: "Envíame un Mensaje", form_name: "Nombre *", form_email: "Correo *", form_subject: "Asunto *", form_msg: "Mensaje *", form_btn: "Enviar Mensaje",
-                faq_1_title: "Tiempo de Respuesta", faq_1_desc: "Normalmente respondo a consultas en 24-48 horas laborables.",
-                faq_2_title: "Tipos de Proyecto", faq_2_desc: "Especialista en pipelines de IA/ML, flujos de trabajo automatizados y optimización.",
-                faq_3_title: "Consulta", faq_3_desc: "Consultas iniciales gratuitas para discutir requerimientos de proyectos y viabilidad técnica.",
-                faq_4_title: "Colaboración", faq_4_desc: "Abierto a trabajo remoto, contratos y alianzas de investigación.",
-                footer_role: "Ingeniero de IA y ML", footer_links: "Enlaces Rápidos", footer_connect: "Conecta", footer_status: "Abierto a nuevas oportunidades · Actualizado Julio 2026"
+                nav: ["Inicio", "Proyectos", "Habilidades", "Experiencia", "Contacto"],
+                hero_badge: "Gerente de Proyectos @ Codesy · Máster en IA",
+                hero_title: "Hola, soy",
+                hero_role: "Ingeniero de IA y Automatización | Machine Learning",
+                hero_certs: "Certificado Google Cybersecurity | Data Analytics & BI",
+                hero_bio: "Construyo <strong class='text-blue-400'>soluciones de IA</strong> y sistemas de automatización. Con experiencia en Python, PyTorch, React y JavaScript, conecto tuberías de <strong class='text-purple-400'>Explainable AI (XAI)</strong> con aplicaciones web escalables. Cursando un Máster en IA.",
+                btn_work: "Ver mis Proyectos", btn_contact: "Contáctame",
+                stats: ["Tecnologías", "Habilidades Extra", "Años de Exp.", "Certificaciones"],
+                sec_skills: "Habilidades y Tecnologías", sec_skills_sub: "Tecnologías principales en desarrollo de IA, procesamiento de datos y diseño web.",
+                sec_proj: "Proyectos Destacados", sec_proj_sub: "Una selección de mi trabajo reciente en sistemas de IA y visión por computadora.",
+                sec_exp: "Experiencia Profesional",
+                sec_contact: "Contáctame", sec_contact_sub: "¿Tienes un proyecto en mente? ¡Me encantaría escucharte!",
+                contact_info: "Información", contact_loc: "Ubicación", contact_conn: "Conecta Conmigo",
+                form: ["Envíame un Mensaje", "Nombre *", "Correo *", "Asunto *", "Mensaje *", "Enviar Mensaje"]
             },
             fr: {
-                nav_projects: "Projets", nav_skills: "Compétences", nav_experience: "Expérience", nav_contact: "Contact", nav_about: "À propos",
-                hero_status: "Chef de Projet @ Codesy · Master en IA", hero_role: "IA & Automatisation | Ingénieur Machine Learning", hero_certs: "Certifié Google Cybersecurity | Data Analytics & BI",
-                hero_bio: "Je conçois des <strong class='text-blue-400'>solutions d'IA</strong> et des systèmes d'automatisation, des flux de travail aux pipelines <strong class='text-purple-400'>Explainable AI (XAI)</strong>. Basé sur plus de 2 ans de gestion de projet. Actuellement en Master en Intelligence Artificielle.",
-                btn_work: "Voir mon Travail <i class='fas fa-arrow-right'></i>", btn_contact: "Contactez-moi",
-                stat_core: "Technologies Clés", stat_comp: "Compétences", stat_exp: "Années d'Exp.", stat_cert: "Certifications",
-                skills_header: "Compétences & Technologies", skills_sub: "Technologies de base avec lesquelles je travaille dans le développement d'IA et le traitement des données.", skills_comp: "Technologies Complémentaires",
-                proj_header: "Projets Phares", proj_sub: "Une sélection de mes récents travaux de recherche et développement en IA, pipelines automatisés et vision par ordinateur.",
-                badge_completed: "Terminé", badge_ongoing: "En cours (Thèse)",
-                p1_title: "Pipeline Automatisé d'Imagerie Médicale", p1_desc: "Mise en œuvre d'un pipeline d'apprentissage continu automatisé pour des tâches complexes d'imagerie médicale.", 
-                p2_title: "Système Automatisé de Détection d'Anomalies Causales", p2_desc: "Recherche de thèse axée sur l'Explainable AI (XAI). J'ai conçu un pipeline automatisé pour identifier les causes.", 
-                p3_title: "Analyse Financière et Automatisation par l'IA", p3_desc: "Développement d'une architecture qui intègre, traite et analyse automatiquement les données boursières.", 
-                exp_title: "Expérience Professionnelle",
-                job1_title: "Chef de Projet", job1_date: "Mai 2024 - Présent", job1_desc: "Direction d'équipes pour fournir des solutions d'IA et des applications Python avec les méthodologies Agile.",
-                job2_title: "Développement Commercial", job2_date: "Nov 2022 - Avr 2024", job2_desc: "Exécution de stratégies pour accroître la notoriété de la marque et maximiser le ROI.",
-                job3_title: "Spécialiste Web", job3_date: "Mar 2020 - Jan 2022", job3_desc: "Conception de sites Web axés sur l'utilisateur à l'aide de HTML, CSS, JavaScript et Bootstrap.",
-                contact_title: "Contactez-moi", contact_sub: "Vous avez un projet en tête ou souhaitez discuter d'opportunités ? J'aimerais vous entendre !",
-                contact_info: "Coordonnées", contact_loc: "Lieu", contact_connect: "Connectez-vous",
-                form_title: "Envoyez-moi un Message", form_name: "Nom *", form_email: "Email *", form_subject: "Sujet *", form_msg: "Message *", form_btn: "Envoyer le Message",
-                faq_1_title: "Temps de Réponse", faq_1_desc: "Je réponds généralement aux demandes dans les 24 à 48 heures ouvrables.",
-                faq_2_title: "Types de Projets", faq_2_desc: "Je suis spécialisé dans les pipelines IA/ML, les flux de travail automatisés et l'optimisation.",
-                faq_3_title: "Consultation", faq_3_desc: "Consultations initiales gratuites pour discuter des exigences du projet et de la faisabilité.",
-                faq_4_title: "Collaboration", faq_4_desc: "Ouvert au travail à distance, aux contrats et aux partenariats de recherche.",
-                footer_role: "Ingénieur IA & ML", footer_links: "Liens Rapides", footer_connect: "Connectez-vous", footer_status: "Ouvert à de nouvelles opportunités · Mise à jour Juillet 2026"
+                nav: ["Accueil", "Projets", "Compétences", "Expérience", "Contact"],
+                hero_badge: "Chef de Projet @ Codesy · Master en IA",
+                hero_title: "Bonjour, je suis",
+                hero_role: "Ingénieur IA & Automatisation | Machine Learning",
+                hero_certs: "Certifié Google Cybersecurity | Data Analytics & BI",
+                hero_bio: "Je conçois des <strong class='text-blue-400'>solutions d'IA</strong> et des systèmes d'automatisation. Expert en Python, PyTorch, React et JavaScript, je relie les pipelines d'<strong class='text-purple-400'>Explainable AI (XAI)</strong> aux applications web. Master en IA en cours.",
+                btn_work: "Voir mon Travail", btn_contact: "Contactez-moi",
+                stats: ["Technologies Clés", "Compétences Extra", "Années d'Exp.", "Certifications"],
+                sec_skills: "Compétences & Technologies", sec_skills_sub: "Technologies de base dans le développement d'IA et le web full-stack.",
+                sec_proj: "Projets Phares", sec_proj_sub: "Une sélection de mes récents travaux de recherche et développement en IA.",
+                sec_exp: "Expérience Professionnelle",
+                sec_contact: "Contactez-moi", sec_contact_sub: "Un projet en tête ? J'aimerais en discuter !",
+                contact_info: "Coordonnées", contact_loc: "Lieu", contact_conn: "Connectez-vous",
+                form: ["Envoyez-moi un Message", "Nom *", "Email *", "Sujet *", "Message *", "Envoyer"]
             },
             de: {
-                nav_projects: "Projekte", nav_skills: "Fähigkeiten", nav_experience: "Erfahrung", nav_contact: "Kontakt", nav_about: "Über mich",
-                hero_status: "Projektmanager @ Codesy · Master in KI", hero_role: "KI & Automatisierung | Machine Learning Engineer", hero_certs: "Google Cybersecurity Zertifiziert | Data Analytics & BI",
-                hero_bio: "Ich entwickle <strong class='text-blue-400'>KI-gesteuerte Lösungen</strong> und Automatisierungssysteme, von Workflows bis hin zu <strong class='text-purple-400'>Explainable AI (XAI)</strong>. Dies baut auf über 2 Jahren Projektmanagement auf. Derzeit absolviere ich einen Master in Künstlicher Intelligenz.",
-                btn_work: "Meine Arbeit <i class='fas fa-arrow-right'></i>", btn_contact: "Kontakt",
-                stat_core: "Technologien", stat_comp: "Zusatz-Skills", stat_exp: "Jahre Exp.", stat_cert: "Zertifikate",
-                skills_header: "Fähigkeiten & Technologien", skills_sub: "Kerntechnologien, mit denen ich in der KI-Entwicklung und Datenverarbeitung arbeite.", skills_comp: "Ergänzende Technologien",
-                proj_header: "Ausgewählte Projekte", proj_sub: "Eine Auswahl meiner aktuellen Forschungs- und Entwicklungsarbeiten in den Bereichen KI-Systeme, automatisierte Pipelines und Computer Vision.",
-                badge_completed: "Abgeschlossen", badge_ongoing: "Laufend (Thesis)",
-                p1_title: "Automatisierte Pipeline für Medizinische Bildgebung", p1_desc: "Implementierung einer automatisierten Pipeline für kontinuierliches Lernen bei medizinischen Bildgebungsaufgaben.", 
-                p2_title: "Automatisches Kausales Anomalieerkennungssystem", p2_desc: "Thesis-Forschung mit Schwerpunkt auf Explainable AI (XAI). Entwicklung einer automatisierten Pipeline.", 
-                p3_title: "KI-gesteuerte Finanzanalyse & Automatisierung", p3_desc: "Entwicklung einer Machine-Learning-Architektur, die umfangreiche Börsendaten automatisch aufnimmt.", 
-                exp_title: "Berufserfahrung",
-                job1_title: "Projektmanager", job1_date: "Mai 2024 - Heute", job1_desc: "Leitung von Teams zur Bereitstellung von KI-Lösungen und Python-Anwendungen mit agilen Methoden.",
-                job2_title: "Geschäftsentwicklung", job2_date: "Nov 2022 - Apr 2024", job2_desc: "Ausführung von Datenstrategien zur Steigerung der Markenbekanntheit und Maximierung des ROI.",
-                job3_title: "Web-Spezialist", job3_date: "März 2020 - Jan 2022", job3_desc: "Design benutzerorientierter Websites mit HTML, CSS, JavaScript und Bootstrap.",
-                contact_title: "Kontaktieren", contact_sub: "Haben Sie ein Projekt im Sinn oder möchten Sie Möglichkeiten besprechen? Ich freue mich, von Ihnen zu hören!",
-                contact_info: "Kontaktinformationen", contact_loc: "Standort", contact_connect: "Verbinden Sie sich",
-                form_title: "Senden Sie mir eine Nachricht", form_name: "Name *", form_email: "Email *", form_subject: "Betreff *", form_msg: "Nachricht *", form_btn: "Nachricht senden",
-                faq_1_title: "Antwortzeit", faq_1_desc: "Normalerweise antworte ich an Werktagen innerhalb von 24-48 Stunden auf Anfragen.",
-                faq_2_title: "Projekttypen", faq_2_desc: "Spezialisiert auf KI/ML-Pipelines, automatisierte Workflows und Prozessoptimierung.",
-                faq_3_title: "Beratung", faq_3_desc: "Kostenlose Erstberatung zur Besprechung Ihrer Projektanforderungen und der Machbarkeit.",
-                faq_4_title: "Zusammenarbeit", faq_4_desc: "Offen für Remote-Arbeit, Vertragspositionen und Forschungspartnerschaften.",
-                footer_role: "KI & ML-Ingenieur", footer_links: "Schnelllinks", footer_connect: "Verbinden", footer_status: "Offen für neue Möglichkeiten · Aktualisiert Juli 2026"
+                nav: ["Startseite", "Projekte", "Fähigkeiten", "Erfahrung", "Kontakt"],
+                hero_badge: "Projektmanager @ Codesy · Master in KI",
+                hero_title: "Hallo, ich bin",
+                hero_role: "KI & Automatisierungsingenieur | Machine Learning",
+                hero_certs: "Google Cybersecurity Zertifiziert | Data Analytics & BI",
+                hero_bio: "Ich entwickle <strong class='text-blue-400'>KI-gesteuerte Lösungen</strong>. Mit Expertise in Python, PyTorch, React und JavaScript verbinde ich <strong class='text-purple-400'>Explainable AI (XAI)</strong>-Pipelines mit skalierbaren Web-Apps. Derzeit Master in KI.",
+                btn_work: "Meine Arbeit", btn_contact: "Kontakt",
+                stats: ["Technologien", "Zusatz-Skills", "Jahre Exp.", "Zertifikate"],
+                sec_skills: "Fähigkeiten & Technologien", sec_skills_sub: "Kerntechnologien in der KI-Entwicklung und Web-Fullstack.",
+                sec_proj: "Ausgewählte Projekte", sec_proj_sub: "Eine Auswahl meiner aktuellen Forschungs- und Entwicklungsarbeiten.",
+                sec_exp: "Berufserfahrung",
+                sec_contact: "Kontaktieren", sec_contact_sub: "Haben Sie ein Projekt im Sinn? Ich freue mich von Ihnen zu hören!",
+                contact_info: "Kontaktinfo", contact_loc: "Standort", contact_conn: "Verbinden",
+                form: ["Nachricht senden", "Name *", "Email *", "Betreff *", "Nachricht *", "Senden"]
             }
         };
 
-        function changeLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
-                }
-            });
-        }
+        const Navbar = ({ lang, setLang }) => (
+            <nav className="w-full py-5 px-6 border-b border-slate-800/50 bg-[#0f1523]/90 backdrop-blur-md fixed top-0 z-50">
+                <div className="max-w-7xl mx-auto flex justify-between items-center">
+                    <a href="#" className="text-xl font-bold tracking-tighter text-blue-500">Sagar<span className="text-purple-500">Lal</span></a>
+                    <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                        <a href="#home" className="px-4 py-1.5 bg-blue-600 text-white rounded-full">{t[lang].nav[0]}</a>
+                        <a href="#projects" className="hover:text-white transition-colors">{t[lang].nav[1]}</a>
+                        <a href="#skills" className="hover:text-white transition-colors">{t[lang].nav[2]}</a>
+                        <a href="#experience" className="hover:text-white transition-colors">{t[lang].nav[3]}</a>
+                        <a href="#contact" className="hover:text-white transition-colors">{t[lang].nav[4]}</a>
+                    </div>
+                    <div className="relative flex items-center bg-[#131b2f] border border-slate-700 rounded-lg px-2 py-1.5">
+                        <i className="fas fa-globe text-slate-400 text-xs mr-2"></i>
+                        <select value={lang} onChange={(e) => setLang(e.target.value)} className="bg-transparent text-xs font-semibold text-slate-200 outline-none cursor-pointer appearance-none">
+                            <option value="en" className="bg-[#0f1523]">EN</option>
+                            <option value="it" className="bg-[#0f1523]">IT</option>
+                            <option value="es" className="bg-[#0f1523]">ES</option>
+                            <option value="fr" className="bg-[#0f1523]">FR</option>
+                            <option value="de" className="bg-[#0f1523]">DE</option>
+                        </select>
+                    </div>
+                </div>
+            </nav>
+        );
+
+        const Hero = ({ lang }) => (
+            <section id="home" className="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-12 gap-12 items-center">
+                    <div className="lg:col-span-8">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-medium mb-6">
+                            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span>{t[lang].hero_badge}</span>
+                        </div>
+                        <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-3">
+                            {t[lang].hero_title} <span className="gradient-text">Sagar Lal</span>
+                        </h1>
+                        <h2 className="text-xl md:text-2xl text-slate-200 font-semibold mb-2">{t[lang].hero_role}</h2>
+                        <p className="text-sm text-slate-400 mb-6 font-medium">{t[lang].hero_certs}</p>
+                        <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-8 max-w-3xl" dangerouslySetInnerHTML={{__html: t[lang].hero_bio}}></p>
+                        
+                        <div className="flex flex-wrap gap-2 mb-10">
+                            {["React", "JavaScript", "Python", "PyTorch", "TensorFlow", "XAI"].map(skill => (
+                                <span key={skill} className="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-medium rounded-md">{skill}</span>
+                            ))}
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-6">
+                            <a href="#projects" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-colors flex items-center gap-2 text-sm">
+                                {t[lang].btn_work} <i className="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" className="px-6 py-3 border border-slate-600 hover:bg-slate-800 text-white font-semibold rounded-lg transition-colors text-sm">
+                                {t[lang].btn_contact}
+                            </a>
+                            <div className="flex gap-4 ml-2 border-l border-slate-700 pl-6">
+                                <a href="https://github.com/sagar-ai-dev" target="_blank" className="text-slate-400 hover:text-white transition-colors"><i className="fab fa-github text-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" className="text-slate-400 hover:text-white transition-colors"><i className="fab fa-linkedin text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="lg:col-span-4 flex flex-col items-center">
+                        <div className="relative w-64 h-64 md:w-72 md:h-72 mb-10">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 p-1.5">
+                                <div className="w-full h-full rounded-full bg-[#0f1523] p-1 overflow-hidden">
+                                    <img 
+                                        src="profile.jpg" 
+                                        alt="Sagar Lal" 
+                                        className="w-full h-full object-cover rounded-full" 
+                                        style={{ 
+                                            objectPosition: 'center 20%', 
+                                            filter: 'contrast(1.05) saturate(1.1) brightness(1.02)' 
+                                        }}
+                                        onError={(e) => {e.target.src='https://ui-avatars.com/api/?name=Sagar+Lal&size=512&background=1e293b&color=fff'}}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+
+        const Skills = ({ lang }) => (
+            <section id="skills" className="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/50">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl font-extrabold text-white tracking-tight mb-4">{t[lang].sec_skills}</h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto">{t[lang].sec_skills_sub}</p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <SkillCard icon="fa-brain" color="purple" title="AI / ML" skills={[
+                        {name: "Python", val: 90}, {name: "PyTorch & TF", val: 75}, {name: "OpenCV", val: 80}, {name: "XAI", val: 70}
+                    ]} />
+                    <SkillCard icon="fa-layer-group" color="blue" title="Frontend Web" skills={[
+                        {name: "React & JS", val: 85}, {name: "HTML5 & CSS3", val: 95}, {name: "Tailwind & Bootstrap", val: 80}, {name: "Responsive UI", val: 85}
+                    ]} />
+                    <SkillCard icon="fa-database" color="emerald" title="Data & Backend" skills={[
+                        {name: "SQL & Databases", val: 85}, {name: "Pandas & NumPy", val: 90}, {name: "REST APIs", val: 75}, {name: "Node.js / Flask", val: 70}
+                    ]} />
+                    <SkillCard icon="fa-terminal" color="orange" title="DevOps & Tools" skills={[
+                        {name: "Git & GitHub", val: 90}, {name: "Jupyter & Colab", val: 85}, {name: "Agile / Jira", val: 75}, {name: "Docker (Basic)", val: 50}
+                    ]} />
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                    <StatCard val="12+" label={t[lang].stats[0]} />
+                    <StatCard val="25+" label={t[lang].stats[1]} />
+                    <StatCard val="2+" label={t[lang].stats[2]} />
+                    <StatCard val="4" label={t[lang].stats[3]} />
+                </div>
+            </section>
+        );
+
+        const SkillCard = ({ icon, color, title, skills }) => (
+            <div className="glass-card rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-6">
+                    <i className={`fas ${icon} text-${color}-400 text-2xl`}></i>
+                    <h3 className="text-xl font-bold text-white">{title}</h3>
+                </div>
+                <div className="space-y-5">
+                    {skills.map(s => (
+                        <div key={s.name}>
+                            <div className="flex justify-between text-sm mb-1"><span className="text-slate-200 font-medium">{s.name}</span></div>
+                            <div className="progress-bar-container"><div className={`bg-gradient-to-r from-${color}-600 to-${color}-400 h-full rounded-full`} style={{width: `${s.val}%`}}></div></div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+
+        const StatCard = ({ val, label }) => (
+            <div className="glass-card rounded-xl p-6 text-center">
+                <h4 className="text-3xl font-extrabold text-white mb-2">{val}</h4>
+                <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider">{label}</p>
+            </div>
+        );
+
+        const Projects = ({ lang }) => (
+            <section id="projects" className="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/50">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl font-extrabold text-white tracking-tight mb-4">{t[lang].sec_proj}</h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto">{t[lang].sec_proj_sub}</p>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div className="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
+                        <a href="https://github.com/sagar-ai-dev/Medical-Imaging-Continual-Learning-Pipeline" target="_blank" className="absolute inset-0 z-10"></a>
+                        <div className="flex justify-between items-start mb-6 relative z-20">
+                            <span className="px-2.5 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-md text-[10px] font-bold uppercase tracking-wider">AI / ML</span>
+                            <span className="text-emerald-400 text-xs font-semibold">Completed</span>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Automated Medical Imaging Continual Learning</h3>
+                        <p className="text-sm text-slate-400 leading-relaxed mb-6 flex-grow">
+                            Implemented an automated, cross-domain continual learning pipeline for complex medical imaging tasks. Utilized knowledge distillation algorithms to train a lightweight MobileNetV3 student model.
+                        </p>
+                        <div className="flex flex-wrap gap-2 relative z-20">
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Python</span>
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">PyTorch</span>
+                        </div>
+                    </div>
+
+                    <div className="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
+                        <a href="https://github.com/sagar-ai-dev/causal_anomaly_detection" target="_blank" className="absolute inset-0 z-10"></a>
+                        <div className="flex justify-between items-start mb-6 relative z-20">
+                            <span className="px-2.5 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-md text-[10px] font-bold uppercase tracking-wider">Research / XAI</span>
+                            <span className="text-amber-400 text-xs font-semibold">Ongoing</span>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Automated Causal Anomaly Detection System</h3>
+                        <p className="text-sm text-slate-400 leading-relaxed mb-6 flex-grow">
+                            Core academic thesis research focusing on Explainable AI (XAI). Engineered an automated pipeline to identify root causes within complex anomaly datasets using feature attribution techniques.
+                        </p>
+                        <div className="flex flex-wrap gap-2 relative z-20">
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Python</span>
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">TensorFlow</span>
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">XAI</span>
+                        </div>
+                    </div>
+
+                    <div className="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
+                        <a href="https://github.com/sagar-ai-dev/Machine_learning_Stock_data_ana" target="_blank" className="absolute inset-0 z-10"></a>
+                        <div className="flex justify-between items-start mb-6 relative z-20">
+                            <span className="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-md text-[10px] font-bold uppercase tracking-wider">Data / Models</span>
+                            <span className="text-emerald-400 text-xs font-semibold">Completed</span>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">AI-Driven Financial Analysis & Automation</h3>
+                        <p className="text-sm text-slate-400 leading-relaxed mb-6 flex-grow">
+                            Developed a machine learning architecture that automatically ingests, processes, and analyzes large-scale stock market data using time-series models for trend prediction.
+                        </p>
+                        <div className="flex flex-wrap gap-2 relative z-20">
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Python</span>
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Time-Series</span>
+                            <span className="px-2.5 py-1 bg-[#0f1523] border border-slate-700 text-slate-300 rounded text-[11px] font-medium">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+
+        const Contact = ({ lang }) => (
+            <section id="contact" className="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/50">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 tracking-tight mb-4">{t[lang].sec_contact}</h2>
+                    <p className="text-slate-400 max-w-2xl mx-auto">{t[lang].sec_contact_sub}</p>
+                </div>
+                <div className="grid lg:grid-cols-12 gap-8 mb-16">
+                    <div className="lg:col-span-4 space-y-6">
+                        <div className="glass-card rounded-2xl p-6">
+                            <h3 className="text-lg font-bold text-white mb-6">{t[lang].contact_info}</h3>
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4">
+                                    <i className="fas fa-envelope text-blue-500 mt-1"></i>
+                                    <div>
+                                        <p className="text-sm font-bold text-white">Email</p>
+                                        <a href="mailto:Sagarrangwani1@gmail.com" className="text-slate-400 text-sm hover:text-blue-400 transition-colors">Sagarrangwani1@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4">
+                                    <i className="fas fa-map-marker-alt text-blue-500 mt-1"></i>
+                                    <div>
+                                        <p className="text-sm font-bold text-white">{t[lang].contact_loc}</p>
+                                        <p className="text-slate-400 text-sm">Verona, Italy</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="glass-card rounded-2xl p-6">
+                            <h3 className="text-lg font-bold text-white mb-4">{t[lang].contact_conn}</h3>
+                            <div className="space-y-4">
+                                <a href="https://github.com/sagar-ai-dev" target="_blank" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                                    <i className="fab fa-github w-5 text-center"></i> <span className="text-sm font-medium">GitHub</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors">
+                                    <i className="fab fa-linkedin w-5 text-center"></i> <span className="text-sm font-medium">LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="lg:col-span-8 glass-card rounded-2xl p-8">
+                        <h3 className="text-2xl font-bold text-white mb-6">{t[lang].form[0]}</h3>
+                        <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div><label className="block text-sm font-bold text-slate-200 mb-2">{t[lang].form[1]}</label><input type="text" className="input-field" required /></div>
+                                <div><label className="block text-sm font-bold text-slate-200 mb-2">{t[lang].form[2]}</label><input type="email" className="input-field" required /></div>
+                            </div>
+                            <div><label className="block text-sm font-bold text-slate-200 mb-2">{t[lang].form[3]}</label><input type="text" className="input-field" required /></div>
+                            <div><label className="block text-sm font-bold text-slate-200 mb-2">{t[lang].form[4]}</label><textarea rows="4" className="input-field resize-none" required></textarea></div>
+                            <button type="submit" className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors">{t[lang].form[5]}</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        );
+
+        // Main App Assembly
+        const App = () => {
+            const [lang, setLang] = useState('en');
+            return (
+                <div>
+                    <Navbar lang={lang} setLang={setLang} />
+                    <Hero lang={lang} />
+                    <Skills lang={lang} />
+                    <Projects lang={lang} />
+                    <Contact lang={lang} />
+                    <footer className="py-8 border-t border-slate-800/50 text-center bg-[#0a0f18]">
+                        <p className="text-slate-500 text-sm font-medium">&copy; 2026 Sagar Lal. All rights reserved.</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        // Render App
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
     </script>
 </body>
 </html>
