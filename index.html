@@ -16,12 +16,7 @@
                         darkBg: '#0b1120',
                         darkCard: '#131b2f',
                         lightBg: '#f8fafc',
-                        lightCard: '#ffffff',
-                        verBlue: '#3b82f6',
-                        verPink: '#ec4899',
-                        verGreen: '#10b981',
-                        verOrange: '#f97316',
-                        verPurple: '#8b5cf6'
+                        lightCard: '#ffffff'
                     }
                 }
             }
@@ -43,7 +38,7 @@
         body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
         
         .theme-card { transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; }
-        .theme-card:hover { transform: translateY(-4px); }
+        .theme-card:hover { transform: translateY(-2px); }
         
         .gradient-text { background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
@@ -65,457 +60,253 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // Fact-Based, Highly Credible Multi-Language Dictionary
+        // Structured English Dictionary (Multi-language framework maintained for scaling)
         const t = {
             en: {
-                nav: { home: "Home", about: "About", projects: "Projects", skills: "Skills", experience: "Experience", contact: "Contact" },
+                nav: { home: "Home", about: "About", exp: "Experience", proj: "Projects", skills: "Skills", certs: "Certifications", contact: "Contact" },
                 hero: {
-                    badge: "Currently @ Codesy & La Vertueuse · Open to opportunities",
-                    greeting: "Hi, I'm",
-                    role: "AI & Machine Learning Engineer",
-                    location: "Verona, Veneto, Italy",
-                    bio: "AI Engineer specializing in machine learning, computer vision, explainable AI, and intelligent automation. Experienced in developing Python-based AI applications, backend services, and full-stack web solutions. 5+ years of programming experience.",
-                    btn1: "View My Work", btn2: "Get in Touch"
+                    title: "AI & Machine Learning Engineer",
+                    subtitle: "MSc Artificial Intelligence Candidate • University of Verona",
+                    tags: "Python • Machine Learning • Computer Vision • Explainable AI",
+                    stats: ["3+ Professional Years", "12+ Projects", "24+ Certifications", "MSc AI Candidate"],
+                    btn_proj: "View Projects", btn_res: "Download Resume"
                 },
                 about: {
-                    title1: "Professional Summary",
-                    p1: "I am an AI Engineer focused on machine learning systems, computer vision, and automation. Currently, I develop Python-based AI scripts at Codesy and manage full-stack web architectures for La Vertueuse. Previously, I completed an intensive 150-hour research internship at the University of Verona, developing CNNs and time-series classifiers using TensorFlow and Keras.",
-                    p2: "I hold an M.S. in Artificial Intelligence, combining deep academic foundations in Explainable AI (XAI) and logic with practical backend integration experience. Backed by Google and AWS certifications, I focus on writing clean code, processing complex datasets, and building reliable backend services.",
-                    title2: "Professional Goals",
-                    g1: "Seeking: AI Engineer, Machine Learning Engineer, or Backend AI Developer roles.",
-                    g2: "Focus Areas: Explainable AI (XAI), Computer Vision Pipelines, Time-Series Forecasting, and backend development (Python/FastAPI/PostgreSQL)."
+                    title: "About Me",
+                    p1: "I am an AI Engineer specializing in machine learning, computer vision, explainable AI, and intelligent automation. I combine academic rigor with practical development, bridging the gap between theoretical AI models and functional software. I have 3+ years of professional development experience and 5+ years of programming experience.",
+                    p2: "Currently, I develop AI automation scripts as a freelancer for Codesy and manage the backend administrative portals for the French enterprise La Vertueuse. Concurrently, I am finalizing my Master's thesis in Explainable AI at the University of Verona, where I recently completed an intensive 150-hour Machine Learning internship focusing on CNNs and time-series forecasting.",
+                    what_i_do: "What I Do",
+                    do_items: ["AI Development", "Machine Learning", "Backend APIs", "Data Engineering", "Full Stack Web"],
+                    career: "Career Interests",
+                    c_items: ["AI Engineer", "Machine Learning Engineer", "ML Research Engineer", "Backend AI Developer"],
+                    achievements: "Key Achievements",
+                    a_items: ["MSc AI Candidate (University of Verona)", "Thesis in Explainable Causal Discovery", "24+ Professional Certifications", "Official Machine Learning Internship", "Deployed Full-Stack Architectures"]
                 },
-                achievements: {
-                    title: "Key Achievements",
-                    a1: "MSc Artificial Intelligence Candidate – University of Verona (Expected 2026)",
-                    a2: "Master's Thesis Research in Explainable AI & Causal Discovery (PCMCI)",
-                    a3: "24+ Professional Certifications (Google AI, Cybersecurity, AWS, Azure)",
-                    a4: "150-Hour Official Machine Learning University Internship",
-                    a5: "Delivered diverse Freelance AI Automation & Full-Stack Web Projects"
-                },
-                skills: {
-                    title: "Skills & Technologies", sub: "Core technologies I work with across AI development, data processing, and full-stack web.",
-                    comp: "Complementary Technologies",
-                    stats: ["Years Prog. Exp.", "Projects Delivered", "Academic Internship", "Certifications"],
-                    cats: ["AI / Machine Learning", "Data Engineering", "Backend & Automation", "Cloud & MLOps", "Frontend Web"]
-                },
-                projects: {
-                    title: "Projects & Research", sub: "Explore my portfolio of 12+ repositories spanning AI/ML models, data architecture, and full-stack development."
+                edu: {
+                    title: "Education",
+                    msc_title: "Master of Science in Artificial Intelligence",
+                    msc_uni: "University of Verona, Italy",
+                    msc_date: "Expected Graduation: Oct 2026",
+                    msc_course: "Relevant Coursework: Machine Learning, Deep Learning, Explainable AI, Computer Vision, Logic in AI, Automated Reasoning.",
+                    bsc_title: "BSc in Computer Systems Engineering",
+                    bsc_uni: "Dawood University of Eng. & Tech.",
+                    bsc_date: "Jan 2019 - Nov 2022",
+                    bsc_course: "Relevant Coursework: Data Structures, Algorithms, Software Engineering, Database Systems."
                 },
                 exp: {
                     title: "Professional Experience",
-                    job1_title: "Freelance AI Automation Developer",
-                    job1_company: "Codesy",
-                    job1_date: "May 2024 - Present",
-                    job1_desc: "Developed Python-based automation scripts and backend services for client projects. Built REST APIs using FastAPI connected to PostgreSQL. Processed and analyzed datasets of 20,000+ records to improve workflow efficiency.",
-                    job_intern_title: "Machine Learning Intern",
-                    job_intern_company: "University of Verona",
-                    job_intern_date: "Apr 2025 - Jun 2025",
-                    job_intern_desc: "150-hour academic internship. Developed CNN models using TensorFlow and transfer learning techniques (ResNet, VGG). Preprocessed image data using OpenCV and PIL. Built and evaluated time-series classifiers using LSTM and GRU networks.",
-                    job4_title: "Fullstack Web Developer",
-                    job4_company: "La Vertueuse",
-                    job4_date: "Jan 2026 - Present",
-                    job4_desc: "Developed and maintained the administrative portal and custom e-commerce website. Integrated payment gateways (Stripe, SumUp) and optimized custom PHP backends. Reduced page load times and ensured responsive mobile designs.",
-                    job3_title: "Web Design Specialist",
-                    job3_company: "Freelance",
-                    job3_date: "Mar 2020 - Jan 2022",
-                    job3_desc: "Designed user-focused web applications from scratch, focusing on strict client requirements and fully responsive mobile-friendly HTML/CSS/JS architectures."
-                },
-                cert: {
-                    title: "Licenses & Certifications", sub: "A selection of my 24+ verified professional credentials spanning AI, Cybersecurity, and Data Systems."
-                },
-                contact: {
-                    title: "Get in Touch", sub: "Have a project in mind or want to discuss opportunities? I'd love to hear from you!",
-                    info: "Contact Information", conn: "Connect With Me", form: "Send Me a Message",
-                    f_name: "Name *", f_email: "Email *", f_sub: "Subject *", f_msg: "Message *", f_btn: "Send Message",
-                    faq: [
-                        { q: "Response Time", a: "I typically respond to inquiries within 24-48 hours during business days." },
-                        { q: "Project Types", a: "I work on full-stack web applications, Python automation, and AI/ML model integrations." },
-                        { q: "Consultation", a: "Free initial consultations available to discuss your technical requirements and timeline." },
-                        { q: "Collaboration", a: "Open to remote work, freelance contracts, and full-time ML engineering roles." }
-                    ]
-                }
-            },
-            it: {
-                nav: { home: "Home", about: "Chi Sono", projects: "Progetti", skills: "Competenze", experience: "Esperienza", contact: "Contatti" },
-                hero: {
-                    badge: "Attualmente @ Codesy & La Vertueuse · Aperto a opportunità",
-                    greeting: "Ciao, sono",
-                    role: "AI & Machine Learning Engineer",
-                    location: "Verona, Veneto, Italia",
-                    bio: "Ingegnere AI specializzato in machine learning, computer vision e automazione. Esperto nello sviluppo di applicazioni AI in Python, servizi backend e soluzioni web full-stack. Oltre 5 anni di esperienza di programmazione.",
-                    btn1: "Vedi i Progetti", btn2: "Contattami"
-                },
-                about: {
-                    title1: "Riepilogo Professionale",
-                    p1: "Sono un ingegnere AI focalizzato su sistemi di machine learning, computer vision e automazione. Attualmente sviluppo script AI in Python presso Codesy e gestisco architetture web per La Vertueuse. In precedenza, ho completato un tirocinio di 150 ore presso l'Università di Verona, sviluppando CNN e classificatori di serie temporali.",
-                    p2: "Possiedo una laurea magistrale in Intelligenza Artificiale. Con oltre 24 certificazioni professionali da Google e AWS, mi concentro sulla scrittura di codice pulito e sulla creazione di servizi backend affidabili.",
-                    title2: "Obiettivi Professioni",
-                    g1: "Ricerca: Ruoli come AI Engineer, Machine Learning Engineer o Backend AI Developer.",
-                    g2: "Aree di Focus: Explainable AI (XAI), Computer Vision, Serie Temporali e sviluppo backend (Python/FastAPI)."
-                },
-                achievements: {
-                    title: "Risultati Principali",
-                    a1: "Laurea Magistrale in AI – Università di Verona (Attesa 2026)",
-                    a2: "Tesi di Ricerca in Explainable AI & Causal Discovery (PCMCI)",
-                    a3: "Oltre 24 Certificazioni (Google AI, Cybersecurity, AWS)",
-                    a4: "Tirocinio Universitario Ufficiale in Machine Learning (150 Ore)",
-                    a5: "Sviluppo di vari progetti Freelance in AI e Full-Stack"
-                },
-                skills: {
-                    title: "Competenze e Tecnologie", sub: "Tecnologie principali per lo sviluppo AI, elaborazione dati e web full-stack.",
-                    comp: "Tecnologie Complementari",
-                    stats: ["Anni Prog. Exp.", "Progetti", "Tirocinio", "Certificazioni"],
-                    cats: ["AI / Machine Learning", "Data Engineering", "Backend & Automazione", "Cloud & MLOps", "Sviluppo Frontend"]
+                    job1: {
+                        title: "Machine Learning Intern", comp: "University of Verona", loc: "Verona, Italy", date: "Apr 2025 - Jun 2025",
+                        resp: "150-hour official academic internship focused on advanced deep learning and computer vision architectures.",
+                        tech: ["Python", "TensorFlow", "Keras", "OpenCV", "CNNs", "LSTM"],
+                        achieve: [
+                            "Developed CNN models (ResNet, VGG) using TensorFlow and transfer learning techniques.",
+                            "Preprocessed and augmented complex image datasets using OpenCV and PIL.",
+                            "Engineered and evaluated time-series classifiers using LSTM and GRU networks.",
+                            "Documented complete AI workflows and presented technical reports to university faculty."
+                        ]
+                    },
+                    job2: {
+                        title: "Freelance AI Automation Developer", comp: "Codesy", loc: "Remote / Project-Based", date: "May 2024 - Present",
+                        resp: "Developing Python-based AI tools and backend services for diverse clients on an on-demand, freelance basis.",
+                        tech: ["Python", "FastAPI", "PostgreSQL", "Data Analytics"],
+                        achieve: [
+                            "Built REST APIs with FastAPI connected to secure PostgreSQL databases.",
+                            "Developed automated workflow scripts to replace manual data entry processes.",
+                            "Built a data pipeline processing and analyzing 20,000+ records for business intelligence.",
+                            "Reduced client data preprocessing time by 35% through script optimization."
+                        ]
+                    },
+                    job3: {
+                        title: "Senior Fullstack Web Developer", comp: "La Vertueuse", loc: "France (Remote)", date: "Jan 2026 - Present",
+                        resp: "Managing complete backend administrative portals and full-stack website services for a French enterprise.",
+                        tech: ["PHP", "JavaScript", "SQL", "Stripe API", "Backend Management"],
+                        achieve: [
+                            "Architected and secured the primary backend administrative dashboard.",
+                            "Integrated Stripe and SumUp payment gateways for seamless e-commerce transactions.",
+                            "Optimized database queries and custom PHP scripts to handle enterprise-level traffic.",
+                            "Implemented strict responsive UI features and countdown modules for marketing campaigns."
+                        ]
+                    },
+                    job4: {
+                        title: "Web Design Specialist", comp: "Freelance", loc: "Remote", date: "Mar 2020 - Jan 2022",
+                        resp: "Designed user-focused web applications and interfaces for local businesses and startups.",
+                        tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+                        achieve: [
+                            "Designed standards-compliant web applications from scratch based on strict client briefs.",
+                            "Implemented fully responsive, mobile-first architectures.",
+                            "Optimized frontend code resulting in 90+ Google Lighthouse performance scores."
+                        ]
+                    }
                 },
                 projects: {
-                    title: "Progetti e Ricerca", sub: "Esplora il mio portfolio di oltre 12 repository in AI/ML e architettura dati."
-                },
-                exp: {
-                    title: "Esperienza Professionale",
-                    job1_title: "Sviluppatore AI & Automazione Freelance",
-                    job1_company: "Codesy",
-                    job1_date: "Mag 2024 - Presente",
-                    job1_desc: "Sviluppo di script di automazione Python e servizi backend. Creazione di API REST con FastAPI e PostgreSQL. Elaborazione di dataset di oltre 20.000 record per migliorare l'efficienza.",
-                    job_intern_title: "Tirocinante Machine Learning",
-                    job_intern_company: "Università di Verona",
-                    job_intern_date: "Apr 2025 - Giu 2025",
-                    job_intern_desc: "Tirocinio di 150 ore. Sviluppo di modelli CNN con TensorFlow (ResNet, VGG). Pre-elaborazione immagini con OpenCV. Sviluppo di classificatori di serie temporali (LSTM, GRU).",
-                    job4_title: "Sviluppatore Web Fullstack",
-                    job4_company: "La Vertueuse",
-                    job4_date: "Gen 2026 - Presente",
-                    job4_desc: "Sviluppo del portale amministrativo e sito e-commerce. Integrazione di gateway di pagamento (Stripe, SumUp) e ottimizzazione backend in PHP personalizzato.",
-                    job3_title: "Specialista Web Design",
-                    job3_company: "Freelance",
-                    job3_date: "Mar 2020 - Gen 2022",
-                    job3_desc: "Progettazione di applicazioni web da zero, focalizzandosi sui requisiti del cliente e architetture mobile-friendly (HTML/CSS/JS)."
-                },
-                cert: { title: "Licenze e Certificazioni", sub: "Oltre 24 credenziali professionali in AI e Cybersecurity." },
-                contact: {
-                    title: "Contattami", sub: "Hai un progetto in mente? Mi piacerebbe parlarne!",
-                    info: "Informazioni", conn: "Connettiti", form: "Inviami un Messaggio",
-                    f_name: "Nome *", f_email: "Email *", f_sub: "Oggetto *", f_msg: "Messaggio *", f_btn: "Invia",
-                    faq: [
-                        { q: "Tempo di Risposta", a: "Rispondo entro 24-48 ore nei giorni lavorativi." },
-                        { q: "Tipi di Progetti", a: "App web, script Python e integrazioni AI/ML." },
-                        { q: "Consulenza", a: "Consulenza iniziale gratuita per discutere i requisiti." },
-                        { q: "Collaborazione", a: "Aperto a lavoro da remoto e ruoli ML full-time." }
-                    ]
-                }
-            },
-            es: {
-                nav: { home: "Inicio", about: "Sobre Mí", projects: "Proyectos", skills: "Habilidades", experience: "Experiencia", contact: "Contacto" },
-                hero: {
-                    badge: "Actualmente @ Codesy & La Vertueuse · Abierto a oportunidades",
-                    greeting: "Hola, soy",
-                    role: "AI & Machine Learning Engineer",
-                    location: "Verona, Véneto, Italia",
-                    bio: "Ingeniero de IA especializado en machine learning, visión por computadora y automatización inteligente. Experiencia en desarrollo Python, backend y web full-stack. Más de 5 años de experiencia programando.",
-                    btn1: "Ver Proyectos", btn2: "Contáctame"
-                },
-                about: {
-                    title1: "Resumen Profesional",
-                    p1: "Ingeniero de IA centrado en sistemas de ML, visión por computadora y automatización. Actualmente desarrollo scripts de IA en Python para Codesy y gestiono arquitecturas web para La Vertueuse. Anteriormente completé una pasantía de 150 horas en la Universidad de Verona diseñando CNNs.",
-                    p2: "Tengo un Máster en Inteligencia Artificial. Con certificaciones de Google y AWS, me enfoco en escribir código limpio, procesar conjuntos de datos complejos y construir backends confiables.",
-                    title2: "Objetivos Profesionales",
-                    g1: "Buscando: Roles de AI Engineer, ML Engineer o Backend AI Developer.",
-                    g2: "Áreas de Enfoque: Explainable AI (XAI), Visión por Computadora, Series Temporales y desarrollo backend (Python/FastAPI)."
-                },
-                achievements: {
-                    title: "Logros Destacados",
-                    a1: "Candidato a MSc en IA – Universidad de Verona (2026)",
-                    a2: "Tesis en Explainable AI & Descubrimiento Causal (PCMCI)",
-                    a3: "Más de 24 Certificaciones (Google AI, Ciberseguridad, AWS)",
-                    a4: "Pasantía Universitaria Oficial de ML (150 Horas)",
-                    a5: "Múltiples Proyectos Freelance en IA y Full-Stack"
+                    title: "Research & Case Studies", sub: "Technical deep-dives into my AI pipelines, machine learning models, and full-stack architectures."
                 },
                 skills: {
-                    title: "Habilidades y Tecnologías", sub: "Tecnologías principales en desarrollo de IA, procesamiento de datos y web.",
-                    comp: "Tecnologías Complementarias",
-                    stats: ["Años Programando", "Proyectos", "Pasantía", "Certificaciones"],
-                    cats: ["IA / Machine Learning", "Ingeniería de Datos", "Backend y Automatización", "Cloud y MLOps", "Desarrollo Frontend"]
+                    title: "Technical Skills", sub: "Core engineering frameworks evaluated by practical proficiency.",
+                    cats: ["AI / Machine Learning", "Data Engineering", "Backend APIs", "Frontend & Fullstack", "DevOps & Tools"]
                 },
-                projects: { title: "Proyectos e Investigación", sub: "Explora mi portafolio de más de 12 repositorios de modelos IA/ML." },
-                exp: {
-                    title: "Experiencia Profesional",
-                    job1_title: "Desarrollador Freelance de Automatización e IA",
-                    job1_company: "Codesy",
-                    job1_date: "May 2024 - Presente",
-                    job1_desc: "Desarrollo de scripts de automatización en Python. Construcción de APIs REST con FastAPI y PostgreSQL. Procesamiento de datasets de más de 20,000 registros para mejorar flujos de trabajo.",
-                    job_intern_title: "Pasante de Machine Learning",
-                    job_intern_company: "Universidad de Verona",
-                    job_intern_date: "Abr 2025 - Jun 2025",
-                    job_intern_desc: "Pasantía de 150 horas. Desarrollo de modelos CNN con TensorFlow (ResNet, VGG). Preprocesamiento de imágenes con OpenCV. Clasificadores de series temporales (LSTM, GRU).",
-                    job4_title: "Desarrollador Web Fullstack",
-                    job4_company: "La Vertueuse",
-                    job4_date: "Ene 2026 - Presente",
-                    job4_desc: "Desarrollo y mantenimiento del portal administrativo y e-commerce. Integración de pasarelas de pago (Stripe, SumUp) y optimización de backends en PHP personalizado.",
-                    job3_title: "Especialista Web",
-                    job3_company: "Freelance",
-                    job3_date: "Mar 2020 - Ene 2022",
-                    job3_desc: "Diseño de aplicaciones web desde cero, centrado en requisitos del cliente y arquitecturas responsivas en HTML/CSS/JS."
+                cert: {
+                    title: "Top Certifications", sub: "A curated list of my verified credentials. (24+ Total Certifications)", btn: "View All (24)"
                 },
-                cert: { title: "Licencias y Certificaciones", sub: "Más de 24 credenciales en IA, Ciberseguridad y Datos." },
                 contact: {
-                    title: "Contáctame", sub: "¿Tienes un proyecto en mente? ¡Hablemos!",
-                    info: "Información", conn: "Conectar", form: "Envíame un Mensaje",
-                    f_name: "Nombre *", f_email: "Correo *", f_sub: "Asunto *", f_msg: "Mensaje *", f_btn: "Enviar",
-                    faq: [
-                        { q: "Tiempo de Respuesta", a: "Respondo en 24-48 horas laborables." },
-                        { q: "Tipos de Proyecto", a: "Aplicaciones web, automatización Python e integraciones IA." },
-                        { q: "Consulta", a: "Consultas iniciales gratuitas para evaluar requerimientos." },
-                        { q: "Colaboración", a: "Abierto a remoto, freelance o roles ML full-time." }
-                    ]
-                }
-            },
-            fr: {
-                nav: { home: "Accueil", about: "À Propos", projects: "Projets", skills: "Compétences", experience: "Expérience", contact: "Contact" },
-                hero: {
-                    badge: "Actuellement @ Codesy & La Vertueuse · Ouvert aux opportunités",
-                    greeting: "Bonjour, je suis",
-                    role: "AI & Machine Learning Engineer",
-                    location: "Vérone, Vénétie, Italie",
-                    bio: "Ingénieur IA spécialisé en machine learning, vision par ordinateur et automatisation. Expérimenté dans le développement d'applications Python et de solutions web. 5+ années d'expérience en programmation.",
-                    btn1: "Voir mes Projets", btn2: "Contactez-moi"
-                },
-                about: {
-                    title1: "Résumé Professionnel",
-                    p1: "Ingénieur IA axé sur le ML et l'automatisation. Actuellement, je développe des scripts Python chez Codesy et gère l'architecture web de La Vertueuse. J'ai également effectué un stage de recherche de 150h à l'Université de Vérone sur les CNNs et séries temporelles.",
-                    p2: "Titulaire d'un Master en IA et de certifications Google et AWS, je me concentre sur l'écriture d'un code propre, le traitement de données complexes et les services backend fiables.",
-                    title2: "Objectifs Professionnels",
-                    g1: "Recherche : Postes d'Ingénieur IA, Ingénieur ML ou Développeur Backend IA.",
-                    g2: "Domaines : Explainable AI (XAI), Vision par Ordinateur, Séries Temporelles et Python/FastAPI."
-                },
-                achievements: {
-                    title: "Réalisations Clés",
-                    a1: "Candidat MSc Intelligence Artificielle – Université de Vérone (2026)",
-                    a2: "Recherche de thèse en Explainable AI & Découverte Causale (PCMCI)",
-                    a3: "24+ Certifications (Google AI, Cybersécurité, AWS)",
-                    a4: "Stage Officiel de 150 Heures en Machine Learning",
-                    a5: "Projets Freelance divers en IA et Full-Stack"
-                },
-                skills: {
-                    title: "Compétences & Technologies", sub: "Technologies de base pour le développement IA, les données et le web.",
-                    comp: "Technologies Complémentaires",
-                    stats: ["Années de Prog.", "Projets", "Stage", "Certifications"],
-                    cats: ["IA / Machine Learning", "Ingénierie des Données", "Backend & Automatisation", "Cloud & MLOps", "Développement Frontend"]
-                },
-                projects: { title: "Projets & Recherche", sub: "Explorez mon portefeuille de plus de 12 projets en IA/ML et données." },
-                exp: {
-                    title: "Expérience Professionnelle",
-                    job1_title: "Développeur Freelance IA & Automatisation",
-                    job1_company: "Codesy",
-                    job1_date: "Mai 2024 - Présent",
-                    job1_desc: "Développement de scripts d'automatisation Python. Création d'API REST avec FastAPI et PostgreSQL. Traitement de datasets de 20 000+ enregistrements pour améliorer l'efficacité.",
-                    job_intern_title: "Stagiaire Machine Learning",
-                    job_intern_company: "Université de Vérone",
-                    job_intern_date: "Avr 2025 - Juin 2025",
-                    job_intern_desc: "Stage de 150 heures. Développement de modèles CNN avec TensorFlow (ResNet, VGG). Prétraitement d'images avec OpenCV. Classificateurs de séries temporelles (LSTM, GRU).",
-                    job4_title: "Développeur Web Fullstack",
-                    job4_company: "La Vertueuse",
-                    job4_date: "Janv 2026 - Présent",
-                    job4_desc: "Développement du portail administratif et du site e-commerce. Intégration de paiements (Stripe, SumUp) et backend PHP personnalisé.",
-                    job3_title: "Spécialiste Web",
-                    job3_company: "Freelance",
-                    job3_date: "Mars 2020 - Janv 2022",
-                    job3_desc: "Conception d'applications web HTML/CSS/JS, en mettant l'accent sur les exigences des clients et le responsive design."
-                },
-                cert: { title: "Licences et Certifications", sub: "Plus de 24 diplômes professionnels vérifiés." },
-                contact: {
-                    title: "Contactez-moi", sub: "Un projet en tête ? Discutons-en !",
-                    info: "Coordonnées", conn: "Réseaux", form: "Envoyez un Message",
-                    f_name: "Nom *", f_email: "Email *", f_sub: "Sujet *", f_msg: "Message *", f_btn: "Envoyer",
-                    faq: [
-                        { q: "Temps de Réponse", a: "Je réponds sous 24 à 48 heures ouvrables." },
-                        { q: "Types de Projets", a: "Applications web, automatisation Python et IA/ML." },
-                        { q: "Consultation", a: "Consultation gratuite pour discuter de vos besoins." },
-                        { q: "Collaboration", a: "Ouvert au télétravail, contrats freelance et postes ML." }
-                    ]
-                }
-            },
-            de: {
-                nav: { home: "Startseite", about: "Über mich", projects: "Projekte", skills: "Fähigkeiten", experience: "Erfahrung", contact: "Kontakt" },
-                hero: {
-                    badge: "Derzeit @ Codesy & La Vertueuse · Offen für Möglichkeiten",
-                    greeting: "Hallo, ich bin",
-                    role: "AI & Machine Learning Engineer",
-                    location: "Verona, Venetien, Italien",
-                    bio: "KI-Ingenieur mit Spezialisierung auf Machine Learning, Computer Vision und intelligente Automatisierung. Erfahrung in Python, Backend-Services und Web-Lösungen. 5+ Jahre Programmiererfahrung.",
-                    btn1: "Meine Arbeit", btn2: "Kontaktieren"
-                },
-                about: {
-                    title1: "Berufliches Profil",
-                    p1: "KI-Ingenieur mit Fokus auf ML und Automatisierung. Derzeit entwickle ich Python-KI-Skripte bei Codesy und verwalte die Webarchitektur von La Vertueuse. Zuvor absolvierte ich ein 150-stündiges Forschungspraktikum an der Universität Verona (CNNs & Zeitreihen).",
-                    p2: "Masterstudent in KI. Mit Zertifizierungen von Google und AWS konzentriere ich mich auf sauberen Code, die Verarbeitung komplexer Datensätze und zuverlässige Backends.",
-                    title2: "Berufliche Ziele",
-                    g1: "Suche: KI-Ingenieur, Machine Learning Engineer oder Backend AI Developer.",
-                    g2: "Fokus: Explainable AI (XAI), Computer Vision, Zeitreihen und Backend-Entwicklung (Python/FastAPI)."
-                },
-                achievements: {
-                    title: "Wichtigste Erfolge",
-                    a1: "MSc Artificial Intelligence – Universität Verona (Erwartet 2026)",
-                    a2: "Masterarbeit in Explainable AI & Kausalanalyse (PCMCI)",
-                    a3: "24+ Zertifizierungen (Google AI, Cybersecurity, AWS)",
-                    a4: "150-stündiges offizielles Machine Learning Praktikum",
-                    a5: "Erfolgreiche Freelance KI- & Full-Stack-Projekte"
-                },
-                skills: {
-                    title: "Fähigkeiten & Technologien", sub: "Kerntechnologien in KI-Entwicklung, Datenverarbeitung und Web.",
-                    comp: "Ergänzende Technologien",
-                    stats: ["Jahre Prog.", "Projekte", "Praktikum", "Zertifikate"],
-                    cats: ["KI / Machine Learning", "Data Engineering", "Backend & Automatisierung", "Cloud & MLOps", "Frontend-Entwicklung"]
-                },
-                projects: { title: "Projekte & Forschung", sub: "Entdecken Sie 12+ Projekte aus KI/ML und Datenarchitektur." },
-                exp: {
-                    title: "Berufserfahrung",
-                    job1_title: "Freelance KI & Automatisierungsentwickler",
-                    job1_company: "Codesy",
-                    job1_date: "Mai 2024 - Heute",
-                    job1_desc: "Entwicklung von Python-Automatisierungsskripten. Erstellung von REST-APIs mit FastAPI und PostgreSQL. Verarbeitung von Datensätzen mit 20.000+ Datensätzen.",
-                    job_intern_title: "Machine Learning Praktikant",
-                    job_intern_company: "Universität Verona",
-                    job_intern_date: "Apr 2025 - Jun 2025",
-                    job_intern_desc: "150-stündiges Praktikum. CNN-Modelle mit TensorFlow (ResNet, VGG). Bildverarbeitung mit OpenCV. Zeitreihenklassifikatoren (LSTM, GRU).",
-                    job4_title: "Fullstack Web Developer",
-                    job4_company: "La Vertueuse",
-                    job4_date: "Jan 2026 - Heute",
-                    job4_desc: "Entwicklung des Verwaltungsportals und E-Commerce. Integration von Zahlungen (Stripe, SumUp) und individuelles PHP-Backend.",
-                    job3_title: "Web-Spezialist",
-                    job3_company: "Freiberuflich",
-                    job3_date: "März 2020 - Jan 2022",
-                    job3_desc: "Design von Webanwendungen von Grund auf, HTML/CSS/JS mit Fokus auf Responsive Design."
-                },
-                cert: { title: "Zertifizierungen", sub: "24+ verifizierte Nachweise in KI und Cybersecurity." },
-                contact: {
-                    title: "Kontakt", sub: "Haben Sie ein Projekt im Sinn? Ich freue mich auf Ihre Nachricht!",
-                    info: "Kontaktinfo", conn: "Netzwerke", form: "Nachricht senden",
-                    f_name: "Name *", f_email: "Email *", f_sub: "Betreff *", f_msg: "Nachricht *", f_btn: "Senden",
-                    faq: [
-                        { q: "Antwortzeit", a: "Normalerweise innerhalb von 24-48 Stunden." },
-                        { q: "Projekttypen", a: "Full-Stack-Web, Python-Skripte und KI-Integration." },
-                        { q: "Beratung", a: "Kostenlose Erstberatung für Ihre Projektanforderungen." },
-                        { q: "Zusammenarbeit", a: "Offen für Remote-Arbeit und ML-Rollen." }
-                    ]
+                    title: "Get in Touch", sub: "Available for AI Engineering roles, freelance contracts, and research collaborations.",
+                    avail: "Availability", a1: "Open to Work", a2: "Based in Italy", a3: "Remote Worldwide", a4: "Relocation Available"
                 }
             }
         };
 
-        const Navbar = ({ lang, setLang, isDark, setIsDark }) => (
+        // --- COMPONENTS ---
+
+        const Navbar = ({ isDark, setIsDark }) => (
             <nav className="w-full py-4 px-6 border-b dark:border-slate-800/50 border-slate-200 dark:bg-darkBg/95 bg-white/95 backdrop-blur-md fixed top-0 z-50 transition-colors">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <a href="#" className="text-2xl font-bold tracking-tighter text-blue-600 dark:text-blue-500">Sagar<span className="text-purple-600 dark:text-purple-500">Lal</span></a>
                     
                     <div className="hidden lg:flex items-center gap-6 text-sm font-bold dark:text-slate-300 text-slate-600">
-                        <a href="#home" className="px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full transition-colors">{t[lang].nav.home}</a>
-                        <a href="#about" className="hover:text-blue-500 transition-colors">{t[lang].nav.about}</a>
-                        <a href="#skills" className="hover:text-blue-500 transition-colors">{t[lang].nav.skills}</a>
-                        <a href="#projects" className="hover:text-blue-500 transition-colors">{t[lang].nav.projects}</a>
-                        <a href="#experience" className="hover:text-blue-500 transition-colors">{t[lang].nav.experience}</a>
-                        <a href="#contact" className="hover:text-blue-500 transition-colors">{t[lang].nav.contact}</a>
+                        <a href="#home" className="hover:text-blue-500 transition-colors">{t.en.nav.home}</a>
+                        <a href="#about" className="hover:text-blue-500 transition-colors">{t.en.nav.about}</a>
+                        <a href="#experience" className="hover:text-blue-500 transition-colors">{t.en.nav.exp}</a>
+                        <a href="#projects" className="hover:text-blue-500 transition-colors">{t.en.nav.proj}</a>
+                        <a href="#skills" className="hover:text-blue-500 transition-colors">{t.en.nav.skills}</a>
+                        <a href="#certifications" className="hover:text-blue-500 transition-colors">{t.en.nav.certs}</a>
+                        <a href="#contact" className="hover:text-blue-500 transition-colors">{t.en.nav.contact}</a>
                     </div>
                     
-                    <div className="flex items-center gap-3">
-                        <button 
-                            onClick={() => setIsDark(!isDark)} 
-                            className="w-10 h-10 rounded-full flex items-center justify-center dark:bg-slate-800 bg-slate-100 dark:text-yellow-400 text-blue-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm"
-                            aria-label="Toggle Theme"
-                        >
-                            <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'} text-lg`}></i>
-                        </button>
-                        
-                        <div className="relative flex items-center dark:bg-darkCard bg-slate-100 border dark:border-slate-700 border-slate-300 rounded-full px-3 py-1.5 transition-colors shadow-sm">
-                            <i className="fas fa-globe dark:text-slate-400 text-slate-500 text-sm mr-2"></i>
-                            <select value={lang} onChange={(e) => setLang(e.target.value)} className="bg-transparent text-sm font-bold dark:text-slate-200 text-slate-800 outline-none cursor-pointer appearance-none pr-2">
-                                <option value="en" className="dark:bg-darkBg bg-white">English</option>
-                                <option value="it" className="dark:bg-darkBg bg-white">Italiano</option>
-                                <option value="es" className="dark:bg-darkBg bg-white">Español</option>
-                                <option value="fr" className="dark:bg-darkBg bg-white">Français</option>
-                                <option value="de" className="dark:bg-darkBg bg-white">Deutsch</option>
-                            </select>
-                        </div>
-                    </div>
+                    <button onClick={() => setIsDark(!isDark)} className="w-10 h-10 rounded-full flex items-center justify-center dark:bg-slate-800 bg-slate-100 dark:text-yellow-400 text-blue-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm">
+                        <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'} text-lg`}></i>
+                    </button>
                 </div>
             </nav>
         );
 
-        const Hero = ({ lang }) => (
+        const Hero = () => (
             <section id="home" className="pt-32 pb-16 px-6 max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
                     <div className="lg:col-span-8">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border dark:border-emerald-500/30 border-emerald-200 dark:bg-emerald-500/10 bg-emerald-50 text-emerald-700 dark:text-emerald-400 text-xs font-bold tracking-wide mb-6 shadow-sm">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span>{t[lang].hero.badge}</span>
-                        </div>
-                        
-                        <h1 className="text-5xl md:text-7xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-3">
-                            {t[lang].hero.greeting} <span className="gradient-text">Sagar Lal</span>
+                        <h1 className="text-5xl md:text-6xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">
+                            {t.en.hero.title}
                         </h1>
-                        <h2 className="text-xl md:text-2xl dark:text-slate-200 text-slate-700 font-bold mb-4">{t[lang].hero.role}</h2>
+                        <h2 className="text-xl md:text-2xl dark:text-blue-400 text-blue-600 font-bold mb-4">{t.en.hero.subtitle}</h2>
+                        <p className="text-sm md:text-base dark:text-slate-400 text-slate-500 mb-8 font-semibold tracking-wide uppercase">
+                            {t.en.hero.tags}
+                        </p>
                         
-                        <div className="flex flex-wrap items-center gap-4 mb-6">
-                            <span className="flex items-center gap-2 text-sm font-bold dark:text-slate-400 text-slate-600 bg-slate-200 dark:bg-slate-800 px-3 py-1.5 rounded-md">
-                                <i className="fas fa-map-marker-alt text-red-500"></i> {t[lang].hero.location}
-                            </span>
-                            <a href="https://github.com/sagar-ai-dev" target="_blank" className="flex items-center gap-2 text-sm font-bold dark:text-slate-300 text-white bg-slate-800 dark:bg-slate-700 px-3 py-1.5 rounded-md hover:opacity-80 transition-opacity">
-                                <i className="fab fa-github"></i> GitHub
+                        <div className="flex flex-wrap items-center gap-4 mb-10">
+                            <a href="#projects" className="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors flex items-center gap-2 shadow-md">
+                                {t.en.hero.btn_proj} <i className="fas fa-arrow-down"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" className="flex items-center gap-2 text-sm font-bold text-white bg-[#0a66c2] px-3 py-1.5 rounded-md hover:opacity-80 transition-opacity">
-                                <i className="fab fa-linkedin"></i> LinkedIn
+                            <a href="#" className="px-8 py-3.5 border-2 dark:border-slate-600 border-slate-300 dark:hover:bg-slate-800 hover:bg-slate-100 dark:text-white text-slate-800 font-bold rounded-lg transition-colors flex items-center gap-2">
+                                <i className="fas fa-file-pdf"></i> {t.en.hero.btn_res}
                             </a>
-                            <a href="mailto:Sagarrangwani1@gmail.com" className="flex items-center gap-2 text-sm font-bold text-white bg-blue-500 px-3 py-1.5 rounded-md hover:opacity-80 transition-opacity">
-                                <i className="fas fa-envelope"></i> Email
+                            <a href="https://github.com/sagar-ai-dev" target="_blank" className="w-12 h-12 flex items-center justify-center rounded-lg border-2 dark:border-slate-600 border-slate-300 dark:hover:bg-slate-800 hover:bg-slate-100 dark:text-white text-slate-800 transition-colors">
+                                <i className="fab fa-github text-xl"></i>
                             </a>
-                        </div>
-
-                        <p className="dark:text-slate-300 text-slate-700 text-base md:text-lg leading-relaxed mb-8 max-w-3xl font-medium" dangerouslySetInnerHTML={{__html: t[lang].hero.bio}}></p>
-
-                        <div className="flex flex-wrap items-center gap-4">
-                            <a href="#projects" className="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors flex items-center gap-2 shadow-lg shadow-blue-500/30">
-                                {t[lang].hero.btn1} <i className="fas fa-arrow-right"></i>
-                            </a>
-                            <a href="#contact" className="px-8 py-3.5 border-2 dark:border-slate-600 border-slate-300 dark:hover:bg-slate-800 hover:bg-slate-100 dark:text-white text-slate-800 font-bold rounded-lg transition-colors">
-                                {t[lang].hero.btn2}
+                            <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" className="w-12 h-12 flex items-center justify-center rounded-lg border-2 border-[#0a66c2] text-[#0a66c2] hover:bg-[#0a66c2] hover:text-white transition-colors">
+                                <i className="fab fa-linkedin text-xl"></i>
                             </a>
                         </div>
                     </div>
                     
-                    <div className="lg:col-span-4 flex justify-center lg:justify-end">
-                        <div className="relative w-72 h-72 md:w-80 md:h-80">
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 p-2 shadow-2xl">
-                                <div className="w-full h-full rounded-full dark:bg-darkBg bg-white p-1 overflow-hidden transition-colors">
+                    <div className="lg:col-span-4 flex flex-col items-center">
+                        <div className="relative w-64 h-64 md:w-72 md:h-72 mb-8">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 p-1.5 shadow-2xl">
+                                <div className="w-full h-full rounded-full dark:bg-darkBg bg-white p-1 overflow-hidden">
                                     <img src="profile.jpg" alt="Sagar Lal" className="w-full h-full object-cover rounded-full" style={{ objectPosition: 'center 20%', filter: 'contrast(1.05) saturate(1.1) brightness(1.02)' }} onError={(e) => {e.target.src='https://ui-avatars.com/api/?name=Sagar+Lal&size=512&background=1e293b&color=fff'}} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {/* Highly Credible Stats Banner */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div className="theme-card p-6 rounded-xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
+                        <h4 className="text-2xl font-black text-blue-500 mb-1">3+</h4>
+                        <p className="text-[11px] font-bold dark:text-slate-400 text-slate-500 uppercase">{t.en.hero.stats[0]}</p>
+                    </div>
+                    <div className="theme-card p-6 rounded-xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
+                        <h4 className="text-2xl font-black text-purple-500 mb-1">12+</h4>
+                        <p className="text-[11px] font-bold dark:text-slate-400 text-slate-500 uppercase">{t.en.hero.stats[1]}</p>
+                    </div>
+                    <div className="theme-card p-6 rounded-xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
+                        <h4 className="text-2xl font-black text-emerald-500 mb-1">24+</h4>
+                        <p className="text-[11px] font-bold dark:text-slate-400 text-slate-500 uppercase">{t.en.hero.stats[2]}</p>
+                    </div>
+                    <div className="theme-card p-6 rounded-xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
+                        <h4 className="text-2xl font-black text-orange-500 mb-1">MSc</h4>
+                        <p className="text-[11px] font-bold dark:text-slate-400 text-slate-500 uppercase">{t.en.hero.stats[3]}</p>
+                    </div>
+                </div>
             </section>
         );
 
-        const About = ({ lang }) => (
+        const About = () => (
             <section id="about" className="py-16 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
                 <div className="grid lg:grid-cols-12 gap-12">
-                    <div className="lg:col-span-7 space-y-6">
-                        <h2 className="text-3xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t[lang].about.title1}</h2>
-                        <p className="dark:text-slate-400 text-slate-700 leading-relaxed font-medium">{t[lang].about.p1}</p>
-                        <p className="dark:text-slate-400 text-slate-700 leading-relaxed font-medium">{t[lang].about.p2}</p>
+                    
+                    {/* Left Column: About Me & Goals */}
+                    <div className="lg:col-span-7 space-y-10">
+                        <div>
+                            <h2 className="text-3xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-5">{t.en.about.title}</h2>
+                            <p className="dark:text-slate-400 text-slate-700 leading-relaxed font-medium mb-4 text-sm md:text-base">{t.en.about.p1}</p>
+                            <p className="dark:text-slate-400 text-slate-700 leading-relaxed font-medium text-sm md:text-base">{t.en.about.p2}</p>
+                        </div>
                         
-                        <h2 className="text-2xl font-extrabold dark:text-white text-slate-900 tracking-tight mt-10 mb-4">{t[lang].about.title2}</h2>
-                        <ul className="space-y-4 font-medium dark:text-slate-400 text-slate-700">
-                            <li className="flex items-start gap-3"><i className="fas fa-bullseye text-blue-500 mt-1"></i> <span>{t[lang].about.g1}</span></li>
-                            <li className="flex items-start gap-3"><i className="fas fa-rocket text-purple-500 mt-1"></i> <span>{t[lang].about.g2}</span></li>
-                        </ul>
+                        <div>
+                            <h2 className="text-2xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-5">{t.en.about.career}</h2>
+                            <div className="flex flex-wrap gap-3 mb-4">
+                                {t.en.about.c_items.map(item => (
+                                    <span key={item} className="px-3 py-1.5 dark:bg-blue-900/20 bg-blue-50 border dark:border-blue-800 border-blue-200 dark:text-blue-400 text-blue-700 rounded-lg text-xs font-bold">{item}</span>
+                                ))}
+                            </div>
+                            <p className="dark:text-slate-400 text-slate-700 font-medium text-sm"><strong className="dark:text-slate-300 text-slate-800">Technical Focus:</strong> {t.en.about.g2.split(':')[1]}</p>
+                        </div>
+                        
+                        {/* Education Section Integrated into About */}
+                        <div className="border-t dark:border-slate-800/50 border-slate-200 pt-8">
+                            <h2 className="text-2xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-6">{t.en.edu.title}</h2>
+                            <div className="space-y-6">
+                                <div>
+                                    <h3 className="text-lg font-bold dark:text-white text-slate-900">{t.en.edu.msc_title}</h3>
+                                    <p className="text-blue-500 font-bold text-sm">{t.en.edu.msc_uni}</p>
+                                    <p className="text-xs dark:text-slate-500 text-slate-400 font-bold mb-2">{t.en.edu.msc_date}</p>
+                                    <p className="text-sm dark:text-slate-400 text-slate-600 font-medium">{t.en.edu.msc_course}</p>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold dark:text-white text-slate-900">{t.en.edu.bsc_title}</h3>
+                                    <p className="text-purple-500 font-bold text-sm">{t.en.edu.bsc_uni}</p>
+                                    <p className="text-xs dark:text-slate-500 text-slate-400 font-bold mb-2">{t.en.edu.bsc_date}</p>
+                                    <p className="text-sm dark:text-slate-400 text-slate-600 font-medium">{t.en.edu.bsc_course}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div className="lg:col-span-5">
-                        <div className="theme-card p-8 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-t-4 dark:border-t-blue-500 border-t-blue-500">
-                            <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-6">{t[lang].achievements.title}</h3>
+                    {/* Right Column: What I Do & Achievements */}
+                    <div className="lg:col-span-5 space-y-8">
+                        
+                        {/* What I Do */}
+                        <div className="theme-card p-8 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-t-4 border-t-blue-500">
+                            <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-6">{t.en.about.what_i_do}</h3>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="flex items-center gap-3"><div className="w-10 h-10 rounded-lg dark:bg-slate-800 bg-slate-100 flex items-center justify-center text-blue-500"><i className="fas fa-robot"></i></div><span className="text-sm font-bold dark:text-slate-300 text-slate-700">AI Dev</span></div>
+                                <div className="flex items-center gap-3"><div className="w-10 h-10 rounded-lg dark:bg-slate-800 bg-slate-100 flex items-center justify-center text-purple-500"><i className="fas fa-brain"></i></div><span className="text-sm font-bold dark:text-slate-300 text-slate-700">Machine Learning</span></div>
+                                <div className="flex items-center gap-3"><div className="w-10 h-10 rounded-lg dark:bg-slate-800 bg-slate-100 flex items-center justify-center text-emerald-500"><i className="fas fa-server"></i></div><span className="text-sm font-bold dark:text-slate-300 text-slate-700">Backend APIs</span></div>
+                                <div className="flex items-center gap-3"><div className="w-10 h-10 rounded-lg dark:bg-slate-800 bg-slate-100 flex items-center justify-center text-orange-500"><i className="fas fa-database"></i></div><span className="text-sm font-bold dark:text-slate-300 text-slate-700">Data Engineering</span></div>
+                                <div className="flex items-center gap-3 col-span-2"><div className="w-10 h-10 rounded-lg dark:bg-slate-800 bg-slate-100 flex items-center justify-center text-pink-500"><i className="fas fa-layer-group"></i></div><span className="text-sm font-bold dark:text-slate-300 text-slate-700">Full Stack Architectures</span></div>
+                            </div>
+                        </div>
+
+                        {/* Key Achievements */}
+                        <div className="theme-card p-8 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-t-4 border-t-purple-500">
+                            <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-6">{t.en.about.achievements}</h3>
                             <ul className="space-y-4 text-sm dark:text-slate-400 text-slate-600 font-medium">
-                                <li className="flex items-start gap-3"><i className="fas fa-graduation-cap text-blue-500 mt-1"></i> <span>{t[lang].achievements.a1}</span></li>
-                                <li className="flex items-start gap-3"><i className="fas fa-microscope text-purple-500 mt-1"></i> <span>{t[lang].achievements.a2}</span></li>
-                                <li className="flex items-start gap-3"><i className="fas fa-certificate text-emerald-500 mt-1"></i> <span>{t[lang].achievements.a3}</span></li>
-                                <li className="flex items-start gap-3"><i className="fas fa-building text-orange-500 mt-1"></i> <span>{t[lang].achievements.a4}</span></li>
-                                <li className="flex items-start gap-3"><i className="fas fa-laptop-code text-pink-500 mt-1"></i> <span>{t[lang].achievements.a5}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-graduation-cap text-blue-500 mt-1"></i> <span>{t.en.about.a_items[0]}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-book-open text-purple-500 mt-1"></i> <span>{t.en.about.a_items[1]}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-certificate text-emerald-500 mt-1"></i> <span>{t.en.about.a_items[2]}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-building text-orange-500 mt-1"></i> <span>{t.en.about.a_items[3]}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-laptop-code text-pink-500 mt-1"></i> <span>{t.en.about.a_items[4]}</span></li>
                             </ul>
                         </div>
                     </div>
@@ -523,164 +314,188 @@
             </section>
         );
 
-        const Skills = ({ lang }) => {
-            const skillCategories = [
-                {
-                    title: t[lang].skills.cats[0], icon: "fa-brain", color: "purple",
-                    items: [ {name: "PyTorch & TensorFlow", y: "3"}, {name: "Computer Vision (OpenCV)", y: "3"}, {name: "Explainable AI (XAI)", y: "2"}, {name: "PCMCI & Causal Disc.", y: "2"} ]
-                },
-                {
-                    title: t[lang].skills.cats[1], icon: "fa-database", color: "emerald",
-                    items: [ {name: "Python", y: "5"}, {name: "Pandas & NumPy", y: "4"}, {name: "SQL & PostgreSQL", y: "4"}, {name: "Vector Databases", y: "1"} ]
-                },
-                {
-                    title: t[lang].skills.cats[2], icon: "fa-server", color: "pink",
-                    items: [ {name: "FastAPI / Flask", y: "2"}, {name: "RESTful APIs", y: "3"}, {name: "Workflow Automation", y: "3"}, {name: "Custom PHP", y: "2"} ]
-                },
-                {
-                    title: t[lang].skills.cats[3], icon: "fa-cloud", color: "orange",
-                    items: [ {name: "Git & GitHub", y: "5"}, {name: "Docker", y: "2"}, {name: "CI/CD Pipelines", y: "2"}, {name: "Azure / AWS", y: "1"} ]
-                },
-                {
-                    title: t[lang].skills.cats[4], icon: "fa-layer-group", color: "blue",
-                    items: [ {name: "React & Next.js", y: "3"}, {name: "JavaScript / TS", y: "4"}, {name: "Tailwind & Bootstrap", y: "4"}, {name: "Responsive UI", y: "4"} ]
-                }
-            ];
-
-            const complementary = [
-                "C++", "scikit-learn", "Transformers", "NLP", "Sentiment Analysis", "CNNs (ResNet, VGG)", "Grad-CAM", "Saliency Maps",
-                "EDA", "Matplotlib", "Data Cleaning", "MFA", "OAuth2", "WebSockets", "Stripe API", "SumUp API",
-                "Azure OpenAI", "Linux", "WordPress"
+        const Experience = () => {
+            const jobs = [
+                { id: "job1", color: "purple" },
+                { id: "job2", color: "blue" },
+                { id: "job3", color: "pink" },
+                { id: "job4", color: "orange" }
             ];
 
             return (
-                <section id="skills" className="py-16 px-6 max-w-[90rem] mx-auto border-t dark:border-slate-800/50 border-slate-200">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t[lang].skills.title}</h2>
-                        <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t[lang].skills.sub}</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
-                        {skillCategories.map((cat, i) => (
-                            <div key={i} className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm flex flex-col">
-                                <div className="flex items-center gap-3 mb-8">
-                                    <i className={`fas ${cat.icon} text-${cat.color}-500 text-2xl drop-shadow-md`}></i>
-                                    <h3 className={`text-xl font-black text-${cat.color}-500`}>{cat.title}</h3>
-                                </div>
-                                <div className="space-y-6 flex-grow">
-                                    {cat.items.map((skill, j) => {
-                                        const pct = Math.min((parseInt(skill.y) / 5) * 100, 100);
-                                        return (
-                                            <div key={j}>
-                                                <div className="flex justify-between items-end mb-2">
-                                                    <span className="dark:text-slate-100 text-slate-900 font-bold text-sm">{skill.name}</span>
-                                                    <div className="text-right">
-                                                        <span className={`text-${cat.color}-500 font-black text-lg leading-none`}>{skill.y}</span>
-                                                        <span className="dark:text-slate-500 text-slate-400 text-[10px] ml-1">yrs</span>
-                                                    </div>
-                                                </div>
-                                                <div className="w-full dark:bg-slate-800 bg-slate-200 rounded-full h-1.5">
-                                                    <div className={`bg-${cat.color}-500 h-1.5 rounded-full`} style={{width: `${pct}%`}}></div>
-                                                </div>
+                <section id="experience" className="py-16 px-6 max-w-5xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
+                    <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-12 text-center">{t.en.exp.title}</h2>
+                    
+                    <div className="relative border-l-2 dark:border-slate-700 border-slate-200 ml-4 md:ml-0 space-y-12">
+                        {jobs.map(job => {
+                            const data = t.en.exp[job.id];
+                            return (
+                                <div key={job.id} className="relative pl-8 md:pl-10">
+                                    {/* Timeline Dot */}
+                                    <div className={`absolute w-6 h-6 rounded-full bg-${job.color}-500 border-4 dark:border-darkBg border-white -left-[13px] top-1`}></div>
+                                    
+                                    <div className="theme-card rounded-2xl p-6 md:p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm">
+                                        <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 border-b dark:border-slate-700/50 border-slate-200 pb-4">
+                                            <div>
+                                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{data.title}</h3>
+                                                <p className={`text-${job.color}-500 font-bold text-lg`}>{data.comp}</p>
+                                                <p className="text-xs font-bold dark:text-slate-400 text-slate-500 mt-1"><i className="fas fa-map-marker-alt"></i> {data.loc}</p>
                                             </div>
-                                        );
-                                    })}
+                                            <span className="text-xs font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-3 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-lg border dark:border-slate-700 border-slate-200 uppercase tracking-wide">{data.date}</span>
+                                        </div>
+                                        
+                                        <p className="text-sm dark:text-slate-300 text-slate-800 font-semibold mb-4 italic">{data.resp}</p>
+                                        
+                                        <h4 className="text-xs font-bold dark:text-slate-500 text-slate-400 uppercase tracking-wider mb-2">Key Achievements</h4>
+                                        <ul className="space-y-2 dark:text-slate-400 text-slate-600 text-sm font-medium mb-6">
+                                            {data.achieve.map((item, i) => (
+                                                <li key={i} className="flex items-start gap-2"><i className={`fas fa-check text-${job.color}-500 mt-1 text-[10px]`}></i> <span>{item}</span></li>
+                                            ))}
+                                        </ul>
+                                        
+                                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
+                                            {data.tech.map(tech => (
+                                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-[10px] font-bold uppercase">{tech}</span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="text-center mb-16">
-                        <h3 className="text-xl font-bold dark:text-white text-slate-900 mb-8">{t[lang].skills.comp}</h3>
-                        <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
-                            {complementary.map((tech, i) => (
-                                <span key={i} className="px-4 py-1.5 dark:bg-slate-800/80 bg-slate-100 border dark:border-slate-700 border-slate-300 dark:text-slate-300 text-slate-700 text-xs font-bold rounded-lg shadow-sm hover:scale-105 transition-transform cursor-default">
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                        <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">5+</h4>
-                            <p className="dark:text-slate-400 text-slate-500 text-xs font-bold uppercase tracking-wider">{t[lang].skills.stats[0]}</p>
-                        </div>
-                        <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">12+</h4>
-                            <p className="dark:text-slate-400 text-slate-500 text-xs font-bold uppercase tracking-wider">{t[lang].skills.stats[1]}</p>
-                        </div>
-                        <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">150<span className="text-lg">h</span></h4>
-                            <p className="dark:text-slate-400 text-slate-500 text-xs font-bold uppercase tracking-wider">{t[lang].skills.stats[2]}</p>
-                        </div>
-                        <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">24+</h4>
-                            <p className="dark:text-slate-400 text-slate-500 text-xs font-bold uppercase tracking-wider">{t[lang].skills.stats[3]}</p>
-                        </div>
+                            );
+                        })}
                     </div>
                 </section>
             );
         };
 
-        const Projects = ({ lang }) => {
+        const Projects = () => {
             const projectData = [
-                { id: 1, title: "Explainable Causal Anomaly Detection", desc: "Master's thesis research. Developed an automated pipeline to identify root causes in complex datasets using PCMCI and feature attribution.", link: "causal_anomaly_detection", tags: ["</> Thesis", "AI/ML"], status: "Academic", tools: ["Python", "TensorFlow", "XAI Methods"], metrics: [{l: "Role", v: "Sole Dev"}, {l: "Focus", v: "Causality"}, {l: "Type", v: "Research"}] },
-                { id: 2, title: "Medical Imaging Continual Learning", desc: "Built a continual learning pipeline for medical imaging using knowledge distillation algorithms to train a MobileNetV3 student model.", link: "Medical-Imaging-Continual-Learning-Pipeline", tags: ["</> Research", "AI/ML"], status: "Completed", tools: ["Python", "PyTorch", "MobileNetV3"], metrics: [{l: "Role", v: "Developer"}, {l: "Task", v: "Imaging"}, {l: "Model", v: "CNN"}] },
-                { id: 3, title: "Financial Time-Series Analysis", desc: "Machine learning architecture that ingests and analyzes stock market data using time-series foundation models for trend prediction.", link: "Machine_learning_Stock_data_ana", tags: ["</> Analytics", "Data"], status: "Completed", tools: ["Python", "Pandas", "Scikit-learn"], metrics: [{l: "Data", v: "Financial"}, {l: "Type", v: "Predictive"}, {l: "Scale", v: "Large"}] },
-                { id: 4, title: "Computer Vision Models", desc: "Developed 2D and 3D computer vision models using deep learning, OpenCV transformations, edge detection, and SIFT feature extraction.", link: "CV_Project", tags: ["</> Open Source", "Vision"], status: "Completed", tools: ["OpenCV", "Deep Learning", "PIL"], metrics: [{l: "Dims", v: "2D/3D"}, {l: "Features", v: "SIFT"}, {l: "Task", v: "Detect."}] },
-                { id: 5, title: "NLP & Sentiment Analysis", desc: "Implemented NLP solutions involving text preprocessing, tokenization, and sentiment analysis utilizing transformer architectures.", link: "NLP_assignment2", tags: ["</> Academic", "NLP"], status: "Completed", tools: ["Transformers", "Tokenization"], metrics: [{l: "Analysis", v: "Sent."}, {l: "Arch", v: "Transf."}, {l: "Scope", v: "Academic"}] },
-                { id: 6, title: "Knowledge Representation & Logic", desc: "Implemented modal logic reasoning algorithms and knowledge representation models for university coursework.", link: "-Knowledge_Representation_Project", tags: ["</> Academic", "Logic"], status: "Completed", tools: ["Automated Reasoning", "Algorithms"], metrics: [{l: "Frameworks", v: "Logic"}, {l: "Type", v: "Agentic"}, {l: "Scope", v: "Academic"}] },
-                { id: 7, title: "Deep Learning Foundation Models", desc: "Built and evaluated advanced deep learning models focusing on foundational time-series architectures.", link: "DL_Project_Time-series_Foundation_Models", tags: ["</> Research", "Deep Learning"], status: "Completed", tools: ["Python", "Deep Learning"], metrics: [{l: "Models", v: "Found."}, {l: "Task", v: "Eval."}, {l: "Focus", v: "Temporal"}] },
-                { id: 8, title: "Interactive React Application", desc: "Modern frontend web application built from the ground up using React and JavaScript, focusing on responsive UI/UX.", link: "project_react", tags: ["</> Side Project", "Frontend"], status: "Completed", tools: ["React", "JavaScript", "CSS"], metrics: [{l: "Tech", v: "React"}, {l: "Type", v: "SPA"}, {l: "UI", v: "Resp."}] },
-                { id: 9, title: "Secure Database Management System", desc: "Designed and implemented a secure relational database architecture to handle data tracking.", link: "Data-base-system", tags: ["</> Infrastructure", "Backend"], status: "Completed", tools: ["SQL", "DB Design", "Security"], metrics: [{l: "Arch", v: "Relational"}, {l: "Focus", v: "Secure"}, {l: "Type", v: "DBMS"}] },
-                { id: 10, title: "Automated QR Attendance System", desc: "Engineered an automated attendance tracking application utilizing QR code generation and image scanning algorithms.", link: "ATTENDANCE-QR-CODE", tags: ["</> Tool", "Automation"], status: "Completed", tools: ["Python", "Algorithms", "OpenCV"], metrics: [{l: "Input", v: "QR"}, {l: "Type", v: "Tool"}, {l: "Scope", v: "Side Proj."}] },
-                { id: 11, title: "Blood Bank Management Platform", desc: "Full-stack application architecture developed to safely and efficiently manage blood bank inventory and donor records.", link: "-Bloodbank-Application", tags: ["</> Full Stack", "Web"], status: "Completed", tools: ["Web Dev", "Backend", "UI/UX"], metrics: [{l: "Focus", v: "Health"}, {l: "Scale", v: "Med"}, {l: "Users", v: "Multi"}] },
-                { id: 12, title: "WordPress E-Commerce Platform", desc: "Built responsive platform integrating Stripe, SumUp, countdown timers, custom PHP, and performance optimization.", link: "wordpress-blog-site", tags: ["</> Client", "CMS"], status: "Completed", tools: ["PHP", "WordPress", "Stripe API"], metrics: [{l: "Stack", v: "LAMP"}, {l: "Feat.", v: "Custom"}, {l: "Type", v: "CMS"}] }
+                { 
+                    id: 1, title: "Master's Thesis: Explainable Causal Discovery", link: "causal_anomaly_detection", 
+                    role: "Lead Researcher", duration: "6 Months", 
+                    desc: "Implemented modal logic reasoning algorithms and knowledge representation models. Engineered an automated pipeline to identify root causes in complex datasets using PCMCI and feature attribution.", 
+                    tags: ["</> Thesis", "XAI"], 
+                    tools: ["Python", "TensorFlow", "Causal Inference", "PCMCI"], 
+                    achievements: [
+                        "Analyzed multi-dimensional anomaly datasets.",
+                        "Integrated Saliency Maps for black-box transparency.",
+                        "Presented findings to University of Verona faculty."
+                    ]
+                },
+                { 
+                    id: 2, title: "Medical Imaging Continual Learning", link: "Medical-Imaging-Continual-Learning-Pipeline", 
+                    role: "AI Developer", duration: "Academic", 
+                    desc: "Cross-domain continual learning pipeline for medical imaging using knowledge distillation algorithms to train a MobileNetV3 student model without catastrophic forgetting.", 
+                    tags: ["</> Research", "Computer Vision"], 
+                    tools: ["PyTorch", "MobileNetV3", "Python", "Data Augmentation"], 
+                    achievements: [
+                        "Automated adaptation to new medical data domains.",
+                        "Drastically reduced manual retraining overhead.",
+                        "Preserved accuracy on older diagnostic datasets."
+                    ]
+                },
+                { 
+                    id: 3, title: "Financial Time-Series Architecture", link: "Machine_learning_Stock_data_ana", 
+                    role: "Backend AI Dev", duration: "Personal Project", 
+                    desc: "Machine learning architecture that ingests and analyzes stock market data using time-series foundation models for automated trend prediction.", 
+                    tags: ["</> Analytics", "Data"], 
+                    tools: ["Python", "Pandas", "Scikit-Learn", "APIs"], 
+                    achievements: [
+                        "Built a pipeline processing 10,000+ financial records.",
+                        "Automated complex technical analysis extraction.",
+                        "Deployed predictive models for trend forecasting."
+                    ]
+                },
+                { 
+                    id: 4, title: "Advanced Computer Vision Pipelines", link: "CV_Project", 
+                    role: "Developer", duration: "Academic", 
+                    desc: "Developed 2D and 3D computer vision models utilizing deep learning techniques. Applied transformations, edge detection, and SIFT feature extraction.", 
+                    tags: ["</> Open Source", "Vision"], 
+                    tools: ["OpenCV", "CNNs", "PIL", "Python"], 
+                    achievements: [
+                        "Implemented robust object detection pipelines.",
+                        "Optimized image preprocessing workflows.",
+                        "Evaluated spatial hierarchies in image data."
+                    ]
+                },
+                { 
+                    id: 5, title: "NLP & Sentiment Analysis System", link: "NLP_assignment2", 
+                    role: "Developer", duration: "Academic", 
+                    desc: "Engineered NLP solutions involving complex text preprocessing, tokenization, embeddings, and sentiment analysis utilizing modern transformer-based architectures.", 
+                    tags: ["</> Academic", "NLP"], 
+                    tools: ["Transformers", "Tokenization", "Python", "NLTK"], 
+                    achievements: [
+                        "Processed unstructured text corpuses.",
+                        "Implemented sentiment classification algorithms.",
+                        "Evaluated transformer model outputs."
+                    ]
+                },
+                { 
+                    id: 6, title: "Secure Database Management API", link: "Data-base-system", 
+                    role: "Backend Dev", duration: "Side Project", 
+                    desc: "Designed and implemented a secure relational database architecture to handle robust data tracking and user management via REST APIs.", 
+                    tags: ["</> Backend", "Infrastructure"], 
+                    tools: ["SQL", "FastAPI", "Python", "DB Design"], 
+                    achievements: [
+                        "Architected normalized relational schemas.",
+                        "Built secure CRUD operations.",
+                        "Optimized query response times."
+                    ]
+                }
             ];
 
             return (
                 <section id="projects" className="py-16 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t[lang].projects.title}</h2>
-                        <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t[lang].projects.sub}</p>
+                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t.en.projects.title}</h2>
+                        <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t.en.projects.sub}</p>
                     </div>
                     
-                    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                        {projectData.map(p => (
-                            <div key={p.id} className="theme-card rounded-2xl p-6 flex flex-col h-full relative dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm hover:shadow-md">
-                                <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-xl font-bold dark:text-white text-slate-900 leading-tight pr-4">{p.title}</h3>
-                                    {p.id === 1 && <span className="px-2 py-1 bg-purple-600 text-white rounded text-[10px] font-bold tracking-wide shadow-sm flex-shrink-0">Featured</span>}
-                                </div>
-                                <p className="text-sm dark:text-slate-400 text-slate-600 leading-relaxed mb-5 flex-grow font-medium">{p.desc}</p>
+                    <div className="grid lg:grid-cols-2 gap-8">
+                        {projectData.map((p, idx) => (
+                            <div key={p.id} className={`theme-card rounded-2xl flex flex-col h-full overflow-hidden dark:bg-darkCard bg-lightCard border ${idx === 0 ? 'dark:border-purple-500 border-purple-500 shadow-lg' : 'dark:border-slate-800 border-slate-200 shadow-sm'}`}>
                                 
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {p.tags.map(tag => (
-                                        <span key={tag} className="px-2.5 py-1 dark:bg-slate-800/80 bg-slate-100 border dark:border-slate-700 border-slate-200 dark:text-blue-400 text-blue-700 rounded text-[10px] font-bold">{tag}</span>
-                                    ))}
-                                    <span className="px-2.5 py-1 rounded text-[10px] font-bold dark:bg-slate-800 bg-slate-100 dark:text-slate-300 text-slate-700 border dark:border-slate-700 border-slate-200">{p.status}</span>
+                                {/* Case Study Image Placeholder */}
+                                <div className="h-48 w-full dark:bg-slate-800 bg-slate-200 flex flex-col items-center justify-center border-b dark:border-slate-700 border-slate-300">
+                                    <i className={`fas ${idx===0 ? 'fa-microscope text-purple-400' : 'fa-code text-blue-400'} text-4xl mb-2 opacity-50`}></i>
+                                    <span className="text-xs font-bold dark:text-slate-500 text-slate-400 uppercase tracking-widest">Project Repository</span>
                                 </div>
 
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {p.tools.map(tool => (
-                                        <span key={tool} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-600 rounded text-[11px] font-semibold">{tool}</span>
-                                    ))}
-                                </div>
+                                <div className="p-6 md:p-8 flex flex-col flex-grow">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <h3 className="text-2xl font-bold dark:text-white text-slate-900 leading-tight pr-4">{p.title}</h3>
+                                        {idx === 0 && <span className="px-3 py-1 bg-purple-600 text-white rounded text-[10px] font-bold tracking-widest uppercase shadow-sm flex-shrink-0">Featured</span>}
+                                    </div>
+                                    
+                                    <div className="flex items-center gap-4 mb-4 text-xs font-bold dark:text-slate-400 text-slate-500">
+                                        <span><i className="fas fa-user-tag"></i> {p.role}</span>
+                                        <span><i className="fas fa-clock"></i> {p.duration}</span>
+                                    </div>
 
-                                <div className="grid grid-cols-3 gap-2 mb-6 border-t dark:border-slate-700/50 border-slate-200 pt-5">
-                                    {p.metrics.map((m, i) => (
-                                        <div key={i} className="flex flex-col">
-                                            <span className="dark:text-slate-500 text-slate-400 text-[10px] uppercase tracking-wider font-bold mb-1">{m.l}</span>
-                                            <span className="dark:text-slate-300 text-slate-700 text-sm font-black">{m.v}</span>
+                                    <p className="text-sm dark:text-slate-300 text-slate-700 leading-relaxed mb-6 font-medium">{p.desc}</p>
+                                    
+                                    <h4 className="text-xs font-bold dark:text-slate-500 text-slate-400 uppercase tracking-wider mb-2">Technical Decisions</h4>
+                                    <ul className="space-y-2 dark:text-slate-400 text-slate-600 text-sm font-medium mb-6 flex-grow">
+                                        {p.achievements.map((item, i) => (
+                                            <li key={i} className="flex items-start gap-2"><i className="fas fa-angle-right text-blue-500 mt-1 text-[10px]"></i> <span>{item}</span></li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="flex flex-wrap gap-2 mb-6">
+                                        {p.tools.map(tool => (
+                                            <span key={tool} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-600 rounded text-[11px] font-bold">{tool}</span>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-auto pt-6 border-t dark:border-slate-700/50 border-slate-200 flex justify-between items-center">
+                                        <a href={`https://github.com/sagar-ai-dev/${p.link}`} target="_blank" className="px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded hover:bg-slate-700 transition-colors flex items-center gap-2">
+                                            <i className="fab fa-github"></i> View GitHub
+                                        </a>
+                                        <div className="flex gap-2">
+                                            {p.tags.map(tag => (
+                                                <span key={tag} className="px-2 py-1 dark:bg-slate-800/80 bg-slate-100 dark:text-blue-400 text-blue-700 rounded text-[10px] font-bold">{tag}</span>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-
-                                <div className="mt-auto pt-4 border-t dark:border-slate-800 border-slate-200">
-                                    <a href={`https://github.com/sagar-ai-dev/${p.link}`} target="_blank" className="text-sm font-bold dark:text-blue-400 text-blue-600 hover:text-blue-500 transition-colors flex items-center gap-1">
-                                        View Source Code &rarr;
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -689,144 +504,119 @@
             );
         };
 
-        const Experience = ({ lang }) => (
-            <section id="experience" className="py-16 px-6 max-w-5xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
-                <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-10 text-center">{t[lang].exp.title}</h2>
-                <div className="space-y-8">
-                    
-                    <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-blue-500">
-                        <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
-                            <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job1_title}</h3>
-                                <p className="text-blue-500 font-bold text-lg">{t[lang].exp.job1_company}</p>
-                                <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> Remote / Freelance</p>
-                            </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job1_date}</span>
-                        </div>
-                        <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>{t[lang].exp.job1_desc}</li>
-                        </ul>
-                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
-                            {["Python", "FastAPI", "PostgreSQL", "Data Analytics"].map(tech => (
-                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
-                            ))}
-                        </div>
+        const Skills = () => {
+            const skillCategories = [
+                {
+                    title: "AI / Machine Learning", icon: "fa-brain", color: "purple",
+                    items: [ {name: "Python (Data/ML)", level: "Expert", pct: 95}, {name: "PyTorch & TensorFlow", level: "Advanced", pct: 85}, {name: "Computer Vision (OpenCV)", level: "Advanced", pct: 80}, {name: "Explainable AI (XAI)", level: "Intermediate", pct: 60} ]
+                },
+                {
+                    title: "Backend & Data Engineering", icon: "fa-server", color: "emerald",
+                    items: [ {name: "SQL & PostgreSQL", level: "Advanced", pct: 85}, {name: "FastAPI / Flask", level: "Advanced", pct: 80}, {name: "Pandas & NumPy", level: "Advanced", pct: 85}, {name: "Custom PHP", level: "Intermediate", pct: 65} ]
+                },
+                {
+                    title: "Fullstack Web & Tools", icon: "fa-layer-group", color: "blue",
+                    items: [ {name: "JavaScript / TypeScript", level: "Advanced", pct: 80}, {name: "React & HTML/CSS", level: "Advanced", pct: 85}, {name: "Git, GitHub & CI/CD", level: "Advanced", pct: 85}, {name: "Docker", level: "Intermediate", pct: 60} ]
+                }
+            ];
+
+            return (
+                <section id="skills" className="py-16 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t.en.skills.title}</h2>
+                        <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t.en.skills.sub}</p>
                     </div>
 
-                    <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-purple-500">
-                        <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
-                            <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job_intern_title}</h3>
-                                <p className="text-purple-500 font-bold text-lg">{t[lang].exp.job_intern_company}</p>
-                                <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> Verona, Italy (On-site)</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {skillCategories.map((cat, i) => (
+                            <div key={i} className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm flex flex-col">
+                                <div className="flex items-center gap-3 mb-8">
+                                    <div className={`w-12 h-12 rounded-lg bg-${cat.color}-500/10 flex items-center justify-center border border-${cat.color}-500/20`}>
+                                        <i className={`fas ${cat.icon} text-${cat.color}-500 text-xl`}></i>
+                                    </div>
+                                    <h3 className={`text-xl font-bold dark:text-white text-slate-900`}>{cat.title}</h3>
+                                </div>
+                                <div className="space-y-6 flex-grow">
+                                    {cat.items.map((skill, j) => (
+                                        <div key={j}>
+                                            <div className="flex justify-between items-end mb-2">
+                                                <span className="dark:text-slate-200 text-slate-800 font-bold text-sm">{skill.name}</span>
+                                                <span className={`dark:text-${cat.color}-400 text-${cat.color}-600 font-bold text-xs uppercase tracking-wider`}>{skill.level}</span>
+                                            </div>
+                                            <div className="w-full dark:bg-slate-800 bg-slate-200 rounded-full h-2">
+                                                <div className={`bg-${cat.color}-500 h-2 rounded-full`} style={{width: `${skill.pct}%`}}></div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job_intern_date}</span>
-                        </div>
-                        <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>{t[lang].exp.job_intern_desc}</li>
-                        </ul>
-                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
-                            {["TensorFlow / Keras", "OpenCV", "LSTM & GRU", "CNNs (ResNet, VGG)"].map(tech => (
-                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
-                            ))}
-                        </div>
+                        ))}
                     </div>
+                </section>
+            );
+        };
 
-                    <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-pink-500">
-                        <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
-                            <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job4_title}</h3>
-                                <p className="text-pink-500 font-bold text-lg">{t[lang].exp.job4_company}</p>
-                                <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> France (Remote / Freelance)</p>
-                            </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job4_date}</span>
-                        </div>
-                        <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>{t[lang].exp.job4_desc}</li>
-                        </ul>
-                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
-                            {["Custom PHP", "Stripe API", "SumUp API", "UI/UX"].map(tech => (
-                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-orange-500">
-                        <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
-                            <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job3_title}</h3>
-                                <p className="text-orange-500 font-bold text-lg">{t[lang].exp.job3_company}</p>
-                            </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job3_date}</span>
-                        </div>
-                        <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>{t[lang].exp.job3_desc}</li>
-                        </ul>
-                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
-                            {["JavaScript", "HTML5/CSS3", "Bootstrap", "Responsive Web"].map(tech => (
-                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-        );
-
-        const Certifications = ({ lang }) => {
+        const Certifications = () => {
             const certs = [
-                { title: "Automate Cybersecurity Tasks with Python", issuer: "Google", date: "Dec 2024", icon: "fa-shield-alt", color: "blue" },
-                { title: "Sound the Alarm: Detection and Response", issuer: "Google", date: "Nov 2024", icon: "fa-bell", color: "red" },
-                { title: "Assets, Threats, and Vulnerabilities", issuer: "Google", date: "Nov 2024", icon: "fa-bug", color: "orange" },
-                { title: "Connect and Protect: Network Security", issuer: "Google", date: "Apr 2024", icon: "fa-network-wired", color: "cyan" },
-                { title: "Play It Safe: Manage Security Risks", issuer: "Google", date: "Apr 2024", icon: "fa-lock", color: "indigo" },
-                { title: "Foundations of Cybersecurity", issuer: "Google", date: "Apr 2024", icon: "fa-shield-check", color: "blue" },
-                { title: "Tools of the Trade: Linux and SQL", issuer: "Google", date: "May 2024", icon: "fa-terminal", color: "emerald" },
-                { title: "Data Analytics and Business Intelligence", issuer: "DigiSkills.pk", date: "Mar 2024", icon: "fa-chart-bar", color: "yellow" },
-                { title: "Communication and Soft Skills", issuer: "DigiSkills.pk", date: "Mar 2024", icon: "fa-comments", color: "pink" },
-                { title: "CPR and Basic Life Support (BLSD)", issuer: "University of Verona", date: "May 2025", icon: "fa-heartbeat", color: "rose" }
+                { title: "Automate Cybersecurity Tasks with Python", issuer: "Google", icon: "fa-shield-alt", color: "blue" },
+                { title: "Sound the Alarm: Detection and Response", issuer: "Google", icon: "fa-bell", color: "red" },
+                { title: "Assets, Threats, and Vulnerabilities", issuer: "Google", icon: "fa-bug", color: "orange" },
+                { title: "Tools of the Trade: Linux and SQL", issuer: "Google", icon: "fa-terminal", color: "emerald" },
+                { title: "Data Analytics and Business Intelligence", issuer: "DigiSkills.pk", icon: "fa-chart-bar", color: "yellow" },
+                { title: "Foundations of Cybersecurity", issuer: "Google", icon: "fa-lock", color: "indigo" }
             ];
 
             return (
                 <section id="certifications" className="py-16 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t[lang].cert.title}</h2>
-                        <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t[lang].cert.sub}</p>
+                        <h2 className="text-3xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t.en.cert.title}</h2>
+                        <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t.en.cert.sub}</p>
                     </div>
                     
-                    <div className="flex overflow-x-auto gap-6 pb-8 cert-scroll snap-x">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                         {certs.map((cert, index) => (
-                            <div key={index} className="theme-card rounded-2xl p-6 min-w-[300px] max-w-[300px] flex-shrink-0 snap-start flex flex-col dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-lg bg-slate-500/10 flex items-center justify-center border border-slate-500/20 flex-shrink-0">
-                                        <i className={`fas ${cert.icon} text-blue-500 text-xl`}></i>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-sm font-bold dark:text-white text-slate-900 line-clamp-2 leading-snug">{cert.title}</h3>
-                                        <p className="dark:text-slate-400 text-slate-500 text-xs mt-1 font-bold">{cert.issuer}</p>
-                                    </div>
+                            <div key={index} className="theme-card rounded-xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm flex items-center gap-4">
+                                <div className={`w-12 h-12 rounded-lg bg-${cert.color}-500/10 flex items-center justify-center border border-${cert.color}-500/20 flex-shrink-0`}>
+                                    <i className={`fas ${cert.icon} text-${cert.color}-500 text-xl`}></i>
                                 </div>
-                                <div className="mt-auto pt-4 border-t dark:border-slate-700/50 border-slate-200 flex justify-between items-center text-xs">
-                                    <span className="dark:text-slate-500 text-slate-600 font-bold">Issued: {cert.date}</span>
-                                    <span className="dark:text-slate-400 text-blue-600 font-bold"><i className="fas fa-check-circle"></i> Verified</span>
+                                <div>
+                                    <h3 className="text-sm font-bold dark:text-white text-slate-900 leading-snug mb-1">{cert.title}</h3>
+                                    <p className="dark:text-slate-400 text-slate-500 text-xs font-bold"><i className="fas fa-check-circle text-blue-500"></i> Verified by {cert.issuer}</p>
                                 </div>
                             </div>
                         ))}
+                    </div>
+                    <div className="text-center">
+                        <button className="px-6 py-2 border dark:border-slate-600 border-slate-300 dark:text-white text-slate-800 font-bold rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-sm">
+                            {t.en.cert.btn}
+                        </button>
                     </div>
                 </section>
             );
         };
 
-        const Contact = ({ lang }) => (
+        const Contact = () => (
             <section id="contact" className="py-16 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 tracking-tight mb-4">{t[lang].contact.title}</h2>
-                    <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t[lang].contact.sub}</p>
+                    <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 tracking-tight mb-4">{t.en.contact.title}</h2>
+                    <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t.en.contact.sub}</p>
                 </div>
                 <div className="grid lg:grid-cols-12 gap-8 mb-16">
                     <div className="lg:col-span-4 space-y-6">
+                        {/* Availability Card */}
+                        <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-t-4 border-t-emerald-500">
+                            <h3 className="text-lg font-bold dark:text-white text-slate-900 mb-4">{t.en.contact.avail}</h3>
+                            <ul className="space-y-3 dark:text-slate-300 text-slate-700 font-bold text-sm">
+                                <li className="flex items-center gap-3"><i className="fas fa-circle text-emerald-500 text-[10px] animate-pulse"></i> {t.en.contact.a1}</li>
+                                <li className="flex items-center gap-3"><i className="fas fa-map-pin text-slate-400"></i> {t.en.contact.a2}</li>
+                                <li className="flex items-center gap-3"><i className="fas fa-laptop-house text-blue-400"></i> {t.en.contact.a3}</li>
+                                <li className="flex items-center gap-3"><i className="fas fa-plane text-purple-400"></i> {t.en.contact.a4}</li>
+                            </ul>
+                        </div>
+
                         <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm">
-                            <h3 className="text-lg font-bold dark:text-white text-slate-900 mb-6">{t[lang].contact.info}</h3>
-                            <div className="space-y-6">
+                            <h3 className="text-lg font-bold dark:text-white text-slate-900 mb-6">{t.en.contact.info}</h3>
+                            <div className="space-y-4">
                                 <div className="flex items-start gap-4">
                                     <i className="fas fa-envelope text-blue-500 mt-1"></i>
                                     <div>
@@ -834,54 +624,26 @@
                                         <a href="mailto:Sagarrangwani1@gmail.com" className="dark:text-slate-400 text-slate-600 text-sm hover:text-blue-500 transition-colors font-medium">Sagarrangwani1@gmail.com</a>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-4">
-                                    <i className="fas fa-map-marker-alt text-blue-500 mt-1"></i>
-                                    <div>
-                                        <p className="text-sm font-bold dark:text-white text-slate-900">Location</p>
-                                        <p className="dark:text-slate-400 text-slate-600 text-sm font-medium">Verona, Italy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm">
-                            <h3 className="text-lg font-bold dark:text-white text-slate-900 mb-4">{t[lang].contact.conn}</h3>
-                            <div className="space-y-4">
-                                <a href="https://github.com/sagar-ai-dev" target="_blank" className="flex items-center gap-3 dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-blue-600 transition-colors font-bold">
-                                    <i className="fab fa-github w-5 text-center text-lg"></i> <span>GitHub</span>
-                                </a>
-                                <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" className="flex items-center gap-3 dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-blue-600 transition-colors font-bold">
-                                    <i className="fab fa-linkedin w-5 text-center text-lg"></i> <span>LinkedIn</span>
-                                </a>
                             </div>
                         </div>
                     </div>
                     <div className="lg:col-span-8 theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm">
-                        <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-6">{t[lang].contact.form}</h3>
+                        <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-6">{t.en.contact.form}</h3>
                         <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-6">
-                                <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t[lang].contact.f_name}</label><input type="text" className="input-field dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required /></div>
-                                <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t[lang].contact.f_email}</label><input type="email" className="input-field dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required /></div>
+                                <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t.en.contact.f_name}</label><input type="text" className="input-field dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required /></div>
+                                <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t.en.contact.f_email}</label><input type="email" className="input-field dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required /></div>
                             </div>
-                            <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t[lang].contact.f_sub}</label><input type="text" className="input-field dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required /></div>
-                            <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t[lang].contact.f_msg}</label><textarea rows="4" className="input-field resize-none dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required></textarea></div>
-                            <button type="submit" className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors shadow-md">{t[lang].contact.f_btn}</button>
+                            <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t.en.contact.f_sub}</label><input type="text" className="input-field dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required /></div>
+                            <div><label className="block text-sm font-bold dark:text-slate-200 text-slate-700 mb-2">{t.en.contact.f_msg}</label><textarea rows="4" className="input-field resize-none dark:bg-darkBg bg-slate-50 dark:border-slate-800 border-slate-300 dark:text-white text-slate-900 font-medium" required></textarea></div>
+                            <button type="submit" className="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-colors shadow-md">{t.en.contact.f_btn}</button>
                         </form>
                     </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                    {t[lang].contact.faq.map((f, i) => (
-                        <div key={i} className="theme-card rounded-xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm">
-                            <h4 className="text-lg font-bold dark:text-white text-slate-900 mb-2">{f.q}</h4>
-                            <p className="dark:text-slate-400 text-slate-600 text-sm font-medium">{f.a}</p>
-                        </div>
-                    ))}
                 </div>
             </section>
         );
 
         const App = () => {
-            const [lang, setLang] = useState('en');
             const [isDark, setIsDark] = useState(true);
 
             useEffect(() => {
@@ -897,14 +659,14 @@
 
             return (
                 <div className="transition-colors duration-300">
-                    <Navbar lang={lang} setLang={setLang} isDark={isDark} setIsDark={setIsDark} />
-                    <Hero lang={lang} />
-                    <About lang={lang} />
-                    <Skills lang={lang} />
-                    <Projects lang={lang} />
-                    <Experience lang={lang} />
-                    <Certifications lang={lang} />
-                    <Contact lang={lang} />
+                    <Navbar isDark={isDark} setIsDark={setIsDark} />
+                    <Hero />
+                    <About />
+                    <Experience />
+                    <Projects />
+                    <Skills />
+                    <Certifications />
+                    <Contact />
                     <footer className="pt-16 pb-8 border-t dark:border-slate-800/50 border-slate-200 dark:bg-[#080d18] bg-slate-100 transition-colors">
                         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 mb-12">
                             <div>
@@ -913,12 +675,11 @@
                                 <p className="dark:text-slate-500 text-slate-500 text-sm flex items-center gap-2 font-bold"><i className="fas fa-map-marker-alt"></i> Verona, Italy</p>
                             </div>
                             <div>
-                                <h4 className="dark:text-white text-slate-900 font-extrabold mb-4">Quick Links</h4>
-                                <div className="flex flex-col space-y-2 text-sm dark:text-slate-400 text-slate-600 font-bold">
-                                    <a href="#about" className="hover:text-blue-500 transition-colors">About</a>
-                                    <a href="#projects" className="hover:text-blue-500 transition-colors">Projects</a>
-                                    <a href="#skills" className="hover:text-blue-500 transition-colors">Skills</a>
-                                    <a href="#experience" className="hover:text-blue-500 transition-colors">Experience</a>
+                                <h4 className="dark:text-white text-slate-900 font-extrabold mb-4">Core Technologies</h4>
+                                <div className="flex flex-wrap gap-2 text-xs font-bold">
+                                    {["Python", "PyTorch", "TensorFlow", "React", "SQL", "FastAPI", "Docker", "Git"].map(tech => (
+                                        <span key={tech} className="px-2 py-1 dark:bg-slate-800 bg-slate-200 dark:text-slate-400 text-slate-600 rounded">{tech}</span>
+                                    ))}
                                 </div>
                             </div>
                             <div>
@@ -926,13 +687,14 @@
                                 <div className="flex flex-wrap gap-4">
                                     <a href="https://github.com/sagar-ai-dev" target="_blank" className="dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-blue-600 transition-colors"><i className="fab fa-github text-2xl"></i></a>
                                     <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" className="dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-blue-600 transition-colors"><i className="fab fa-linkedin text-2xl"></i></a>
+                                    <a href="#" className="dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-blue-600 transition-colors"><i className="fas fa-file-pdf text-2xl"></i></a>
                                     <a href="mailto:Sagarrangwani1@gmail.com" className="dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-blue-600 transition-colors"><i className="fas fa-envelope text-2xl"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div className="max-w-7xl mx-auto px-6 pt-8 border-t dark:border-slate-800/50 border-slate-200 flex flex-col md:flex-row justify-between items-center text-xs dark:text-slate-500 text-slate-500 font-bold">
                             <p>&copy; 2026 Sagar Lal. All rights reserved.</p>
-                            <p className="mt-2 md:mt-0">Open to new opportunities · Last updated July 2026</p>
+                            <p className="mt-2 md:mt-0">Open to new opportunities</p>
                         </div>
                     </footer>
                 </div>
