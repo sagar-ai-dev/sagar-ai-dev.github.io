@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sagar Lal | AI & Machine Learning Engineer</title>
     
-    <!-- Tailwind CSS with Dark Mode Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,14 +22,11 @@
         }
     </script>
     
-    <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
-    <!-- React & ReactDOM (Production) -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     
-    <!-- Babel for in-browser JSX compilation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
@@ -60,7 +56,7 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // Structured English Dictionary (Multi-language framework maintained for scaling)
+        // Flawless Data Dictionary
         const t = {
             en: {
                 nav: { home: "Home", about: "About", exp: "Experience", proj: "Projects", skills: "Skills", certs: "Certifications", contact: "Contact" },
@@ -79,6 +75,7 @@
                     do_items: ["AI Development", "Machine Learning", "Backend APIs", "Data Engineering", "Full Stack Web"],
                     career: "Career Interests",
                     c_items: ["AI Engineer", "Machine Learning Engineer", "ML Research Engineer", "Backend AI Developer"],
+                    tech_focus: "Explainable AI (XAI), Computer Vision Pipelines, Time-Series Forecasting, and backend development (Python/FastAPI/PostgreSQL).",
                     achievements: "Key Achievements",
                     a_items: ["MSc AI Candidate (University of Verona)", "Thesis in Explainable Causal Discovery", "24+ Professional Certifications", "Official Machine Learning Internship", "Deployed Full-Stack Architectures"]
                 },
@@ -96,6 +93,28 @@
                 exp: {
                     title: "Professional Experience",
                     job1: {
+                        title: "Senior Fullstack Web Engineer", comp: "La Vertueuse", loc: "France (Remote)", date: "Jan 2026 - Present",
+                        resp: "Architecting and managing complete backend administrative portals and website services for a French enterprise.",
+                        tech: ["PHP", "JavaScript", "SQL", "Stripe API", "Backend Management"],
+                        achieve: [
+                            "Architected and secured the primary backend administrative dashboard.",
+                            "Integrated Stripe and SumUp payment gateways for seamless e-commerce transactions.",
+                            "Optimized database queries and custom PHP scripts to handle enterprise-level traffic.",
+                            "Implemented strict responsive UI features and modules for marketing campaigns."
+                        ]
+                    },
+                    job2: {
+                        title: "Freelance AI Automation Developer", comp: "Codesy", loc: "Remote / On-Demand", date: "May 2024 - Present",
+                        resp: "Developing Python-based AI tools and backend services on a freelance, project-dependent basis.",
+                        tech: ["Python", "FastAPI", "PostgreSQL", "Data Analytics"],
+                        achieve: [
+                            "Built REST APIs with FastAPI connected to secure PostgreSQL databases.",
+                            "Developed automated workflow scripts to replace manual data entry processes.",
+                            "Built a data pipeline processing and analyzing 20,000+ records for business intelligence.",
+                            "Reduced client data preprocessing time by 35% through script optimization."
+                        ]
+                    },
+                    job3: {
                         title: "Machine Learning Intern", comp: "University of Verona", loc: "Verona, Italy", date: "Apr 2025 - Jun 2025",
                         resp: "150-hour official academic internship focused on advanced deep learning and computer vision architectures.",
                         tech: ["Python", "TensorFlow", "Keras", "OpenCV", "CNNs", "LSTM"],
@@ -106,28 +125,6 @@
                             "Documented complete AI workflows and presented technical reports to university faculty."
                         ]
                     },
-                    job2: {
-                        title: "Freelance AI Automation Developer", comp: "Codesy", loc: "Remote / Project-Based", date: "May 2024 - Present",
-                        resp: "Developing Python-based AI tools and backend services for diverse clients on an on-demand, freelance basis.",
-                        tech: ["Python", "FastAPI", "PostgreSQL", "Data Analytics"],
-                        achieve: [
-                            "Built REST APIs with FastAPI connected to secure PostgreSQL databases.",
-                            "Developed automated workflow scripts to replace manual data entry processes.",
-                            "Built a data pipeline processing and analyzing 20,000+ records for business intelligence.",
-                            "Reduced client data preprocessing time by 35% through script optimization."
-                        ]
-                    },
-                    job3: {
-                        title: "Senior Fullstack Web Developer", comp: "La Vertueuse", loc: "France (Remote)", date: "Jan 2026 - Present",
-                        resp: "Managing complete backend administrative portals and full-stack website services for a French enterprise.",
-                        tech: ["PHP", "JavaScript", "SQL", "Stripe API", "Backend Management"],
-                        achieve: [
-                            "Architected and secured the primary backend administrative dashboard.",
-                            "Integrated Stripe and SumUp payment gateways for seamless e-commerce transactions.",
-                            "Optimized database queries and custom PHP scripts to handle enterprise-level traffic.",
-                            "Implemented strict responsive UI features and countdown modules for marketing campaigns."
-                        ]
-                    },
                     job4: {
                         title: "Web Design Specialist", comp: "Freelance", loc: "Remote", date: "Mar 2020 - Jan 2022",
                         resp: "Designed user-focused web applications and interfaces for local businesses and startups.",
@@ -135,7 +132,7 @@
                         achieve: [
                             "Designed standards-compliant web applications from scratch based on strict client briefs.",
                             "Implemented fully responsive, mobile-first architectures.",
-                            "Optimized frontend code resulting in 90+ Google Lighthouse performance scores."
+                            "Optimized frontend code resulting in highly efficient page load speeds."
                         ]
                     }
                 },
@@ -151,7 +148,9 @@
                 },
                 contact: {
                     title: "Get in Touch", sub: "Available for AI Engineering roles, freelance contracts, and research collaborations.",
-                    avail: "Availability", a1: "Open to Work", a2: "Based in Italy", a3: "Remote Worldwide", a4: "Relocation Available"
+                    avail: "Availability", a1: "Open to Work", a2: "Based in Italy", a3: "Remote Worldwide", a4: "Relocation Available",
+                    info: "Contact Information", conn: "Connect With Me", form: "Send Me a Message",
+                    f_name: "Name *", f_email: "Email *", f_sub: "Subject *", f_msg: "Message *", f_btn: "Send Message"
                 }
             }
         };
@@ -260,7 +259,7 @@
                                     <span key={item} className="px-3 py-1.5 dark:bg-blue-900/20 bg-blue-50 border dark:border-blue-800 border-blue-200 dark:text-blue-400 text-blue-700 rounded-lg text-xs font-bold">{item}</span>
                                 ))}
                             </div>
-                            <p className="dark:text-slate-400 text-slate-700 font-medium text-sm"><strong className="dark:text-slate-300 text-slate-800">Technical Focus:</strong> {t.en.about.g2.split(':')[1]}</p>
+                            <p className="dark:text-slate-400 text-slate-700 font-medium text-sm"><strong className="dark:text-slate-300 text-slate-800">Technical Focus:</strong> {t.en.about.tech_focus}</p>
                         </div>
                         
                         {/* Education Section Integrated into About */}
@@ -316,10 +315,10 @@
 
         const Experience = () => {
             const jobs = [
-                { id: "job1", color: "purple" },
-                { id: "job2", color: "blue" },
-                { id: "job3", color: "pink" },
-                { id: "job4", color: "orange" }
+                { id: "job3", color: "purple" }, // La Vertueuse
+                { id: "job2", color: "blue" },   // Codesy
+                { id: "job1", color: "emerald" },// Uni Verona
+                { id: "job4", color: "orange" }  // Freelance Web
             ];
 
             return (
@@ -331,7 +330,6 @@
                             const data = t.en.exp[job.id];
                             return (
                                 <div key={job.id} className="relative pl-8 md:pl-10">
-                                    {/* Timeline Dot */}
                                     <div className={`absolute w-6 h-6 rounded-full bg-${job.color}-500 border-4 dark:border-darkBg border-white -left-[13px] top-1`}></div>
                                     
                                     <div className="theme-card rounded-2xl p-6 md:p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm">
@@ -462,7 +460,7 @@
 
                                 <div className="p-6 md:p-8 flex flex-col flex-grow">
                                     <div className="flex justify-between items-start mb-4">
-                                        <h3 className="text-2xl font-bold dark:text-white text-slate-900 leading-tight pr-4">{p.title}</h3>
+                                        <h3 className="text-xl font-bold dark:text-white text-slate-900 leading-tight pr-4">{p.title}</h3>
                                         {idx === 0 && <span className="px-3 py-1 bg-purple-600 text-white rounded text-[10px] font-bold tracking-widest uppercase shadow-sm flex-shrink-0">Featured</span>}
                                     </div>
                                     
