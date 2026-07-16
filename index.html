@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagar Lal | Senior AI & Automation Engineer</title>
+    <title>Sagar Lal | AI & Machine Learning Engineer</title>
     
+    <!-- Tailwind CSS with Dark Mode Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,11 +28,14 @@
         }
     </script>
     
+    <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
+    <!-- React & ReactDOM (Production) -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     
+    <!-- Babel for in-browser JSX compilation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
@@ -61,37 +65,61 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // Massive Multi-Language Dictionary
+        // Fact-Based, Highly Credible Multi-Language Dictionary
         const t = {
             en: {
                 nav: { home: "Home", about: "About", projects: "Projects", skills: "Skills", experience: "Experience", contact: "Contact" },
                 hero: {
-                    badge: "Currently @ La Vertueuse & Codesy · Open to new opportunities",
+                    badge: "Currently @ Codesy & La Vertueuse · Open to opportunities",
                     greeting: "Hi, I'm",
-                    role: "Senior AI Engineer · Automation & ML Systems",
+                    role: "AI & Machine Learning Engineer",
                     location: "Verona, Veneto, Italy",
-                    bio: "Senior AI Engineer focused on <strong class='text-blue-500 dark:text-blue-400'>production machine learning</strong> and intelligent automation systems. I build complex Python backend architectures, integrate <strong class='text-purple-500 dark:text-purple-400'>Explainable AI (XAI)</strong> models, and engineer scalable web applications. Leveraging 6+ years of technical study and 2+ years of professional full-stack delivery.",
+                    bio: "AI Engineer specializing in machine learning, computer vision, explainable AI, and intelligent automation. Experienced in developing Python-based AI applications, backend services, and full-stack web solutions. 5+ years of programming experience.",
                     btn1: "View My Work", btn2: "Get in Touch"
                 },
                 about: {
                     title1: "Professional Summary",
-                    p1: "AI Engineer focused on production machine learning systems, computer vision, and intelligent automation. Right now, I build and manage complex AI-driven workflows at Codesy, ensuring reliable backend architecture in Python. Before this, I architected Convolutional Neural Networks (CNNs) and time-series classifiers during an intensive research tenure at the University of Verona, significantly optimizing data preprocessing and feature extraction accuracy.",
-                    p2: "I hold an M.S. in Artificial Intelligence, combining deep academic foundations in Explainable AI (XAI) and logic with practical, production-ready integration experience. With 24+ professional certifications from Google and other institutions, I contribute to the developer community through continuous research, open-source projects, and scalable full-stack web development.",
+                    p1: "I am an AI Engineer focused on machine learning systems, computer vision, and automation. Currently, I develop Python-based AI scripts at Codesy and manage full-stack web architectures for La Vertueuse. Previously, I completed an intensive 150-hour research internship at the University of Verona, developing CNNs and time-series classifiers using TensorFlow and Keras.",
+                    p2: "I hold an M.S. in Artificial Intelligence, combining deep academic foundations in Explainable AI (XAI) and logic with practical backend integration experience. Backed by Google and AWS certifications, I focus on writing clean code, processing complex datasets, and building reliable backend services.",
                     title2: "Professional Goals",
-                    g1: "Seeking: Senior AI Engineer and Machine Learning Architect roles where I can design, deploy, and scale production AI systems, utilizing my robust Python backend background.",
-                    g2: "Focus Areas: Explainable AI (XAI), Automated Computer Vision Pipelines, Time-Series Forecasting, and connecting advanced models to highly secure, scalable cloud architectures."
+                    g1: "Seeking: AI Engineer, Machine Learning Engineer, or Backend AI Developer roles.",
+                    g2: "Focus Areas: Explainable AI (XAI), Computer Vision Pipelines, Time-Series Forecasting, and backend development (Python/FastAPI/PostgreSQL)."
+                },
+                achievements: {
+                    title: "Key Achievements",
+                    a1: "MSc Artificial Intelligence Candidate – University of Verona (Expected 2026)",
+                    a2: "Master's Thesis Research in Explainable AI & Causal Discovery (PCMCI)",
+                    a3: "24+ Professional Certifications (Google AI, Cybersecurity, AWS, Azure)",
+                    a4: "150-Hour Official Machine Learning University Internship",
+                    a5: "Delivered diverse Freelance AI Automation & Full-Stack Web Projects"
                 },
                 skills: {
-                    title: "Skills & Technologies", sub: "Core technologies I work with across full-stack development, cloud platforms, and AI tooling.",
+                    title: "Skills & Technologies", sub: "Core technologies I work with across AI development, data processing, and full-stack web.",
                     comp: "Complementary Technologies",
-                    stats: ["Core Technologies", "Complementary Skills", "Years Experience", "Cloud Certifications"],
+                    stats: ["Years Prog. Exp.", "Projects Delivered", "Academic Internship", "Certifications"],
                     cats: ["AI / Machine Learning", "Data Engineering", "Backend & Automation", "Cloud & MLOps", "Frontend Web"]
                 },
                 projects: {
-                    title: "All Projects", sub: "Explore my portfolio of 12+ projects spanning full-stack development, AI/ML models, and data architecture."
+                    title: "Projects & Research", sub: "Explore my portfolio of 12+ repositories spanning AI/ML models, data architecture, and full-stack development."
                 },
                 exp: {
-                    title: "Professional Experience"
+                    title: "Professional Experience",
+                    job1_title: "Freelance AI Automation Developer",
+                    job1_company: "Codesy",
+                    job1_date: "May 2024 - Present",
+                    job1_desc: "Developed Python-based automation scripts and backend services for client projects. Built REST APIs using FastAPI connected to PostgreSQL. Processed and analyzed datasets of 20,000+ records to improve workflow efficiency.",
+                    job_intern_title: "Machine Learning Intern",
+                    job_intern_company: "University of Verona",
+                    job_intern_date: "Apr 2025 - Jun 2025",
+                    job_intern_desc: "150-hour academic internship. Developed CNN models using TensorFlow and transfer learning techniques (ResNet, VGG). Preprocessed image data using OpenCV and PIL. Built and evaluated time-series classifiers using LSTM and GRU networks.",
+                    job4_title: "Fullstack Web Developer",
+                    job4_company: "La Vertueuse",
+                    job4_date: "Jan 2026 - Present",
+                    job4_desc: "Developed and maintained the administrative portal and custom e-commerce website. Integrated payment gateways (Stripe, SumUp) and optimized custom PHP backends. Reduced page load times and ensured responsive mobile designs.",
+                    job3_title: "Web Design Specialist",
+                    job3_company: "Freelance",
+                    job3_date: "Mar 2020 - Jan 2022",
+                    job3_desc: "Designed user-focused web applications from scratch, focusing on strict client requirements and fully responsive mobile-friendly HTML/CSS/JS architectures."
                 },
                 cert: {
                     title: "Licenses & Certifications", sub: "A selection of my 24+ verified professional credentials spanning AI, Cybersecurity, and Data Systems."
@@ -102,167 +130,271 @@
                     f_name: "Name *", f_email: "Email *", f_sub: "Subject *", f_msg: "Message *", f_btn: "Send Message",
                     faq: [
                         { q: "Response Time", a: "I typically respond to inquiries within 24-48 hours during business days." },
-                        { q: "Project Types", a: "I work on full-stack web applications, automation pipelines, and AI/ML integrations." },
-                        { q: "Consultation", a: "Free initial consultations available to discuss your project requirements and timeline." },
-                        { q: "Collaboration", a: "Open to remote work, contract positions, and long-term partnerships worldwide." }
+                        { q: "Project Types", a: "I work on full-stack web applications, Python automation, and AI/ML model integrations." },
+                        { q: "Consultation", a: "Free initial consultations available to discuss your technical requirements and timeline." },
+                        { q: "Collaboration", a: "Open to remote work, freelance contracts, and full-time ML engineering roles." }
                     ]
                 }
             },
             it: {
                 nav: { home: "Home", about: "Chi Sono", projects: "Progetti", skills: "Competenze", experience: "Esperienza", contact: "Contatti" },
                 hero: {
-                    badge: "Attualmente @ La Vertueuse & Codesy · Aperto a nuove opportunità",
+                    badge: "Attualmente @ Codesy & La Vertueuse · Aperto a opportunità",
                     greeting: "Ciao, sono",
-                    role: "Senior AI Engineer · Automazione e Sistemi ML",
+                    role: "AI & Machine Learning Engineer",
                     location: "Verona, Veneto, Italia",
-                    bio: "Senior AI Engineer focalizzato su <strong class='text-blue-500 dark:text-blue-400'>machine learning in produzione</strong> e automazione intelligente. Costruisco complesse architetture backend in Python, integro modelli di <strong class='text-purple-500 dark:text-purple-400'>Explainable AI (XAI)</strong> e sviluppo app web scalabili.",
+                    bio: "Ingegnere AI specializzato in machine learning, computer vision e automazione. Esperto nello sviluppo di applicazioni AI in Python, servizi backend e soluzioni web full-stack. Oltre 5 anni di esperienza di programmazione.",
                     btn1: "Vedi i Progetti", btn2: "Contattami"
                 },
                 about: {
                     title1: "Riepilogo Professionale",
-                    p1: "Ingegnere AI specializzato in sistemi di machine learning, computer vision e automazione. Attualmente gestisco flussi di lavoro AI presso Codesy. In precedenza, ho progettato CNN e classificatori di serie temporali presso l'Università di Verona.",
-                    p2: "Possiedo una laurea magistrale in Intelligenza Artificiale e oltre 24 certificazioni professionali (Google, ecc.). Unisco solide basi accademiche in XAI con esperienza pratica nello sviluppo full-stack.",
-                    title2: "Obiettivi Professionali",
-                    g1: "Ricerca: Ruoli come Senior AI Engineer e ML Architect per progettare e scalare sistemi AI in produzione.",
-                    g2: "Aree di Focus: Explainable AI (XAI), Computer Vision, Previsioni di Serie Temporali e architetture cloud sicure."
+                    p1: "Sono un ingegnere AI focalizzato su sistemi di machine learning, computer vision e automazione. Attualmente sviluppo script AI in Python presso Codesy e gestisco architetture web per La Vertueuse. In precedenza, ho completato un tirocinio di 150 ore presso l'Università di Verona, sviluppando CNN e classificatori di serie temporali.",
+                    p2: "Possiedo una laurea magistrale in Intelligenza Artificiale. Con oltre 24 certificazioni professionali da Google e AWS, mi concentro sulla scrittura di codice pulito e sulla creazione di servizi backend affidabili.",
+                    title2: "Obiettivi Professioni",
+                    g1: "Ricerca: Ruoli come AI Engineer, Machine Learning Engineer o Backend AI Developer.",
+                    g2: "Aree di Focus: Explainable AI (XAI), Computer Vision, Serie Temporali e sviluppo backend (Python/FastAPI)."
+                },
+                achievements: {
+                    title: "Risultati Principali",
+                    a1: "Laurea Magistrale in AI – Università di Verona (Attesa 2026)",
+                    a2: "Tesi di Ricerca in Explainable AI & Causal Discovery (PCMCI)",
+                    a3: "Oltre 24 Certificazioni (Google AI, Cybersecurity, AWS)",
+                    a4: "Tirocinio Universitario Ufficiale in Machine Learning (150 Ore)",
+                    a5: "Sviluppo di vari progetti Freelance in AI e Full-Stack"
                 },
                 skills: {
-                    title: "Competenze e Tecnologie", sub: "Tecnologie principali con cui lavoro per lo sviluppo full-stack, cloud e AI.",
+                    title: "Competenze e Tecnologie", sub: "Tecnologie principali per lo sviluppo AI, elaborazione dati e web full-stack.",
                     comp: "Tecnologie Complementari",
-                    stats: ["Tecnologie Base", "Competenze Extra", "Anni di Esperienza", "Certificazioni Cloud"],
+                    stats: ["Anni Prog. Exp.", "Progetti", "Tirocinio", "Certificazioni"],
                     cats: ["AI / Machine Learning", "Data Engineering", "Backend & Automazione", "Cloud & MLOps", "Sviluppo Frontend"]
                 },
                 projects: {
-                    title: "Tutti i Progetti", sub: "Esplora il mio portfolio di oltre 12 progetti in sviluppo full-stack, AI/ML e architettura dati."
+                    title: "Progetti e Ricerca", sub: "Esplora il mio portfolio di oltre 12 repository in AI/ML e architettura dati."
                 },
-                exp: { title: "Esperienza Professionale" },
-                cert: { title: "Licenze e Certificazioni", sub: "Oltre 24 credenziali professionali verificate in AI, Cybersecurity e Sistemi Dati." },
+                exp: {
+                    title: "Esperienza Professionale",
+                    job1_title: "Sviluppatore AI & Automazione Freelance",
+                    job1_company: "Codesy",
+                    job1_date: "Mag 2024 - Presente",
+                    job1_desc: "Sviluppo di script di automazione Python e servizi backend. Creazione di API REST con FastAPI e PostgreSQL. Elaborazione di dataset di oltre 20.000 record per migliorare l'efficienza.",
+                    job_intern_title: "Tirocinante Machine Learning",
+                    job_intern_company: "Università di Verona",
+                    job_intern_date: "Apr 2025 - Giu 2025",
+                    job_intern_desc: "Tirocinio di 150 ore. Sviluppo di modelli CNN con TensorFlow (ResNet, VGG). Pre-elaborazione immagini con OpenCV. Sviluppo di classificatori di serie temporali (LSTM, GRU).",
+                    job4_title: "Sviluppatore Web Fullstack",
+                    job4_company: "La Vertueuse",
+                    job4_date: "Gen 2026 - Presente",
+                    job4_desc: "Sviluppo del portale amministrativo e sito e-commerce. Integrazione di gateway di pagamento (Stripe, SumUp) e ottimizzazione backend in PHP personalizzato.",
+                    job3_title: "Specialista Web Design",
+                    job3_company: "Freelance",
+                    job3_date: "Mar 2020 - Gen 2022",
+                    job3_desc: "Progettazione di applicazioni web da zero, focalizzandosi sui requisiti del cliente e architetture mobile-friendly (HTML/CSS/JS)."
+                },
+                cert: { title: "Licenze e Certificazioni", sub: "Oltre 24 credenziali professionali in AI e Cybersecurity." },
                 contact: {
                     title: "Contattami", sub: "Hai un progetto in mente? Mi piacerebbe parlarne!",
                     info: "Informazioni", conn: "Connettiti", form: "Inviami un Messaggio",
                     f_name: "Nome *", f_email: "Email *", f_sub: "Oggetto *", f_msg: "Messaggio *", f_btn: "Invia",
                     faq: [
                         { q: "Tempo di Risposta", a: "Rispondo entro 24-48 ore nei giorni lavorativi." },
-                        { q: "Tipi di Progetti", a: "Applicazioni full-stack, automazione e integrazioni AI/ML." },
-                        { q: "Consulenza", a: "Consulenza iniziale gratuita per discutere i requisiti del progetto." },
-                        { q: "Collaborazione", a: "Aperto a lavoro da remoto e partnership a lungo termine." }
+                        { q: "Tipi di Progetti", a: "App web, script Python e integrazioni AI/ML." },
+                        { q: "Consulenza", a: "Consulenza iniziale gratuita per discutere i requisiti." },
+                        { q: "Collaborazione", a: "Aperto a lavoro da remoto e ruoli ML full-time." }
                     ]
                 }
             },
             es: {
                 nav: { home: "Inicio", about: "Sobre Mí", projects: "Proyectos", skills: "Habilidades", experience: "Experiencia", contact: "Contacto" },
                 hero: {
-                    badge: "Actualmente @ La Vertueuse & Codesy · Abierto a nuevas oportunidades",
+                    badge: "Actualmente @ Codesy & La Vertueuse · Abierto a oportunidades",
                     greeting: "Hola, soy",
-                    role: "Senior AI Engineer · Automatización y Sistemas ML",
+                    role: "AI & Machine Learning Engineer",
                     location: "Verona, Véneto, Italia",
-                    bio: "Senior AI Engineer enfocado en <strong class='text-blue-500 dark:text-blue-400'>machine learning en producción</strong> y automatización inteligente. Construyo complejas arquitecturas backend en Python e integro <strong class='text-purple-500 dark:text-purple-400'>Explainable AI (XAI)</strong>.",
+                    bio: "Ingeniero de IA especializado en machine learning, visión por computadora y automatización inteligente. Experiencia en desarrollo Python, backend y web full-stack. Más de 5 años de experiencia programando.",
                     btn1: "Ver Proyectos", btn2: "Contáctame"
                 },
                 about: {
                     title1: "Resumen Profesional",
-                    p1: "Ingeniero de IA centrado en sistemas de ML, visión por computadora y automatización. Gestiono flujos de trabajo impulsados por IA en Codesy. Anteriormente, diseñé CNNs y clasificadores de series temporales en la Universidad de Verona.",
-                    p2: "Tengo un Máster en Inteligencia Artificial y más de 24 certificaciones profesionales. Combino bases académicas en XAI con experiencia práctica en desarrollo full-stack.",
+                    p1: "Ingeniero de IA centrado en sistemas de ML, visión por computadora y automatización. Actualmente desarrollo scripts de IA en Python para Codesy y gestiono arquitecturas web para La Vertueuse. Anteriormente completé una pasantía de 150 horas en la Universidad de Verona diseñando CNNs.",
+                    p2: "Tengo un Máster en Inteligencia Artificial. Con certificaciones de Google y AWS, me enfoco en escribir código limpio, procesar conjuntos de datos complejos y construir backends confiables.",
                     title2: "Objetivos Profesionales",
-                    g1: "Buscando: Roles de Senior AI Engineer y ML Architect para escalar sistemas de IA.",
-                    g2: "Áreas de Enfoque: Explainable AI (XAI), Visión por Computadora, Series Temporales y arquitecturas cloud seguras."
+                    g1: "Buscando: Roles de AI Engineer, ML Engineer o Backend AI Developer.",
+                    g2: "Áreas de Enfoque: Explainable AI (XAI), Visión por Computadora, Series Temporales y desarrollo backend (Python/FastAPI)."
+                },
+                achievements: {
+                    title: "Logros Destacados",
+                    a1: "Candidato a MSc en IA – Universidad de Verona (2026)",
+                    a2: "Tesis en Explainable AI & Descubrimiento Causal (PCMCI)",
+                    a3: "Más de 24 Certificaciones (Google AI, Ciberseguridad, AWS)",
+                    a4: "Pasantía Universitaria Oficial de ML (150 Horas)",
+                    a5: "Múltiples Proyectos Freelance en IA y Full-Stack"
                 },
                 skills: {
-                    title: "Habilidades y Tecnologías", sub: "Tecnologías principales en desarrollo full-stack, cloud y herramientas de IA.",
+                    title: "Habilidades y Tecnologías", sub: "Tecnologías principales en desarrollo de IA, procesamiento de datos y web.",
                     comp: "Tecnologías Complementarias",
-                    stats: ["Tecnologías Base", "Habilidades Extra", "Años de Exp.", "Certificaciones"],
+                    stats: ["Años Programando", "Proyectos", "Pasantía", "Certificaciones"],
                     cats: ["IA / Machine Learning", "Ingeniería de Datos", "Backend y Automatización", "Cloud y MLOps", "Desarrollo Frontend"]
                 },
-                projects: { title: "Todos los Proyectos", sub: "Explora mi portafolio de más de 12 proyectos de desarrollo full-stack, AI/ML y datos." },
-                exp: { title: "Experiencia Profesional" },
-                cert: { title: "Licencias y Certificaciones", sub: "Más de 24 credenciales profesionales verificadas en IA, Ciberseguridad y Datos." },
+                projects: { title: "Proyectos e Investigación", sub: "Explora mi portafolio de más de 12 repositorios de modelos IA/ML." },
+                exp: {
+                    title: "Experiencia Profesional",
+                    job1_title: "Desarrollador Freelance de Automatización e IA",
+                    job1_company: "Codesy",
+                    job1_date: "May 2024 - Presente",
+                    job1_desc: "Desarrollo de scripts de automatización en Python. Construcción de APIs REST con FastAPI y PostgreSQL. Procesamiento de datasets de más de 20,000 registros para mejorar flujos de trabajo.",
+                    job_intern_title: "Pasante de Machine Learning",
+                    job_intern_company: "Universidad de Verona",
+                    job_intern_date: "Abr 2025 - Jun 2025",
+                    job_intern_desc: "Pasantía de 150 horas. Desarrollo de modelos CNN con TensorFlow (ResNet, VGG). Preprocesamiento de imágenes con OpenCV. Clasificadores de series temporales (LSTM, GRU).",
+                    job4_title: "Desarrollador Web Fullstack",
+                    job4_company: "La Vertueuse",
+                    job4_date: "Ene 2026 - Presente",
+                    job4_desc: "Desarrollo y mantenimiento del portal administrativo y e-commerce. Integración de pasarelas de pago (Stripe, SumUp) y optimización de backends en PHP personalizado.",
+                    job3_title: "Especialista Web",
+                    job3_company: "Freelance",
+                    job3_date: "Mar 2020 - Ene 2022",
+                    job3_desc: "Diseño de aplicaciones web desde cero, centrado en requisitos del cliente y arquitecturas responsivas en HTML/CSS/JS."
+                },
+                cert: { title: "Licencias y Certificaciones", sub: "Más de 24 credenciales en IA, Ciberseguridad y Datos." },
                 contact: {
                     title: "Contáctame", sub: "¿Tienes un proyecto en mente? ¡Hablemos!",
                     info: "Información", conn: "Conectar", form: "Envíame un Mensaje",
                     f_name: "Nombre *", f_email: "Correo *", f_sub: "Asunto *", f_msg: "Mensaje *", f_btn: "Enviar",
                     faq: [
                         { q: "Tiempo de Respuesta", a: "Respondo en 24-48 horas laborables." },
-                        { q: "Tipos de Proyecto", a: "Aplicaciones full-stack, automatización e integraciones IA." },
+                        { q: "Tipos de Proyecto", a: "Aplicaciones web, automatización Python e integraciones IA." },
                         { q: "Consulta", a: "Consultas iniciales gratuitas para evaluar requerimientos." },
-                        { q: "Colaboración", a: "Abierto a trabajo remoto y alianzas globales." }
+                        { q: "Colaboración", a: "Abierto a remoto, freelance o roles ML full-time." }
                     ]
                 }
             },
             fr: {
                 nav: { home: "Accueil", about: "À Propos", projects: "Projets", skills: "Compétences", experience: "Expérience", contact: "Contact" },
                 hero: {
-                    badge: "Actuellement @ La Vertueuse & Codesy · Ouvert aux opportunités",
+                    badge: "Actuellement @ Codesy & La Vertueuse · Ouvert aux opportunités",
                     greeting: "Bonjour, je suis",
-                    role: "Senior AI Engineer · Automatisation & Systèmes ML",
+                    role: "AI & Machine Learning Engineer",
                     location: "Vérone, Vénétie, Italie",
-                    bio: "Senior AI Engineer axé sur le <strong class='text-blue-500 dark:text-blue-400'>machine learning en production</strong> et l'automatisation. Je conçois des architectures Python et intègre l'<strong class='text-purple-500 dark:text-purple-400'>Explainable AI (XAI)</strong>.",
+                    bio: "Ingénieur IA spécialisé en machine learning, vision par ordinateur et automatisation. Expérimenté dans le développement d'applications Python et de solutions web. 5+ années d'expérience en programmation.",
                     btn1: "Voir mes Projets", btn2: "Contactez-moi"
                 },
                 about: {
                     title1: "Résumé Professionnel",
-                    p1: "Ingénieur IA spécialisé dans les systèmes ML et la vision par ordinateur. Je gère des flux de travail IA chez Codesy. Auparavant, j'ai conçu des CNN et des classificateurs à l'Université de Vérone.",
-                    p2: "Titulaire d'un Master en IA et de plus de 24 certifications. Je combine de solides bases en XAI avec une expertise en développement full-stack.",
-                    title2: "Objectifs",
-                    g1: "Recherche : Postes de Senior AI Engineer pour déployer des systèmes IA en production.",
-                    g2: "Domaines : Explainable AI (XAI), Vision par Ordinateur, Séries Temporelles et Cloud."
+                    p1: "Ingénieur IA axé sur le ML et l'automatisation. Actuellement, je développe des scripts Python chez Codesy et gère l'architecture web de La Vertueuse. J'ai également effectué un stage de recherche de 150h à l'Université de Vérone sur les CNNs et séries temporelles.",
+                    p2: "Titulaire d'un Master en IA et de certifications Google et AWS, je me concentre sur l'écriture d'un code propre, le traitement de données complexes et les services backend fiables.",
+                    title2: "Objectifs Professionnels",
+                    g1: "Recherche : Postes d'Ingénieur IA, Ingénieur ML ou Développeur Backend IA.",
+                    g2: "Domaines : Explainable AI (XAI), Vision par Ordinateur, Séries Temporelles et Python/FastAPI."
+                },
+                achievements: {
+                    title: "Réalisations Clés",
+                    a1: "Candidat MSc Intelligence Artificielle – Université de Vérone (2026)",
+                    a2: "Recherche de thèse en Explainable AI & Découverte Causale (PCMCI)",
+                    a3: "24+ Certifications (Google AI, Cybersécurité, AWS)",
+                    a4: "Stage Officiel de 150 Heures en Machine Learning",
+                    a5: "Projets Freelance divers en IA et Full-Stack"
                 },
                 skills: {
-                    title: "Compétences & Technologies", sub: "Technologies de base pour le full-stack, le cloud et l'IA.",
+                    title: "Compétences & Technologies", sub: "Technologies de base pour le développement IA, les données et le web.",
                     comp: "Technologies Complémentaires",
-                    stats: ["Technologies Clés", "Compétences Extra", "Années d'Exp.", "Certifications"],
+                    stats: ["Années de Prog.", "Projets", "Stage", "Certifications"],
                     cats: ["IA / Machine Learning", "Ingénierie des Données", "Backend & Automatisation", "Cloud & MLOps", "Développement Frontend"]
                 },
-                projects: { title: "Tous les Projets", sub: "Explorez mon portefeuille de plus de 12 projets en full-stack, IA/ML et données." },
-                exp: { title: "Expérience Professionnelle" },
-                cert: { title: "Licences et Certifications", sub: "Plus de 24 diplômes professionnels vérifiés en IA et Cybersécurité." },
+                projects: { title: "Projets & Recherche", sub: "Explorez mon portefeuille de plus de 12 projets en IA/ML et données." },
+                exp: {
+                    title: "Expérience Professionnelle",
+                    job1_title: "Développeur Freelance IA & Automatisation",
+                    job1_company: "Codesy",
+                    job1_date: "Mai 2024 - Présent",
+                    job1_desc: "Développement de scripts d'automatisation Python. Création d'API REST avec FastAPI et PostgreSQL. Traitement de datasets de 20 000+ enregistrements pour améliorer l'efficacité.",
+                    job_intern_title: "Stagiaire Machine Learning",
+                    job_intern_company: "Université de Vérone",
+                    job_intern_date: "Avr 2025 - Juin 2025",
+                    job_intern_desc: "Stage de 150 heures. Développement de modèles CNN avec TensorFlow (ResNet, VGG). Prétraitement d'images avec OpenCV. Classificateurs de séries temporelles (LSTM, GRU).",
+                    job4_title: "Développeur Web Fullstack",
+                    job4_company: "La Vertueuse",
+                    job4_date: "Janv 2026 - Présent",
+                    job4_desc: "Développement du portail administratif et du site e-commerce. Intégration de paiements (Stripe, SumUp) et backend PHP personnalisé.",
+                    job3_title: "Spécialiste Web",
+                    job3_company: "Freelance",
+                    job3_date: "Mars 2020 - Janv 2022",
+                    job3_desc: "Conception d'applications web HTML/CSS/JS, en mettant l'accent sur les exigences des clients et le responsive design."
+                },
+                cert: { title: "Licences et Certifications", sub: "Plus de 24 diplômes professionnels vérifiés." },
                 contact: {
                     title: "Contactez-moi", sub: "Un projet en tête ? Discutons-en !",
                     info: "Coordonnées", conn: "Réseaux", form: "Envoyez un Message",
                     f_name: "Nom *", f_email: "Email *", f_sub: "Sujet *", f_msg: "Message *", f_btn: "Envoyer",
                     faq: [
                         { q: "Temps de Réponse", a: "Je réponds sous 24 à 48 heures ouvrables." },
-                        { q: "Types de Projets", a: "Applications full-stack, automatisation et IA/ML." },
+                        { q: "Types de Projets", a: "Applications web, automatisation Python et IA/ML." },
                         { q: "Consultation", a: "Consultation gratuite pour discuter de vos besoins." },
-                        { q: "Collaboration", a: "Ouvert au télétravail et aux partenariats." }
+                        { q: "Collaboration", a: "Ouvert au télétravail, contrats freelance et postes ML." }
                     ]
                 }
             },
             de: {
                 nav: { home: "Startseite", about: "Über mich", projects: "Projekte", skills: "Fähigkeiten", experience: "Erfahrung", contact: "Kontakt" },
                 hero: {
-                    badge: "Derzeit @ La Vertueuse & Codesy · Offen für neue Möglichkeiten",
+                    badge: "Derzeit @ Codesy & La Vertueuse · Offen für Möglichkeiten",
                     greeting: "Hallo, ich bin",
-                    role: "Senior AI Engineer · Automatisierung & ML",
+                    role: "AI & Machine Learning Engineer",
                     location: "Verona, Venetien, Italien",
-                    bio: "Senior AI Engineer mit Fokus auf <strong class='text-blue-500 dark:text-blue-400'>Machine Learning in der Produktion</strong>. Ich erstelle komplexe Python-Backends und integriere <strong class='text-purple-500 dark:text-purple-400'>Explainable AI (XAI)</strong>.",
+                    bio: "KI-Ingenieur mit Spezialisierung auf Machine Learning, Computer Vision und intelligente Automatisierung. Erfahrung in Python, Backend-Services und Web-Lösungen. 5+ Jahre Programmiererfahrung.",
                     btn1: "Meine Arbeit", btn2: "Kontaktieren"
                 },
                 about: {
                     title1: "Berufliches Profil",
-                    p1: "KI-Ingenieur mit Fokus auf ML-Systeme, Computer Vision und Automatisierung. Derzeit leite ich KI-Workflows bei Codesy. Zuvor entwickelte ich CNNs an der Universität Verona.",
-                    p2: "Master in KI und 24+ Zertifizierungen. Ich kombiniere akademische XAI-Grundlagen mit praktischer Full-Stack-Erfahrung.",
+                    p1: "KI-Ingenieur mit Fokus auf ML und Automatisierung. Derzeit entwickle ich Python-KI-Skripte bei Codesy und verwalte die Webarchitektur von La Vertueuse. Zuvor absolvierte ich ein 150-stündiges Forschungspraktikum an der Universität Verona (CNNs & Zeitreihen).",
+                    p2: "Masterstudent in KI. Mit Zertifizierungen von Google und AWS konzentriere ich mich auf sauberen Code, die Verarbeitung komplexer Datensätze und zuverlässige Backends.",
                     title2: "Berufliche Ziele",
-                    g1: "Suche: Senior AI Engineer Rollen zur Skalierung von Produktions-KI-Systemen.",
-                    g2: "Fokus: Explainable AI (XAI), Computer Vision, Zeitreihen und Cloud-Architekturen."
+                    g1: "Suche: KI-Ingenieur, Machine Learning Engineer oder Backend AI Developer.",
+                    g2: "Fokus: Explainable AI (XAI), Computer Vision, Zeitreihen und Backend-Entwicklung (Python/FastAPI)."
+                },
+                achievements: {
+                    title: "Wichtigste Erfolge",
+                    a1: "MSc Artificial Intelligence – Universität Verona (Erwartet 2026)",
+                    a2: "Masterarbeit in Explainable AI & Kausalanalyse (PCMCI)",
+                    a3: "24+ Zertifizierungen (Google AI, Cybersecurity, AWS)",
+                    a4: "150-stündiges offizielles Machine Learning Praktikum",
+                    a5: "Erfolgreiche Freelance KI- & Full-Stack-Projekte"
                 },
                 skills: {
-                    title: "Fähigkeiten & Technologien", sub: "Kerntechnologien in Full-Stack, Cloud und KI.",
+                    title: "Fähigkeiten & Technologien", sub: "Kerntechnologien in KI-Entwicklung, Datenverarbeitung und Web.",
                     comp: "Ergänzende Technologien",
-                    stats: ["Kerntechnologien", "Zusatz-Skills", "Jahre Exp.", "Zertifikate"],
+                    stats: ["Jahre Prog.", "Projekte", "Praktikum", "Zertifikate"],
                     cats: ["KI / Machine Learning", "Data Engineering", "Backend & Automatisierung", "Cloud & MLOps", "Frontend-Entwicklung"]
                 },
-                projects: { title: "Alle Projekte", sub: "Entdecken Sie 12+ Projekte aus Full-Stack, KI/ML und Datenarchitektur." },
-                exp: { title: "Berufserfahrung" },
-                cert: { title: "Zertifizierungen", sub: "24+ verifizierte Nachweise in KI, Cybersecurity und Daten." },
+                projects: { title: "Projekte & Forschung", sub: "Entdecken Sie 12+ Projekte aus KI/ML und Datenarchitektur." },
+                exp: {
+                    title: "Berufserfahrung",
+                    job1_title: "Freelance KI & Automatisierungsentwickler",
+                    job1_company: "Codesy",
+                    job1_date: "Mai 2024 - Heute",
+                    job1_desc: "Entwicklung von Python-Automatisierungsskripten. Erstellung von REST-APIs mit FastAPI und PostgreSQL. Verarbeitung von Datensätzen mit 20.000+ Datensätzen.",
+                    job_intern_title: "Machine Learning Praktikant",
+                    job_intern_company: "Universität Verona",
+                    job_intern_date: "Apr 2025 - Jun 2025",
+                    job_intern_desc: "150-stündiges Praktikum. CNN-Modelle mit TensorFlow (ResNet, VGG). Bildverarbeitung mit OpenCV. Zeitreihenklassifikatoren (LSTM, GRU).",
+                    job4_title: "Fullstack Web Developer",
+                    job4_company: "La Vertueuse",
+                    job4_date: "Jan 2026 - Heute",
+                    job4_desc: "Entwicklung des Verwaltungsportals und E-Commerce. Integration von Zahlungen (Stripe, SumUp) und individuelles PHP-Backend.",
+                    job3_title: "Web-Spezialist",
+                    job3_company: "Freiberuflich",
+                    job3_date: "März 2020 - Jan 2022",
+                    job3_desc: "Design von Webanwendungen von Grund auf, HTML/CSS/JS mit Fokus auf Responsive Design."
+                },
+                cert: { title: "Zertifizierungen", sub: "24+ verifizierte Nachweise in KI und Cybersecurity." },
                 contact: {
                     title: "Kontakt", sub: "Haben Sie ein Projekt im Sinn? Ich freue mich auf Ihre Nachricht!",
                     info: "Kontaktinfo", conn: "Netzwerke", form: "Nachricht senden",
                     f_name: "Name *", f_email: "Email *", f_sub: "Betreff *", f_msg: "Nachricht *", f_btn: "Senden",
                     faq: [
                         { q: "Antwortzeit", a: "Normalerweise innerhalb von 24-48 Stunden." },
-                        { q: "Projekttypen", a: "Full-Stack-Web, Automatisierung und KI-Integration." },
+                        { q: "Projekttypen", a: "Full-Stack-Web, Python-Skripte und KI-Integration." },
                         { q: "Beratung", a: "Kostenlose Erstberatung für Ihre Projektanforderungen." },
-                        { q: "Zusammenarbeit", a: "Offen für Remote-Arbeit und Partnerschaften." }
+                        { q: "Zusammenarbeit", a: "Offen für Remote-Arbeit und ML-Rollen." }
                     ]
                 }
             }
@@ -283,7 +415,6 @@
                     </div>
                     
                     <div className="flex items-center gap-3">
-                        {/* Theme Toggle Button */}
                         <button 
                             onClick={() => setIsDark(!isDark)} 
                             className="w-10 h-10 rounded-full flex items-center justify-center dark:bg-slate-800 bg-slate-100 dark:text-yellow-400 text-blue-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm"
@@ -292,7 +423,6 @@
                             <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'} text-lg`}></i>
                         </button>
                         
-                        {/* Polished Language Dropdown */}
                         <div className="relative flex items-center dark:bg-darkCard bg-slate-100 border dark:border-slate-700 border-slate-300 rounded-full px-3 py-1.5 transition-colors shadow-sm">
                             <i className="fas fa-globe dark:text-slate-400 text-slate-500 text-sm mr-2"></i>
                             <select value={lang} onChange={(e) => setLang(e.target.value)} className="bg-transparent text-sm font-bold dark:text-slate-200 text-slate-800 outline-none cursor-pointer appearance-none pr-2">
@@ -322,7 +452,6 @@
                         </h1>
                         <h2 className="text-xl md:text-2xl dark:text-slate-200 text-slate-700 font-bold mb-4">{t[lang].hero.role}</h2>
                         
-                        {/* Location and Quick Links Row */}
                         <div className="flex flex-wrap items-center gap-4 mb-6">
                             <span className="flex items-center gap-2 text-sm font-bold dark:text-slate-400 text-slate-600 bg-slate-200 dark:bg-slate-800 px-3 py-1.5 rounded-md">
                                 <i className="fas fa-map-marker-alt text-red-500"></i> {t[lang].hero.location}
@@ -350,7 +479,6 @@
                         </div>
                     </div>
                     
-                    {/* Hero Image Profile */}
                     <div className="lg:col-span-4 flex justify-center lg:justify-end">
                         <div className="relative w-72 h-72 md:w-80 md:h-80">
                             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 p-2 shadow-2xl">
@@ -367,7 +495,7 @@
         const About = ({ lang }) => (
             <section id="about" className="py-16 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
                 <div className="grid lg:grid-cols-12 gap-12">
-                    <div className="lg:col-span-8 space-y-6">
+                    <div className="lg:col-span-7 space-y-6">
                         <h2 className="text-3xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{t[lang].about.title1}</h2>
                         <p className="dark:text-slate-400 text-slate-700 leading-relaxed font-medium">{t[lang].about.p1}</p>
                         <p className="dark:text-slate-400 text-slate-700 leading-relaxed font-medium">{t[lang].about.p2}</p>
@@ -379,37 +507,27 @@
                         </ul>
                     </div>
                     
-                    {/* Quick Stats Grid replacing simple competencies for Vercel density */}
-                    <div className="lg:col-span-4">
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="theme-card p-6 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                                <h4 className="text-4xl font-black text-blue-500 mb-2">6+</h4>
-                                <p className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase">Years Study & Exp.</p>
-                            </div>
-                            <div className="theme-card p-6 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                                <h4 className="text-4xl font-black text-purple-500 mb-2">24+</h4>
-                                <p className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase">Certifications</p>
-                            </div>
-                            <div className="theme-card p-6 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                                <h4 className="text-4xl font-black text-emerald-500 mb-2">85+</h4>
-                                <p className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase">Technologies</p>
-                            </div>
-                            <div className="theme-card p-6 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                                <h4 className="text-4xl font-black text-orange-500 mb-2">12+</h4>
-                                <p className="text-xs font-bold dark:text-slate-400 text-slate-500 uppercase">Projects</p>
-                            </div>
+                    <div className="lg:col-span-5">
+                        <div className="theme-card p-8 rounded-2xl dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-t-4 dark:border-t-blue-500 border-t-blue-500">
+                            <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-6">{t[lang].achievements.title}</h3>
+                            <ul className="space-y-4 text-sm dark:text-slate-400 text-slate-600 font-medium">
+                                <li className="flex items-start gap-3"><i className="fas fa-graduation-cap text-blue-500 mt-1"></i> <span>{t[lang].achievements.a1}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-microscope text-purple-500 mt-1"></i> <span>{t[lang].achievements.a2}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-certificate text-emerald-500 mt-1"></i> <span>{t[lang].achievements.a3}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-building text-orange-500 mt-1"></i> <span>{t[lang].achievements.a4}</span></li>
+                                <li className="flex items-start gap-3"><i className="fas fa-laptop-code text-pink-500 mt-1"></i> <span>{t[lang].achievements.a5}</span></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
         );
 
-        // VERCEL-STYLE DETAILED SKILLS SECTION RESTRUCTURED FOR AI & DATA
         const Skills = ({ lang }) => {
             const skillCategories = [
                 {
                     title: t[lang].skills.cats[0], icon: "fa-brain", color: "purple",
-                    items: [ {name: "PyTorch & TensorFlow", y: "3"}, {name: "Computer Vision (OpenCV)", y: "3"}, {name: "Explainable AI (XAI)", y: "2"}, {name: "LLMs & Agentic AI", y: "1"} ]
+                    items: [ {name: "PyTorch & TensorFlow", y: "3"}, {name: "Computer Vision (OpenCV)", y: "3"}, {name: "Explainable AI (XAI)", y: "2"}, {name: "PCMCI & Causal Disc.", y: "2"} ]
                 },
                 {
                     title: t[lang].skills.cats[1], icon: "fa-database", color: "emerald",
@@ -417,22 +535,22 @@
                 },
                 {
                     title: t[lang].skills.cats[2], icon: "fa-server", color: "pink",
-                    items: [ {name: "FastAPI / Flask", y: "2"}, {name: "RESTful APIs", y: "3"}, {name: "Workflow Automation", y: "3"}, {name: ".NET / C#", y: "2"} ]
+                    items: [ {name: "FastAPI / Flask", y: "2"}, {name: "RESTful APIs", y: "3"}, {name: "Workflow Automation", y: "3"}, {name: "Custom PHP", y: "2"} ]
                 },
                 {
                     title: t[lang].skills.cats[3], icon: "fa-cloud", color: "orange",
-                    items: [ {name: "Git & GitHub", y: "5"}, {name: "Docker & Kubernetes", y: "2"}, {name: "CI/CD Pipelines", y: "2"}, {name: "Azure / AWS", y: "1"} ]
+                    items: [ {name: "Git & GitHub", y: "5"}, {name: "Docker", y: "2"}, {name: "CI/CD Pipelines", y: "2"}, {name: "Azure / AWS", y: "1"} ]
                 },
                 {
                     title: t[lang].skills.cats[4], icon: "fa-layer-group", color: "blue",
-                    items: [ {name: "React & Next.js", y: "3"}, {name: "JavaScript / TS", y: "4"}, {name: "Tailwind CSS", y: "3"}, {name: "Responsive UI", y: "4"} ]
+                    items: [ {name: "React & Next.js", y: "3"}, {name: "JavaScript / TS", y: "4"}, {name: "Tailwind & Bootstrap", y: "4"}, {name: "Responsive UI", y: "4"} ]
                 }
             ];
 
             const complementary = [
-                "C++", "scikit-learn", "Transformers", "NLP", "Sentiment Analysis", "CNNs", "Grad-CAM", "Saliency Maps",
-                "EDA", "Matplotlib", "Conda / venv", "Data Cleaning", "MFA", "OAuth2", "GraphQL", "WebSockets",
-                "Azure OpenAI", "LangChain", "GCP", "Linux", "Bootstrap", "HTML5", "CSS3"
+                "C++", "scikit-learn", "Transformers", "NLP", "Sentiment Analysis", "CNNs (ResNet, VGG)", "Grad-CAM", "Saliency Maps",
+                "EDA", "Matplotlib", "Data Cleaning", "MFA", "OAuth2", "WebSockets", "Stripe API", "SumUp API",
+                "Azure OpenAI", "Linux", "WordPress"
             ];
 
             return (
@@ -442,7 +560,6 @@
                         <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium">{t[lang].skills.sub}</p>
                     </div>
 
-                    {/* 5-Column Grid exactly matching reference */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
                         {skillCategories.map((cat, i) => (
                             <div key={i} className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm flex flex-col">
@@ -452,7 +569,6 @@
                                 </div>
                                 <div className="space-y-6 flex-grow">
                                     {cat.items.map((skill, j) => {
-                                        // Calculate percentage for visual bar based on max 5 years
                                         const pct = Math.min((parseInt(skill.y) / 5) * 100, 100);
                                         return (
                                             <div key={j}>
@@ -460,7 +576,7 @@
                                                     <span className="dark:text-slate-100 text-slate-900 font-bold text-sm">{skill.name}</span>
                                                     <div className="text-right">
                                                         <span className={`text-${cat.color}-500 font-black text-lg leading-none`}>{skill.y}</span>
-                                                        <span className="dark:text-slate-500 text-slate-400 text-[10px] ml-1">years</span>
+                                                        <span className="dark:text-slate-500 text-slate-400 text-[10px] ml-1">yrs</span>
                                                     </div>
                                                 </div>
                                                 <div className="w-full dark:bg-slate-800 bg-slate-200 rounded-full h-1.5">
@@ -474,7 +590,6 @@
                         ))}
                     </div>
 
-                    {/* Complementary Technologies Pills */}
                     <div className="text-center mb-16">
                         <h3 className="text-xl font-bold dark:text-white text-slate-900 mb-8">{t[lang].skills.comp}</h3>
                         <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
@@ -486,18 +601,17 @@
                         </div>
                     </div>
 
-                    {/* Skills Stats Row */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
                         <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">16</h4>
+                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">5+</h4>
                             <p className="dark:text-slate-400 text-slate-500 text-xs font-bold uppercase tracking-wider">{t[lang].skills.stats[0]}</p>
                         </div>
                         <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">52+</h4>
+                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">12+</h4>
                             <p className="dark:text-slate-400 text-slate-500 text-xs font-bold uppercase tracking-wider">{t[lang].skills.stats[1]}</p>
                         </div>
                         <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
-                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">6+</h4>
+                            <h4 className="text-4xl font-black dark:text-white text-slate-900 mb-2">150<span className="text-lg">h</span></h4>
                             <p className="dark:text-slate-400 text-slate-500 text-xs font-bold uppercase tracking-wider">{t[lang].skills.stats[2]}</p>
                         </div>
                         <div className="theme-card rounded-2xl p-6 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm text-center">
@@ -511,18 +625,18 @@
 
         const Projects = ({ lang }) => {
             const projectData = [
-                { id: 1, title: "Medical Imaging Continual Learning", desc: "Automated, cross-domain continual learning pipeline for complex medical imaging tasks utilizing knowledge distillation.", link: "Medical-Imaging-Continual-Learning-Pipeline", tags: ["</> Open Source", "AI/ML"], status: "Completed", tools: ["Python", "PyTorch", "MobileNetV3"], metrics: [{l: "Algorithms", v: "2"}, {l: "Acc.", v: "95%"}, {l: "Domains", v: "Multi"}] },
-                { id: 2, title: "Causal Anomaly Detection System", desc: "Engineered an automated pipeline to identify root causes within complex anomaly datasets using feature attribution.", link: "causal_anomaly_detection", tags: ["</> Research", "AI/ML"], status: "Ongoing", tools: ["Python", "TensorFlow", "XAI Methods"], metrics: [{l: "Diagnostic", v: "<2s"}, {l: "Transp.", v: "High"}, {l: "Layers", v: "4"}] },
-                { id: 3, title: "Financial Time-Series Analysis", desc: "Machine learning architecture that automatically ingests and analyzes stock market data using time-series models.", link: "Machine_learning_Stock_data_ana", tags: ["</> Analytics", "Data"], status: "Completed", tools: ["Python", "Pandas", "Time-Series"], metrics: [{l: "Data", v: "Large"}, {l: "Trend Acc.", v: "88%"}, {l: "Pipelines", v: "1"}] },
-                { id: 4, title: "Computer Vision Pipelines", desc: "Developed 2D and 3D computer vision models utilizing deep learning techniques for robust object detection.", link: "CV_Project", tags: ["</> Open Source", "Vision"], status: "Completed", tools: ["OpenCV", "Deep Learning", "CNNs"], metrics: [{l: "Dims", v: "2D/3D"}, {l: "Speed", v: "Fast"}, {l: "Features", v: "SIFT"}] },
-                { id: 5, title: "NLP & Sentiment Systems", desc: "Engineered NLP solutions involving complex text preprocessing, tokenization, and sentiment analysis via transformers.", link: "NLP_assignment2", tags: ["</> Academic", "NLP"], status: "Completed", tools: ["Transformers", "Tokenization"], metrics: [{l: "Analysis", v: "Sent."}, {l: "Arch", v: "Transf."}, {l: "Opt.", v: "High"}] },
-                { id: 6, title: "Knowledge Representation & Logic", desc: "Academic project focusing on automated reasoning, logical frameworks, and structured knowledge representation.", link: "-Knowledge_Representation_Project", tags: ["</> Academic", "Logic"], status: "Completed", tools: ["Automated Reasoning", "Algorithms"], metrics: [{l: "Frameworks", v: "Multi"}, {l: "Type", v: "Agentic"}, {l: "Struct", v: "Complex"}] },
-                { id: 7, title: "Deep Learning Foundation Models", desc: "Built and evaluated advanced deep learning models focusing on foundational time-series architectures.", link: "DL_Project_Time-series_Foundation_Models", tags: ["</> Research", "Deep Learning"], status: "Completed", tools: ["Python", "Deep Learning"], metrics: [{l: "Models", v: "Found."}, {l: "Acc.", v: "High"}, {l: "Focus", v: "Temporal"}] },
+                { id: 1, title: "Explainable Causal Anomaly Detection", desc: "Master's thesis research. Developed an automated pipeline to identify root causes in complex datasets using PCMCI and feature attribution.", link: "causal_anomaly_detection", tags: ["</> Thesis", "AI/ML"], status: "Academic", tools: ["Python", "TensorFlow", "XAI Methods"], metrics: [{l: "Role", v: "Sole Dev"}, {l: "Focus", v: "Causality"}, {l: "Type", v: "Research"}] },
+                { id: 2, title: "Medical Imaging Continual Learning", desc: "Built a continual learning pipeline for medical imaging using knowledge distillation algorithms to train a MobileNetV3 student model.", link: "Medical-Imaging-Continual-Learning-Pipeline", tags: ["</> Research", "AI/ML"], status: "Completed", tools: ["Python", "PyTorch", "MobileNetV3"], metrics: [{l: "Role", v: "Developer"}, {l: "Task", v: "Imaging"}, {l: "Model", v: "CNN"}] },
+                { id: 3, title: "Financial Time-Series Analysis", desc: "Machine learning architecture that ingests and analyzes stock market data using time-series foundation models for trend prediction.", link: "Machine_learning_Stock_data_ana", tags: ["</> Analytics", "Data"], status: "Completed", tools: ["Python", "Pandas", "Scikit-learn"], metrics: [{l: "Data", v: "Financial"}, {l: "Type", v: "Predictive"}, {l: "Scale", v: "Large"}] },
+                { id: 4, title: "Computer Vision Models", desc: "Developed 2D and 3D computer vision models using deep learning, OpenCV transformations, edge detection, and SIFT feature extraction.", link: "CV_Project", tags: ["</> Open Source", "Vision"], status: "Completed", tools: ["OpenCV", "Deep Learning", "PIL"], metrics: [{l: "Dims", v: "2D/3D"}, {l: "Features", v: "SIFT"}, {l: "Task", v: "Detect."}] },
+                { id: 5, title: "NLP & Sentiment Analysis", desc: "Implemented NLP solutions involving text preprocessing, tokenization, and sentiment analysis utilizing transformer architectures.", link: "NLP_assignment2", tags: ["</> Academic", "NLP"], status: "Completed", tools: ["Transformers", "Tokenization"], metrics: [{l: "Analysis", v: "Sent."}, {l: "Arch", v: "Transf."}, {l: "Scope", v: "Academic"}] },
+                { id: 6, title: "Knowledge Representation & Logic", desc: "Implemented modal logic reasoning algorithms and knowledge representation models for university coursework.", link: "-Knowledge_Representation_Project", tags: ["</> Academic", "Logic"], status: "Completed", tools: ["Automated Reasoning", "Algorithms"], metrics: [{l: "Frameworks", v: "Logic"}, {l: "Type", v: "Agentic"}, {l: "Scope", v: "Academic"}] },
+                { id: 7, title: "Deep Learning Foundation Models", desc: "Built and evaluated advanced deep learning models focusing on foundational time-series architectures.", link: "DL_Project_Time-series_Foundation_Models", tags: ["</> Research", "Deep Learning"], status: "Completed", tools: ["Python", "Deep Learning"], metrics: [{l: "Models", v: "Found."}, {l: "Task", v: "Eval."}, {l: "Focus", v: "Temporal"}] },
                 { id: 8, title: "Interactive React Application", desc: "Modern frontend web application built from the ground up using React and JavaScript, focusing on responsive UI/UX.", link: "project_react", tags: ["</> Side Project", "Frontend"], status: "Completed", tools: ["React", "JavaScript", "CSS"], metrics: [{l: "Tech", v: "React"}, {l: "Type", v: "SPA"}, {l: "UI", v: "Resp."}] },
-                { id: 9, title: "Secure Database Management System", desc: "Designed and implemented a secure relational database architecture to handle robust data tracking.", link: "Data-base-system", tags: ["</> Infrastructure", "Backend"], status: "Completed", tools: ["SQL", "DB Design", "Security"], metrics: [{l: "Arch", v: "Relational"}, {l: "Focus", v: "Secure"}, {l: "Type", v: "DBMS"}] },
-                { id: 10, title: "Automated QR Attendance System", desc: "Engineered an automated attendance tracking application utilizing QR code generation and image scanning algorithms.", link: "ATTENDANCE-QR-CODE", tags: ["</> Tool", "Automation"], status: "Completed", tools: ["Python", "Algorithms", "OpenCV"], metrics: [{l: "Input", v: "QR"}, {l: "Speed", v: "Instant"}, {l: "Type", v: "Tool"}] },
+                { id: 9, title: "Secure Database Management System", desc: "Designed and implemented a secure relational database architecture to handle data tracking.", link: "Data-base-system", tags: ["</> Infrastructure", "Backend"], status: "Completed", tools: ["SQL", "DB Design", "Security"], metrics: [{l: "Arch", v: "Relational"}, {l: "Focus", v: "Secure"}, {l: "Type", v: "DBMS"}] },
+                { id: 10, title: "Automated QR Attendance System", desc: "Engineered an automated attendance tracking application utilizing QR code generation and image scanning algorithms.", link: "ATTENDANCE-QR-CODE", tags: ["</> Tool", "Automation"], status: "Completed", tools: ["Python", "Algorithms", "OpenCV"], metrics: [{l: "Input", v: "QR"}, {l: "Type", v: "Tool"}, {l: "Scope", v: "Side Proj."}] },
                 { id: 11, title: "Blood Bank Management Platform", desc: "Full-stack application architecture developed to safely and efficiently manage blood bank inventory and donor records.", link: "-Bloodbank-Application", tags: ["</> Full Stack", "Web"], status: "Completed", tools: ["Web Dev", "Backend", "UI/UX"], metrics: [{l: "Focus", v: "Health"}, {l: "Scale", v: "Med"}, {l: "Users", v: "Multi"}] },
-                { id: 12, title: "WordPress Blog Architecture", desc: "Custom WordPress-based platform integrating specific plugins and PHP features for optimized content management.", link: "wordpress-blog-site", tags: ["</> Client", "CMS"], status: "Completed", tools: ["PHP", "WordPress", "Plugins"], metrics: [{l: "Stack", v: "LAMP"}, {l: "Feat.", v: "Custom"}, {l: "Type", v: "CMS"}] }
+                { id: 12, title: "WordPress E-Commerce Platform", desc: "Built responsive platform integrating Stripe, SumUp, countdown timers, custom PHP, and performance optimization.", link: "wordpress-blog-site", tags: ["</> Client", "CMS"], status: "Completed", tools: ["PHP", "WordPress", "Stripe API"], metrics: [{l: "Stack", v: "LAMP"}, {l: "Feat.", v: "Custom"}, {l: "Type", v: "CMS"}] }
             ];
 
             return (
@@ -537,20 +651,20 @@
                             <div key={p.id} className="theme-card rounded-2xl p-6 flex flex-col h-full relative dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm hover:shadow-md">
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-xl font-bold dark:text-white text-slate-900 leading-tight pr-4">{p.title}</h3>
-                                    {p.id <= 3 && <span className="px-2 py-1 bg-purple-600 text-white rounded text-[10px] font-bold tracking-wide shadow-sm flex-shrink-0">Featured</span>}
+                                    {p.id === 1 && <span className="px-2 py-1 bg-purple-600 text-white rounded text-[10px] font-bold tracking-wide shadow-sm flex-shrink-0">Featured</span>}
                                 </div>
                                 <p className="text-sm dark:text-slate-400 text-slate-600 leading-relaxed mb-5 flex-grow font-medium">{p.desc}</p>
                                 
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {p.tags.map(tag => (
-                                        <span key={tag} className="px-2.5 py-1 dark:bg-slate-800/80 bg-slate-100 border dark:border-slate-700 border-slate-200 dark:text-green-400 text-green-700 rounded text-[10px] font-bold">{tag}</span>
+                                        <span key={tag} className="px-2.5 py-1 dark:bg-slate-800/80 bg-slate-100 border dark:border-slate-700 border-slate-200 dark:text-blue-400 text-blue-700 rounded text-[10px] font-bold">{tag}</span>
                                     ))}
-                                    <span className={`px-2.5 py-1 rounded text-[10px] font-bold ${p.status === 'Completed' ? 'dark:bg-emerald-900/30 bg-emerald-100 dark:text-emerald-400 text-emerald-700 border dark:border-emerald-800 border-emerald-300' : 'dark:bg-amber-900/30 bg-amber-100 dark:text-amber-400 text-amber-700 border dark:border-amber-800 border-amber-300'}`}>{p.status}</span>
+                                    <span className="px-2.5 py-1 rounded text-[10px] font-bold dark:bg-slate-800 bg-slate-100 dark:text-slate-300 text-slate-700 border dark:border-slate-700 border-slate-200">{p.status}</span>
                                 </div>
 
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {p.tools.map(tool => (
-                                        <span key={tool} className="px-2 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-600 rounded text-[11px] font-semibold">{tool}</span>
+                                        <span key={tool} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-600 rounded text-[11px] font-semibold">{tool}</span>
                                     ))}
                                 </div>
 
@@ -558,14 +672,14 @@
                                     {p.metrics.map((m, i) => (
                                         <div key={i} className="flex flex-col">
                                             <span className="dark:text-slate-500 text-slate-400 text-[10px] uppercase tracking-wider font-bold mb-1">{m.l}</span>
-                                            <span className="dark:text-blue-400 text-blue-600 text-lg font-black">{m.v}</span>
+                                            <span className="dark:text-slate-300 text-slate-700 text-sm font-black">{m.v}</span>
                                         </div>
                                     ))}
                                 </div>
 
                                 <div className="mt-auto pt-4 border-t dark:border-slate-800 border-slate-200">
                                     <a href={`https://github.com/sagar-ai-dev/${p.link}`} target="_blank" className="text-sm font-bold dark:text-blue-400 text-blue-600 hover:text-blue-500 transition-colors flex items-center gap-1">
-                                        View Details &rarr;
+                                        View Source Code &rarr;
                                     </a>
                                 </div>
                             </div>
@@ -578,45 +692,22 @@
         const Experience = ({ lang }) => (
             <section id="experience" className="py-16 px-6 max-w-5xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
                 <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-10 text-center">{t[lang].exp.title}</h2>
-                
                 <div className="space-y-8">
-                    <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-pink-500">
-                        <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
-                            <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">Senior Fullstack Developer</h3>
-                                <p className="text-pink-500 font-bold text-lg">La Vertueuse</p>
-                                <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> France (Remote)</p>
-                            </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">Jan 2026 - Present</span>
-                        </div>
-                        <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>Architect and manage comprehensive backend systems and administrative portals for a prominent French enterprise.</li>
-                            <li>Oversee all end-to-end website services, ensuring high availability, robust security, and seamless user experiences.</li>
-                            <li>Engineer and maintain scalable database architectures and API integrations to support dynamic enterprise operations.</li>
-                        </ul>
-                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
-                            {["Backend Architecture", "Fullstack Web", "Database Management", "API Integration"].map(tech => (
-                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
-                            ))}
-                        </div>
-                    </div>
-
+                    
                     <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-blue-500">
                         <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
                             <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">Project Manager (AI & Automation)</h3>
-                                <p className="text-blue-500 font-bold text-lg">Codesy <span className="text-sm text-slate-500 dark:text-slate-400 font-medium">(Freelance / On-Demand)</span></p>
-                                <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> Remote / Project-Based</p>
+                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job1_title}</h3>
+                                <p className="text-blue-500 font-bold text-lg">{t[lang].exp.job1_company}</p>
+                                <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> Remote / Freelance</p>
                             </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">May 2024 - Present</span>
+                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job1_date}</span>
                         </div>
                         <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>Lead the end-to-end lifecycle of complex AI and intelligent automation projects on a freelance, demand-driven basis, ensuring rapid, high-quality delivery.</li>
-                            <li>Coordinate highly technical development teams to build Python-based AI tools, automated workflow scripts, and seamless process automation systems.</li>
-                            <li>Define project scopes, sprint timelines, and key deliverables, acting as the primary communication bridge translating complex algorithmic concepts into actionable plans for stakeholders.</li>
+                            <li>{t[lang].exp.job1_desc}</li>
                         </ul>
                         <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
-                            {["Python", "Agile/Scrum", "AI Architecture", "REST APIs"].map(tech => (
+                            {["Python", "FastAPI", "PostgreSQL", "Data Analytics"].map(tech => (
                                 <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
                             ))}
                         </div>
@@ -625,16 +716,14 @@
                     <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-purple-500">
                         <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
                             <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">Machine Learning Engineer (Intern)</h3>
-                                <p className="text-purple-500 font-bold text-lg">University of Verona</p>
+                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job_intern_title}</h3>
+                                <p className="text-purple-500 font-bold text-lg">{t[lang].exp.job_intern_company}</p>
                                 <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> Verona, Italy (On-site)</p>
                             </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">Apr 2025 - Jun 2025</span>
+                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job_intern_date}</span>
                         </div>
                         <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>Completed a 150-hour intensive academic AI internship. Preprocessed complex image data using OpenCV and PIL; applied advanced feature extraction techniques including SIFT and HOG.</li>
-                            <li>Architected and trained Convolutional Neural Networks (CNNs) using TensorFlow/Keras, optimizing architectures with transfer learning from pre-trained ResNet and VGG models.</li>
-                            <li>Developed robust time-series classifiers in Python; engineered and fine-tuned Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) networks to handle sequential data outliers.</li>
+                            <li>{t[lang].exp.job_intern_desc}</li>
                         </ul>
                         <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
                             {["TensorFlow / Keras", "OpenCV", "LSTM & GRU", "CNNs (ResNet, VGG)"].map(tech => (
@@ -643,32 +732,41 @@
                         </div>
                     </div>
 
-                    <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-emerald-500">
+                    <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-pink-500">
                         <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
                             <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">Business Development Executive</h3>
-                                <p className="text-emerald-500 font-bold text-lg">Codesy</p>
+                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job4_title}</h3>
+                                <p className="text-pink-500 font-bold text-lg">{t[lang].exp.job4_company}</p>
+                                <p className="text-sm dark:text-slate-400 text-slate-500 mt-1 font-medium"><i className="fas fa-map-marker-alt"></i> France (Remote / Freelance)</p>
                             </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">Nov 2022 - Apr 2024</span>
+                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job4_date}</span>
                         </div>
                         <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>Developed and executed highly successful, data-driven strategies aligning digital initiatives with core business objectives.</li>
-                            <li>Conducted extensive market research and competitive analysis, continuously analyzing KPI performance data to maximize campaign ROI.</li>
+                            <li>{t[lang].exp.job4_desc}</li>
                         </ul>
+                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
+                            {["Custom PHP", "Stripe API", "SumUp API", "UI/UX"].map(tech => (
+                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="theme-card rounded-2xl p-8 dark:bg-darkCard bg-lightCard border dark:border-slate-800 border-slate-200 shadow-sm border-l-4 border-l-orange-500">
                         <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b dark:border-slate-700/50 border-slate-200 pb-4">
                             <div>
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">Web Design Specialist</h3>
-                                <p className="text-orange-500 font-bold text-lg">Freelance</p>
+                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-1">{t[lang].exp.job3_title}</h3>
+                                <p className="text-orange-500 font-bold text-lg">{t[lang].exp.job3_company}</p>
                             </div>
-                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">Mar 2020 - Jan 2022</span>
+                            <span className="text-sm font-bold dark:text-slate-300 text-slate-700 mt-3 md:mt-0 px-4 py-1.5 dark:bg-slate-800 bg-slate-100 rounded-full border dark:border-slate-700 border-slate-200">{t[lang].exp.job3_date}</span>
                         </div>
                         <ul className="list-disc list-outside ml-5 space-y-3 dark:text-slate-400 text-slate-600 text-sm md:text-base leading-relaxed mb-6 font-medium">
-                            <li>Designed and deployed visually appealing, standards-compliant web applications from scratch, focusing on strict client requirements and tight deadlines.</li>
-                            <li>Implemented fully responsive mobile-friendly architectures using modern Bootstrap, CSS, and JS frameworks.</li>
+                            <li>{t[lang].exp.job3_desc}</li>
                         </ul>
+                        <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
+                            {["JavaScript", "HTML5/CSS3", "Bootstrap", "Responsive Web"].map(tech => (
+                                <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-xs font-bold">{tech}</span>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -811,7 +909,7 @@
                         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 mb-12">
                             <div>
                                 <a href="#" className="text-2xl font-bold tracking-tighter text-blue-500 mb-2 block">Sagar<span className="text-purple-500">Lal</span></a>
-                                <p className="dark:text-slate-300 text-slate-600 text-sm font-bold mb-4">Senior AI Engineer · Automation & ML Systems</p>
+                                <p className="dark:text-slate-300 text-slate-600 text-sm font-bold mb-4">AI & Machine Learning Engineer</p>
                                 <p className="dark:text-slate-500 text-slate-500 text-sm flex items-center gap-2 font-bold"><i className="fas fa-map-marker-alt"></i> Verona, Italy</p>
                             </div>
                             <div>
