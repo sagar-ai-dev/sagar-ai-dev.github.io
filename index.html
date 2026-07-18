@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sagar Lal - AI & Machine Learning Engineer. MSc Artificial Intelligence candidate specializing in computer vision, XAI, and Python backend development.">
+    <meta name="description" content="Sagar Lal - AI & Machine Learning Engineer based in Verona, Italy.">
     <title>Sagar Lal | AI & Machine Learning Engineer</title>
     
     <!-- Tailwind CSS (Premium Configuration) -->
@@ -14,7 +14,7 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#020617', /* Deeper, richer FAANG-style dark mode */
+                        darkBg: '#020617', 
                         darkCard: '#0f172a',
                         lightBg: '#f8fafc',
                         lightCard: '#ffffff',
@@ -27,11 +27,16 @@
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
                     },
                     keyframes: {
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 }
@@ -71,6 +76,7 @@
         }
         .light .glass-card:hover {
             box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); 
+            border-color: rgba(59, 130, 246, 0.3);
         }
 
         /* Timeline Vertical Line */
@@ -87,8 +93,18 @@
         .light ::-webkit-scrollbar-track { background: #f1f5f9; }
         .light ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         
-        .input-field { transition: all 0.3s ease; }
-        .input-field:focus { box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); }
+        /* Input Field Styling */
+        .input-field { 
+            transition: all 0.3s ease; 
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border-radius: 0.75rem;
+            outline: none;
+        }
+        .input-field:focus { 
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); 
+            border-color: transparent;
+        }
     </style>
 </head>
 <body class="antialiased dark:bg-darkBg dark:text-slate-300 bg-lightBg text-slate-700 selection:bg-primary selection:text-white">
@@ -103,15 +119,15 @@
                 nav: ["Home", "About", "Education", "Experience", "Research", "Projects", "Skills", "Contact"],
                 hero: {
                     title: "AI & Machine Learning Engineer",
-                    subtitle: "MSc Artificial Intelligence Candidate • University of Verona",
+                    subtitle: "Based in Verona, Italy • Project Manager at Codesy",
                     desc: "Building intelligent systems through Machine Learning, Explainable AI, Computer Vision, and scalable Python backend architectures.",
-                    stats: ["3+", "Professional Years", "12+", "Projects", "150", "Internship Hours", "24+", "Certifications"],
+                    stats: ["3+", "Professional Years", "12+", "Projects", "150", "Internship Hours", "25+", "Certifications"],
                     btn_proj: "View Work", btn_res: "Download Resume"
                 },
                 about: {
                     title: "About Me",
-                    p1: "I am an AI & Machine Learning Engineer focusing on practical AI integration, computer vision, and backend development. Currently, I develop Python-based automation scripts for Codesy and manage full-stack web architectures for La Vertueuse.",
-                    p2: "I am finalizing my MSc in Artificial Intelligence at the University of Verona. My academic focus centers on Explainable AI (XAI) and Causal Discovery. I combine this rigorous research with 3+ years of professional development experience, prioritizing clean code, robust data pipelines, and scalable APIs."
+                    p1: "I am an AI & Machine Learning Engineer focusing on practical AI integration, computer vision, and scalable development. Currently, I serve as a Project Manager at Codesy orchestrating automation workflows, while managing full-stack architectures for diverse clients.",
+                    p2: "I am finalizing my MSc in Artificial Intelligence at the University of Verona. My academic focus centers on Explainable AI (XAI) and Causal Discovery. I combine this rigorous research with 3+ years of professional development experience, prioritizing clean code, robust data pipelines, and seamless user experiences."
                 },
                 edu: {
                     title: "Academic Background",
@@ -124,6 +140,14 @@
                     title: "Professional Experience",
                     jobs: [
                         {
+                            title: "Project Manager", comp: "Codesy", date: "May 2024 - Present", loc: "Remote",
+                            resp: [
+                                "Led cross-functional workflows and managed the lifecycle of Python-based AI automation scripts.",
+                                "Oversaw the architecture and deployment of robust FastAPI REST APIs connected to PostgreSQL databases.",
+                                "Coordinated data engineering tasks, automating repetitive processes for datasets containing 20,000+ records."
+                            ], tech: ["Project Management", "Python", "FastAPI", "PostgreSQL", "Workflow Optimization"]
+                        },
+                        {
                             title: "Web Developer", comp: "La Vertueuse", date: "Jan 2026 - Present", loc: "France (Remote)",
                             resp: [
                                 "Maintaining the company website and administrative portal to ensure high availability.",
@@ -132,12 +156,12 @@
                             ], tech: ["PHP", "JavaScript", "SQL", "Stripe API"]
                         },
                         {
-                            title: "Freelance AI Automation Developer", comp: "Codesy", date: "May 2024 - Present", loc: "Remote",
+                            title: "Freelance Web Developer", comp: "Independent Clients", date: "Mar 2023 - Present", loc: "Remote",
                             resp: [
-                                "Improved data preprocessing efficiency by developing custom Python automation scripts.",
-                                "Built and deployed REST APIs using FastAPI connected to PostgreSQL databases.",
-                                "Automated repetitive workflows, processing datasets containing 20,000+ records."
-                            ], tech: ["Python", "FastAPI", "PostgreSQL", "Data Pipelines"]
+                                "Designed, built, and updated highly responsive modern websites utilizing WordPress and Elementor.",
+                                "Implemented complex UI/UX designs into fully functional landing pages tailored to client specifications.",
+                                "Managed continuous website maintenance, hosting configurations, and technical troubleshooting."
+                            ], tech: ["WordPress", "Elementor", "CSS3", "Client Management"]
                         },
                         {
                             title: "Machine Learning Intern", comp: "University of Verona", date: "Apr 2025 - Jun 2025", loc: "Verona, Italy",
@@ -157,75 +181,73 @@
                     p_title: "4-Phase Architecture", p_items: ["Graph Discovery: Learns causal dependencies from healthy data.", "Offline Fitting: Trains regression variants (Linear/OLS, Poly Degree 3, RBF+Ridge).", "Online Drift: Uses dynamic sliding windows to calculate the L2 norm of coefficient drift.", "Auto-Thresholding: Calculates dynamic thresholds based on 95th-99th percentiles."],
                     x_title: "XAI & Standardized Reporting", x_desc: "All 27 independent scripts route through a centralized reporting module generating F1/AUC-ROC metrics, attack localization visuals, and XAI X-Ray spreadsheets ranking the specific variables that triggered the alert."
                 },
-                projects: {
-                    title: "Technical Projects", sub: "Academic research, open-source tools, and freelance developments."
-                },
-                skills: {
-                    title: "Technical Expertise", sub: "Core programming languages, frameworks, and tools."
-                },
-                cert: {
-                    title: "Certifications", sub: "A curated list of my verified credentials."
-                },
+                projects: { title: "Technical Projects", sub: "Academic research, open-source tools, and freelance developments." },
+                skills: { title: "Technical Expertise", sub: "Core programming languages, frameworks, and tools." },
+                cert: { title: "Certifications", sub: "A curated list of my verified credentials." },
                 contact: { 
-                    title: "Get in Touch", avail: "Availability", a_items: ["Open to Work", "Based in Italy", "Remote Worldwide", "Relocation Available"],
-                    form: ["Name", "Email", "Message", "Send Message"]
+                    title: "Let's Build Something Great", avail: "Current Availability", a_items: ["Open to New Opportunities", "Based in Verona, Italy", "Remote Worldwide", "Relocation Available"],
+                    form: ["Full Name", "Email Address", "Your Message", "Send Message"]
                 }
             },
             it: {
                 nav: ["Home", "Chi Sono", "Formazione", "Esperienza", "Ricerca", "Progetti", "Competenze", "Contatti"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "MSc Intelligenza Artificiale • Università di Verona", desc: "Sviluppo sistemi intelligenti tramite Machine Learning, Computer Vision e backend Python.", stats: ["3+", "Anni Esperienza", "12+", "Progetti", "150", "Ore Tirocinio", "24+", "Certificazioni"], btn_proj: "Vedi Progetti", btn_res: "Scarica CV" },
-                about: { title: "Chi Sono", p1: "Ingegnere AI specializzato in machine learning, computer vision e automazione.", p2: "Sto completando la magistrale in AI a Verona. Unisco la ricerca accademica (XAI) a 3+ anni di esperienza di sviluppo professionale." },
+                hero: { title: "AI & Machine Learning Engineer", subtitle: "Residente a Verona, Italia • Project Manager presso Codesy", desc: "Sviluppo sistemi intelligenti tramite Machine Learning, Computer Vision e backend Python.", stats: ["3+", "Anni Esperienza", "12+", "Progetti", "150", "Ore Tirocinio", "25+", "Certificazioni"], btn_proj: "Vedi Progetti", btn_res: "Scarica CV" },
+                about: { title: "Chi Sono", p1: "Ingegnere AI specializzato in machine learning e automazione. Attualmente Project Manager presso Codesy e sviluppatore per vari clienti.", p2: "Sto completando la magistrale in AI all'Università di Verona. Unisco la ricerca accademica (XAI) a 3+ anni di esperienza di sviluppo professionale." },
                 edu: { title: "Formazione Accademica", degrees: [{deg: "MSc Intelligenza Artificiale", uni: "Università di Verona", date: "Atteso Ott 2026", desc: "Specializzazione in Explainable AI e Causal Discovery."}, {deg: "BSc Computer Systems Engineering", uni: "Dawood University", date: "Gen 2019 - Nov 2022", desc: "Focus su Algoritmi, Strutture Dati e Architetture Software."}] },
                 exp: { title: "Esperienza Professionale", jobs: [
-                    {title: "Sviluppatore Web", comp: "La Vertueuse", date: "Gen 2026 - Presente", loc: "Francia (Remoto)", resp: ["Manutenzione sito aziendale.", "Ottimizzazione PHP."], tech: ["PHP", "JS", "SQL"]},
-                    {title: "Sviluppatore AI Freelance", comp: "Codesy", date: "Mag 2024 - Presente", loc: "Remoto", resp: ["Script automazione Python.", "API REST con FastAPI."], tech: ["Python", "FastAPI"]},
-                    {title: "Tirocinante Machine Learning", comp: "Università di Verona", date: "Apr 2025 - Giu 2025", loc: "Verona", resp: ["Modelli CNN con TensorFlow.", "Classificatori serie temporali."], tech: ["TensorFlow", "OpenCV"]}
+                    {title: "Project Manager", comp: "Codesy", date: "Mag 2024 - Presente", loc: "Remoto", resp: ["Gestione del ciclo di vita degli script di automazione Python.", "Supervisione di architetture API REST FastAPI.", "Ottimizzazione di pipeline di dati e flussi di lavoro."], tech: ["Project Management", "Python", "FastAPI"]},
+                    {title: "Sviluppatore Web", comp: "La Vertueuse", date: "Gen 2026 - Presente", loc: "Francia (Remoto)", resp: ["Manutenzione sito aziendale.", "Ottimizzazione PHP.", "Integrazione Stripe."], tech: ["PHP", "JS", "SQL"]},
+                    {title: "Sviluppatore Web Freelance", comp: "Clienti Indipendenti", date: "Mar 2023 - Presente", loc: "Remoto", resp: ["Progettazione e aggiornamento siti con WordPress e Elementor.", "Sviluppo landing page responsive.", "Gestione clienti e manutenzione tecnica."], tech: ["WordPress", "Elementor"]},
+                    {title: "Tirocinante Machine Learning", comp: "Università di Verona", date: "Apr 2025 - Giu 2025", loc: "Verona, Italia", resp: ["Modelli CNN con TensorFlow.", "Classificatori serie temporali."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
                 research: { title: "Ricerca: Tesi Magistrale", obj: "Studio di ablazione per valutare algoritmi di Causal Discovery integrati in un motore di Anomaly Scoring.", d_title: "I Tre Domini", d_items: ["Healthcare (ECG)", "Industriale (TEP)", "Robotica (PEPPER)"], a_title: "Algoritmi Causali", a_items: ["PCMCI", "GEM/GES", "TS-CAM-UV"], p_title: "Architettura", p_items: ["Graph Discovery", "Offline Fitting", "Online Drift", "Auto-Thresholding"], x_title: "XAI & Reporting", x_desc: "Generazione di metriche standardizzate e report X-Ray per l'interpretabilità." },
                 projects: { title: "Progetti Tecnici", sub: "Sviluppo open-source e freelance." }, skills: { title: "Competenze", sub: "Linguaggi e framework." }, cert: { title: "Certificazioni", sub: "Credenziali verificate." },
-                contact: { title: "Contattami", avail: "Disponibilità", a_items: ["Aperto a Lavoro", "Italia", "Remoto", "Trasferimento"], form: ["Nome", "Email", "Messaggio", "Invia"] }
+                contact: { title: "Costruiamo Qualcosa Insieme", avail: "Disponibilità Attuale", a_items: ["Aperto a Nuove Opportunità", "Residente a Verona, Italia", "Remoto Globale", "Trasferimento Possibile"], form: ["Nome Completo", "Indirizzo Email", "Il Tuo Messaggio", "Invia Messaggio"] }
             },
             es: {
                 nav: ["Inicio", "Sobre Mí", "Educación", "Experiencia", "Investigación", "Proyectos", "Habilidades", "Contacto"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "MSc Inteligencia Artificial • Universidad de Verona", desc: "Construyendo sistemas inteligentes a través de Machine Learning y Python.", stats: ["3+", "Años de Exp", "12+", "Proyectos", "150", "Horas Pasantía", "24+", "Certificaciones"], btn_proj: "Ver Proyectos", btn_res: "Descargar CV" },
-                about: { title: "Sobre Mí", p1: "Ingeniero de IA enfocado en ML, visión por computadora y automatización.", p2: "Finalizando mi Maestría en IA. Combino el rigor académico con 3+ años de experiencia profesional." },
+                hero: { title: "AI & Machine Learning Engineer", subtitle: "Basado en Verona, Italia • Project Manager en Codesy", desc: "Construyendo sistemas inteligentes a través de Machine Learning y Python.", stats: ["3+", "Años de Exp", "12+", "Proyectos", "150", "Horas Pasantía", "25+", "Certificaciones"], btn_proj: "Ver Proyectos", btn_res: "Descargar CV" },
+                about: { title: "Sobre Mí", p1: "Ingeniero de IA enfocado en ML y automatización. Project Manager en Codesy y desarrollador web para múltiples clientes.", p2: "Finalizando mi Maestría en IA en la Universidad de Verona. Combino el rigor académico con 3+ años de experiencia profesional." },
                 edu: { title: "Educación", degrees: [{deg: "MSc Inteligencia Artificial", uni: "Universidad de Verona", date: "Oct 2026", desc: "Especialización en XAI y Descubrimiento Causal."}, {deg: "BSc Ingeniería de Sistemas", uni: "Universidad Dawood", date: "Ene 2019 - Nov 2022", desc: "Algoritmos y Arquitectura de Software."}] },
                 exp: { title: "Experiencia Profesional", jobs: [
+                    {title: "Project Manager", comp: "Codesy", date: "May 2024 - Presente", loc: "Remoto", resp: ["Liderazgo en flujos de trabajo de automatización en Python.", "Supervisión de APIs REST con FastAPI.", "Ingeniería de datos."], tech: ["Project Management", "Python", "FastAPI"]},
                     {title: "Desarrollador Web", comp: "La Vertueuse", date: "Ene 2026 - Presente", loc: "Francia (Remoto)", resp: ["Mantenimiento web corporativo.", "Integración Stripe."], tech: ["PHP", "JS", "SQL"]},
-                    {title: "Desarrollador IA Freelance", comp: "Codesy", date: "May 2024 - Presente", loc: "Remoto", resp: ["Scripts de automatización.", "APIs REST con FastAPI."], tech: ["Python", "FastAPI"]},
-                    {title: "Pasante Machine Learning", comp: "Univ. de Verona", date: "Abr 2025 - Jun 2025", loc: "Verona", resp: ["Modelos CNN TensorFlow.", "Series temporales."], tech: ["TensorFlow", "OpenCV"]}
+                    {title: "Desarrollador Web Freelance", comp: "Clientes Independientes", date: "Mar 2023 - Presente", loc: "Remoto", resp: ["Diseño de sitios web con WordPress y Elementor.", "Desarrollo de landing pages.", "Mantenimiento y gestión de clientes."], tech: ["WordPress", "Elementor"]},
+                    {title: "Pasante Machine Learning", comp: "Univ. de Verona", date: "Abr 2025 - Jun 2025", loc: "Verona, Italia", resp: ["Modelos CNN TensorFlow.", "Series temporales."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
                 research: { title: "Investigación: Tesis", obj: "Estudio para evaluar algoritmos de descubrimiento causal para detección de anomalías.", d_title: "Tres Dominios", d_items: ["Salud (ECG)", "Industrial (TEP)", "Robótica (PEPPER)"], a_title: "Algoritmos Causales", a_items: ["PCMCI", "GEM/GES", "TS-CAM-UV"], p_title: "Arquitectura", p_items: ["Descubrimiento de Grafos", "Ajuste Offline", "Deriva Online", "Auto-Umbral"], x_title: "XAI & Reporting", x_desc: "Generación de métricas F1/AUC y análisis de explicabilidad (X-Ray)." },
                 projects: { title: "Proyectos Técnicos", sub: "Desarrollos y análisis." }, skills: { title: "Habilidades", sub: "Herramientas core." }, cert: { title: "Certificaciones", sub: "Credenciales." },
-                contact: { title: "Contacto", avail: "Disponibilidad", a_items: ["Abierto a Trabajar", "Italia", "Remoto", "Reubicación"], form: ["Nombre", "Email", "Mensaje", "Enviar"] }
+                contact: { title: "Trabajemos Juntos", avail: "Disponibilidad Actual", a_items: ["Abierto a Oportunidades", "Basado en Verona, Italia", "Remoto Mundial", "Reubicación Disponible"], form: ["Nombre Completo", "Correo Electrónico", "Tu Mensaje", "Enviar Mensaje"] }
             },
             fr: {
                 nav: ["Accueil", "À Propos", "Éducation", "Expérience", "Recherche", "Projets", "Compétences", "Contact"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "MSc Intelligence Artificielle • Université de Vérone", desc: "Création de systèmes intelligents via le Machine Learning et Python.", stats: ["3+", "Années Exp.", "12+", "Projets", "150", "Heures Stage", "24+", "Certifications"], btn_proj: "Voir Projets", btn_res: "Télécharger CV" },
-                about: { title: "À Propos", p1: "Ingénieur IA spécialisé en ML, vision par ordinateur et automatisation.", p2: "Je combine la recherche académique à Vérone avec 3+ ans d'expérience professionnelle." },
+                hero: { title: "AI & Machine Learning Engineer", subtitle: "Basé à Vérone, Italie • Project Manager chez Codesy", desc: "Création de systèmes intelligents via le Machine Learning et Python.", stats: ["3+", "Années Exp.", "12+", "Projets", "150", "Heures Stage", "25+", "Certifications"], btn_proj: "Voir Projets", btn_res: "Télécharger CV" },
+                about: { title: "À Propos", p1: "Ingénieur IA spécialisé en ML. Project Manager chez Codesy et développeur full-stack pour divers clients.", p2: "Je combine la recherche académique à Vérone avec 3+ ans d'expérience professionnelle dans le développement." },
                 edu: { title: "Formation", degrees: [{deg: "MSc Intelligence Artificielle", uni: "Université de Vérone", date: "Oct 2026", desc: "Spécialisation en XAI et Causal Discovery."}, {deg: "Licence Ingénierie", uni: "Université Dawood", date: "Janv 2019 - Nov 2022", desc: "Structures de données et architectures."}] },
                 exp: { title: "Expérience", jobs: [
+                    {title: "Project Manager", comp: "Codesy", date: "Mai 2024 - Présent", loc: "Remoto", resp: ["Gestion de workflows d'automatisation Python.", "Déploiement d'APIs REST FastAPI.", "Optimisation de pipelines de données."], tech: ["Project Management", "Python", "FastAPI"]},
                     {title: "Développeur Web", comp: "La Vertueuse", date: "Janv 2026 - Présent", loc: "France (Remoto)", resp: ["Maintenance du site.", "Intégration Stripe."], tech: ["PHP", "JS", "SQL"]},
-                    {title: "Développeur IA Freelance", comp: "Codesy", date: "Mai 2024 - Présent", loc: "Remoto", resp: ["Scripts Python.", "API REST FastAPI."], tech: ["Python", "FastAPI"]},
-                    {title: "Stagiaire ML", comp: "Université de Vérone", date: "Avr 2025 - Juin 2025", loc: "Vérone", resp: ["Modèles CNN TensorFlow.", "Séries temporelles."], tech: ["TensorFlow", "OpenCV"]}
+                    {title: "Développeur Web Freelance", comp: "Clients Indépendants", date: "Mar 2023 - Présent", loc: "Remoto", resp: ["Création de sites via WordPress et Elementor.", "Intégration UI/UX.", "Maintenance technique."], tech: ["WordPress", "Elementor"]},
+                    {title: "Stagiaire ML", comp: "Université de Vérone", date: "Avr 2025 - Juin 2025", loc: "Vérone, Italie", resp: ["Modèles CNN TensorFlow.", "Séries temporelles."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
                 research: { title: "Recherche de Thèse", obj: "Évaluation d'algorithmes de découverte causale pour la détection d'anomalies.", d_title: "Domaines", d_items: ["Santé (ECG)", "Industriel (TEP)", "Robotique (PEPPER)"], a_title: "Algorithmes", a_items: ["PCMCI", "GEM/GES", "TS-CAM-UV"], p_title: "Architecture", p_items: ["Graphes Causaux", "Baseline Offline", "Online Drift", "Auto-Thresholding"], x_title: "XAI", x_desc: "Rapports standardisés et explicabilité X-Ray." },
                 projects: { title: "Projets", sub: "Développements techniques." }, skills: { title: "Compétences", sub: "Technologies." }, cert: { title: "Certifications", sub: "Validées." },
-                contact: { title: "Contact", avail: "Disponibilité", a_items: ["Ouvert aux Offres", "Italie", "Télétravail", "Relocalisation"], form: ["Nom", "Email", "Message", "Envoyer"] }
+                contact: { title: "Construisons l'Avenir", avail: "Disponibilité", a_items: ["Ouvert aux Opportunités", "Basé à Vérone, Italie", "Télétravail Mondial", "Relocalisation Possible"], form: ["Nom Complet", "Adresse Email", "Votre Message", "Envoyer le Message"] }
             },
             de: {
                 nav: ["Startseite", "Über", "Bildung", "Erfahrung", "Forschung", "Projekte", "Fähigkeiten", "Kontakt"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "MSc Künstliche Intelligenz • Universität Verona", desc: "Entwicklung intelligenter Systeme durch ML und Python.", stats: ["3+", "Jahre Exp.", "12+", "Projekte", "150", "Stunden Prakt.", "24+", "Zertifikate"], btn_proj: "Projekte", btn_res: "Lebenslauf" },
-                about: { title: "Über Mich", p1: "KI-Ingenieur mit Fokus auf ML, Computer Vision und Automatisierung.", p2: "Ich kombiniere Forschung (XAI) mit 3+ Jahren professioneller Erfahrung." },
+                hero: { title: "AI & Machine Learning Engineer", subtitle: "Sitz in Verona, Italien • Project Manager bei Codesy", desc: "Entwicklung intelligenter Systeme durch ML und Python.", stats: ["3+", "Jahre Exp.", "12+", "Projekte", "150", "Stunden Prakt.", "25+", "Zertifikate"], btn_proj: "Projekte", btn_res: "Lebenslauf" },
+                about: { title: "Über Mich", p1: "KI-Ingenieur mit Fokus auf ML. Project Manager bei Codesy und Webentwickler für verschiedene Kunden.", p2: "Ich kombiniere Forschung (XAI) an der Uni Verona mit 3+ Jahren professioneller Erfahrung." },
                 edu: { title: "Bildung", degrees: [{deg: "MSc Künstliche Intelligenz", uni: "Universität Verona", date: "Okt 2026", desc: "Spezialisierung auf XAI und Causal Discovery."}, {deg: "BSc Ingenieurwesen", uni: "Dawood Uni", date: "Jan 2019 - Nov 2022", desc: "Datenstrukturen und Software Engineering."}] },
                 exp: { title: "Berufserfahrung", jobs: [
+                    {title: "Project Manager", comp: "Codesy", date: "Mai 2024 - Heute", loc: "Remote", resp: ["Leitung von Python-Automatisierungs-Workflows.", "Überwachung von FastAPI REST APIs.", "Daten-Engineering."], tech: ["Project Management", "Python", "FastAPI"]},
                     {title: "Webentwickler", comp: "La Vertueuse", date: "Jan 2026 - Heute", loc: "Frankreich", resp: ["Wartung der Website.", "Stripe Integration."], tech: ["PHP", "JS", "SQL"]},
-                    {title: "Freelance KI Entwickler", comp: "Codesy", date: "Mai 2024 - Heute", loc: "Remote", resp: ["Python-Skripte.", "REST APIs mit FastAPI."], tech: ["Python", "FastAPI"]},
-                    {title: "ML Praktikant", comp: "Uni Verona", date: "Apr 2025 - Jun 2025", loc: "Verona", resp: ["CNN TensorFlow.", "Zeitreihen."], tech: ["TensorFlow", "OpenCV"]}
+                    {title: "Freelance Webentwickler", comp: "Unabhängige Kunden", date: "Mär 2023 - Heute", loc: "Remote", resp: ["Erstellung von Websites mit WordPress und Elementor.", "UI/UX Integration.", "Technische Wartung."], tech: ["WordPress", "Elementor"]},
+                    {title: "ML Praktikant", comp: "Uni Verona", date: "Apr 2025 - Jun 2025", loc: "Verona, Italien", resp: ["CNN TensorFlow.", "Zeitreihen."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
                 research: { title: "Forschung Thesis", obj: "Wissenschaftliche Evaluierung kausaler Algorithmen zur Anomalieerkennung.", d_title: "Domänen", d_items: ["Gesundheit (ECG)", "Industrie (TEP)", "Robotik (PEPPER)"], a_title: "Algorithmen", a_items: ["PCMCI", "GEM/GES", "TS-CAM-UV"], p_title: "Architektur", p_items: ["Graphenerkennung", "Offline Fitting", "Online Drift", "Auto-Thresholding"], x_title: "XAI Reporting", x_desc: "Standardisierte Metriken und erklärbare X-Ray Berichte." },
                 projects: { title: "Projekte", sub: "Akademische Projekte." }, skills: { title: "Fähigkeiten", sub: "Frameworks." }, cert: { title: "Zertifizierungen", sub: "Qualifikationen." },
-                contact: { title: "Kontakt", avail: "Verfügbarkeit", a_items: ["Offen für Arbeit", "Italien", "Remote", "Umzug möglich"], form: ["Name", "Email", "Nachricht", "Senden"] }
+                contact: { title: "Kontaktieren Sie Mich", avail: "Verfügbarkeit", a_items: ["Offen für Chancen", "Sitz in Verona, Italien", "Remote Weltweit", "Umzug Möglich"], form: ["Vollständiger Name", "E-Mail Adresse", "Ihre Nachricht", "Nachricht Senden"] }
             }
         };
 
@@ -234,7 +256,7 @@
             const links = ["#home", "#about", "#education", "#experience", "#research", "#projects", "#skills", "#contact"];
             
             return (
-                <nav className="w-full py-4 px-6 border-b dark:border-slate-800 border-slate-200 dark:bg-darkBg/80 bg-white/80 backdrop-blur-xl fixed top-0 z-50 transition-colors">
+                <nav className="w-full py-4 px-6 border-b dark:border-slate-800 border-slate-200 dark:bg-darkBg/90 bg-white/90 backdrop-blur-xl fixed top-0 z-50 transition-colors shadow-sm">
                     <div className="max-w-7xl mx-auto flex justify-between items-center">
                         <a href="#" className="text-2xl font-extrabold tracking-tighter text-primary">Sagar<span className="text-secondary">Lal</span></a>
                         
@@ -245,7 +267,7 @@
                         </div>
                         
                         <div className="flex items-center gap-4">
-                            <button onClick={() => setIsDark(!isDark)} className="w-10 h-10 rounded-full flex items-center justify-center dark:bg-slate-800 bg-slate-100 dark:text-yellow-400 text-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm">
+                            <button onClick={() => setIsDark(!isDark)} className="w-10 h-10 rounded-full flex items-center justify-center dark:bg-slate-800 bg-slate-100 dark:text-yellow-400 text-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm border dark:border-slate-700 border-slate-200">
                                 <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'}`}></i>
                             </button>
                             
@@ -261,38 +283,43 @@
         const Hero = ({ lang }) => {
             const h = t[lang].hero;
             return (
-                <section id="home" className="pt-32 pb-20 px-6 max-w-7xl mx-auto animate-fade-in-up">
-                    <div className="flex flex-col-reverse lg:flex-row gap-12 items-center justify-between">
-                        <div className="lg:w-3/5 space-y-6 text-center lg:text-left">
+                /* Note: Increased pt-40 md:pt-48 to fix mobile image clipping under the navbar */
+                <section id="home" className="pt-40 lg:pt-48 pb-20 px-6 max-w-7xl mx-auto animate-fade-in-up">
+                    {/* Changed flex direction to place image perfectly on mobile view */}
+                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between">
+                        
+                        <div className="lg:w-3/5 space-y-6 text-center lg:text-left order-2 lg:order-1 mt-6 lg:mt-0">
                             <h1 className="text-5xl lg:text-7xl font-extrabold dark:text-white text-slate-900 tracking-tight leading-tight">
                                 {h.title}
                             </h1>
-                            <h2 className="text-xl font-bold text-primary">{h.subtitle}</h2>
+                            <h2 className="text-xl font-bold text-primary flex items-center justify-center lg:justify-start gap-2">
+                                <i className="fas fa-map-marker-alt text-secondary"></i> {h.subtitle}
+                            </h2>
                             <p className="text-base dark:text-slate-400 text-slate-600 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                                 {h.desc}
                             </p>
                             
                             <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-                                <a href="#projects" className="px-8 py-3.5 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg transition-all shadow-lg shadow-blue-500/30">
+                                <a href="#projects" className="px-8 py-3.5 bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold rounded-lg transition-all shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
                                     {h.btn_proj}
                                 </a>
-                                <a href="https://raw.githubusercontent.com/sagar-ai-dev/sagar-ai-dev.github.io/main/Sagar_Lal.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 border-2 dark:border-slate-700 border-slate-300 dark:hover:bg-slate-800 hover:bg-slate-100 dark:text-white text-slate-800 font-bold rounded-lg transition-all flex items-center gap-2">
+                                <a href="https://raw.githubusercontent.com/sagar-ai-dev/sagar-ai-dev.github.io/main/Sagar_Lal.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 border-2 dark:border-slate-700 border-slate-300 dark:bg-slate-800/50 bg-white dark:hover:bg-slate-800 hover:bg-slate-50 dark:text-white text-slate-800 font-bold rounded-lg transition-all flex items-center gap-2 transform hover:-translate-y-1">
                                     <i className="fas fa-file-pdf text-red-500"></i> {h.btn_res}
                                 </a>
                             </div>
                         </div>
                         
-                        <div className="lg:w-2/5 flex justify-center relative">
+                        <div className="lg:w-2/5 flex justify-center relative order-1 lg:order-2">
                             <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse-slow"></div>
-                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-1.5 bg-gradient-to-tr from-primary via-secondary to-emerald-500 shadow-2xl">
-                                <div className="w-full h-full rounded-full overflow-hidden dark:bg-darkBg bg-white border-4 dark:border-darkBg border-white">
+                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-primary via-secondary to-emerald-500 shadow-2xl animate-float">
+                                <div className="w-full h-full rounded-full overflow-hidden dark:bg-darkBg bg-white border-4 dark:border-darkBg border-white relative z-10">
                                     <img src="https://raw.githubusercontent.com/sagar-ai-dev/sagar-ai-dev.github.io/main/IMG_1934.jpeg" alt="Sagar Lal" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-20">
                         {[0,2,4,6].map(i => (
                             <div key={i} className="glass-card p-6 rounded-2xl text-center">
                                 <h4 className="text-3xl font-black dark:text-white text-slate-900 mb-1">{h.stats[i]}</h4>
@@ -308,9 +335,9 @@
             const a = t[lang].about;
             return (
                 <section id="about" className="py-24 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="max-w-3xl mx-auto text-center space-y-6">
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900">{a.title}</h2>
-                        <p className="dark:text-slate-400 text-slate-600 leading-relaxed font-medium text-lg">{a.p1}</p>
+                    <div className="max-w-4xl mx-auto text-center space-y-6">
+                        <span className="inline-block px-4 py-1.5 bg-blue-500/10 text-primary text-xs font-black uppercase tracking-widest rounded-full mb-2"><i className="fas fa-user mr-2"></i> {a.title}</span>
+                        <p className="dark:text-slate-300 text-slate-700 leading-relaxed font-medium text-lg">{a.p1}</p>
                         <p className="dark:text-slate-400 text-slate-600 leading-relaxed font-medium text-lg">{a.p2}</p>
                     </div>
                 </section>
@@ -327,12 +354,12 @@
                     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         {edu.degrees.map((d, i) => (
                             <div key={i} className="glass-card p-8 rounded-2xl border-t-4 border-t-primary">
-                                <div className="w-12 h-12 rounded-full dark:bg-primary/10 bg-blue-50 flex items-center justify-center mb-6 text-primary text-xl">
+                                <div className="w-12 h-12 rounded-full dark:bg-primary/10 bg-blue-50 flex items-center justify-center mb-6 text-primary text-xl border dark:border-primary/20 border-blue-100">
                                     <i className="fas fa-graduation-cap"></i>
                                 </div>
                                 <h3 className="text-xl font-extrabold dark:text-white text-slate-900 mb-1">{d.deg}</h3>
                                 <p className="text-secondary font-bold mb-4">{d.uni}</p>
-                                <span className="inline-block px-3 py-1 dark:bg-slate-800 bg-slate-100 rounded-lg text-xs font-bold dark:text-slate-300 text-slate-700 mb-4">{d.date}</span>
+                                <span className="inline-block px-3 py-1 dark:bg-slate-800 bg-slate-100 rounded-lg text-xs font-bold dark:text-slate-300 text-slate-700 mb-4 border dark:border-slate-700 border-slate-200">{d.date}</span>
                                 <p className="text-sm dark:text-slate-400 text-slate-600 font-medium leading-relaxed">{d.desc}</p>
                             </div>
                         ))}
@@ -369,7 +396,7 @@
                                     <ul className="space-y-3 text-sm dark:text-slate-400 text-slate-600 font-medium mb-6">
                                         {job.resp.map((r, i) => (
                                             <li key={i} className="flex items-start gap-3">
-                                                <i className="fas fa-chevron-right text-primary mt-1 text-[10px]"></i> <span>{r}</span>
+                                                <i className="fas fa-check-circle text-emerald-500 mt-1 text-[10px]"></i> <span>{r}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -392,41 +419,37 @@
             return (
                 <section id="research" className="py-24 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
                     <div className="text-center mb-16">
-                        <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary dark:text-purple-400 text-xs font-black uppercase tracking-widest rounded-full mb-4">Master's Thesis Dashboard</span>
+                        <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary dark:text-purple-400 text-xs font-black uppercase tracking-widest rounded-full mb-4"><i className="fas fa-microscope mr-2"></i> Master's Thesis Dashboard</span>
                         <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight">{r.title}</h2>
                     </div>
 
-                    <div className="glass-card p-8 md:p-12 rounded-3xl dark:bg-gradient-to-br dark:from-darkCard dark:to-[#1e1b4b] bg-gradient-to-br from-white to-purple-50 border dark:border-secondary/30 border-purple-200">
+                    <div className="glass-card p-8 md:p-12 rounded-3xl dark:bg-gradient-to-br dark:from-darkCard dark:to-[#1e1b4b] bg-gradient-to-br from-white to-purple-50 border dark:border-secondary/30 border-purple-200 shadow-xl">
                         <p className="text-lg dark:text-slate-300 text-slate-700 font-medium leading-relaxed mb-12 text-center max-w-4xl mx-auto">
                             {r.obj}
                         </p>
                         
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {/* Domains */}
                             <div className="space-y-4">
                                 <h4 className="text-sm font-black text-secondary flex items-center gap-2"><i className="fas fa-layer-group"></i> {r.d_title}</h4>
                                 <ul className="space-y-3">
-                                    {r.d_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/5">{item}</li>)}
+                                    {r.d_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/10">{item}</li>)}
                                 </ul>
                             </div>
-                            {/* Algorithms */}
                             <div className="space-y-4">
                                 <h4 className="text-sm font-black text-primary flex items-center gap-2"><i className="fas fa-project-diagram"></i> {r.a_title}</h4>
                                 <ul className="space-y-3">
-                                    {r.a_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/5">{item}</li>)}
+                                    {r.a_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/10">{item}</li>)}
                                 </ul>
                             </div>
-                            {/* Pipeline */}
                             <div className="space-y-4">
                                 <h4 className="text-sm font-black text-emerald-500 flex items-center gap-2"><i className="fas fa-cogs"></i> {r.p_title}</h4>
                                 <ul className="space-y-3">
-                                    {r.p_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/5">{item}</li>)}
+                                    {r.p_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/10">{item}</li>)}
                                 </ul>
                             </div>
-                            {/* XAI */}
                             <div className="space-y-4">
                                 <h4 className="text-sm font-black text-orange-500 flex items-center gap-2"><i className="fas fa-chart-pie"></i> {r.x_title}</h4>
-                                <div className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-4 rounded-lg border border-black/5 dark:border-white/5 leading-relaxed">
+                                <div className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-4 rounded-lg border border-black/5 dark:border-white/10 leading-relaxed shadow-inner">
                                     {r.x_desc}
                                 </div>
                             </div>
@@ -459,8 +482,8 @@
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {projectData.map((proj, idx) => (
-                            <div key={idx} className="glass-card rounded-2xl flex flex-col h-full p-8 group">
-                                <div className={`w-12 h-12 rounded-xl bg-${proj.color}-500/10 text-${proj.color}-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform`}>
+                            <div key={idx} className="glass-card rounded-2xl flex flex-col h-full p-8 group relative overflow-hidden">
+                                <div className={`w-12 h-12 rounded-xl bg-${proj.color}-500/10 text-${proj.color}-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform border border-${proj.color}-500/20`}>
                                     <i className={`fas ${proj.icon}`}></i>
                                 </div>
                                 <h3 className="text-lg font-bold dark:text-white text-slate-900 mb-3 leading-tight">{proj.title}</h3>
@@ -472,8 +495,8 @@
                                     ))}
                                 </div>
                                 
-                                <a href={`https://github.com/sagar-ai-dev/${proj.link}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold dark:text-white text-slate-900 hover:text-primary dark:hover:text-primary transition-colors">
-                                    View Source <i className="fas fa-arrow-right text-[10px]"></i>
+                                <a href={`https://github.com/sagar-ai-dev/${proj.link}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-primary dark:text-primary hover:text-blue-700 dark:hover:text-blue-400 transition-colors mt-auto">
+                                    View Source Code <i className="fas fa-arrow-right text-[10px]"></i>
                                 </a>
                             </div>
                         ))}
@@ -494,12 +517,12 @@
                     skills: ["FastAPI", "REST APIs", "SQL", "PostgreSQL", "Pandas", "NumPy", "Data Pipelines"] 
                 },
                 { 
-                    cat: "Frontend Web", icon: "fa-layer-group", color: "blue",
-                    skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "PHP"] 
+                    cat: "Frontend Web Development", icon: "fa-layer-group", color: "blue",
+                    skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "WordPress", "Elementor", "PHP"] 
                 },
                 { 
-                    cat: "DevOps & Tools", icon: "fa-terminal", color: "orange",
-                    skills: ["Git", "GitHub", "Docker", "Linux", "CI/CD", "Jupyter", "Agile"] 
+                    cat: "DevOps & Tooling", icon: "fa-terminal", color: "orange",
+                    skills: ["Git", "GitHub", "Docker", "Linux", "CI/CD", "Jupyter", "Agile Management"] 
                 }
             ];
 
@@ -514,14 +537,14 @@
                         {skillData.map((group, i) => (
                             <div key={i} className="glass-card p-8 rounded-2xl">
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className={`w-10 h-10 rounded-lg bg-${group.color}-500/10 text-${group.color}-500 flex items-center justify-center text-lg`}>
+                                    <div className={`w-10 h-10 rounded-lg bg-${group.color}-500/10 text-${group.color}-500 flex items-center justify-center text-lg border border-${group.color}-500/20`}>
                                         <i className={`fas ${group.icon}`}></i>
                                     </div>
                                     <h3 className="text-lg font-bold dark:text-white text-slate-900">{group.cat}</h3>
                                 </div>
                                 <div className="flex flex-wrap gap-2">
                                     {group.skills.map((skill, j) => (
-                                        <span key={j} className="px-3 py-1.5 dark:bg-slate-800 bg-slate-100 border dark:border-slate-700 border-slate-200 dark:text-slate-200 text-slate-700 rounded-lg text-xs font-bold">{skill}</span>
+                                        <span key={j} className="px-3 py-1.5 dark:bg-slate-800 bg-slate-100 border dark:border-slate-700 border-slate-200 dark:text-slate-200 text-slate-700 rounded-lg text-xs font-bold shadow-sm">{skill}</span>
                                     ))}
                                 </div>
                             </div>
@@ -534,10 +557,12 @@
         const Certifications = ({ lang }) => {
             const c = t[lang].cert;
             const certs = [
-                { title: "Automate Cybersecurity Tasks with Python", issuer: "Google" },
-                { title: "Foundations of Cybersecurity", issuer: "Google" },
-                { title: "Tools of the Trade: Linux and SQL", issuer: "Google" },
-                { title: "Data Analytics and Business Intelligence", issuer: "DigiSkills" }
+                { title: "Italian A2 Language Proficiency Certification", issuer: "CLA University of Verona", icon: "fa-language", color: "text-red-500" },
+                { title: "Automate Cybersecurity Tasks with Python", issuer: "Google", icon: "fa-shield-alt", color: "text-blue-500" },
+                { title: "Foundations of Cybersecurity", issuer: "Google", icon: "fa-lock", color: "text-blue-500" },
+                { title: "Tools of the Trade: Linux and SQL", issuer: "Google", icon: "fa-database", color: "text-blue-500" },
+                { title: "Data Analytics and Business Intelligence", issuer: "DigiSkills", icon: "fa-chart-bar", color: "text-emerald-500" },
+                { title: "Play It Safe: Manage Security Risks", issuer: "Google", icon: "fa-user-shield", color: "text-blue-500" }
             ];
 
             return (
@@ -547,13 +572,13 @@
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4">
                         {certs.map((cert, index) => (
-                            <div key={index} className="glass-card rounded-xl p-5 flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full dark:bg-slate-800 bg-slate-50 flex items-center justify-center flex-shrink-0 border dark:border-slate-700 border-slate-200">
-                                    <i className="fas fa-certificate text-primary"></i>
+                            <div key={index} className="glass-card rounded-xl p-5 flex items-center gap-5 transition-transform hover:scale-[1.02]">
+                                <div className="w-12 h-12 rounded-full dark:bg-slate-800 bg-slate-50 flex items-center justify-center flex-shrink-0 border dark:border-slate-700 border-slate-200 shadow-sm">
+                                    <i className={`fas ${cert.icon} ${cert.color} text-lg`}></i>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-bold dark:text-white text-slate-900">{cert.title}</h3>
-                                    <p className="dark:text-slate-500 text-slate-500 text-[10px] font-bold uppercase mt-1 tracking-wider">{cert.issuer}</p>
+                                    <h3 className="text-sm font-bold dark:text-white text-slate-900 leading-snug">{cert.title}</h3>
+                                    <p className="dark:text-slate-500 text-slate-500 text-[10px] font-bold uppercase mt-1 tracking-widest">{cert.issuer}</p>
                                 </div>
                             </div>
                         ))}
@@ -565,42 +590,83 @@
         const Contact = ({ lang }) => {
             const c = t[lang].contact;
             return (
-                <section id="contact" className="py-24 px-6 max-w-5xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary tracking-tight mb-4">{c.title}</h2>
+                <section id="contact" className="py-32 px-6 max-w-6xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up relative">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-primary/10 dark:bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+                    
+                    <div className="text-center mb-16 relative z-10">
+                        <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-black uppercase tracking-widest rounded-full mb-4"><i className="fas fa-paper-plane mr-2"></i> Contact</span>
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-blue-500 tracking-tight mb-4 pb-2">{c.title}</h2>
                     </div>
-                    <div className="grid md:grid-cols-5 gap-8">
-                        <div className="md:col-span-2 space-y-6">
-                            <div className="glass-card rounded-2xl p-8 border-t-4 border-t-emerald-500">
-                                <h3 className="text-xl font-bold dark:text-white text-slate-900 mb-6">{c.avail}</h3>
-                                <ul className="space-y-4 dark:text-slate-300 text-slate-700 font-bold text-sm">
+                    
+                    <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
+                        <div className="lg:col-span-5 space-y-6">
+                            <div className="glass-card rounded-3xl p-8 lg:p-10 border-t-4 border-t-emerald-500 shadow-xl dark:bg-darkCard/80 bg-white/80 h-full flex flex-col justify-center">
+                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-8">{c.avail}</h3>
+                                <ul className="space-y-6 dark:text-slate-300 text-slate-700 font-bold text-sm">
                                     {c.a_items.map((item, idx) => {
-                                        const icons = ["fa-circle text-emerald-500 text-[10px] animate-pulse", "fa-map-pin text-slate-400", "fa-laptop-house text-primary", "fa-plane text-secondary"];
-                                        return <li key={idx} className="flex items-center gap-4"><i className={`fas ${icons[idx]} w-4 text-center`}></i> {item}</li>
+                                        const icons = [
+                                            "fa-circle text-emerald-500 text-[12px] animate-pulse drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]", 
+                                            "fa-map-marker-alt text-red-400 text-lg", 
+                                            "fa-globe-americas text-blue-400 text-lg", 
+                                            "fa-plane-departure text-purple-400 text-lg"
+                                        ];
+                                        return (
+                                            <li key={idx} className="flex items-center gap-5">
+                                                <div className="w-8 flex justify-center"><i className={`fas ${icons[idx]}`}></i></div> 
+                                                <span className="text-base">{item}</span>
+                                            </li>
+                                        );
                                     })}
                                 </ul>
+                                
+                                <div className="mt-12 pt-8 border-t dark:border-slate-700 border-slate-200">
+                                    <p className="text-xs font-bold dark:text-slate-500 text-slate-400 uppercase tracking-widest mb-4">Direct Contact</p>
+                                    <a href="mailto:Sagarrangwani1@gmail.com" className="flex items-center gap-4 text-lg font-bold dark:text-white text-slate-900 hover:text-primary dark:hover:text-primary transition-colors">
+                                        <div className="w-10 h-10 rounded-full dark:bg-slate-800 bg-slate-100 flex items-center justify-center text-primary"><i className="fas fa-envelope"></i></div>
+                                        Sagarrangwani1@gmail.com
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div className="md:col-span-3 glass-card rounded-2xl p-8">
-                            <form action="https://formsubmit.co/Sagarrangwani1@gmail.com" method="POST" className="space-y-5">
-                                <input type="hidden" name="_subject" value="New message from your AI Portfolio!" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <input type="hidden" name="_template" value="table" />
+                        
+                        <div className="lg:col-span-7">
+                            <div className="glass-card rounded-3xl p-8 lg:p-10 shadow-xl dark:bg-darkCard/80 bg-white/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/50">
+                                <form action="https://formsubmit.co/Sagarrangwani1@gmail.com" method="POST" className="space-y-6">
+                                    <input type="hidden" name="_subject" value="New message from your AI Portfolio!" />
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="_template" value="table" />
 
-                                <div>
-                                    <label className="block text-xs font-bold dark:text-slate-400 text-slate-600 mb-2 uppercase tracking-wider">{c.form[0]}</label>
-                                    <input type="text" name="name" className="input-field bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm" required />
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-bold dark:text-slate-400 text-slate-600 mb-2 uppercase tracking-wider">{c.form[1]}</label>
-                                    <input type="email" name="email" className="input-field bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm" required />
-                                </div>
-                                <div>
-                                    <label className="block text-xs font-bold dark:text-slate-400 text-slate-600 mb-2 uppercase tracking-wider">{c.form[2]}</label>
-                                    <textarea name="message" rows="4" className="input-field bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm resize-none" required></textarea>
-                                </div>
-                                <button type="submit" className="w-full py-3.5 bg-primary hover:bg-blue-600 text-white font-bold rounded-lg transition-all shadow-lg shadow-blue-500/20">{c.form[3]}</button>
-                            </form>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="block text-xs font-extrabold dark:text-slate-400 text-slate-600 uppercase tracking-wider ml-1">{c.form[0]}</label>
+                                            <div className="relative">
+                                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                                                    <i className="fas fa-user"></i>
+                                                </div>
+                                                <input type="text" name="name" className="input-field pl-10 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm" required placeholder="John Doe" />
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="block text-xs font-extrabold dark:text-slate-400 text-slate-600 uppercase tracking-wider ml-1">{c.form[1]}</label>
+                                            <div className="relative">
+                                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                                                    <i className="fas fa-at"></i>
+                                                </div>
+                                                <input type="email" name="email" className="input-field pl-10 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm" required placeholder="john@company.com" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="space-y-2">
+                                        <label className="block text-xs font-extrabold dark:text-slate-400 text-slate-600 uppercase tracking-wider ml-1">{c.form[2]}</label>
+                                        <textarea name="message" rows="5" className="input-field bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm resize-none p-4" required placeholder="How can I help you?"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" className="w-full py-4 bg-gradient-to-r from-primary to-secondary hover:from-blue-600 hover:to-purple-600 text-white text-sm font-extrabold rounded-xl transition-all shadow-lg shadow-primary/30 transform hover:-translate-y-1 mt-4 flex items-center justify-center gap-2">
+                                        {c.form[3]} <i className="fas fa-paper-plane"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -636,16 +702,16 @@
                         <Certifications lang={lang} />
                         <Contact lang={lang} />
                     </main>
-                    <footer className="py-10 border-t dark:border-slate-800/50 border-slate-200 dark:bg-[#020617] bg-slate-50 mt-auto">
+                    <footer className="py-12 border-t dark:border-slate-800/50 border-slate-200 dark:bg-[#020617] bg-slate-50 mt-auto">
                         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
                             <div className="text-center md:text-left">
-                                <p className="dark:text-white text-slate-900 font-extrabold text-xl">Sagar Lal</p>
-                                <p className="dark:text-slate-500 text-slate-500 text-xs font-bold mt-1">AI & Machine Learning Engineer</p>
+                                <p className="dark:text-white text-slate-900 font-extrabold text-2xl tracking-tight">Sagar Lal</p>
+                                <p className="dark:text-slate-500 text-slate-500 text-xs font-bold mt-1 uppercase tracking-widest">AI & Machine Learning Engineer</p>
                             </div>
                             <div className="flex gap-6">
-                                <a href="https://github.com/sagar-ai-dev" target="_blank" rel="noopener noreferrer" className="dark:text-slate-400 text-slate-500 hover:text-primary dark:hover:text-primary transition-colors text-xl"><i className="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" rel="noopener noreferrer" className="dark:text-slate-400 text-slate-500 hover:text-primary dark:hover:text-primary transition-colors text-xl"><i className="fab fa-linkedin"></i></a>
-                                <a href="mailto:Sagarrangwani1@gmail.com" className="dark:text-slate-400 text-slate-500 hover:text-primary dark:hover:text-primary transition-colors text-xl"><i className="fas fa-envelope"></i></a>
+                                <a href="https://github.com/sagar-ai-dev" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full dark:bg-slate-800 bg-white dark:text-slate-300 text-slate-600 hover:text-primary dark:hover:text-primary hover:-translate-y-1 transition-all flex items-center justify-center text-xl shadow-sm border dark:border-slate-700 border-slate-200"><i className="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full dark:bg-slate-800 bg-white dark:text-slate-300 text-slate-600 hover:text-primary dark:hover:text-primary hover:-translate-y-1 transition-all flex items-center justify-center text-xl shadow-sm border dark:border-slate-700 border-slate-200"><i className="fab fa-linkedin"></i></a>
+                                <a href="mailto:Sagarrangwani1@gmail.com" className="w-12 h-12 rounded-full dark:bg-slate-800 bg-white dark:text-slate-300 text-slate-600 hover:text-primary dark:hover:text-primary hover:-translate-y-1 transition-all flex items-center justify-center text-xl shadow-sm border dark:border-slate-700 border-slate-200"><i className="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </footer>
