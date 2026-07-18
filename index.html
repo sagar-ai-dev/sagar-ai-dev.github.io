@@ -68,7 +68,7 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // Dynamic Language Dictionary mapped to "t" to fix compilation crash
+        // Fully Complete Dictionary - No Missing Keys
         const t = {
             en: {
                 nav: ["Home", "About", "Timeline", "Research", "Experience", "Projects", "Skills", "Contact"],
@@ -146,6 +146,9 @@
                 skills: {
                     title: "Technical Expertise", sub: "Core programming languages, frameworks, and tools I use daily."
                 },
+                cert: {
+                    title: "Top Certifications", sub: "A curated list of my verified credentials."
+                },
                 contact: {
                     title: "Get in Touch", avail: "Availability", a_items: ["Open to Work", "Based in Italy", "Remote Worldwide", "Relocation Available"],
                     form: ["Name", "Email", "Message", "Send Message"]
@@ -157,8 +160,11 @@
                 about: { title: "Chi Sono", p1: "Sono un ingegnere AI specializzato in machine learning e automazione. Sviluppo script Python per Codesy e gestisco il backend web per La Vertueuse.", p2: "Sto completando la magistrale in AI a Verona. Unisco la ricerca accademica (XAI) a 3+ anni di esperienza di sviluppo professionale.", what_i_do: "Cosa Faccio", do_items: ["Sviluppo AI", "Machine Learning", "API Backend", "Data Engineering", "Full Stack Web"], career: "Interessi Professionali", c_items: ["AI Engineer", "ML Engineer", "Computer Vision Engineer", "Backend AI Developer"], achievements: "Risultati Principali", a_items: ["MSc AI Candidate", "Tesi in Explainable AI", "Certificazioni Cloud", "Tirocinio Ufficiale ML"] },
                 timeline: { title: "Percorso di Carriera", events: [{year:"2026", title:"Tesi Magistrale", desc:"Università di Verona"}, {year:"2026", title:"Sviluppatore Web", desc:"La Vertueuse"}, {year:"2025", title:"Tirocinio Machine Learning", desc:"Università di Verona"}, {year:"2024", title:"Sviluppatore Automazione AI", desc:"Codesy"}, {year:"2022", title:"Laurea Triennale", desc:"Dawood University"}] },
                 research: { title: "Ricerca: Tesi di Laurea", subtitle: "Explainable Causal Anomaly Detection (PCMCI)", prob: "Identificare le cause profonde delle anomalie nei dati.", meth: "Implementazione dell'algoritmo PCMCI per estrarre grafi causali.", out: "Sviluppo di una pipeline automatizzata e interpretabile." },
-                exp: { title: "Esperienza Professionale", jobs: [{title:"Tirocinante Machine Learning", comp:"Università di Verona", date:"Apr 2025 - Giu 2025", resp:["Ottimizzazione modelli ResNet e VGG con TensorFlow.", "Elaborazione immagini con OpenCV.", "Sviluppo classificatori serie temporali (LSTM, GRU).", "Documentazione tecnica."], tech:["TensorFlow", "OpenCV", "Python"]}, {title:"Sviluppatore AI Automazione (Freelance)", comp:"Codesy", date:"Mag 2024 - Presente", resp:["Sviluppo script Python per automazione.", "Creazione API REST con FastAPI e PostgreSQL.", "Elaborazione dataset aziendali complessi.", "Ottimizzazione pipeline dati."], tech:["Python", "FastAPI", "PostgreSQL"]}, {title:"Sviluppatore Web", comp:"La Vertueuse", date:"Gen 2026 - Presente", resp:["Manutenzione sito web aziendale.", "Integrazione pagamenti Stripe e SumUp.", "Ottimizzazione database backend.", "Risoluzione bug responsive."], tech:["PHP", "JavaScript", "SQL"]}] },
-                projects: { title: "Progetti Tecnici", sub: "Ricerca, open-source e sviluppi freelance." }, skills: { title: "Competenze Tecniche", sub: "Linguaggi, framework e strumenti core." }, contact: { title: "Contattami", avail: "Disponibilità", a_items: ["Aperto a Lavoro", "Residente in Italia", "Remoto Globale", "Disponibile al Trasferimento"], form: ["Nome", "Email", "Messaggio", "Invia Messaggio"] }
+                exp: { title: "Esperienza Professionale", jobs: [{title:"Tirocinante Machine Learning", comp:"Università di Verona", date:"Apr 2025 - Giu 2025", resp:["Ottimizzazione modelli ResNet e VGG con TensorFlow.", "Elaborazione immagini con OpenCV.", "Sviluppo classificatori serie temporali (LSTM, GRU).", "Documentazione tecnica."], tech:["TensorFlow", "OpenCV", "Python"]}, {title:"Sviluppatore AI Automazione (Freelance)", comp:"Codesy", date:"Mag 2024 - Presente", resp:["Sviluppo script Python per automazione.", "Creazione API REST con FastAPI e PostgreSQL.", "Elaborazione dataset complessi.", "Ottimizzazione pipeline dati."], tech:["Python", "FastAPI", "PostgreSQL"]}, {title:"Sviluppatore Web", comp:"La Vertueuse", date:"Gen 2026 - Presente", resp:["Manutenzione sito web aziendale.", "Integrazione pagamenti Stripe e SumUp.", "Ottimizzazione database backend.", "Risoluzione bug responsive."], tech:["PHP", "JavaScript", "SQL"]}] },
+                projects: { title: "Progetti Tecnici", sub: "Ricerca, open-source e sviluppi freelance." }, 
+                skills: { title: "Competenze Tecniche", sub: "Linguaggi, framework e strumenti core." }, 
+                cert: { title: "Certificazioni", sub: "Elenco delle mie credenziali verificate." },
+                contact: { title: "Contattami", avail: "Disponibilità", a_items: ["Aperto a Lavoro", "Residente in Italia", "Remoto Globale", "Disponibile al Trasferimento"], form: ["Nome", "Email", "Messaggio", "Invia Messaggio"] }
             },
             es: {
                 nav: ["Inicio", "Sobre Mí", "Línea de Tiempo", "Investigación", "Experiencia", "Proyectos", "Habilidades", "Contacto"],
@@ -167,7 +173,10 @@
                 timeline: { title: "Trayectoria", events: [{year:"2026", title:"Tesis de Maestría", desc:"Universidad de Verona"}, {year:"2026", title:"Desarrollador Web", desc:"La Vertueuse"}, {year:"2025", title:"Pasantía Machine Learning", desc:"Universidad de Verona"}, {year:"2024", title:"Desarrollador Automatización IA", desc:"Codesy"}, {year:"2022", title:"Grado en Ingeniería", desc:"Universidad Dawood"}] },
                 research: { title: "Investigación: Tesis", subtitle: "Detección Causal de Anomalías (PCMCI)", prob: "Identificar causas raíz de anomalías.", meth: "Implementación del algoritmo PCMCI.", out: "Canalización automatizada e interpretable." },
                 exp: { title: "Experiencia Profesional", jobs: [{title:"Pasante de Machine Learning", comp:"Univ. de Verona", date:"Abr 2025 - Jun 2025", resp:["Optimización de ResNet y VGG con TensorFlow.", "Procesamiento con OpenCV.", "Clasificadores LSTM/GRU.", "Documentación de pipelines."], tech:["TensorFlow", "OpenCV", "Python"]}, {title:"Desarrollador Freelance IA", comp:"Codesy", date:"May 2024 - Presente", resp:["Scripts de automatización en Python.", "APIs REST con FastAPI.", "Procesamiento de datos.", "Optimización en la nube."], tech:["Python", "FastAPI", "PostgreSQL"]}, {title:"Desarrollador Web", comp:"La Vertueuse", date:"Ene 2026 - Presente", resp:["Mantenimiento web corporativo.", "Integración Stripe/SumUp.", "Mantenimiento backend PHP.", "Mejoras responsivas."], tech:["PHP", "JavaScript", "SQL"]}] },
-                projects: { title: "Proyectos Técnicos", sub: "Investigación académica y desarrollo freelance." }, skills: { title: "Habilidades Técnicas", sub: "Herramientas y lenguajes core." }, contact: { title: "Contacto", avail: "Disponibilidad", a_items: ["Abierto a Trabajar", "Base en Italia", "Remoto", "Reubicación Posible"], form: ["Nombre", "Email", "Mensaje", "Enviar"] }
+                projects: { title: "Proyectos Técnicos", sub: "Investigación académica y desarrollo freelance." }, 
+                skills: { title: "Habilidades Técnicas", sub: "Herramientas y lenguajes core." }, 
+                cert: { title: "Certificaciones", sub: "Lista de mis credenciales verificadas." },
+                contact: { title: "Contacto", avail: "Disponibilidad", a_items: ["Abierto a Trabajar", "Base en Italia", "Remoto", "Reubicación Posible"], form: ["Nombre", "Email", "Mensaje", "Enviar"] }
             },
             fr: {
                 nav: ["Accueil", "À Propos", "Chronologie", "Recherche", "Expérience", "Projets", "Compétences", "Contact"],
@@ -176,7 +185,10 @@
                 timeline: { title: "Parcours", events: [{year:"2026", title:"Thèse de Master", desc:"Université de Vérone"}, {year:"2026", title:"Développeur Web", desc:"La Vertueuse"}, {year:"2025", title:"Stage Machine Learning", desc:"Université de Vérone"}, {year:"2024", title:"Développeur Automatisation IA", desc:"Codesy"}, {year:"2022", title:"Licence Ingénierie", desc:"Université Dawood"}] },
                 research: { title: "Recherche : Thèse", subtitle: "Détection Causale d'Anomalies (PCMCI)", prob: "Identifier les causes profondes.", meth: "Algorithme PCMCI implémenté.", out: "Pipeline interprétable automatisé." },
                 exp: { title: "Expérience Professionnelle", jobs: [{title:"Stagiaire ML", comp:"Université de Vérone", date:"Avr 2025 - Juin 2025", resp:["Modèles ResNet/VGG avec TensorFlow.", "Traitement OpenCV.", "Séries temporelles LSTM/GRU.", "Rapports techniques."], tech:["TensorFlow", "OpenCV", "Python"]}, {title:"Développeur IA Freelance", comp:"Codesy", date:"Mai 2024 - Présent", resp:["Scripts Python.", "API REST FastAPI.", "Pipelines de données.", "Optimisation cloud."], tech:["Python", "FastAPI", "PostgreSQL"]}, {title:"Développeur Web", comp:"La Vertueuse", date:"Janv 2026 - Présent", resp:["Maintenance du site.", "Intégration Stripe.", "Optimisation PHP.", "Bug fixing."], tech:["PHP", "JavaScript", "SQL"]}] },
-                projects: { title: "Projets Techniques", sub: "Recherche et développement freelance." }, skills: { title: "Compétences Techniques", sub: "Langages et outils." }, contact: { title: "Contact", avail: "Disponibilité", a_items: ["Ouvert aux Offres", "Basé en Italie", "Télétravail", "Relocalisation Possible"], form: ["Nom", "Email", "Message", "Envoyer"] }
+                projects: { title: "Projets Techniques", sub: "Recherche et développement freelance." }, 
+                skills: { title: "Compétences Techniques", sub: "Langages et outils." }, 
+                cert: { title: "Certifications", sub: "Liste de mes compétences vérifiées." },
+                contact: { title: "Contact", avail: "Disponibilité", a_items: ["Ouvert aux Offres", "Basé en Italie", "Télétravail", "Relocalisation Possible"], form: ["Nom", "Email", "Message", "Envoyer"] }
             },
             de: {
                 nav: ["Startseite", "Über", "Zeitachse", "Forschung", "Erfahrung", "Projekte", "Fähigkeiten", "Kontakt"],
@@ -185,12 +197,15 @@
                 timeline: { title: "Karriereweg", events: [{year:"2026", title:"Masterarbeit", desc:"Uni Verona"}, {year:"2026", title:"Webentwickler", desc:"La Vertueuse"}, {year:"2025", title:"ML Praktikum", desc:"Uni Verona"}, {year:"2024", title:"KI Automatisierung", desc:"Codesy"}, {year:"2022", title:"BSc Ingenieurwesen", desc:"Dawood Uni"}] },
                 research: { title: "Forschung: Thesis", subtitle: "Kausale Anomalieerkennung (PCMCI)", prob: "Ursachen von Anomalien finden.", meth: "PCMCI-Algorithmus implementiert.", out: "Interpretierbare Pipeline entwickelt." },
                 exp: { title: "Berufserfahrung", jobs: [{title:"ML Praktikant", comp:"Uni Verona", date:"Apr 2025 - Jun 2025", resp:["ResNet/VGG mit TensorFlow.", "OpenCV Bildverarbeitung.", "LSTM/GRU Zeitreihen.", "Technische Dokumentation."], tech:["TensorFlow", "OpenCV", "Python"]}, {title:"Freelance KI Entwickler", comp:"Codesy", date:"Mai 2024 - Heute", resp:["Python-Skripte.", "REST APIs mit FastAPI.", "Datenverarbeitung.", "Cloud Optimierung."], tech:["Python", "FastAPI", "PostgreSQL"]}, {title:"Webentwickler", comp:"La Vertueuse", date:"Jan 2026 - Heute", resp:["Wartung der Website.", "Stripe Integration.", "PHP Optimierung.", "Fehlerbehebung."], tech:["PHP", "JavaScript", "SQL"]}] },
-                projects: { title: "Technische Projekte", sub: "Akademische und Freelance-Projekte." }, skills: { title: "Technische Fähigkeiten", sub: "Sprachen und Frameworks." }, contact: { title: "Kontakt", avail: "Verfügbarkeit", a_items: ["Offen für Arbeit", "Sitz in Italien", "Remote", "Umzug möglich"], form: ["Name", "Email", "Nachricht", "Senden"] }
+                projects: { title: "Technische Projekte", sub: "Akademische und Freelance-Projekte." }, 
+                skills: { title: "Technische Fähigkeiten", sub: "Sprachen und Frameworks." }, 
+                cert: { title: "Zertifizierungen", sub: "Liste meiner verifizierten Qualifikationen." },
+                contact: { title: "Kontakt", avail: "Verfügbarkeit", a_items: ["Offen für Arbeit", "Sitz in Italien", "Remote", "Umzug möglich"], form: ["Name", "Email", "Nachricht", "Senden"] }
             }
         };
 
         const Navbar = ({ lang, setLang, isDark, setIsDark }) => {
-            const loc = t[lang].nav || t.en.nav;
+            const loc = t[lang].nav;
             const links = ["#home", "#about", "#timeline", "#research", "#experience", "#projects", "#skills", "#contact"];
             
             return (
@@ -236,7 +251,7 @@
                             </h1>
                             <h2 className="text-lg md:text-xl dark:text-blue-400 text-blue-600 font-bold mb-4">{h.subtitle}</h2>
                             <p className="text-xs md:text-sm dark:text-slate-400 text-slate-500 mb-8 font-semibold tracking-widest uppercase">
-                                {Array.isArray(h.tags) ? h.tags.join(" • ") : h.tags}
+                                {h.tags.join(" • ")}
                             </p>
                             
                             <div className="flex flex-wrap items-center gap-4 mb-10">
@@ -543,7 +558,7 @@
         );
 
         const Certifications = ({ lang }) => {
-            const c = t[lang].cert || t.en.cert;
+            const c = t[lang].cert;
             const certs = [
                 { title: "Automate Cybersecurity Tasks with Python", issuer: "Google", icon: "fa-shield-alt" },
                 { title: "Foundations of Cybersecurity", issuer: "Google", icon: "fa-lock" },
@@ -556,6 +571,7 @@
                 <section id="certifications" className="py-16 px-6 max-w-5xl mx-auto border-t dark:border-slate-800/50 border-slate-200">
                     <div className="text-center mb-10">
                         <h2 className="text-3xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-3">{c.title}</h2>
+                        <p className="dark:text-slate-400 text-slate-600 max-w-2xl mx-auto font-medium text-sm">{c.sub}</p>
                     </div>
                     
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
