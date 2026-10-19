@@ -1,785 +1,608 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sagar Lal - AI &amp; Machine Learning Engineer in Verona, Italy. MSc Artificial Intelligence, University of Verona. Causal discovery, explainable AI, deep learning on time series, Python and FastAPI.">
-    <meta name="author" content="Sagar Lal">
-    <link rel="canonical" href="https://sagar-ai-dev.github.io/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sagar Lal | AI &amp; Machine Learning Engineer</title>
+  <meta name="description" content="Sagar Lal, AI and machine-learning engineer in Verona, Italy. MSc in Artificial Intelligence from the University of Verona (2026): causal discovery, explainable AI and deep learning on time series, with three years of professional software delivery.">
+  <meta name="author" content="Sagar Lal">
+  <link rel="canonical" href="https://sagar-ai-dev.github.io/">
+  <meta name="theme-color" content="#070b16" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-    <!-- Link previews: LinkedIn, WhatsApp, Slack and X read these, and none of
-         them run the React app below. -->
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://sagar-ai-dev.github.io/">
-    <meta property="og:title" content="Sagar Lal - AI &amp; Machine Learning Engineer">
-    <meta property="og:description" content="MSc Artificial Intelligence, University of Verona. Causal discovery, explainable AI and deep learning on time series, with three years of professional software development.">
-    <meta property="og:image" content="https://sagar-ai-dev.github.io/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="profile:first_name" content="Sagar">
-    <meta property="profile:last_name" content="Lal">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sagar Lal - AI &amp; Machine Learning Engineer">
-    <meta name="twitter:description" content="MSc Artificial Intelligence, University of Verona. Causal discovery, explainable AI and deep learning on time series.">
-    <meta name="twitter:image" content="https://sagar-ai-dev.github.io/og-image.png">
-    <title>Sagar Lal | AI & Machine Learning Engineer</title>
-    
-    <!-- Tailwind CSS (Premium Configuration) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#020617', 
-                        darkCard: '#0f172a',
-                        lightBg: '#f8fafc',
-                        lightCard: '#ffffff',
-                        primary: '#3b82f6',
-                        secondary: '#8b5cf6'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- FontAwesome for Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- React & ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Link previews (LinkedIn, WhatsApp, Slack, X) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://sagar-ai-dev.github.io/">
+  <meta property="og:title" content="Sagar Lal | AI &amp; Machine Learning Engineer">
+  <meta property="og:description" content="MSc in Artificial Intelligence, University of Verona. Causal discovery, explainable AI and deep learning on time series, with three years of professional software delivery.">
+  <meta property="og:image" content="https://sagar-ai-dev.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="profile:first_name" content="Sagar">
+  <meta property="profile:last_name" content="Lal">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sagar Lal | AI &amp; Machine Learning Engineer">
+  <meta name="twitter:description" content="MSc in Artificial Intelligence, University of Verona. Causal discovery, explainable AI and deep learning on time series.">
+  <meta name="twitter:image" content="https://sagar-ai-dev.github.io/og-image.png">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body { transition: background-color 0.3s ease, color 0.3s ease; }
-        
-        /* Premium Card Hover Effects */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .light .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .glass-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3); 
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-        .light .glass-card:hover {
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); 
-            border-color: rgba(59, 130, 246, 0.3);
-        }
+  <!-- Theme and language are applied before the first paint, so nothing flickers. -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = null, l = null;
+      try { t = localStorage.getItem("theme"); l = localStorage.getItem("lang"); } catch (e) {}
+      if (t !== "light" && t !== "dark") { t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"; }
+      d.setAttribute("data-theme", t);
+      var q = (location.search.match(/[?&]lang=(it|es|fr|de|en)\b/) || [])[1];
+      if (!q && !l) { var n = (navigator.languages || [navigator.language || "en"]); for (var i = 0; i < n.length; i++) { var c = String(n[i]).slice(0, 2).toLowerCase(); if (/^(it|es|fr|de|en)$/.test(c)) { q = c; break; } } }
+      if ((q || l || "en") !== "en") { d.classList.add("i18n-pending"); setTimeout(function () { d.classList.remove("i18n-pending"); }, 1500); }
+    })();
+  </script>
 
-        /* Timeline Vertical Line */
-        .timeline-container::before {
-            content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px;
-            background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #10b981); opacity: 0.5;
-        }
-        @media (min-width: 768px) { .timeline-container::before { left: 23px; } }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="preload" as="image" href="assets/img/sagar-lal.webp" type="image/webp">
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        .dark ::-webkit-scrollbar-track { background: #020617; }
-        .dark ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        .light ::-webkit-scrollbar-track { background: #f1f5f9; }
-        .light ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        
-        /* Input Field Styling */
-        .input-field { 
-            transition: all 0.3s ease; 
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border-radius: 0.75rem;
-            outline: none;
-        }
-        .input-field:focus { 
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); 
-            border-color: transparent;
-        }
-    </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sagar Lal",
+    "jobTitle": "AI & Machine Learning Engineer",
+    "url": "https://sagar-ai-dev.github.io/",
+    "image": "https://sagar-ai-dev.github.io/assets/img/sagar-lal.jpg",
+    "email": "mailto:sagarrangwani1@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Verona", "addressCountry": "IT" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Verona" },
+      { "@type": "CollegeOrUniversity", "name": "Dawood University of Engineering & Technology" }
+    ],
+    "knowsAbout": ["Machine learning", "Causal discovery", "Explainable AI", "Anomaly detection", "Time-series analysis", "Python", "FastAPI"],
+    "sameAs": ["https://github.com/sagar-ai-dev", "https://www.linkedin.com/in/sagar-lal007"]
+  }
+  </script>
 </head>
-<body class="antialiased dark:bg-darkBg dark:text-slate-300 bg-lightBg text-slate-700 selection:bg-primary selection:text-white">
-    <div id="root"></div>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+<div class="bg-glow" aria-hidden="true"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<!-- Icons: Lucide (ISC licence), Font Awesome Free brands github and linkedin (CC BY 4.0) -->
+<symbol id="i-activity" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" /></g></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></g></symbol>
+<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /> <path d="M7 17 17 7" /></g></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" /> <circle cx="12" cy="8" r="6" /></g></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" /> <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" /> <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" /> <path d="M17.599 6.5a3 3 0 0 0 .399-1.375" /> <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" /> <path d="M3.477 10.896a4 4 0 0 1 .585-.396" /> <path d="M19.938 10.5a4 4 0 0 1 .585.396" /> <path d="M6 18a4 4 0 0 1-1.967-.516" /> <path d="M19.967 17.484A4 4 0 0 1 18 18" /></g></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /></g></symbol>
+<symbol id="i-chart-line" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="m19 9-5 5-4-4-3 3" /></g></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></g></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></g></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></g></symbol>
+<symbol id="i-code-xml" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4" /> <path d="m6 8-4 4 4 4" /> <path d="m14.5 4-5 16" /></g></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /> <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></g></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3" /> <path d="M3 5V19A9 3 0 0 0 21 19V5" /> <path d="M3 12A9 3 0 0 0 21 12" /></g></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> <polyline points="7 10 12 15 17 10" /> <line x1="12" x2="12" y1="15" y2="3" /></g></symbol>
+<symbol id="i-external-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6" /> <path d="M10 14 21 3" /> <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></g></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></g></symbol>
+<symbol id="i-github" viewBox="0 0 496 512"><path fill="currentColor" stroke="none" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></g></symbol>
+<symbol id="i-graduation-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /> <path d="M22 10v6" /> <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></g></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></g></symbol>
+<symbol id="i-languages" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6" /> <path d="m4 14 6-6 2-3" /> <path d="M2 5h12" /> <path d="M7 2h1" /> <path d="m22 22-5-10-5 10" /> <path d="M14 18h6" /></g></symbol>
+<symbol id="i-layout-template" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="7" x="3" y="3" rx="1" /> <rect width="9" height="7" x="3" y="14" rx="1" /> <rect width="5" height="7" x="16" y="14" rx="1" /></g></symbol>
+<symbol id="i-linkedin" viewBox="0 0 448 512"><path fill="currentColor" stroke="none" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></g></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></g></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12" /> <line x1="4" x2="20" y1="6" y2="6" /> <line x1="4" x2="20" y1="18" y2="18" /></g></symbol>
+<symbol id="i-message-square-text" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /> <path d="M13 8H7" /> <path d="M17 12H7" /></g></symbol>
+<symbol id="i-microscope" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8" /> <path d="M3 22h18" /> <path d="M14 22a7 7 0 1 0 0-14h-1" /> <path d="M9 14h2" /> <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" /> <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" /></g></symbol>
+<symbol id="i-monitor-smartphone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8" /> <path d="M10 19v-3.96 3.15" /> <path d="M7 19h5" /> <rect width="6" height="10" x="16" y="12" rx="2" /></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></g></symbol>
+<symbol id="i-network" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1" /> <rect x="2" y="16" width="6" height="6" rx="1" /> <rect x="9" y="2" width="6" height="6" rx="1" /> <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" /> <path d="M12 12V8" /></g></symbol>
+<symbol id="i-scan-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2" /> <path d="M17 3h2a2 2 0 0 1 2 2v2" /> <path d="M21 17v2a2 2 0 0 1-2 2h-2" /> <path d="M7 21H5a2 2 0 0 1-2-2v-2" /> <circle cx="12" cy="12" r="1" /> <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" /></g></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /> <path d="m21.854 2.147-10.94 10.939" /></g></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2" /> <rect width="20" height="8" x="2" y="14" rx="2" ry="2" /> <line x1="6" x2="6.01" y1="6" y2="6" /> <line x1="6" x2="6.01" y1="18" y2="18" /></g></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></g></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></g></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></g></symbol>
+<symbol id="i-terminal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5" /> <line x1="12" x2="20" y1="19" y2="19" /></g></symbol>
+<symbol id="i-trending-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /> <polyline points="16 7 22 7 22 13" /></g></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></g></symbol>
+</svg>
 
-    <noscript>
-      <div style="max-width:52rem;margin:0 auto;padding:3rem 1.5rem;font-family:system-ui,sans-serif;line-height:1.6;color:#e2e8f0;background:#020617;">
-        <h1 style="font-size:2.25rem;margin:0 0 .25rem;">Sagar Lal</h1>
-        <p style="font-size:1.15rem;color:#3b82f6;margin:0 0 .25rem;">AI &amp; Machine Learning Engineer</p>
-        <p style="color:#94a3b8;margin:0 0 1.75rem;">Verona, Italy</p>
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Sagar Lal">
+      <span class="brand-mark" aria-hidden="true">SL</span><span class="brand-name">Sagar Lal</span>
+    </a>
 
-        <p>MSc in Artificial Intelligence from the University of Verona, October 2026, with
-        three years of professional software development. Thesis work in causal
-        discovery and explainable AI, evaluated across robotics, biomedical and industrial
-        process data.</p>
+    <nav class="nav" id="site-nav" data-i18n-attr="aria-label:a11y.nav" aria-label="Main navigation">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#thesis" data-i18n="nav.thesis">Thesis</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#education" data-i18n="nav.education">Education</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
+    </nav>
 
-        <h2 style="font-size:1.1rem;margin:1.75rem 0 .5rem;">Master's thesis</h2>
-        <p><em>Causal Anomaly Detection from Multivariate Time Series.</em> Three causal
-        discovery algorithms (PCMCI, GES, CAM-UV) compared across 27 configurations on three
-        domains under one detection pipeline, flagging faults from drift in learned regression
-        coefficients rather than from prediction error. <a style="color:#8b5cf6;" href="https://github.com/sagar-ai-dev/Causal-Anomaly-Detection-from-Multivariate-Time-Series">Code on GitHub</a>.</p>
-
-        <h2 style="font-size:1.1rem;margin:1.75rem 0 .5rem;">Experience</h2>
-        <ul>
-          <li>Project Manager, Codesy (2024 to 2025) - Python AI automation, FastAPI, PostgreSQL</li>
-          <li>Machine Learning Intern, University of Verona - TensorFlow, OpenCV, LSTM/GRU</li>
-          <li>Web Developer, La Vertueuse - WordPress, PHP, JavaScript, payment integrations</li>
-          <li>Frontend / full-stack development - Vue.js, Angular, Next.js</li>
+    <div class="header-actions">
+      <div class="lang">
+        <button class="icon-btn" id="lang-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu"
+                data-i18n-attr="aria-label:a11y.lang" aria-label="Change language">
+          <svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span id="lang-code">EN</span><svg class="i i-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu" role="menu" hidden>
+          <li role="none"><button type="button" role="menuitemradio" aria-checked="true" data-lang="en" lang="en">English <span class="code">EN</span><svg class="i i-sm tick" aria-hidden="true"><use href="#i-check"/></svg></button></li>
+          <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="it" lang="it">Italiano <span class="code">IT</span><svg class="i i-sm tick" aria-hidden="true"><use href="#i-check"/></svg></button></li>
+          <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="es" lang="es">Español <span class="code">ES</span><svg class="i i-sm tick" aria-hidden="true"><use href="#i-check"/></svg></button></li>
+          <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="fr" lang="fr">Français <span class="code">FR</span><svg class="i i-sm tick" aria-hidden="true"><use href="#i-check"/></svg></button></li>
+          <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-lang="de" lang="de">Deutsch <span class="code">DE</span><svg class="i i-sm tick" aria-hidden="true"><use href="#i-check"/></svg></button></li>
         </ul>
-
-        <h2 style="font-size:1.1rem;margin:1.75rem 0 .5rem;">Skills</h2>
-        <p>Python, JavaScript, C++, SQL &middot; PyTorch, TensorFlow, scikit-learn &middot;
-        causal discovery, explainable AI (SHAP, Grad-CAM), anomaly detection &middot;
-        FastAPI, Flask, REST APIs, PostgreSQL &middot; Git, Docker, Linux</p>
-
-        <h2 style="font-size:1.1rem;margin:1.75rem 0 .5rem;">Contact</h2>
-        <p>
-          <a style="color:#8b5cf6;" href="mailto:sagarrangwani1@gmail.com">sagarrangwani1@gmail.com</a> &middot;
-          <a style="color:#8b5cf6;" href="https://github.com/sagar-ai-dev">github.com/sagar-ai-dev</a> &middot;
-          <a style="color:#8b5cf6;" href="https://linkedin.com/in/sagar-lal007">linkedin.com/in/sagar-lal007</a> &middot;
-          <a style="color:#8b5cf6;" href="Sagar_Lal.pdf">Download CV</a>
-        </p>
       </div>
-    </noscript>
+      <button class="icon-btn" id="theme-btn" type="button" data-i18n-attr="aria-label:a11y.theme" aria-label="Switch between light and dark theme">
+        <svg class="i icon-sun" aria-hidden="true"><use href="#i-sun"/></svg><svg class="i icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-attr="aria-label:a11y.menu" aria-label="Menu">
+        <svg class="i icon-menu" aria-hidden="true"><use href="#i-menu"/></svg><svg class="i icon-close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-    <script type="text/babel">
-        const { useState, useEffect } = React;
+<main id="main">
 
-        // Fully Structured Translation Dictionary
-        const t = {
-            en: {
-                nav: ["Home", "About", "Education", "Experience", "Research", "Projects", "Skills", "Contact"],
-                hero: {
-                    title: "AI & Machine Learning Engineer",
-                    subtitle: "Based in Verona, Italy",
-                    desc: "Building intelligent systems through Machine Learning, Explainable AI, Computer Vision, and scalable Python backend architectures.",
-                    stats: ["3+", "Professional Years", "12+", "Projects", "15+", "Core Skills", "4", "Certifications"],
-                    btn_proj: "View Work", btn_res: "Download Resume"
-                },
-                about: {
-                    title: "About Me",
-                    p1: "I am an AI & Machine Learning Engineer focusing on practical AI integration, computer vision, and scalable development. As Project Manager at Codesy until December 2025, I led Python AI automation workflows; today I develop web platforms, including WordPress sites, for La Vertueuse and independent clients.",
-                    p2: "I hold an MSc in Artificial Intelligence from the University of Verona, completed in October 2026. My academic focus centers on Explainable AI (XAI) and Causal Discovery. I combine this rigorous research with 3+ years of professional development experience, prioritizing clean code, robust data pipelines, and seamless user experiences."
-                },
-                edu: {
-                    title: "Academic Background",
-                    degrees: [
-                        { deg: "Master of Science in Artificial Intelligence", uni: "University of Verona, Italy", date: "Graduated: Oct 2026", desc: "Specializing in Explainable AI (XAI), Computer Vision, Machine Learning, Deep Learning, and Causal Discovery Algorithms. Thesis focus on causal anomaly detection in complex time-series datasets." },
-                        { deg: "BSc in Computer Systems Engineering", uni: "Dawood University of Eng. & Tech.", date: "Jan 2019 - Nov 2022", desc: "Core focus on Data Structures, Algorithms, Software Engineering, Database Systems, and backend computing architectures." }
-                    ]
-                },
-                exp: {
-                    title: "Professional Experience",
-                    jobs: [
-                        {
-                            title: "Web Developer", comp: "La Vertueuse", date: "Jan 2026 - Present", loc: "France (Remote)",
-                            resp: [
-                                "Maintaining the company's WordPress website and administrative portal to ensure high availability.",
-                                "Managing backend systems and optimizing custom PHP features for content management.",
-                                "Integrated Stripe and SumUp payment gateways for seamless e-commerce transactions."
-                            ], tech: ["WordPress", "PHP", "JavaScript", "SQL", "Stripe API"]
-                        },
-                        {
-                            title: "Project Manager", comp: "Codesy", date: "May 2024 - Dec 2025", loc: "Remote",
-                            resp: [
-                                "Led cross-functional workflows and managed the lifecycle of Python-based AI automation scripts.",
-                                "Oversaw the architecture and deployment of robust FastAPI REST APIs connected to PostgreSQL databases.",
-                                "Coordinated data engineering tasks, automating repetitive processes for datasets containing 20,000+ records."
-                            ], tech: ["Project Management", "Python", "FastAPI", "PostgreSQL", "Workflow Optimization"]
-                        },
-                        {
-                            title: "Freelance Web Developer", comp: "Independent Clients", date: "Mar 2023 - Present", loc: "Remote",
-                            resp: [
-                                "Designed, built, and updated highly responsive modern websites utilizing WordPress and Elementor.",
-                                "Implemented complex UI/UX designs into fully functional landing pages tailored to client specifications.",
-                                "Managed continuous website maintenance, hosting configurations, and technical troubleshooting."
-                            ], tech: ["WordPress", "Elementor", "CSS3", "Client Management"]
-                        },
-                        {
-                            title: "Machine Learning Intern", comp: "University of Verona", date: "Apr 2025 - Jun 2025", loc: "Verona, Italy",
-                            resp: [
-                                "Fine-tuned pretrained ResNet and VGG architectures using TensorFlow for image classification.",
-                                "Preprocessed and augmented image datasets utilizing OpenCV and PIL to improve model robustness.",
-                                "Developed time-series forecasting models using LSTM and GRU networks."
-                            ], tech: ["TensorFlow", "OpenCV", "Python", "CNNs"]
-                        }
-                    ]
-                },
-                research: {
-                    title: "Master's Thesis: Explainable AI & Causal Discovery",
-                    obj: "A systematic evaluation of Causal Discovery Algorithms integrated into a unified Coefficient-Drift Anomaly Scoring Engine. Each alarm is attached to a specific variable's broken relationship, so the detector names a candidate root cause rather than returning a score alone.",
-                    d_title: "The Three Domains", d_items: ["Healthcare: PTB-XL 12-lead ECG Dataset (biological variance).", "Industrial: Tennessee Eastman Process (TEP) dataset (chemical faults).", "Robotics: PEPPER Robot dataset (sensor/actuator anomalies)."],
-                    a_title: "Causal Algorithms", a_items: ["PCMCI: Constraint-based using Tigramite's partial correlation.", "GES: Score-based utilizing Greedy Equivalence Search (BIC).", "CAM-UV: Kernel-based using Hilbert-Schmidt Independence Criterion (HSIC)."],
-                    p_title: "4-Phase Architecture", p_items: ["Graph Discovery: Learns causal dependencies from healthy data.", "Offline Fitting: Regresses each sensor on at most three causal parents (linear, degree-3 polynomial or RBF features, all ridge-regularised).", "Online Drift: Recursive least squares re-fits the coefficients at every time step and scores how far they drift from their healthy values.", "Label-blind thresholding: the alarm line is fixed at the 95th percentile of fault-free scores, set before any fault is seen."],
-                    x_title: "XAI & Standardized Reporting", code_btn: "View the thesis code on GitHub", x_desc: "All 27 independent scripts route through a centralized reporting module generating F1/AUC-ROC metrics, attack localization visuals, and XAI X-Ray spreadsheets ranking the specific variables that triggered the alert."
-                },
-                projects: { title: "Technical Projects", sub: "Academic research, open-source tools, and freelance developments." },
-                skills: { title: "Technical Expertise", sub: "Core programming languages, frameworks, and tools." },
-                cert: { title: "Certifications", sub: "A curated list of my verified credentials." },
-                contact: { 
-                    title: "Let's Build Something Great", avail: "Current Availability", a_items: ["Open to New Opportunities", "Based in Verona, Italy", "Remote Worldwide", "Relocation Available"],
-                    form: ["Full Name", "Email Address", "Your Message", "Send Message"]
-                }
-            },
-            it: {
-                nav: ["Home", "Chi Sono", "Formazione", "Esperienza", "Ricerca", "Progetti", "Competenze", "Contatti"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "Residente a Verona, Italia", desc: "Sviluppo sistemi intelligenti tramite Machine Learning, Computer Vision e backend Python.", stats: ["3+", "Anni Esperienza", "12+", "Progetti", "15+", "Competenze Chiave", "4", "Certificazioni"], btn_proj: "Vedi Progetti", btn_res: "Scarica CV" },
-                about: { title: "Chi Sono", p1: "Ingegnere AI specializzato in machine learning e automazione. Project Manager presso Codesy fino a dicembre 2025; oggi sviluppatore web per La Vertueuse e clienti indipendenti.", p2: "Laurea magistrale in Artificial Intelligence all'Università di Verona, conseguita a ottobre 2026. Unisco la ricerca accademica (XAI) a 3+ anni di esperienza di sviluppo professionale." },
-                edu: { title: "Formazione Accademica", degrees: [{deg: "MSc Intelligenza Artificiale", uni: "Università di Verona", date: "Laureato: Ott 2026", desc: "Specializzazione in Explainable AI e Causal Discovery."}, {deg: "BSc Computer Systems Engineering", uni: "Dawood University", date: "Gen 2019 - Nov 2022", desc: "Focus su Algoritmi, Strutture Dati e Architetture Software."}] },
-                exp: { title: "Esperienza Professionale", jobs: [
-                    {title: "Sviluppatore Web", comp: "La Vertueuse", date: "Gen 2026 - Presente", loc: "Francia (Remoto)", resp: ["Manutenzione del sito aziendale in WordPress.", "Ottimizzazione PHP.", "Integrazione Stripe."], tech: ["WordPress", "PHP", "JS", "SQL"]},
-                    {title: "Project Manager", comp: "Codesy", date: "Mag 2024 - Dic 2025", loc: "Remoto", resp: ["Gestione del ciclo di vita degli script di automazione Python.", "Supervisione di architetture API REST FastAPI.", "Ottimizzazione di pipeline di dati e flussi di lavoro."], tech: ["Project Management", "Python", "FastAPI"]},
-                    {title: "Sviluppatore Web Freelance", comp: "Clienti Indipendenti", date: "Mar 2023 - Presente", loc: "Remoto", resp: ["Progettazione e aggiornamento siti con WordPress e Elementor.", "Sviluppo landing page responsive.", "Gestione clienti e manutenzione tecnica."], tech: ["WordPress", "Elementor"]},
-                    {title: "Tirocinante Machine Learning", comp: "Università di Verona", date: "Apr 2025 - Giu 2025", loc: "Verona, Italia", resp: ["Modelli CNN con TensorFlow.", "Classificatori serie temporali."], tech: ["TensorFlow", "OpenCV"]}
-                ]},
-                research: { title: "Ricerca: Tesi Magistrale", obj: "Valutazione comparativa di algoritmi di Causal Discovery integrati in un motore di Anomaly Scoring.", d_title: "I Tre Domini", d_items: ["Healthcare (ECG)", "Industriale (TEP)", "Robotica (PEPPER)"], a_title: "Algoritmi Causali", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architettura", p_items: ["Graph Discovery", "Offline Fitting", "Online Drift", "Soglia al 95° percentile"], code_btn: "Vedi il codice della tesi su GitHub", x_title: "XAI & Reporting", x_desc: "Generazione di metriche standardizzate e report X-Ray per l'interpretabilità." },
-                projects: { title: "Progetti Tecnici", sub: "Sviluppo open-source e freelance." }, skills: { title: "Competenze", sub: "Linguaggi e framework." }, cert: { title: "Certificazioni", sub: "Credenziali verificate." },
-                contact: { title: "Costruiamo Qualcosa Insieme", avail: "Disponibilità Attuale", a_items: ["Aperto a Nuove Opportunità", "Residente a Verona, Italia", "Remoto Globale", "Trasferimento Possibile"], form: ["Nome Completo", "Indirizzo Email", "Il Tuo Messaggio", "Invia Messaggio"] }
-            },
-            es: {
-                nav: ["Inicio", "Sobre Mí", "Educación", "Experiencia", "Investigación", "Proyectos", "Habilidades", "Contacto"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "Basado en Verona, Italia", desc: "Construyendo sistemas inteligentes a través de Machine Learning y Python.", stats: ["3+", "Años de Exp", "12+", "Proyectos", "15+", "Habilidades Clave", "4", "Certificaciones"], btn_proj: "Ver Proyectos", btn_res: "Descargar CV" },
-                about: { title: "Sobre Mí", p1: "Ingeniero de IA enfocado en ML y automatización. Project Manager en Codesy hasta diciembre de 2025; hoy desarrollador web para La Vertueuse y clientes independientes.", p2: "Máster en Inteligencia Artificial por la Universidad de Verona, obtenido en octubre de 2026. Combino el rigor académico con 3+ años de experiencia profesional." },
-                edu: { title: "Educación", degrees: [{deg: "MSc Inteligencia Artificial", uni: "Universidad de Verona", date: "Graduado: Oct 2026", desc: "Especialización en XAI y Descubrimiento Causal."}, {deg: "BSc Ingeniería de Sistemas", uni: "Universidad Dawood", date: "Ene 2019 - Nov 2022", desc: "Algoritmos y Arquitectura de Software."}] },
-                exp: { title: "Experiencia Profesional", jobs: [
-                    {title: "Desarrollador Web", comp: "La Vertueuse", date: "Ene 2026 - Presente", loc: "Francia (Remoto)", resp: ["Mantenimiento del sitio corporativo en WordPress.", "Integración Stripe."], tech: ["WordPress", "PHP", "JS", "SQL"]},
-                    {title: "Project Manager", comp: "Codesy", date: "May 2024 - Dic 2025", loc: "Remoto", resp: ["Liderazgo en flujos de trabajo de automatización en Python.", "Supervisión de APIs REST con FastAPI.", "Ingeniería de datos."], tech: ["Project Management", "Python", "FastAPI"]},
-                    {title: "Desarrollador Web Freelance", comp: "Clientes Independientes", date: "Mar 2023 - Presente", loc: "Remoto", resp: ["Diseño de sitios web con WordPress y Elementor.", "Desarrollo de landing pages.", "Mantenimiento y gestión de clientes."], tech: ["WordPress", "Elementor"]},
-                    {title: "Pasante Machine Learning", comp: "Univ. de Verona", date: "Abr 2025 - Jun 2025", loc: "Verona, Italia", resp: ["Modelos CNN TensorFlow.", "Series temporales."], tech: ["TensorFlow", "OpenCV"]}
-                ]},
-                research: { title: "Investigación: Tesis", obj: "Estudio para evaluar algoritmos de descubrimiento causal para detección de anomalías.", d_title: "Tres Dominios", d_items: ["Salud (ECG)", "Industrial (TEP)", "Robótica (PEPPER)"], a_title: "Algoritmos Causales", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Arquitectura", p_items: ["Descubrimiento de Grafos", "Ajuste Offline", "Deriva Online", "Umbral del percentil 95"], code_btn: "Ver el código de la tesis en GitHub", x_title: "XAI & Reporting", x_desc: "Generación de métricas F1/AUC y análisis de explicabilidad (X-Ray)." },
-                projects: { title: "Proyectos Técnicos", sub: "Desarrollos y análisis." }, skills: { title: "Habilidades", sub: "Herramientas core." }, cert: { title: "Certificaciones", sub: "Credenciales." },
-                contact: { title: "Trabajemos Juntos", avail: "Disponibilidad Actual", a_items: ["Abierto a Oportunidades", "Basado en Verona, Italia", "Remoto Mundial", "Reubicación Disponible"], form: ["Nombre Completo", "Correo Electrónico", "Tu Mensaje", "Enviar Mensaje"] }
-            },
-            fr: {
-                nav: ["Accueil", "À Propos", "Éducation", "Expérience", "Recherche", "Projets", "Compétences", "Contact"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "Basé à Vérone, Italie", desc: "Création de systèmes intelligents via le Machine Learning et Python.", stats: ["3+", "Années Exp.", "12+", "Projets", "15+", "Compétences Clés", "4", "Certifications"], btn_proj: "Voir Projets", btn_res: "Télécharger CV" },
-                about: { title: "À Propos", p1: "Ingénieur IA spécialisé en ML. Project Manager chez Codesy jusqu'en décembre 2025 ; aujourd'hui développeur web pour La Vertueuse et des clients indépendants.", p2: "Diplômé d'un Master en Intelligence Artificielle de l'Université de Vérone (octobre 2026), je combine la recherche académique avec 3+ ans d'expérience professionnelle dans le développement." },
-                edu: { title: "Formation", degrees: [{deg: "MSc Intelligence Artificielle", uni: "Université de Vérone", date: "Diplômé : Oct 2026", desc: "Spécialisation en XAI et Causal Discovery."}, {deg: "Licence Ingénierie", uni: "Université Dawood", date: "Janv 2019 - Nov 2022", desc: "Structures de données et architectures."}] },
-                exp: { title: "Expérience", jobs: [
-                    {title: "Développeur Web", comp: "La Vertueuse", date: "Janv 2026 - Présent", loc: "France (À distance)", resp: ["Maintenance du site WordPress.", "Intégration Stripe."], tech: ["WordPress", "PHP", "JS", "SQL"]},
-                    {title: "Project Manager", comp: "Codesy", date: "Mai 2024 - Déc 2025", loc: "À distance", resp: ["Gestion de workflows d'automatisation Python.", "Déploiement d'APIs REST FastAPI.", "Optimisation de pipelines de données."], tech: ["Project Management", "Python", "FastAPI"]},
-                    {title: "Développeur Web Freelance", comp: "Clients Indépendants", date: "Mar 2023 - Présent", loc: "À distance", resp: ["Création de sites via WordPress et Elementor.", "Intégration UI/UX.", "Maintenance technique."], tech: ["WordPress", "Elementor"]},
-                    {title: "Stagiaire ML", comp: "Université de Vérone", date: "Avr 2025 - Juin 2025", loc: "Vérone, Italie", resp: ["Modèles CNN TensorFlow.", "Séries temporelles."], tech: ["TensorFlow", "OpenCV"]}
-                ]},
-                research: { title: "Recherche de Thèse", obj: "Évaluation d'algorithmes de découverte causale pour la détection d'anomalies.", d_title: "Domaines", d_items: ["Santé (ECG)", "Industriel (TEP)", "Robotique (PEPPER)"], a_title: "Algorithmes", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architecture", p_items: ["Graphes Causaux", "Baseline Offline", "Online Drift", "Seuil au 95e centile"], code_btn: "Voir le code de la thèse sur GitHub", x_title: "XAI", x_desc: "Rapports standardisés et explicabilité X-Ray." },
-                projects: { title: "Projets", sub: "Développements techniques." }, skills: { title: "Compétences", sub: "Technologies." }, cert: { title: "Certifications", sub: "Validées." },
-                contact: { title: "Construisons l'Avenir", avail: "Disponibilité", a_items: ["Ouvert aux Opportunités", "Basé à Vérone, Italie", "Télétravail Mondial", "Relocalisation Possible"], form: ["Nom Complet", "Adresse Email", "Votre Message", "Envoyer le Message"] }
-            },
-            de: {
-                nav: ["Startseite", "Über", "Bildung", "Erfahrung", "Forschung", "Projekte", "Fähigkeiten", "Kontakt"],
-                hero: { title: "AI & Machine Learning Engineer", subtitle: "Sitz in Verona, Italien", desc: "Entwicklung intelligenter Systeme durch ML und Python.", stats: ["3+", "Jahre Exp.", "12+", "Projekte", "15+", "Kernkompetenzen", "4", "Zertifikate"], btn_proj: "Projekte", btn_res: "Lebenslauf" },
-                about: { title: "Über Mich", p1: "KI-Ingenieur mit Fokus auf ML. Bis Dezember 2025 Project Manager bei Codesy; heute Webentwickler für La Vertueuse und unabhängige Kunden.", p2: "Master in Künstlicher Intelligenz an der Universität Verona, abgeschlossen im Oktober 2026. Ich kombiniere Forschung (XAI) mit 3+ Jahren professioneller Erfahrung." },
-                edu: { title: "Bildung", degrees: [{deg: "MSc Künstliche Intelligenz", uni: "Universität Verona", date: "Abschluss: Okt 2026", desc: "Spezialisierung auf XAI und Causal Discovery."}, {deg: "BSc Ingenieurwesen", uni: "Dawood Uni", date: "Jan 2019 - Nov 2022", desc: "Datenstrukturen und Software Engineering."}] },
-                exp: { title: "Berufserfahrung", jobs: [
-                    {title: "Webentwickler", comp: "La Vertueuse", date: "Jan 2026 - Heute", loc: "Frankreich (Remote)", resp: ["Wartung der WordPress-Website.", "Stripe-Integration."], tech: ["WordPress", "PHP", "JS", "SQL"]},
-                    {title: "Project Manager", comp: "Codesy", date: "Mai 2024 - Dez 2025", loc: "Remote", resp: ["Leitung von Python-Automatisierungs-Workflows.", "Überwachung von FastAPI REST APIs.", "Daten-Engineering."], tech: ["Project Management", "Python", "FastAPI"]},
-                    {title: "Freelance Webentwickler", comp: "Unabhängige Kunden", date: "Mär 2023 - Heute", loc: "Remote", resp: ["Erstellung von Websites mit WordPress und Elementor.", "UI/UX Integration.", "Technische Wartung."], tech: ["WordPress", "Elementor"]},
-                    {title: "ML Praktikant", comp: "Uni Verona", date: "Apr 2025 - Jun 2025", loc: "Verona, Italien", resp: ["CNN TensorFlow.", "Zeitreihen."], tech: ["TensorFlow", "OpenCV"]}
-                ]},
-                research: { title: "Forschung Thesis", obj: "Wissenschaftliche Evaluierung kausaler Algorithmen zur Anomalieerkennung.", d_title: "Domänen", d_items: ["Gesundheit (ECG)", "Industrie (TEP)", "Robotik (PEPPER)"], a_title: "Algorithmen", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architektur", p_items: ["Graphenerkennung", "Offline Fitting", "Online Drift", "Schwelle am 95. Perzentil"], code_btn: "Code der Thesis auf GitHub ansehen", x_title: "XAI Reporting", x_desc: "Standardisierte Metriken und erklärbare X-Ray Berichte." },
-                projects: { title: "Projekte", sub: "Akademische Projekte." }, skills: { title: "Fähigkeiten", sub: "Frameworks." }, cert: { title: "Zertifizierungen", sub: "Qualifikationen." },
-                contact: { title: "Kontaktieren Sie Mich", avail: "Verfügbarkeit", a_items: ["Offen für Chancen", "Sitz in Verona, Italien", "Remote Weltweit", "Umzug Möglich"], form: ["Vollständiger Name", "E-Mail Adresse", "Ihre Nachricht", "Nachricht Senden"] }
-            }
-        };
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" aria-labelledby="hero-name">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="status"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.status">Open to AI &amp; ML roles · Italy, remote or relocation</span></p>
+          <h1 id="hero-name">Sagar Lal</h1>
+          <p class="role">AI &amp; Machine Learning Engineer</p>
+          <p class="lead" data-i18n="hero.lead">I build machine-learning systems that can explain their decisions, and the Python services that run them in production.</p>
+          <p class="sub" data-i18n="hero.sub">MSc in Artificial Intelligence, University of Verona, 2026 · 3+ years of professional software delivery</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#thesis"><span data-i18n="hero.cta1">See my thesis</span><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn-secondary" href="Sagar_Lal.pdf" download="Sagar_Lal_CV.pdf"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="hero.cta2">Download CV</span></a>
+            <a class="btn btn-ghost" href="#contact"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span data-i18n="hero.cta3">Contact me</span></a>
+          </div>
+          <div class="socials">
+            <a class="social" href="https://github.com/sagar-ai-dev" target="_blank" rel="noopener" aria-label="GitHub"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg></a>
+            <a class="social" href="https://www.linkedin.com/in/sagar-lal007" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+            <a class="social" href="mailto:sagarrangwani1@gmail.com" aria-label="Email"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></a>
+          </div>
+        </div>
 
-        const Navbar = ({ lang, setLang, isDark, setIsDark }) => {
-            const loc = t[lang].nav;
-            const links = ["#home", "#about", "#education", "#experience", "#research", "#projects", "#skills", "#contact"];
-            
-            return (
-                <nav className="w-full py-4 px-6 border-b dark:border-slate-800 border-slate-200 dark:bg-darkBg/90 bg-white/90 backdrop-blur-xl fixed top-0 z-50 transition-colors shadow-sm">
-                    <div className="max-w-7xl mx-auto flex justify-between items-center">
-                        <a href="#" className="text-2xl font-extrabold tracking-tighter text-primary">Sagar<span className="text-secondary">Lal</span></a>
-                        
-                        <div className="hidden lg:flex items-center gap-7 text-sm font-semibold dark:text-slate-300 text-slate-600">
-                            {loc.map((item, i) => (
-                                <a key={i} href={links[i]} className="hover:text-primary transition-colors">{item}</a>
-                            ))}
-                        </div>
-                        
-                        <div className="flex items-center gap-4">
-                            <button onClick={() => setIsDark(!isDark)} className="w-10 h-10 rounded-full flex items-center justify-center dark:bg-slate-800 bg-slate-100 dark:text-yellow-400 text-slate-600 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm border dark:border-slate-700 border-slate-200">
-                                <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'}`}></i>
-                            </button>
-                            
-                            <select value={lang} onChange={(e) => setLang(e.target.value)} className="bg-transparent text-sm font-bold dark:text-slate-200 text-slate-800 outline-none cursor-pointer uppercase">
-                                {Object.keys(t).map(k => <option key={k} value={k} className="dark:bg-darkBg bg-white">{k}</option>)}
-                            </select>
-                        </div>
-                    </div>
-                </nav>
-            );
-        };
+        <figure class="portrait" style="margin:0">
+          <picture>
+            <source srcset="assets/img/sagar-lal.webp" type="image/webp">
+            <img src="assets/img/sagar-lal.jpg" width="720" height="900" alt="Sagar Lal at work on a laptop" data-i18n-attr="alt:hero.photo" fetchpriority="high">
+          </picture>
+          <figcaption class="portrait-card">
+            <span class="ic" aria-hidden="true"><svg class="i"><use href="#i-graduation-cap"/></svg></span>
+            <span><strong data-i18n="hero.card1">MSc Artificial Intelligence</strong><span data-i18n="hero.card2">University of Verona · 2026</span></span>
+          </figcaption>
+        </figure>
+      </div>
 
-        const Hero = ({ lang }) => {
-            const h = t[lang].hero;
-            return (
-                <section id="home" className="pt-40 lg:pt-48 pb-20 px-6 max-w-7xl mx-auto animate-fade-in-up">
-                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between">
-                        
-                        <div className="lg:w-3/5 space-y-6 text-center lg:text-left order-2 lg:order-1 mt-6 lg:mt-0">
-                            <h1 className="text-5xl lg:text-7xl font-extrabold dark:text-white text-slate-900 tracking-tight leading-tight">
-                                {h.title}
-                            </h1>
-                            <h2 className="text-xl font-bold text-primary flex items-center justify-center lg:justify-start gap-2">
-                                <i className="fas fa-map-marker-alt text-secondary"></i> {h.subtitle}
-                            </h2>
-                            <p className="text-base dark:text-slate-400 text-slate-600 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                                {h.desc}
-                            </p>
-                            
-                            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-                                <a href="#projects" className="px-8 py-3.5 bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold rounded-lg transition-all shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
-                                    {h.btn_proj}
-                                </a>
-                                <a href="https://raw.githubusercontent.com/sagar-ai-dev/sagar-ai-dev.github.io/main/Sagar_Lal.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 border-2 dark:border-slate-700 border-slate-300 dark:bg-slate-800/50 bg-white dark:hover:bg-slate-800 hover:bg-slate-50 dark:text-white text-slate-800 font-bold rounded-lg transition-all flex items-center gap-2 transform hover:-translate-y-1">
-                                    <i className="fas fa-file-pdf text-red-500"></i> {h.btn_res}
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div className="lg:w-2/5 flex justify-center relative order-1 lg:order-2">
-                            <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse-slow"></div>
-                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-primary via-secondary to-emerald-500 shadow-2xl animate-float">
-                                <div className="w-full h-full rounded-full overflow-hidden dark:bg-darkBg bg-white border-4 dark:border-darkBg border-white relative z-10">
-                                    <img src="https://raw.githubusercontent.com/sagar-ai-dev/sagar-ai-dev.github.io/main/IMG_1934.jpeg" alt="Sagar Lal" className="w-full h-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="proof">
+        <div><strong>MSc AI</strong><span data-i18n="proof.1">University of Verona, 2026</span></div>
+        <div><strong data-i18n="proof.2a">3+ years</strong><span data-i18n="proof.2b">of professional software delivery</span></div>
+        <div><strong data-i18n="proof.3a">27 configurations</strong><span data-i18n="proof.3b">evaluated in my master's thesis</span></div>
+        <div><strong data-i18n="proof.4a">3 domains</strong><span data-i18n="proof.4b">robotics, cardiology and industry</span></div>
+      </div>
+    </div>
+  </section>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-20">
-                        {[0,2,4,6].map(i => (
-                            <div key={i} className="glass-card p-6 rounded-2xl text-center">
-                                <h4 className="text-3xl font-black dark:text-white text-slate-900 mb-1">{h.stats[i]}</h4>
-                                <p className="text-[11px] font-bold dark:text-slate-400 text-slate-500 uppercase tracking-widest">{h.stats[i+1]}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            );
-        };
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+        <h2 class="section-title" id="about-title" data-i18n="about.title">Research depth, production habits</h2>
+      </div>
+      <div class="about-grid">
+        <div class="prose reveal">
+          <p data-i18n="about.p1">I'm an AI and machine-learning engineer based in Verona, Italy. My master's research asked a practical question: when does knowing the causal structure of a system actually help you detect and explain its faults? Answering it meant building one fair pipeline, running 27 configurations on robotics, cardiology and industrial data, and reporting honestly where the approach wins and where it doesn't.</p>
+          <p data-i18n="about.p2">Alongside my studies, I spent three years shipping software: leading Python AI-automation projects, building FastAPI services on PostgreSQL, and delivering web platforms for clients in Europe and the US.</p>
+        </div>
+        <div class="pillars reveal">
+          <div class="pillar">
+            <span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-brain"/></svg></span>
+            <div><h3 data-i18n="about.r.t">Research</h3><p data-i18n="about.r.d">Causal discovery, explainable AI and time-series models, evaluated with baselines, significance tests and stated limits.</p></div>
+          </div>
+          <div class="pillar">
+            <span class="ic" aria-hidden="true"><svg class="i"><use href="#i-terminal"/></svg></span>
+            <div><h3 data-i18n="about.e.t">Engineering</h3><p data-i18n="about.e.d">Python data pipelines, PyTorch and TensorFlow models, FastAPI services and PostgreSQL.</p></div>
+          </div>
+          <div class="pillar">
+            <span class="ic green" aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span>
+            <div><h3 data-i18n="about.d.t">Delivery</h3><p data-i18n="about.d.d">Project management, clear communication with clients, and production websites that stay online.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const About = ({ lang }) => {
-            const a = t[lang].about;
-            return (
-                <section id="about" className="py-24 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="max-w-4xl mx-auto text-center space-y-6">
-                        <span className="inline-block px-4 py-1.5 bg-blue-500/10 text-primary text-xs font-black uppercase tracking-widest rounded-full mb-2"><i className="fas fa-user mr-2"></i> {a.title}</span>
-                        <p className="dark:text-slate-300 text-slate-700 leading-relaxed font-medium text-lg">{a.p1}</p>
-                        <p className="dark:text-slate-400 text-slate-600 leading-relaxed font-medium text-lg">{a.p2}</p>
-                    </div>
-                </section>
-            );
-        };
+  <!-- ===================== THESIS ===================== -->
+  <section id="thesis" aria-labelledby="thesis-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="thesis.eyebrow">Featured research</p>
+        <h2 class="section-title" data-i18n="thesis.title">Master's thesis</h2>
+        <p class="section-intro" data-i18n="thesis.intro">University of Verona · supervised by Prof. Daniele Meli · 2026</p>
+      </div>
 
-        const Education = ({ lang }) => {
-            const edu = t[lang].edu;
-            return (
-                <section id="education" className="py-24 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight">{edu.title}</h2>
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {edu.degrees.map((d, i) => (
-                            <div key={i} className="glass-card p-8 rounded-2xl border-t-4 border-t-primary">
-                                <div className="w-12 h-12 rounded-full dark:bg-primary/10 bg-blue-50 flex items-center justify-center mb-6 text-primary text-xl border dark:border-primary/20 border-blue-100">
-                                    <i className="fas fa-graduation-cap"></i>
-                                </div>
-                                <h3 className="text-xl font-extrabold dark:text-white text-slate-900 mb-1">{d.deg}</h3>
-                                <p className="text-secondary font-bold mb-4">{d.uni}</p>
-                                <span className="inline-block px-3 py-1 dark:bg-slate-800 bg-slate-100 rounded-lg text-xs font-bold dark:text-slate-300 text-slate-700 mb-4 border dark:border-slate-700 border-slate-200">{d.date}</span>
-                                <p className="text-sm dark:text-slate-400 text-slate-600 font-medium leading-relaxed">{d.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            );
-        };
+      <article class="thesis-card reveal">
+        <div class="tag-line">
+          <span class="pill" data-i18n="thesis.tag1">Causal AI</span>
+          <span class="pill" data-i18n="thesis.tag2">Anomaly detection</span>
+          <span class="pill" data-i18n="thesis.tag3">Explainability</span>
+        </div>
+        <h3 class="thesis-title" id="thesis-title">Causal Anomaly Detection from Multivariate Time Series</h3>
+        <p class="thesis-summary" data-i18n="thesis.summary">Faults in complex systems often hide inside normal ranges: every sensor looks fine, but the relationship between them has changed. I learned causal graphs from healthy data, tracked the regression coefficients along those links with recursive least squares, and raised an alarm when they drifted. Three causal-discovery algorithms, three regression models and three real-world domains: 27 configurations under one fair pipeline.</p>
 
-        const Experience = ({ lang }) => {
-            const e = t[lang].exp;
-            return (
-                <section id="experience" className="py-24 px-6 max-w-5xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-16 text-center">{e.title}</h2>
-                    
-                    <div className="relative timeline-container ml-2 md:ml-6 space-y-12">
-                        {e.jobs.map((job, idx) => (
-                            <div key={idx} className="relative pl-12 md:pl-16">
-                                <div className="absolute w-8 h-8 rounded-full bg-primary flex items-center justify-center border-4 dark:border-darkBg border-white -left-[3px] md:-left-[3px] top-0 shadow-lg z-10">
-                                    <i className="fas fa-briefcase text-white text-[10px]"></i>
-                                </div>
-                                
-                                <div className="glass-card rounded-2xl p-6 md:p-8">
-                                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 pb-4 border-b dark:border-slate-700/50 border-slate-200">
-                                        <div>
-                                            <h3 className="text-xl font-extrabold dark:text-white text-slate-900 mb-1">{job.title}</h3>
-                                            <p className="text-primary font-bold">{job.comp}</p>
-                                        </div>
-                                        <div className="text-left md:text-right mt-3 md:mt-0">
-                                            <span className="inline-block px-3 py-1 dark:bg-slate-800 bg-slate-100 rounded-lg text-xs font-bold dark:text-slate-300 text-slate-700 mb-2 border dark:border-slate-700 border-slate-200">{job.date}</span>
-                                            <p className="text-xs font-bold dark:text-slate-500 text-slate-400"><i className="fas fa-map-marker-alt"></i> {job.loc}</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <ul className="space-y-3 text-sm dark:text-slate-400 text-slate-600 font-medium mb-6">
-                                        {job.resp.map((r, i) => (
-                                            <li key={i} className="flex items-start gap-3">
-                                                <i className="fas fa-check-circle text-emerald-500 mt-1 text-[10px]"></i> <span>{r}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    
-                                    <div className="flex flex-wrap gap-2 pt-4 border-t dark:border-slate-700/50 border-slate-200">
-                                        {job.tech.map(tech => (
-                                            <span key={tech} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded text-[11px] font-bold uppercase tracking-wider">{tech}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            );
-        };
+        <div class="results">
+          <div class="result">
+            <p class="val">0.81 <span style="font-weight:600;color:var(--muted)">vs</span> 0.71</p>
+            <p data-i18n="thesis.r1">AUC-ROC on ECG data: causal detection beat the best tuned neural network.</p>
+          </div>
+          <div class="result">
+            <p class="val" data-i18n="thesis.r2v">When, not whether</p>
+            <p data-i18n="thesis.r2">Where a simple threshold already catches the faults, structure adds little. Where it fails, causal structure helps most.</p>
+          </div>
+          <div class="result">
+            <p class="val" data-i18n="thesis.r3v">9 of 9</p>
+            <p data-i18n="thesis.r3">configurations named the documented sensor in a robot attack: the explanation points at what broke, not at what moved most.</p>
+          </div>
+        </div>
 
-        const Research = ({ lang }) => {
-            const r = t[lang].research;
-            return (
-                <section id="research" className="py-24 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="text-center mb-16">
-                        <span className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary dark:text-purple-400 text-xs font-black uppercase tracking-widest rounded-full mb-4"><i className="fas fa-microscope mr-2"></i> Master's Thesis Dashboard</span>
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight">{r.title}</h2>
-                    </div>
+        <ol class="steps">
+          <li data-i18n="thesis.s1">Learn the causal graph</li>
+          <li data-i18n="thesis.s2">Fit a healthy baseline</li>
+          <li data-i18n="thesis.s3">Track coefficients with RLS</li>
+          <li data-i18n="thesis.s4">Score the drift</li>
+          <li data-i18n="thesis.s5">Explain the alarm</li>
+        </ol>
 
-                    <div className="glass-card p-8 md:p-12 rounded-3xl dark:bg-gradient-to-br dark:from-darkCard dark:to-[#1e1b4b] bg-gradient-to-br from-white to-purple-50 border dark:border-secondary/30 border-purple-200 shadow-xl">
-                        <p className="text-lg dark:text-slate-300 text-slate-700 font-medium leading-relaxed mb-12 text-center max-w-4xl mx-auto">
-                            {r.obj}
-                        </p>
-                        
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <div className="space-y-4">
-                                <h4 className="text-sm font-black text-secondary flex items-center gap-2"><i className="fas fa-layer-group"></i> {r.d_title}</h4>
-                                <ul className="space-y-3">
-                                    {r.d_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/10">{item}</li>)}
-                                </ul>
-                            </div>
-                            <div className="space-y-4">
-                                <h4 className="text-sm font-black text-primary flex items-center gap-2"><i className="fas fa-project-diagram"></i> {r.a_title}</h4>
-                                <ul className="space-y-3">
-                                    {r.a_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/10">{item}</li>)}
-                                </ul>
-                            </div>
-                            <div className="space-y-4">
-                                <h4 className="text-sm font-black text-emerald-500 flex items-center gap-2"><i className="fas fa-cogs"></i> {r.p_title}</h4>
-                                <ul className="space-y-3">
-                                    {r.p_items.map((item, i) => <li key={i} className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-3 rounded-lg border border-black/5 dark:border-white/10">{item}</li>)}
-                                </ul>
-                            </div>
-                            <div className="space-y-4">
-                                <h4 className="text-sm font-black text-orange-500 flex items-center gap-2"><i className="fas fa-chart-pie"></i> {r.x_title}</h4>
-                                <div className="text-xs font-bold dark:text-slate-400 text-slate-600 bg-black/5 dark:bg-white/5 p-4 rounded-lg border border-black/5 dark:border-white/10 leading-relaxed shadow-inner">
-                                    {r.x_desc}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="text-center mt-10">
-                            <a href="https://github.com/sagar-ai-dev/Causal-Anomaly-Detection-from-Multivariate-Time-Series" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary text-white font-bold text-sm shadow-lg hover:opacity-90 transition"><i className="fab fa-github"></i> {r.code_btn}</a>
-                        </div>
-                    </div>
-                </section>
-            );
-        };
+        <div class="thesis-foot">
+          <div>
+            <p class="domains" data-i18n="thesis.domains">Robotics: SoftBank Pepper, 244 sensors · Cardiology: PTB-XL, 12-lead ECG · Industry: Tennessee Eastman process, 52 variables</p>
+            <ul class="chips">
+              <li>Python</li><li>PCMCI</li><li>GES</li><li>CAM-UV</li><li>Recursive least squares</li><li>SHAP</li><li>LSTM · TCN · Transformer</li>
+            </ul>
+          </div>
+          <a class="btn btn-primary" href="https://github.com/sagar-ai-dev/Causal-Anomaly-Detection-from-Multivariate-Time-Series" target="_blank" rel="noopener">
+            <svg class="i" aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="thesis.code">Code on GitHub</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
 
-        const Projects = ({ lang }) => {
-            const p = t[lang].projects;
-            const projectData = [
-                { title: "Medical Imaging Continual Learning", desc: "Automated continual learning pipeline using knowledge distillation to train a MobileNetV3 model.", link: "Medical-Imaging-Continual-Learning-Pipeline", icon: "fa-x-ray", color: "blue", tools: ["PyTorch", "MobileNetV3", "Python"] },
-                { title: "Financial Time-Series Architecture", desc: "Machine learning architecture that ingests and analyzes stock market data for trend prediction.", link: "Machine_learning_Stock_data_ana", icon: "fa-chart-line", color: "emerald", tools: ["Python", "Pandas", "Scikit"] },
-                { title: "Advanced Computer Vision Suite", desc: "Developed 2D/3D computer vision models utilizing deep learning, edge detection, and SIFT feature extraction.", link: "CV_Project", icon: "fa-eye", color: "purple", tools: ["OpenCV", "CNNs", "PIL"] },
-                { title: "NLP Sentiment Analyzer", desc: "Engineered NLP solutions involving complex text preprocessing, tokenization, and transformer architectures.", link: "NLP_asssignment2", icon: "fa-language", color: "pink", tools: ["Transformers", "NLTK", "Python"] },
-                { title: "Secure DBMS API", desc: "Designed and implemented a secure relational database architecture to handle robust data tracking via REST APIs.", link: "Data-base-system", icon: "fa-database", color: "orange", tools: ["FastAPI", "SQL", "Python"] },
-                { title: "Automated QR Attendance", desc: "Engineered an automated attendance tracking application utilizing QR code generation and image scanning algorithms.", link: "ATTENDANCE-QR-CODE", icon: "fa-qrcode", color: "blue", tools: ["Python", "OpenCV"] },
-                { title: "Knowledge Rep. & Logic", desc: "Implemented modal logic reasoning algorithms and knowledge representation models for AI agents.", link: "-Knowledge_Representation_Project", icon: "fa-network-wired", color: "emerald", tools: ["Logic", "Algorithms"] },
-                { title: "Deep Learning Foundation Models", desc: "Built and evaluated advanced deep learning models focusing on foundational time-series architectures.", link: "DL_Project_Time-series_Foundation_Models", icon: "fa-brain", color: "purple", tools: ["Deep Learning", "Python"] },
-                { title: "Blood Bank Management Platform", desc: "Full-stack application architecture developed to manage blood bank inventory and donor records.", link: "-Bloodbank-Application", icon: "fa-heartbeat", color: "red", tools: ["Full-Stack", "Web Dev"] }
-            ];
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" aria-labelledby="exp-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="exp.eyebrow">Experience</p>
+        <h2 class="section-title" id="exp-title" data-i18n="exp.title">Where I've worked</h2>
+        <p class="section-intro" data-i18n="exp.intro">Three years of shipping software, alongside my studies.</p>
+      </div>
 
-            return (
-                <section id="projects" className="py-24 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{p.title}</h2>
-                        <p className="dark:text-slate-400 text-slate-600 font-medium">{p.sub}</p>
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {projectData.map((proj, idx) => (
-                            <div key={idx} className="glass-card rounded-2xl flex flex-col h-full p-8 group relative overflow-hidden">
-                                <div className={`w-12 h-12 rounded-xl bg-${proj.color}-500/10 text-${proj.color}-500 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform border border-${proj.color}-500/20`}>
-                                    <i className={`fas ${proj.icon}`}></i>
-                                </div>
-                                <h3 className="text-lg font-bold dark:text-white text-slate-900 mb-3 leading-tight">{proj.title}</h3>
-                                <p className="text-sm dark:text-slate-400 text-slate-600 mb-6 flex-grow font-medium leading-relaxed">{proj.desc}</p>
-                                
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {proj.tools.map(tool => (
-                                        <span key={tool} className="px-2.5 py-1 dark:bg-darkBg bg-slate-50 border dark:border-slate-700 border-slate-200 dark:text-slate-300 text-slate-700 rounded-md text-[10px] font-bold uppercase tracking-wider">{tool}</span>
-                                    ))}
-                                </div>
-                                
-                                <a href={`https://github.com/sagar-ai-dev/${proj.link}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-primary dark:text-primary hover:text-blue-700 dark:hover:text-blue-400 transition-colors mt-auto">
-                                    View Source Code <i className="fas fa-arrow-right text-[10px]"></i>
-                                </a>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            );
-        };
+      <div class="exp-groups">
+        <div class="reveal">
+          <h3 class="group-title"><svg class="i" aria-hidden="true"><use href="#i-brain"/></svg><span data-i18n="exp.g1">AI &amp; machine learning</span></h3>
+          <ol class="timeline">
+            <li class="job">
+              <div class="job-head"><h3>Project Manager</h3><span class="when" data-i18n="job.codesy.when">May 2024 – Dec 2025</span></div>
+              <div class="job-head"><span class="org">Codesy</span><span class="where" data-i18n="where.remote">Remote</span></div>
+              <ul class="points">
+                <li data-i18n="job.codesy.1">Led cross-functional delivery of Python-based AI automation tools, from requirements to deployment.</li>
+                <li data-i18n="job.codesy.2">Oversaw the design and deployment of FastAPI REST services backed by PostgreSQL.</li>
+                <li data-i18n="job.codesy.3">Coordinated data-engineering work that automated repetitive processing across datasets of 20,000+ records.</li>
+              </ul>
+              <ul class="chips"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Agile</li></ul>
+            </li>
+            <li class="job">
+              <div class="job-head"><h3 data-i18n="job.intern.title">Machine Learning Intern</h3><span class="when" data-i18n="job.intern.when">Apr 2025 – Jun 2025</span></div>
+              <div class="job-head"><span class="org" data-i18n="org.univr">University of Verona</span><span class="where">Verona</span></div>
+              <ul class="points">
+                <li data-i18n="job.intern.1">Fine-tuned pretrained ResNet and VGG networks in TensorFlow for image classification.</li>
+                <li data-i18n="job.intern.2">Built preprocessing and data-augmentation pipelines with OpenCV and PIL.</li>
+                <li data-i18n="job.intern.3">Developed LSTM and GRU models for time-series forecasting.</li>
+              </ul>
+              <ul class="chips"><li>TensorFlow</li><li>OpenCV</li><li>CNNs</li><li>LSTM · GRU</li></ul>
+            </li>
+          </ol>
+        </div>
 
-        const Skills = ({ lang }) => {
-            const s = t[lang].skills;
-            const skillData = [
-                { 
-                    cat: "Machine Learning & AI", icon: "fa-brain", color: "purple",
-                    skills: ["Python", "TensorFlow", "Keras", "PyTorch", "OpenCV", "Explainable AI (XAI)", "Scikit-Learn", "Causal Inference", "Time-Series Analysis"] 
-                },
-                { 
-                    cat: "Backend & Data Engineering", icon: "fa-server", color: "emerald",
-                    skills: ["FastAPI", "REST APIs", "SQL", "PostgreSQL", "Pandas", "NumPy", "Data Pipelines"] 
-                },
-                { 
-                    cat: "Frontend Web Development", icon: "fa-layer-group", color: "blue",
-                    skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "WordPress", "Elementor", "PHP"] 
-                },
-                { 
-                    cat: "DevOps & Tooling", icon: "fa-terminal", color: "orange",
-                    skills: ["Git", "GitHub", "Docker", "Linux", "CI/CD", "Jupyter", "Agile Management"] 
-                }
-            ];
+        <div class="reveal">
+          <h3 class="group-title"><svg class="i" aria-hidden="true"><use href="#i-code-xml"/></svg><span data-i18n="exp.g2">Software &amp; web development</span></h3>
+          <ol class="timeline">
+            <li class="job current">
+              <div class="job-head"><h3 data-i18n="job.lv.title">Web Developer</h3><span class="when" data-i18n="job.lv.when">Jan 2026 – Present</span></div>
+              <div class="job-head"><span class="org">La Vertueuse</span><span class="where" data-i18n="where.france">France · remote</span></div>
+              <ul class="points">
+                <li data-i18n="job.lv.1">Maintain the company's WordPress website and administrative portal, keeping them fast and available.</li>
+                <li data-i18n="job.lv.2">Extend custom PHP features for content management.</li>
+                <li data-i18n="job.lv.3">Integrated Stripe and SumUp payment gateways for e-commerce.</li>
+              </ul>
+              <ul class="chips"><li>WordPress</li><li>PHP</li><li>JavaScript</li><li>SQL</li><li>Stripe</li></ul>
+            </li>
+            <li class="job current">
+              <div class="job-head"><h3 data-i18n="job.fl.title">Freelance Web Developer</h3><span class="when" data-i18n="job.fl.when">Mar 2023 – Present</span></div>
+              <div class="job-head"><span class="org" data-i18n="job.fl.org">Independent clients</span><span class="where" data-i18n="where.remote">Remote</span></div>
+              <ul class="points">
+                <li data-i18n="job.fl.1">Design and build responsive websites in WordPress and Elementor to client specifications.</li>
+                <li data-i18n="job.fl.2">Turn UI/UX designs into landing pages, and handle hosting, maintenance and troubleshooting.</li>
+              </ul>
+              <ul class="chips"><li>WordPress</li><li>Elementor</li><li>CSS</li></ul>
+            </li>
+            <li class="job">
+              <div class="job-head"><h3 data-i18n="job.saas.title">Frontend / Full-Stack Developer</h3><span class="when">2023 – 2025</span></div>
+              <div class="job-head"><span class="org" data-i18n="job.saas.org">US SaaS company (confidential)</span><span class="where" data-i18n="where.remote">Remote</span></div>
+              <ul class="points">
+                <li data-i18n="job.saas.1">Built and maintained frontend and backend features in Vue.js, Angular and Next.js for a product with 10,000+ monthly active users.</li>
+                <li data-i18n="job.saas.2">Integrated interfaces with backend services and improved page-load performance.</li>
+              </ul>
+              <ul class="chips"><li>Vue.js</li><li>Angular</li><li>Next.js</li><li>REST APIs</li></ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            return (
-                <section id="skills" className="py-24 px-6 max-w-7xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold dark:text-white text-slate-900 tracking-tight mb-4">{s.title}</h2>
-                        <p className="dark:text-slate-400 text-slate-600 font-medium">{s.sub}</p>
-                    </div>
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education" aria-labelledby="edu-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="edu.eyebrow">Education</p>
+        <h2 class="section-title" id="edu-title" data-i18n="edu.title">Academic background</h2>
+      </div>
+      <div class="edu-grid">
+        <article class="edu reveal">
+          <div class="edu-top">
+            <span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-graduation-cap"/></svg></span>
+            <div>
+              <h3 data-i18n="edu.msc.title">MSc in Artificial Intelligence</h3>
+              <p class="org" data-i18n="edu.msc.org">University of Verona, Italy</p>
+              <p class="when done" data-i18n="edu.msc.when">Graduated October 2026</p>
+            </div>
+          </div>
+          <ul class="points">
+            <li data-i18n="edu.msc.1"><strong>Thesis:</strong> <em>Causal Anomaly Detection from Multivariate Time Series</em>, supervised by Prof. Daniele Meli.</li>
+            <li data-i18n="edu.msc.2"><strong>Top grades:</strong> Machine Learning &amp; Deep Learning 30 cum laude, Knowledge Representation 30 cum laude, Logic in AI 30/30.</li>
+            <li data-i18n="edu.msc.3"><strong>Coursework:</strong> Explainable AI, Computer Vision &amp; Deep Learning, Natural Language Processing, Reinforcement Learning, Planning &amp; Automated Reasoning, Biomedical Decision Support Systems.</li>
+          </ul>
+        </article>
+        <article class="edu reveal">
+          <div class="edu-top">
+            <span class="ic" aria-hidden="true"><svg class="i"><use href="#i-graduation-cap"/></svg></span>
+            <div>
+              <h3 data-i18n="edu.bsc.title">BSc in Computer Systems Engineering</h3>
+              <p class="org">Dawood University of Engineering &amp; Technology, Karachi</p>
+              <p class="when" data-i18n="edu.bsc.when">Jan 2019 – Nov 2022</p>
+            </div>
+          </div>
+          <ul class="points">
+            <li data-i18n="edu.bsc.1">Foundations in data structures, algorithms, software engineering and database systems.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {skillData.map((group, i) => (
-                            <div key={i} className="glass-card p-8 rounded-2xl">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className={`w-10 h-10 rounded-lg bg-${group.color}-500/10 text-${group.color}-500 flex items-center justify-center text-lg border border-${group.color}-500/20`}>
-                                        <i className={`fas ${group.icon}`}></i>
-                                    </div>
-                                    <h3 className="text-lg font-bold dark:text-white text-slate-900">{group.cat}</h3>
-                                </div>
-                                <div className="flex flex-wrap gap-2">
-                                    {group.skills.map((skill, j) => (
-                                        <span key={j} className="px-3 py-1.5 dark:bg-slate-800 bg-slate-100 border dark:border-slate-700 border-slate-200 dark:text-slate-200 text-slate-700 rounded-lg text-xs font-bold shadow-sm">{skill}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            );
-        };
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" aria-labelledby="proj-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="proj.eyebrow">Projects</p>
+        <h2 class="section-title" id="proj-title" data-i18n="proj.title">Selected projects</h2>
+        <p class="section-intro" data-i18n="proj.intro">Machine learning, computer vision and NLP work, with the code on GitHub.</p>
+      </div>
+      <div class="proj-grid">
+        <article class="proj reveal">
+          <span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-microscope"/></svg></span>
+          <h3 data-i18n="p1.t">Continual learning for medical imaging</h3>
+          <p data-i18n="p1.d">A lightweight MobileNetV3 student learns to classify chest X-rays without forgetting what it learned on retinal OCT images, using knowledge distillation and continual-learning strategies.</p>
+          <ul class="chips"><li>PyTorch</li><li>MobileNetV3</li><li>Knowledge distillation</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/Medical-Imaging-Continual-Learning-Pipeline" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic" aria-hidden="true"><svg class="i"><use href="#i-activity"/></svg></span>
+          <h3 data-i18n="p2.t">Time-series foundation models</h3>
+          <p data-i18n="p2.d">Compared MOMENT, Informer and PatchTST for anomaly detection on benchmark datasets (ECL, ETTh1, Weather), from preprocessing to fine-tuning and evaluation.</p>
+          <ul class="chips"><li>Transformers</li><li>Time series</li><li>Python</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/DL_Project_Time-series_Foundation_Models" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic green" aria-hidden="true"><svg class="i"><use href="#i-scan-eye"/></svg></span>
+          <h3 data-i18n="p3.t">2D-to-3D human pose estimation</h3>
+          <p data-i18n="p3.d">Detects people in video, estimates 15 body keypoints per frame with a deep network in OpenCV, lifts them to 3D and visualises the result.</p>
+          <ul class="chips"><li>OpenCV DNN</li><li>Computer vision</li><li>Python</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/2D-3D_CV_DL_Projject" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic" aria-hidden="true"><svg class="i"><use href="#i-image"/></svg></span>
+          <h3 data-i18n="p4.t">CNN image classifier</h3>
+          <p data-i18n="p4.d">A convolutional network in TensorFlow/Keras that classifies animal images, with data augmentation, early stopping and confusion-matrix evaluation.</p>
+          <ul class="chips"><li>TensorFlow</li><li>Keras</li><li>CNN</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/CV_Project" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-trending-up"/></svg></span>
+          <h3 data-i18n="p5.t">AI trading strategy</h3>
+          <p data-i18n="p5.d">An intraday trading strategy for the IVV ETF that combines deep learning and reinforcement learning (team project).</p>
+          <ul class="chips"><li>Reinforcement learning</li><li>TensorFlow</li><li>pandas</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/AI_Finance_Project" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic green" aria-hidden="true"><svg class="i"><use href="#i-message-square-text"/></svg></span>
+          <h3 data-i18n="p6.t">Medical text classification</h3>
+          <p data-i18n="p6.d">Classifies Wikipedia articles as medical or non-medical, with NLTK and spaCy preprocessing and logistic regression.</p>
+          <ul class="chips"><li>NLP</li><li>NLTK</li><li>spaCy</li><li>scikit-learn</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/NLP-Assignment-01" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic" aria-hidden="true"><svg class="i"><use href="#i-network"/></svg></span>
+          <h3 data-i18n="p7.t">Cybersecurity ontology</h3>
+          <p data-i18n="p7.d">An OWL ontology that models incident detection, incident response and risk management, for knowledge representation and reasoning.</p>
+          <ul class="chips"><li>OWL</li><li>RDF</li><li data-i18n="p7.c">Knowledge representation</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/-Knowledge_Representation_Project" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-chart-line"/></svg></span>
+          <h3 data-i18n="p8.t">Stock data analysis toolkit</h3>
+          <p data-i18n="p8.d">Fetches daily market data from the Alpha Vantage API, then analyses and visualises trends with pandas, scikit-learn and Matplotlib.</p>
+          <ul class="chips"><li>Python</li><li>pandas</li><li>scikit-learn</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/Machine_learning_Stock_data_ana" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+        <article class="proj reveal">
+          <span class="ic green" aria-hidden="true"><svg class="i"><use href="#i-database"/></svg></span>
+          <h3 data-i18n="p9.t">Blood bank management app</h3>
+          <p data-i18n="p9.d">A full-stack web application for managing blood inventory and donor records.</p>
+          <ul class="chips"><li data-i18n="p9.c">Full-stack</li><li>Web</li></ul>
+          <a class="more" href="https://github.com/sagar-ai-dev/-Bloodbank-Application" target="_blank" rel="noopener"><span data-i18n="proj.view">View code</span><svg class="i i-sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </article>
+      </div>
+      <p class="earlier reveal">
+        <span data-i18n="proj.earlier">Earlier work:</span>
+        <a href="https://github.com/sagar-ai-dev/ATTENDANCE-QR-CODE" target="_blank" rel="noopener" data-i18n="e1">QR-code attendance system</a>
+        <a href="https://github.com/sagar-ai-dev/Data-base-system" target="_blank" rel="noopener" data-i18n="e2">Database management system</a>
+        <a href="https://github.com/sagar-ai-dev/wordpress-blog-site" target="_blank" rel="noopener" data-i18n="e3">WordPress blog</a>
+        <a href="https://github.com/sagar-ai-dev" target="_blank" rel="noopener" data-i18n="e4">All repositories on GitHub</a>
+      </p>
+    </div>
+  </section>
 
-        const Certifications = ({ lang }) => {
-            const c = t[lang].cert;
-            const certs = [
-                { title: "Italian A2 Language Proficiency Certification", issuer: "CLA University of Verona", icon: "fa-language", color: "text-red-500" },
-                { title: "Automate Cybersecurity Tasks with Python", issuer: "Google", icon: "fa-shield-alt", color: "text-blue-500" },
-                { title: "Foundations of Cybersecurity", issuer: "Google", icon: "fa-lock", color: "text-blue-500" },
-                { title: "Tools of the Trade: Linux and SQL", issuer: "Google", icon: "fa-database", color: "text-blue-500" },
-                { title: "Data Analytics and Business Intelligence", issuer: "DigiSkills", icon: "fa-chart-bar", color: "text-emerald-500" },
-                { title: "Play It Safe: Manage Security Risks", issuer: "Google", icon: "fa-user-shield", color: "text-blue-500" }
-            ];
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="skills.eyebrow">Skills</p>
+        <h2 class="section-title" id="skills-title" data-i18n="skills.title">Technical toolkit</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-brain"/></svg></span><span data-i18n="skills.ml">Machine learning</span></h3>
+          <ul class="chips"><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>scikit-learn</li><li>CNNs</li><li>LSTM · GRU</li><li>Transformers</li><li>Transfer learning</li></ul>
+        </div>
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-microscope"/></svg></span><span data-i18n="skills.research">AI research</span></h3>
+          <ul class="chips"><li>Causal discovery</li><li>PCMCI · GES · CAM-UV</li><li>Explainable AI</li><li>SHAP · Grad-CAM</li><li>Anomaly detection</li><li>Time series</li><li>Statistical testing</li></ul>
+        </div>
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-code-xml"/></svg></span><span data-i18n="skills.lang">Programming languages</span></h3>
+          <ul class="chips"><li>Python</li><li>JavaScript</li><li>SQL</li><li>PHP</li><li>C++</li></ul>
+        </div>
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-server"/></svg></span><span data-i18n="skills.data">Data &amp; backend</span></h3>
+          <ul class="chips"><li>FastAPI</li><li>Flask</li><li>REST APIs</li><li>PostgreSQL</li><li>pandas</li><li>NumPy</li><li>Data pipelines</li></ul>
+        </div>
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic green" aria-hidden="true"><svg class="i"><use href="#i-monitor-smartphone"/></svg></span><span data-i18n="skills.web">Web</span></h3>
+          <ul class="chips"><li>React</li><li>Vue.js</li><li>Angular</li><li>Next.js</li><li>WordPress</li><li>Elementor</li><li>HTML &amp; CSS</li><li>Tailwind CSS</li></ul>
+        </div>
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic green" aria-hidden="true"><svg class="i"><use href="#i-terminal"/></svg></span><span data-i18n="skills.tools">Tools</span></h3>
+          <ul class="chips"><li>Git &amp; GitHub</li><li>Docker</li><li>Linux</li><li>Jupyter</li><li>LaTeX</li><li>CI/CD</li><li>Agile</li></ul>
+        </div>
+      </div>
 
-            return (
-                <section id="certifications" className="py-24 px-6 max-w-5xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-extrabold dark:text-white text-slate-900 tracking-tight">{c.title}</h2>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                        {certs.map((cert, index) => (
-                            <div key={index} className="glass-card rounded-xl p-5 flex items-center gap-5 transition-transform hover:scale-[1.02]">
-                                <div className="w-12 h-12 rounded-full dark:bg-slate-800 bg-slate-50 flex items-center justify-center flex-shrink-0 border dark:border-slate-700 border-slate-200 shadow-sm">
-                                    <i className={`fas ${cert.icon} ${cert.color} text-lg`}></i>
-                                </div>
-                                <div>
-                                    <h3 className="text-sm font-bold dark:text-white text-slate-900 leading-snug">{cert.title}</h3>
-                                    <p className="dark:text-slate-500 text-slate-500 text-[10px] font-bold uppercase mt-1 tracking-widest">{cert.issuer}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-            );
-        };
+      <div class="cred-grid">
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic" aria-hidden="true"><svg class="i"><use href="#i-award"/></svg></span><span data-i18n="cred.certs">Certifications</span></h3>
+          <ul class="rows">
+            <li><span>Foundations of Cybersecurity</span><span class="meta">Google</span></li>
+            <li><span>Play It Safe: Manage Security Risks</span><span class="meta">Google</span></li>
+            <li><span>Tools of the Trade: Linux and SQL</span><span class="meta">Google</span></li>
+            <li><span>Automate Cybersecurity Tasks with Python</span><span class="meta">Google</span></li>
+            <li><span>Data Analytics and Business Intelligence</span><span class="meta">DigiSkills</span></li>
+            <li><span data-i18n="cred.ita">Italian language, level A2</span><span class="meta" data-i18n="cred.cla">CLA, University of Verona</span></li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3 class="card-title"><span class="ic violet" aria-hidden="true"><svg class="i"><use href="#i-languages"/></svg></span><span data-i18n="cred.langs">Languages</span></h3>
+          <ul class="rows">
+            <li><span data-i18n="lang.en">English</span><span class="meta" data-i18n="lvl.pro">Professional</span></li>
+            <li><span data-i18n="lang.it">Italian</span><span class="meta" data-i18n="lvl.a2">A2, certified</span></li>
+            <li><span data-i18n="lang.ur">Urdu</span><span class="meta" data-i18n="lvl.native">Native</span></li>
+            <li><span data-i18n="lang.hi">Hindi</span><span class="meta" data-i18n="lvl.native2">Native</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const Contact = ({ lang }) => {
-            const c = t[lang].contact;
-            return (
-                <section id="contact" className="py-32 px-6 max-w-6xl mx-auto border-t dark:border-slate-800/50 border-slate-200 animate-fade-in-up relative">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-primary/10 dark:bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-                    
-                    <div className="text-center mb-16 relative z-10">
-                        <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-black uppercase tracking-widest rounded-full mb-4"><i className="fas fa-paper-plane mr-2"></i> Contact</span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-blue-500 tracking-tight mb-4 pb-2">{c.title}</h2>
-                    </div>
-                    
-                    <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
-                        <div className="lg:col-span-5 space-y-6">
-                            <div className="glass-card rounded-3xl p-8 lg:p-10 border-t-4 border-t-emerald-500 shadow-xl dark:bg-darkCard/80 bg-white/80 h-full flex flex-col justify-center">
-                                <h3 className="text-2xl font-bold dark:text-white text-slate-900 mb-8">{c.avail}</h3>
-                                <ul className="space-y-6 dark:text-slate-300 text-slate-700 font-bold text-sm">
-                                    {c.a_items.map((item, idx) => {
-                                        const icons = [
-                                            "fa-circle text-emerald-500 text-[12px] animate-pulse drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]", 
-                                            "fa-map-marker-alt text-red-400 text-lg", 
-                                            "fa-globe-americas text-blue-400 text-lg", 
-                                            "fa-plane-departure text-purple-400 text-lg"
-                                        ];
-                                        return (
-                                            <li key={idx} className="flex items-center gap-5">
-                                                <div className="w-8 flex justify-center"><i className={`fas ${icons[idx]}`}></i></div> 
-                                                <span className="text-base">{item}</span>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                                
-                                <div className="mt-12 pt-8 border-t dark:border-slate-700 border-slate-200">
-                                    <p className="text-xs font-bold dark:text-slate-500 text-slate-400 uppercase tracking-widest mb-4">Direct Contact</p>
-                                    <a href="mailto:Sagarrangwani1@gmail.com" className="flex items-center gap-4 text-lg font-bold dark:text-white text-slate-900 hover:text-primary dark:hover:text-primary transition-colors">
-                                        <div className="w-10 h-10 rounded-full dark:bg-slate-800 bg-slate-100 flex items-center justify-center text-primary"><i className="fas fa-envelope"></i></div>
-                                        Sagarrangwani1@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="lg:col-span-7">
-                            <div className="glass-card rounded-3xl p-8 lg:p-10 shadow-xl dark:bg-darkCard/80 bg-white/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/50">
-                                <form action="https://formsubmit.co/Sagarrangwani1@gmail.com" method="POST" className="space-y-6">
-                                    <input type="hidden" name="_subject" value="New message from your AI Portfolio!" />
-                                    <input type="hidden" name="_captcha" value="false" />
-                                    <input type="hidden" name="_template" value="table" />
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h2 class="section-title" id="contact-title" data-i18n="contact.title">Let's work together</h2>
+        <p class="section-intro" data-i18n="contact.intro">I'm open to AI and machine-learning roles in Italy, remote work and relocation. Email is the fastest way to reach me.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="card reveal">
+          <h3 class="card-title" data-i18n="contact.direct">Direct contact</h3>
+          <ul class="contact-list">
+            <li class="row">
+              <span class="email"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:sagarrangwani1@gmail.com" style="border:0;padding:0;background:none">sagarrangwani1@gmail.com</a></span>
+              <button class="copy-btn" id="copy-email" type="button" data-email="sagarrangwani1@gmail.com" data-copied="Copied!" data-i18n-attr="data-copied:contact.copied"><span data-i18n="contact.copy">Copy</span></button>
+            </li>
+            <li><a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a></li>
+            <li><a href="https://github.com/sagar-ai-dev" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+            <li><a href="Sagar_Lal.pdf" download="Sagar_Lal_CV.pdf"><svg class="i" aria-hidden="true"><use href="#i-file-text"/></svg><span data-i18n="contact.cv">Download CV (PDF)</span></a></li>
+          </ul>
+          <ul class="avail">
+            <li><svg class="i" aria-hidden="true"><use href="#i-map-pin"/></svg><span data-i18n="contact.a1">Based in Verona, Italy</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="contact.a2">Open to remote work</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span data-i18n="contact.a3">Willing to relocate</span></li>
+          </ul>
+        </div>
 
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div className="space-y-2">
-                                            <label className="block text-xs font-extrabold dark:text-slate-400 text-slate-600 uppercase tracking-wider ml-1">{c.form[0]}</label>
-                                            <div className="relative">
-                                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
-                                                    <i className="fas fa-user"></i>
-                                                </div>
-                                                <input type="text" name="name" className="input-field pl-10 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm" required placeholder="John Doe" />
-                                            </div>
-                                        </div>
-                                        <div className="space-y-2">
-                                            <label className="block text-xs font-extrabold dark:text-slate-400 text-slate-600 uppercase tracking-wider ml-1">{c.form[1]}</label>
-                                            <div className="relative">
-                                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
-                                                    <i className="fas fa-at"></i>
-                                                </div>
-                                                <input type="email" name="email" className="input-field pl-10 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm" required placeholder="john@company.com" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="space-y-2">
-                                        <label className="block text-xs font-extrabold dark:text-slate-400 text-slate-600 uppercase tracking-wider ml-1">{c.form[2]}</label>
-                                        <textarea name="message" rows="5" className="input-field bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 dark:text-white text-sm resize-none p-4" required placeholder="How can I help you?"></textarea>
-                                    </div>
-                                    
-                                    <button type="submit" className="w-full py-4 bg-gradient-to-r from-primary to-secondary hover:from-blue-600 hover:to-purple-600 text-white text-sm font-extrabold rounded-xl transition-all shadow-lg shadow-primary/30 transform hover:-translate-y-1 mt-4 flex items-center justify-center gap-2">
-                                        {c.form[3]} <i className="fas fa-paper-plane"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            );
-        };
+        <div class="card reveal" id="form-card">
+          <h3 class="card-title" data-i18n="contact.formTitle">Send a message</h3>
+          <form class="form" action="https://formsubmit.co/Sagarrangwani1@gmail.com" method="POST">
+            <p class="notice" role="status" data-i18n="contact.sent">Thank you, your message was sent. I'll get back to you soon.</p>
+            <input type="hidden" name="_subject" value="New message from sagar-ai-dev.github.io">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://sagar-ai-dev.github.io/?sent=1#contact">
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-row">
+              <div class="field">
+                <label for="f-name" data-i18n="contact.name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required data-i18n-attr="placeholder:contact.phName" placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="f-email" data-i18n="contact.email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-msg" data-i18n="contact.message">Message</label>
+              <textarea id="f-msg" name="message" rows="5" required data-i18n-attr="placeholder:contact.phMsg" placeholder="Tell me about the role or project…"></textarea>
+            </div>
+            <div><button class="btn btn-primary" type="submit"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg><span data-i18n="contact.send">Send message</span></button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-        const App = () => {
-            const [lang, setLang] = useState('en');
-            const [isDark, setIsDark] = useState(true);
-
-            useEffect(() => {
-                const root = window.document.documentElement;
-                if (isDark) {
-                    root.classList.add('dark');
-                    root.classList.remove('light');
-                } else {
-                    root.classList.add('light');
-                    root.classList.remove('dark');
-                }
-            }, [isDark]);
-
-            return (
-                <div className="min-h-screen flex flex-col overflow-x-hidden">
-                    <Navbar lang={lang} setLang={setLang} isDark={isDark} setIsDark={setIsDark} />
-                    <main className="flex-grow">
-                        <Hero lang={lang} />
-                        <About lang={lang} />
-                        <Education lang={lang} />
-                        <Experience lang={lang} />
-                        <Research lang={lang} />
-                        <Projects lang={lang} />
-                        <Skills lang={lang} />
-                        <Certifications lang={lang} />
-                        <Contact lang={lang} />
-                    </main>
-                    <footer className="py-12 border-t dark:border-slate-800/50 border-slate-200 dark:bg-[#020617] bg-slate-50 mt-auto">
-                        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-                            <div className="text-center md:text-left">
-                                <p className="dark:text-white text-slate-900 font-extrabold text-2xl tracking-tight">Sagar Lal</p>
-                                <p className="dark:text-slate-500 text-slate-500 text-xs font-bold mt-1 uppercase tracking-widest">AI & Machine Learning Engineer</p>
-                            </div>
-                            <div className="flex gap-6">
-                                <a href="https://github.com/sagar-ai-dev" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full dark:bg-slate-800 bg-white dark:text-slate-300 text-slate-600 hover:text-primary dark:hover:text-primary hover:-translate-y-1 transition-all flex items-center justify-center text-xl shadow-sm border dark:border-slate-700 border-slate-200"><i className="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/sagar-lal007" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full dark:bg-slate-800 bg-white dark:text-slate-300 text-slate-600 hover:text-primary dark:hover:text-primary hover:-translate-y-1 transition-all flex items-center justify-center text-xl shadow-sm border dark:border-slate-700 border-slate-200"><i className="fab fa-linkedin"></i></a>
-                                <a href="mailto:Sagarrangwani1@gmail.com" className="w-12 h-12 rounded-full dark:bg-slate-800 bg-white dark:text-slate-300 text-slate-600 hover:text-primary dark:hover:text-primary hover:-translate-y-1 transition-all flex items-center justify-center text-xl shadow-sm border dark:border-slate-700 border-slate-200"><i className="fas fa-envelope"></i></a>
-                            </div>
-                        </div>
-                    </footer>
-                </div>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span data-year>2026</span> Sagar Lal · <span data-i18n="footer.loc">Verona, Italy</span></p>
+    <p data-i18n="footer.built">Designed and built by hand with HTML, CSS and JavaScript.</p>
+    <p><a href="#top" data-i18n="footer.top">Back to top ↑</a></p>
+  </div>
+</footer>
 </body>
 </html>
