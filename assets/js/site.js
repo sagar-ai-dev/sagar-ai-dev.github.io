@@ -135,7 +135,7 @@
   onScroll();
 
   /* ---------- active section + reveal ---------- */
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window) (function () {
     var links = {};
     each(nav.querySelectorAll('a[href^="#"]'), function (a) { links[a.getAttribute("href").slice(1)] = a; });
     var spy = new IntersectionObserver(function (entries) {
@@ -147,6 +147,9 @@
     }, { rootMargin: "-45% 0px -50% 0px" });
     Object.keys(links).forEach(function (id) { var s = $(id); if (s) { spy.observe(s); } });
 
+    // Visitors who arrive on a section link (/#projects) see it at once: no fade-in
+    // for content the browser has already scrolled them to.
+    if (window.location.hash) { return; }
     var reveal = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) { entry.target.classList.add("in"); reveal.unobserve(entry.target); }
@@ -154,7 +157,7 @@
     }, { rootMargin: "0px 0px -8% 0px" });
     each(document.querySelectorAll(".reveal"), function (el) { reveal.observe(el); });
     root.classList.add("reveal-ready");
-  }
+  })();
 
   /* ---------- copy email ---------- */
   var copyBtn = $("copy-email");
