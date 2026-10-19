@@ -143,7 +143,7 @@
         <p><em>Causal Anomaly Detection from Multivariate Time Series.</em> Three causal
         discovery algorithms (PCMCI, GES, CAM-UV) compared across 27 configurations on three
         domains under one detection pipeline, flagging faults from drift in learned regression
-        coefficients rather than from prediction error.</p>
+        coefficients rather than from prediction error. <a style="color:#8b5cf6;" href="https://github.com/sagar-ai-dev/Causal-Anomaly-Detection-from-Multivariate-Time-Series">Code on GitHub</a>.</p>
 
         <h2 style="font-size:1.1rem;margin:1.75rem 0 .5rem;">Experience</h2>
         <ul>
@@ -237,7 +237,7 @@
                     d_title: "The Three Domains", d_items: ["Healthcare: PTB-XL 12-lead ECG Dataset (biological variance).", "Industrial: Tennessee Eastman Process (TEP) dataset (chemical faults).", "Robotics: PEPPER Robot dataset (sensor/actuator anomalies)."],
                     a_title: "Causal Algorithms", a_items: ["PCMCI: Constraint-based using Tigramite's partial correlation.", "GES: Score-based utilizing Greedy Equivalence Search (BIC).", "CAM-UV: Kernel-based using Hilbert-Schmidt Independence Criterion (HSIC)."],
                     p_title: "4-Phase Architecture", p_items: ["Graph Discovery: Learns causal dependencies from healthy data.", "Offline Fitting: Regresses each sensor on at most three causal parents (linear, degree-3 polynomial or RBF features, all ridge-regularised).", "Online Drift: Recursive least squares re-fits the coefficients at every time step and scores how far they drift from their healthy values.", "Label-blind thresholding: the alarm line is fixed at the 95th percentile of fault-free scores, set before any fault is seen."],
-                    x_title: "XAI & Standardized Reporting", x_desc: "All 27 independent scripts route through a centralized reporting module generating F1/AUC-ROC metrics, attack localization visuals, and XAI X-Ray spreadsheets ranking the specific variables that triggered the alert."
+                    x_title: "XAI & Standardized Reporting", code_btn: "View the thesis code on GitHub", x_desc: "All 27 independent scripts route through a centralized reporting module generating F1/AUC-ROC metrics, attack localization visuals, and XAI X-Ray spreadsheets ranking the specific variables that triggered the alert."
                 },
                 projects: { title: "Technical Projects", sub: "Academic research, open-source tools, and freelance developments." },
                 skills: { title: "Technical Expertise", sub: "Core programming languages, frameworks, and tools." },
@@ -258,7 +258,7 @@
                     {title: "Sviluppatore Web Freelance", comp: "Clienti Indipendenti", date: "Mar 2023 - Presente", loc: "Remoto", resp: ["Progettazione e aggiornamento siti con WordPress e Elementor.", "Sviluppo landing page responsive.", "Gestione clienti e manutenzione tecnica."], tech: ["WordPress", "Elementor"]},
                     {title: "Tirocinante Machine Learning", comp: "Università di Verona", date: "Apr 2025 - Giu 2025", loc: "Verona, Italia", resp: ["Modelli CNN con TensorFlow.", "Classificatori serie temporali."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
-                research: { title: "Ricerca: Tesi Magistrale", obj: "Valutazione comparativa di algoritmi di Causal Discovery integrati in un motore di Anomaly Scoring.", d_title: "I Tre Domini", d_items: ["Healthcare (ECG)", "Industriale (TEP)", "Robotica (PEPPER)"], a_title: "Algoritmi Causali", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architettura", p_items: ["Graph Discovery", "Offline Fitting", "Online Drift", "Soglia al 95° percentile"], x_title: "XAI & Reporting", x_desc: "Generazione di metriche standardizzate e report X-Ray per l'interpretabilità." },
+                research: { title: "Ricerca: Tesi Magistrale", obj: "Valutazione comparativa di algoritmi di Causal Discovery integrati in un motore di Anomaly Scoring.", d_title: "I Tre Domini", d_items: ["Healthcare (ECG)", "Industriale (TEP)", "Robotica (PEPPER)"], a_title: "Algoritmi Causali", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architettura", p_items: ["Graph Discovery", "Offline Fitting", "Online Drift", "Soglia al 95° percentile"], code_btn: "Vedi il codice della tesi su GitHub", x_title: "XAI & Reporting", x_desc: "Generazione di metriche standardizzate e report X-Ray per l'interpretabilità." },
                 projects: { title: "Progetti Tecnici", sub: "Sviluppo open-source e freelance." }, skills: { title: "Competenze", sub: "Linguaggi e framework." }, cert: { title: "Certificazioni", sub: "Credenziali verificate." },
                 contact: { title: "Costruiamo Qualcosa Insieme", avail: "Disponibilità Attuale", a_items: ["Aperto a Nuove Opportunità", "Residente a Verona, Italia", "Remoto Globale", "Trasferimento Possibile"], form: ["Nome Completo", "Indirizzo Email", "Il Tuo Messaggio", "Invia Messaggio"] }
             },
@@ -273,7 +273,7 @@
                     {title: "Desarrollador Web Freelance", comp: "Clientes Independientes", date: "Mar 2023 - Presente", loc: "Remoto", resp: ["Diseño de sitios web con WordPress y Elementor.", "Desarrollo de landing pages.", "Mantenimiento y gestión de clientes."], tech: ["WordPress", "Elementor"]},
                     {title: "Pasante Machine Learning", comp: "Univ. de Verona", date: "Abr 2025 - Jun 2025", loc: "Verona, Italia", resp: ["Modelos CNN TensorFlow.", "Series temporales."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
-                research: { title: "Investigación: Tesis", obj: "Estudio para evaluar algoritmos de descubrimiento causal para detección de anomalías.", d_title: "Tres Dominios", d_items: ["Salud (ECG)", "Industrial (TEP)", "Robótica (PEPPER)"], a_title: "Algoritmos Causales", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Arquitectura", p_items: ["Descubrimiento de Grafos", "Ajuste Offline", "Deriva Online", "Umbral del percentil 95"], x_title: "XAI & Reporting", x_desc: "Generación de métricas F1/AUC y análisis de explicabilidad (X-Ray)." },
+                research: { title: "Investigación: Tesis", obj: "Estudio para evaluar algoritmos de descubrimiento causal para detección de anomalías.", d_title: "Tres Dominios", d_items: ["Salud (ECG)", "Industrial (TEP)", "Robótica (PEPPER)"], a_title: "Algoritmos Causales", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Arquitectura", p_items: ["Descubrimiento de Grafos", "Ajuste Offline", "Deriva Online", "Umbral del percentil 95"], code_btn: "Ver el código de la tesis en GitHub", x_title: "XAI & Reporting", x_desc: "Generación de métricas F1/AUC y análisis de explicabilidad (X-Ray)." },
                 projects: { title: "Proyectos Técnicos", sub: "Desarrollos y análisis." }, skills: { title: "Habilidades", sub: "Herramientas core." }, cert: { title: "Certificaciones", sub: "Credenciales." },
                 contact: { title: "Trabajemos Juntos", avail: "Disponibilidad Actual", a_items: ["Abierto a Oportunidades", "Basado en Verona, Italia", "Remoto Mundial", "Reubicación Disponible"], form: ["Nombre Completo", "Correo Electrónico", "Tu Mensaje", "Enviar Mensaje"] }
             },
@@ -288,7 +288,7 @@
                     {title: "Développeur Web Freelance", comp: "Clients Indépendants", date: "Mar 2023 - Présent", loc: "À distance", resp: ["Création de sites via WordPress et Elementor.", "Intégration UI/UX.", "Maintenance technique."], tech: ["WordPress", "Elementor"]},
                     {title: "Stagiaire ML", comp: "Université de Vérone", date: "Avr 2025 - Juin 2025", loc: "Vérone, Italie", resp: ["Modèles CNN TensorFlow.", "Séries temporelles."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
-                research: { title: "Recherche de Thèse", obj: "Évaluation d'algorithmes de découverte causale pour la détection d'anomalies.", d_title: "Domaines", d_items: ["Santé (ECG)", "Industriel (TEP)", "Robotique (PEPPER)"], a_title: "Algorithmes", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architecture", p_items: ["Graphes Causaux", "Baseline Offline", "Online Drift", "Seuil au 95e centile"], x_title: "XAI", x_desc: "Rapports standardisés et explicabilité X-Ray." },
+                research: { title: "Recherche de Thèse", obj: "Évaluation d'algorithmes de découverte causale pour la détection d'anomalies.", d_title: "Domaines", d_items: ["Santé (ECG)", "Industriel (TEP)", "Robotique (PEPPER)"], a_title: "Algorithmes", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architecture", p_items: ["Graphes Causaux", "Baseline Offline", "Online Drift", "Seuil au 95e centile"], code_btn: "Voir le code de la thèse sur GitHub", x_title: "XAI", x_desc: "Rapports standardisés et explicabilité X-Ray." },
                 projects: { title: "Projets", sub: "Développements techniques." }, skills: { title: "Compétences", sub: "Technologies." }, cert: { title: "Certifications", sub: "Validées." },
                 contact: { title: "Construisons l'Avenir", avail: "Disponibilité", a_items: ["Ouvert aux Opportunités", "Basé à Vérone, Italie", "Télétravail Mondial", "Relocalisation Possible"], form: ["Nom Complet", "Adresse Email", "Votre Message", "Envoyer le Message"] }
             },
@@ -303,7 +303,7 @@
                     {title: "Freelance Webentwickler", comp: "Unabhängige Kunden", date: "Mär 2023 - Heute", loc: "Remote", resp: ["Erstellung von Websites mit WordPress und Elementor.", "UI/UX Integration.", "Technische Wartung."], tech: ["WordPress", "Elementor"]},
                     {title: "ML Praktikant", comp: "Uni Verona", date: "Apr 2025 - Jun 2025", loc: "Verona, Italien", resp: ["CNN TensorFlow.", "Zeitreihen."], tech: ["TensorFlow", "OpenCV"]}
                 ]},
-                research: { title: "Forschung Thesis", obj: "Wissenschaftliche Evaluierung kausaler Algorithmen zur Anomalieerkennung.", d_title: "Domänen", d_items: ["Gesundheit (ECG)", "Industrie (TEP)", "Robotik (PEPPER)"], a_title: "Algorithmen", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architektur", p_items: ["Graphenerkennung", "Offline Fitting", "Online Drift", "Schwelle am 95. Perzentil"], x_title: "XAI Reporting", x_desc: "Standardisierte Metriken und erklärbare X-Ray Berichte." },
+                research: { title: "Forschung Thesis", obj: "Wissenschaftliche Evaluierung kausaler Algorithmen zur Anomalieerkennung.", d_title: "Domänen", d_items: ["Gesundheit (ECG)", "Industrie (TEP)", "Robotik (PEPPER)"], a_title: "Algorithmen", a_items: ["PCMCI", "GES", "CAM-UV"], p_title: "Architektur", p_items: ["Graphenerkennung", "Offline Fitting", "Online Drift", "Schwelle am 95. Perzentil"], code_btn: "Code der Thesis auf GitHub ansehen", x_title: "XAI Reporting", x_desc: "Standardisierte Metriken und erklärbare X-Ray Berichte." },
                 projects: { title: "Projekte", sub: "Akademische Projekte." }, skills: { title: "Fähigkeiten", sub: "Frameworks." }, cert: { title: "Zertifizierungen", sub: "Qualifikationen." },
                 contact: { title: "Kontaktieren Sie Mich", avail: "Verfügbarkeit", a_items: ["Offen für Chancen", "Sitz in Verona, Italien", "Remote Weltweit", "Umzug Möglich"], form: ["Vollständiger Name", "E-Mail Adresse", "Ihre Nachricht", "Nachricht Senden"] }
             }
@@ -510,6 +510,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div className="text-center mt-10">
+                            <a href="https://github.com/sagar-ai-dev/Causal-Anomaly-Detection-from-Multivariate-Time-Series" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary text-white font-bold text-sm shadow-lg hover:opacity-90 transition"><i className="fab fa-github"></i> {r.code_btn}</a>
+                        </div>
                     </div>
                 </section>
             );
@@ -521,7 +524,7 @@
                 { title: "Medical Imaging Continual Learning", desc: "Automated continual learning pipeline using knowledge distillation to train a MobileNetV3 model.", link: "Medical-Imaging-Continual-Learning-Pipeline", icon: "fa-x-ray", color: "blue", tools: ["PyTorch", "MobileNetV3", "Python"] },
                 { title: "Financial Time-Series Architecture", desc: "Machine learning architecture that ingests and analyzes stock market data for trend prediction.", link: "Machine_learning_Stock_data_ana", icon: "fa-chart-line", color: "emerald", tools: ["Python", "Pandas", "Scikit"] },
                 { title: "Advanced Computer Vision Suite", desc: "Developed 2D/3D computer vision models utilizing deep learning, edge detection, and SIFT feature extraction.", link: "CV_Project", icon: "fa-eye", color: "purple", tools: ["OpenCV", "CNNs", "PIL"] },
-                { title: "NLP Sentiment Analyzer", desc: "Engineered NLP solutions involving complex text preprocessing, tokenization, and transformer architectures.", link: "NLP_assignment2", icon: "fa-language", color: "pink", tools: ["Transformers", "NLTK", "Python"] },
+                { title: "NLP Sentiment Analyzer", desc: "Engineered NLP solutions involving complex text preprocessing, tokenization, and transformer architectures.", link: "NLP_asssignment2", icon: "fa-language", color: "pink", tools: ["Transformers", "NLTK", "Python"] },
                 { title: "Secure DBMS API", desc: "Designed and implemented a secure relational database architecture to handle robust data tracking via REST APIs.", link: "Data-base-system", icon: "fa-database", color: "orange", tools: ["FastAPI", "SQL", "Python"] },
                 { title: "Automated QR Attendance", desc: "Engineered an automated attendance tracking application utilizing QR code generation and image scanning algorithms.", link: "ATTENDANCE-QR-CODE", icon: "fa-qrcode", color: "blue", tools: ["Python", "OpenCV"] },
                 { title: "Knowledge Rep. & Logic", desc: "Implemented modal logic reasoning algorithms and knowledge representation models for AI agents.", link: "-Knowledge_Representation_Project", icon: "fa-network-wired", color: "emerald", tools: ["Logic", "Algorithms"] },
